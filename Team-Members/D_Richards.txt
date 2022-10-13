@@ -1,0 +1,4 @@
+Name: Drew Richards
+Year: Junior
+Major: Computer Science - Software Engineering
+Sprint Roles: Lead Developer & Document Writer
