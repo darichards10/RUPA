@@ -28,7 +28,7 @@ A application designed to give parking information to make it easier for the use
  * LAMP
  * WAMP
  * Google Maps API
- * SQL Database
+ * HTML, CSS, and JavaScript
 ## Installation
 Cloning to a web server and connecting to a database will allow you to replicate our system.
 ## Usage
