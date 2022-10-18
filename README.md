@@ -35,3 +35,5 @@ Cloning to a web server and connecting to a database will allow you to replicate
 This will be used by any student, faculty, or visitor looking for a quick reference to parking lots. Our system will display where they are allowed to park and the probability of certain spots being open to park in.
 ## Project Status
 Beginning of sprint 1. Setting up enviroments and loading dependencies for all languages and libraries needed.
+
+--Addition from rucs--
