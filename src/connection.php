@@ -1,5 +1,5 @@
 <?php
-require "../config/config.php";
+require "../config/config.php"; 
 
 $options = [
     PDO::ATTR_ERRMODE  => PDO::ERRMODE_EXCEPTION,
