@@ -12,8 +12,6 @@ $dsn = db_type.":host=".db_server.";dbname=".db_database.";port=".db_port.";char
 
 try {
     $pdo = new PDO($dsn, db_user, db_pass, $options);
-    echo "Successfully connected to the database.<br>";
-
 } catch (PDOException $e) {
     throw new PDOException($e->getMessage(), $e->getCode());
 }
