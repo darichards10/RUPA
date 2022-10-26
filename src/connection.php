@@ -1,5 +1,5 @@
 <?php
-require "../config/config.php"; 
+require "../config/config.php";
 
 $options = [ 
     PDO::ATTR_ERRMODE  => PDO::ERRMODE_EXCEPTION,
@@ -7,10 +7,14 @@ $options = [
     PDO::ATTR_EMULATE_PREPARES => false, 
 ];
 
-$dsn = db_type.":host=".db_server.";db_databsename=".db_database.";port=".db_port.";charset=".db_charset; 
+$pdo = null;
+$dsn = db_type.":host=".db_server.";dbname=".db_database.";port=".db_port.";charset=".db_charset; 
 
 try {
-    $pdo = new PDO($dsn, db_user, db_pass, $options); 
+    $pdo = new PDO($dsn, db_user, db_pass, $options);
+    
 } catch (PDOException $e) {
     throw new PDOException($e->getMessage(), $e->getCode());    
-} ?>
+} 
+
+?>
