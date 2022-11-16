@@ -1,5 +1,5 @@
 <?php
-require "connection.php";
+require "cookieredir.php";
 ?>
 
 <!DOCTYPE html>
@@ -13,9 +13,9 @@ require "connection.php";
     <body>
         <form method="post" action="passvalidation.php">
             <div class="container">
-                <header><h1>RADFORD UNIVERSITY PARKING APP<h1></header>
+                <header><h1>RADFORD UNIVERSITY PARKING APP<hr>Select Parking Pass<h1></header>
                 <button type="submit" class="button" name="met" value="metered" style="background-color: black; color: white;">Disabled/Metered</button><br>
-                <button type="submit" class="button" name="com" value="commuter" style="background-color: rgb(255, 204, 102);">Commuter</button><br>
+                <button type="submit" class="button" name="com" value="commuter" style="background-color: #faf25f;">Commuter</button><br>
                 <button type="submit" class="button" name="uap" value="apartment" style="background-color: #EF70EF;">University Apartment</button><br>
                 <button type="submit" class="button" name="res" value="resident" style="background-color: #ADD8E6;">Resident</button>
             </div>

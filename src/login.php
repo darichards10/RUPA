@@ -35,7 +35,7 @@ require "cookieredir.php";
 		<div class="container">
 			<header><h1>RADFORD UNIVERSITY PARKING APP<hr>Log-In Page<h1></header>
 			<form method="post" action="loginvalidation.php">
-				<input type="email" name="username" id="username" name="username" placeholder="user@radford.edu" oninput="validate()">
+				<input class="inp" type="email" name="username" id="username" name="username" placeholder="user@radford.edu" oninput="validate()">
 				<button type="submit" class="button invisible"  value="login" name="login" id="login"><b>Log-In</b></button><hr>
 				<button type="submit" class="button" value="guest" name="guest"><b> Enter as Guest</b></button>
 			</form>
