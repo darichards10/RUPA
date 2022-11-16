@@ -1,81 +1,102 @@
 
-        body, html {
-            background: url("campuspic.jpg") no-repeat center fixed ;
-            background-size: cover;
-            font-family: 'Raleway', sans-serif;
-            font-weight: bold;
-        }
-          
-        .container {
-            bottom: 45%;
-            left: 20%;
-            background-color: red;
-            margin: 10%;
-            opacity: .8;
-            padding: 10px;
-            border-radius: 10px;
-            display: block;
-            justify-content: center;
-            align-items: center;
-        }    
-        .foot {
-            margin-top: 50%;
-            text-align: center;
-            color:  black;
-            background-color: white;
-            opacity: .9;
-            width: 25%;
-            border-radius: 10px;
-            text-align: center;
-            margin-left: 38%;
+body, html {
+  background: url("campuspic.jpg") no-repeat center fixed ;
+  background-size: cover;
+  font-family: 'Raleway', sans-serif;
+  font-weight: bold;
+}
 
-        }    
-        h1 {
-          text-align: center;
-          color: White;
-          font-weight: bold;
-        }
+.container {
+  bottom: 45%;
+  left: 20%;
+  background-color: rgba(255,0,0,.8);
+  margin: 10%;
+  padding: 10px;
+  border-radius: 10px;
+  display: block;
+  justify-content: center;
+  align-items: center;
+}
 
-        .loader {
-            border: 8px solid grey;
-            border-top: 8px solid #f3f3f3;
-            border-radius: 50%;
-            width: 75px;
-            height: 75px;
-            animation: spin 1s linear infinite;
-            margin-left: 42%;
-            margin-top: 12%;
-            margin-bottom: 8%;
-          }
-          
-          @keyframes spin {
-            0% { transform: rotate(0deg); }
-            100% { transform: rotate(360deg); }
-          }
 
-          .error {
-            background-color: aquamarine;
-          }
-          input {
-            width : 70%;
-            padding: 14px 28px;
-            font-size: 16px;
-            border-radius: 10px;
-            text-align: center;
-            margin-bottom: 5%;
-            margin-left: 13%;
-          }
+.foot {
+  height: fit-content;
+  text-align: center;
+  color:  black;
+  background-color: white;
+  opacity: .9;
+  width: 25%;
+  border-radius: 10px;
+  text-align: center;
+  margin-left: 38%;
 
-          .button {
-            display: block;
-            width: 75%;
-            padding: 14px 28px;
-            font-size: 16px;
-            cursor: pointer;
-            text-align: center;
-            border-radius: 10px;
-            margin-left: 13%;
-          }  
-          .invisible {
-            visibility: hidden;
-          }
+}    
+h1 {
+text-align: center;
+color: White;
+font-weight: bold;
+}
+
+.loader {
+  border: 8px solid grey;
+  border-top: 8px solid #f3f3f3;
+  border-radius: 50%;
+  width: 75px;
+  height: 75px;
+  animation: spin 1s linear infinite;
+  margin-left: 42%;
+  margin-top: 12%;
+  margin-bottom: 8%;
+}
+
+@keyframes spin {
+  0% { transform: rotate(0deg); }
+  100% { transform: rotate(360deg); }
+}
+
+.error {
+  background-color: aquamarine;
+}
+.inp {
+  width : 70%;
+  padding: 14px 28px;
+  font-size: 16px;
+  border-radius: 10px;
+  text-align: center;
+  margin-bottom: 5%;
+  margin-left: 13%;
+}
+
+.button {
+  display: block;
+  width: 75%;
+  padding: 14px 28px;
+  font-size: 16px;
+  cursor: pointer;
+  text-align: center;
+  border-radius: 10px;
+  margin-left: 13%;
+}  
+.invisible {
+  visibility: hidden;
+}
+
+#map {
+  height: 650px;
+}
+#sMap {
+  height: 500px; width: 1000px;
+}
+
+@media only screen and (orientation: portrait) {
+  #map {
+    height: 1500px;
+  }
+  #sMap{
+    height: 1000px; width: 725px;
+  }
+  .container {
+    margin: auto;
+  }
+}
+
