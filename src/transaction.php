@@ -5,8 +5,6 @@
  */
 function qry(PDO $pdo, string $qry, array $args = null, string $mode = null) {
     if ($args != null && $mode == null) {
-function qry(PDO $pdo, string $qry, array $args = null) {
-    if ($args != null) {
         try { 
             //complex query with arguments
             $pdo->beginTransaction(); 
@@ -52,20 +50,4 @@ function transactionControl (PDO $pdo, string $updateDML, array $args) {
               
 
 
-        } catch (Exception $e) {
-            $pdo->rollback(); 
-            throw $e; 
-        }
-    }  else { 
-        //regular query
-        $query = $pdo->query($qry); 
-        return $query->fetch();
-    }
-}
-function transactionControl (PDO $pdo, string $updateDML, array $args) {
-    //Will do later. 
-    
-    return null; 
-}
-              
 ?>
