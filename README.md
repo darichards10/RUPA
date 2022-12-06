@@ -55,7 +55,7 @@ DEFINE('db_pass', 'database-user-password');
 This will be used by any student, faculty, or visitor looking for a quick reference to parking lots. Our system will display where they are allowed to park and the probability of certain spots being open to park in.
 ## Project Status
 Sprint 1. Setting up enviroments and loading dependencies for all languages and libraries needed. COMPLETED.
-Sprint 2. Creating the bulk of our front end, such that a user will be able to navigate the radford campus using the interactive map. COMPLETED.
-Sprint 3. Connecting the front end and the back end more closely. Heat map of lot / spot activity will be given and users may choose to park at a given location. COMPLETED.
 
---Addition from rucs--
+Sprint 2. Creating the bulk of our front end, such that a user will be able to navigate the radford campus using the interactive map. COMPLETED.
+
+Sprint 3. Connecting the front end and the back end more closely. Heat map of lot / spot activity will be given and users may choose to park at a given location. COMPLETED.
