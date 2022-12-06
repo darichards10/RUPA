@@ -11,17 +11,17 @@ Major: Computer Science
 Concentration: Software Engineering
 
 
-Sprint 1:
+### Sprint 1:
 
 Roles: Project Manager, Lead Tester, & Document Reviewer
 
 
-Sprint 2:
+### Sprint 2:
 
 Roles: Assistant Project Manager, Lead Developer, Document Writer, & Customer Liaison 
 
 
-Sprint 3:
+### Sprint 3:
 
 Roles: Developer & Document Writer
 
@@ -35,17 +35,17 @@ Major: Computer Science
 Concentration: Software Engineering
 
 
-Sprint 1:
+### Sprint 1:
 
 Roles: Lead Developer & Document Writer
 
 
-Sprint 2: 
+### Sprint 2: 
 
 Roles: Developer & Document Writer
 
 
-Sprint 3:
+### Sprint 3:
 
 Roles: Project Manager, Lead Tester, & Document Reviewer
 
@@ -62,16 +62,16 @@ Concentration: Computer Science
 Fun fact: Oranges
 
 
-Sprint 1:
+### Sprint 1:
 
 Roles: Assistant Project Manager, Developer, Document Writer, & Customer Liaison
 
 
-Sprint 2:
+### Sprint 2:
 
 Roles: Project Manager, Lead Tester, & Document Reviewer
 
 
-Sprint 3:
+### Sprint 3:
 
 Roles: Assistant Project Manager, Lead Developer, Document Writer, & Customer Liaison
