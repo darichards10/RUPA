@@ -26,13 +26,13 @@ if(isset($_SESSION["parkpass"])) {
         $category["parkpass"] = $_SESSION["parkpass"];
 
         try {
-            // qry($pdo,$query,$category);
+            qry($pdo,$query,$category);
         } catch(Exception $e) {
             header("Location: login.php");
             exit();
         }
         
-        // setcookie("login",$_SESSION["username"],time() + (86400 * 30), "/");
+        setcookie("login",$_SESSION["username"],time() + (86400 * 30), "/");
         unset($_SESSION["username"]);
 
         header("Location: map.php");
