@@ -1,4 +1,5 @@
 <?php
+//this is required for DB operation
 require "../config/config.php";
 
 $options = [ 
@@ -7,6 +8,7 @@ $options = [
     PDO::ATTR_EMULATE_PREPARES => false, 
 ];
 
+//PDO is the basis for our DB SQL operations
 $pdo;
 $dsn = db_type.":host=".db_server.";dbname=".db_database.";port=".db_port.";charset=".db_charset; 
 try {

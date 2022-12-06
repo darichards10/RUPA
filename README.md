@@ -27,13 +27,35 @@ A application designed to give parking information to make it easier for the use
 ## Tech Stack
  * LAMP
  * WAMP
- * Google Maps API
+ * LeafletJS (API)
  * HTML, CSS, and JavaScript
 ## Installation
 Cloning to a web server and connecting to a database will allow you to replicate our system.
+### About our files
+The file paths in our files will not align with the file structure here. To deploy it as such, place every single file in one folder (provided here in this repository).
+
+### Setting up the DB
+It will be as simple as running the contents (or the sql file) [found here.](./sql/parkingdb.sql)
+
+### Config.php
+There is a specific file that [connection.php](./src/connection.php) requires called config.php. This is what config.php needs to contain:
+```php
+<?php 
+DEFINE('db_type', 'database-type');
+DEFINE('db_server', 'database-server');
+DEFINE('db_database', 'database-name');
+DEFINE('db_port','database-port');
+DEFINE('db_charset','utf8mb4');
+DEFINE('db_user', 'database-username');
+DEFINE('db_pass', 'database-user-password');
+?>
+```
+
 ## Usage
 This will be used by any student, faculty, or visitor looking for a quick reference to parking lots. Our system will display where they are allowed to park and the probability of certain spots being open to park in.
 ## Project Status
-Beginning of sprint 1. Setting up enviroments and loading dependencies for all languages and libraries needed.
+Sprint 1. Setting up enviroments and loading dependencies for all languages and libraries needed. COMPLETED.
+Sprint 2. Creating the bulk of our front end, such that a user will be able to navigate the radford campus using the interactive map. COMPLETED.
+Sprint 3. Connecting the front end and the back end more closely. Heat map of lot / spot activity will be given and users may choose to park at a given location. COMPLETED.
 
 --Addition from rucs--

@@ -1,51 +1,33 @@
 <?php
 require "connection.php";
 require "transaction.php";
-require "cookieredir.php";
 session_start();
 
-// echo session_id();
+//check if user has cookies to enable DB operations
+if(count($_COOKIE) > 0) {
+	$_SESSION["cookiesEnabled"] = true;
+	
+	if(isset($_COOKIE["login"])) {
+		$userinfo = $_COOKIE["login"];
+		$query = "SELECT * FROM Users WHERE username LIKE :username;";
+		$cat = array("username"=>$userinfo);
 
-if(!empty($_POST["met"])) {
-    $_SESSION["parkpass"] = "black";
-} elseif(!empty($_POST["com"])) {
-    $_SESSION["parkpass"] = "yellow";
-} elseif(!empty($_POST["uap"])) {
-    $_SESSION["parkpass"] = "purple";
-} elseif(!empty($_POST["res"])) {
-    $_SESSION["parkpass"] = "blue";
-} 
+		$dbUserinfo = qry($pdo,$query,$cat,"fetch");
 
-if(isset($_SESSION["parkpass"])) {
-    $query = "INSERT INTO Users (username, parkpass)
-            VALUES (:username, :parkpass)";
-    $category = array();
+		$_SESSION["parkpass"] = $dbUserinfo[0]["parkpass"];
+		
+		header("Refresh:1; url=map.php");
+		exit();
 
-    if(isset($_SESSION["username"]) && $_SESSION["cookiesEnabled"] == true) {
-        $category["username"] = $_SESSION["username"];
-        $category["parkpass"] = $_SESSION["parkpass"];
-
-        try {
-            qry($pdo,$query,$category);
-        } catch(Exception $e) {
-            header("Location: login.php");
-            exit();
-        }
-        
-        setcookie("login",$_SESSION["username"],time() + (86400 * 30), "/");
-        unset($_SESSION["username"]);
-
-        header("Location: map.php");
-        exit();
-
-    } else {
-        header("Location: map.php");
-        exit();
-    }
-
+	} else {
+		header("Refresh:1; url=login.php");
+		exit();
+	}
 } else {
-    header("Location: index.php");
-    exit();
+	echo html_entity_decode("<p class='error'>Cookies are not enabled. Please enable cookies to save preferences.</p>");
+	header("Refresh:2; url=who.php");
+	exit();
 }
+
 
 ?>
