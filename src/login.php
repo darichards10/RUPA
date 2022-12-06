@@ -1,4 +1,5 @@
 <?php
+//counts cookies to see if they're enabled
 if(count($_COOKIE) <= 0) {
     header("Location: index.php");
     exit();
@@ -8,11 +9,15 @@ require "cookieredir.php";
 <!DOCTYPE html>
 <html lang="en">
 	<head>
+		<title>RUPA</title>
 		<link rel="stylesheet" href="main.css">
 		<link rel="preconnect" href="https://fonts.googleapis.com">
 		<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 		<link href="https://fonts.googleapis.com/css2?family=Raleway:wght@100&display=swap" rel="stylesheet">
 		<script>
+			/**
+			 * Validates the login in the front end, to ensure that user types in the correct email domain
+			 */
 			function validate() {
 				var x = document.getElementById("username").value;
 				var button = document.getElementById("login");
@@ -47,6 +52,3 @@ require "cookieredir.php";
             Team 03<br>
             </footer>
 </html>
-
-
-
