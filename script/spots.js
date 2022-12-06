@@ -1,4 +1,8 @@
-class SpotsInfo {
+
+/**
+ * Creates an object that contains data on an individual spot
+ */
+ class SpotsInfo {
     #lotLetter;
     #spID;
     #isOpen;
@@ -11,7 +15,7 @@ class SpotsInfo {
         this.#spID = spID;
         this.#isOpen = isOpen;
         this.#gridLocation = gridLocation;
-        this.#display = L.circle(this.#gridLocation, {radius: 5, color: 'black'});
+        this.#display = L.circle(this.#gridLocation, {radius: 2, color: 'black'});
         this.#content = "";
     }
 
@@ -40,3710 +44,825 @@ class SpotsInfo {
     set content(content) {
         this.#content = content;
     }
+
+	changeColor(color) {
+		this.#display.setStyle({radius: 2, color: color});
+	}
+
+	changeOpacity(opacity) {
+		this.#display.setStyle({fillOpacity: opacity});
+	}
 }
 
 //Lot A - - - - - - - - - - - - - - - - - - - - - - - - -
-var A001 = new SpotsInfo('A','001',true,[0,0]);
-var A002 = new SpotsInfo('A','002',true,[0,0]);
-var A003 = new SpotsInfo('A','003',true,[0,0]);
-var A004 = new SpotsInfo('A','004',true,[0,0]);
-var A005 = new SpotsInfo('A','005',true,[0,0]);
-var A006 = new SpotsInfo('A','006',true,[0,0]);
-var A007 = new SpotsInfo('A','007',true,[0,0]);
-var A008 = new SpotsInfo('A','008',true,[0,0]);
-var A009 = new SpotsInfo('A','009',true,[0,0]);
-var A00A = new SpotsInfo('A','00A',true,[0,0]);
-var A00B = new SpotsInfo('A','00B',true,[0,0]);
-var A00C = new SpotsInfo('A','00C',true,[0,0]);
-var A00D = new SpotsInfo('A','00D',true,[0,0]);
-var A00E = new SpotsInfo('A','00E',true,[0,0]);
-var A00F = new SpotsInfo('A','00F',true,[0,0]);
-var A010 = new SpotsInfo('A','010',true,[0,0]);
-var A011 = new SpotsInfo('A','011',true,[0,0]);
-var A012 = new SpotsInfo('A','012',true,[0,0]);
-var A013 = new SpotsInfo('A','013',true,[0,0]);
-var A014 = new SpotsInfo('A','014',true,[0,0]);
-var A015 = new SpotsInfo('A','015',true,[0,0]);
-var A016 = new SpotsInfo('A','016',true,[0,0]);
-var A017 = new SpotsInfo('A','017',true,[0,0]);
-var A018 = new SpotsInfo('A','018',true,[0,0]);
-var A019 = new SpotsInfo('A','019',true,[0,0]);
-var A01A = new SpotsInfo('A','01A',true,[0,0]);
-var A01B = new SpotsInfo('A','01B',true,[0,0]);
-var A01C = new SpotsInfo('A','01C',true,[0,0]);
-var A01D = new SpotsInfo('A','01D',true,[0,0]);
-var A01E = new SpotsInfo('A','01E',true,[0,0]);
-var A01F = new SpotsInfo('A','01F',true,[0,0]);
-var A020 = new SpotsInfo('A','020',true,[0,0]);
-var A021 = new SpotsInfo('A','021',true,[0,0]);
-var A022 = new SpotsInfo('A','022',true,[0,0]);
-var A023 = new SpotsInfo('A','023',true,[0,0]);
-var A024 = new SpotsInfo('A','024',true,[0,0]);
-var A025 = new SpotsInfo('A','025',true,[0,0]);
-var A026 = new SpotsInfo('A','026',true,[0,0]);
-var A027 = new SpotsInfo('A','027',true,[0,0]);
-var A028 = new SpotsInfo('A','028',true,[0,0]);
-var A029 = new SpotsInfo('A','029',true,[0,0]);
-var A02A = new SpotsInfo('A','02A',true,[0,0]);
-var A02B = new SpotsInfo('A','02B',true,[0,0]);
-var A02C = new SpotsInfo('A','02C',true,[0,0]);
-var A02D = new SpotsInfo('A','02D',true,[0,0]);
-var A02E = new SpotsInfo('A','02E',true,[0,0]);
-var A02F = new SpotsInfo('A','02F',true,[0,0]);
-var A030 = new SpotsInfo('A','030',true,[0,0]);
-var A031 = new SpotsInfo('A','031',true,[0,0]);
-var A032 = new SpotsInfo('A','032',true,[0,0]);
-var A033 = new SpotsInfo('A','033',true,[0,0]);
-var A034 = new SpotsInfo('A','034',true,[0,0]);
-var A035 = new SpotsInfo('A','035',true,[0,0]);
-var A036 = new SpotsInfo('A','036',true,[0,0]);
-var A037 = new SpotsInfo('A','037',true,[0,0]);
-var A038 = new SpotsInfo('A','038',true,[0,0]);
-var A039 = new SpotsInfo('A','039',true,[0,0]);
-var A03A = new SpotsInfo('A','03A',true,[0,0]);
-var A03B = new SpotsInfo('A','03B',true,[0,0]);
-var A03C = new SpotsInfo('A','03C',true,[0,0]);
-var A03D = new SpotsInfo('A','03D',true,[0,0]);
-var A03E = new SpotsInfo('A','03E',true,[0,0]);
-var A03F = new SpotsInfo('A','03F',true,[0,0]);
-var A040 = new SpotsInfo('A','040',true,[0,0]);
-var A041 = new SpotsInfo('A','041',true,[0,0]);
-var A042 = new SpotsInfo('A','042',true,[0,0]);
-var A043 = new SpotsInfo('A','043',true,[0,0]);
-var A044 = new SpotsInfo('A','044',true,[0,0]);
-var A045 = new SpotsInfo('A','045',true,[0,0]);
-var A046 = new SpotsInfo('A','046',true,[0,0]);
-var A047 = new SpotsInfo('A','047',true,[0,0]);
-var A048 = new SpotsInfo('A','048',true,[0,0]);
-var A049 = new SpotsInfo('A','049',true,[0,0]);
-var A04A = new SpotsInfo('A','04A',true,[0,0]);
-var A04B = new SpotsInfo('A','04B',true,[0,0]);
-var A04C = new SpotsInfo('A','04C',true,[0,0]);
-var A04D = new SpotsInfo('A','04D',true,[0,0]);
-var A04E = new SpotsInfo('A','04E',true,[0,0]);
-var A04F = new SpotsInfo('A','04F',true,[0,0]);
-var A050 = new SpotsInfo('A','050',true,[0,0]);
-var A051 = new SpotsInfo('A','051',true,[0,0]);
-var A052 = new SpotsInfo('A','052',true,[0,0]);
-var A053 = new SpotsInfo('A','053',true,[0,0]);
-var A054 = new SpotsInfo('A','054',true,[0,0]);
-var A055 = new SpotsInfo('A','055',true,[0,0]);
-var A056 = new SpotsInfo('A','056',true,[0,0]);
-var A057 = new SpotsInfo('A','057',true,[0,0]);
-var A058 = new SpotsInfo('A','058',true,[0,0]);
-var A059 = new SpotsInfo('A','059',true,[0,0]);
-var A05A = new SpotsInfo('A','05A',true,[0,0]);
-var A05B = new SpotsInfo('A','05B',true,[0,0]);
-var A05C = new SpotsInfo('A','05C',true,[0,0]);
-var A05D = new SpotsInfo('A','05D',true,[0,0]);
-var A05E = new SpotsInfo('A','05E',true,[0,0]);
-var A05F = new SpotsInfo('A','05F',true,[0,0]);
-var A060 = new SpotsInfo('A','060',true,[0,0]);
-var A061 = new SpotsInfo('A','061',true,[0,0]);
-var A062 = new SpotsInfo('A','062',true,[0,0]);
-var A063 = new SpotsInfo('A','063',true,[0,0]);
-var A064 = new SpotsInfo('A','064',true,[0,0]);
-var A065 = new SpotsInfo('A','065',true,[0,0]);
-var A066 = new SpotsInfo('A','066',true,[0,0]);
-var A067 = new SpotsInfo('A','067',true,[0,0]);
-var A068 = new SpotsInfo('A','068',true,[0,0]);
-var A069 = new SpotsInfo('A','069',true,[0,0]);
-var A06A = new SpotsInfo('A','06A',true,[0,0]);
-var A06B = new SpotsInfo('A','06B',true,[0,0]);
-var A06C = new SpotsInfo('A','06C',true,[0,0]);
-var A06D = new SpotsInfo('A','06D',true,[0,0]);
-var A06E = new SpotsInfo('A','06E',true,[0,0]);
-var A06F = new SpotsInfo('A','06F',true,[0,0]);
-var A070 = new SpotsInfo('A','070',true,[0,0]);
-var A071 = new SpotsInfo('A','071',true,[0,0]);
-var A072 = new SpotsInfo('A','072',true,[0,0]);
-var A073 = new SpotsInfo('A','073',true,[0,0]);
-var A074 = new SpotsInfo('A','074',true,[0,0]);
-var A075 = new SpotsInfo('A','075',true,[0,0]);
-var lotASpots = [A001,A002,A003,A004,A005,A006,A007,A008,A009,A00A
-				,A00B,A00C,A00D,A00E,A00F,A010,A011,A012,A013,A014
-				,A015,A016,A017,A018,A019,A01A,A01B,A01C,A01D,A01E
-				,A01F,A020,A021,A022,A023,A024,A025,A026,A027,A028
-				,A029,A02A,A02B,A02C,A02D,A02E,A02F,A030,A031,A032
-				,A033,A034,A035,A036,A037,A038,A039,A03A,A03B,A03C
-				,A03D,A03E,A03F,A040,A041,A042,A043,A044,A045,A046
-				,A047,A048,A049,A04A,A04B,A04C,A04D,A04E,A04F,A050
-				,A051,A052,A053,A054,A055,A056,A057,A058,A059,A05A
-				,A05B,A05C,A05D,A05E,A05F,A060,A061,A062,A063,A064
-				,A065,A066,A067,A068,A069,A06A,A06B,A06C,A06D,A06E
-				,A06F,A070,A071,A072,A073,A074,A075];
+var lotASpots = [new SpotsInfo('A','001',true,[171.2,82.2]),new SpotsInfo('A','002',true,[169.4,77.9]),new SpotsInfo('A','003',true,[167.8,73.4]),new SpotsInfo('A','004',true,[164.4,69.3]),new SpotsInfo('A','005',true,[161.1,63.9])
+				,new SpotsInfo('A','006',true,[158.5,57.7]),new SpotsInfo('A','007',true,[155.8,53]),new SpotsInfo('A','008',true,[155.8,92.8]),new SpotsInfo('A','009',true,[154.1,49.9]),new SpotsInfo('A','00A',true,[153,88.9])
+				,new SpotsInfo('A','00B',true,[152.3,46.4]),new SpotsInfo('A','00C',true,[150.7,85.2]),new SpotsInfo('A','00D',true,[149.9,42.4]),new SpotsInfo('A','00E',true,[148.2,81.8]),new SpotsInfo('A','00F',true,[147.7,38.2])
+				,new SpotsInfo('A','010',true,[145.9,78.2]),new SpotsInfo('A','011',true,[145.4,34.4]),new SpotsInfo('A','012',true,[144.8,100.5]),new SpotsInfo('A','013',true,[143.5,31]),new SpotsInfo('A','014',true,[143.4,74.2])
+				,new SpotsInfo('A','015',true,[141.8,27.3]),new SpotsInfo('A','016',true,[141.8,96.2]),new SpotsInfo('A','017',true,[141.4,70.4]),new SpotsInfo('A','018',true,[139.9,23.6]),new SpotsInfo('A','019',true,[139.4,92.8])
+				,new SpotsInfo('A','01A',true,[138.9,67.2]),new SpotsInfo('A','01B',true,[136.7,89.2]),new SpotsInfo('A','01C',true,[136.6,63.8]),new SpotsInfo('A','01D',true,[135.1,13.6]),new SpotsInfo('A','01E',true,[134.1,59.9])
+				,new SpotsInfo('A','01F',true,[134,85.8]),new SpotsInfo('A','020',true,[131.5,56.1]),new SpotsInfo('A','021',true,[131.5,82.2]),new SpotsInfo('A','022',true,[129.6,78.1]),new SpotsInfo('A','023',true,[129.2,51.9])
+				,new SpotsInfo('A','024',true,[127.4,75.2]),new SpotsInfo('A','025',true,[126.3,47.8]),new SpotsInfo('A','026',true,[125.4,71.5]),new SpotsInfo('A','027',true,[123.9,44]),new SpotsInfo('A','028',true,[123.3,67.1])
+				,new SpotsInfo('A','029',true,[121.5,40.6]),new SpotsInfo('A','02A',true,[120.9,63.4]),new SpotsInfo('A','02B',true,[119.3,36.7]),new SpotsInfo('A','02C',true,[118.2,59.4]),new SpotsInfo('A','02D',true,[117.8,93.4])
+				,new SpotsInfo('A','02E',true,[116.2,32.8]),new SpotsInfo('A','02F',true,[115.6,55.4]),new SpotsInfo('A','030',true,[115.3,89.5]),new SpotsInfo('A','031',true,[113.9,28.4]),new SpotsInfo('A','032',true,[112.9,51.7])
+				,new SpotsInfo('A','033',true,[112.5,85.3]),new SpotsInfo('A','034',true,[111.4,81.7]),new SpotsInfo('A','035',true,[111.2,23.9]),new SpotsInfo('A','036',true,[110.8,48]),new SpotsInfo('A','037',true,[108.5,44.4])
+				,new SpotsInfo('A','038',true,[108.3,78.4]),new SpotsInfo('A','039',true,[105.9,74.5]),new SpotsInfo('A','03A',true,[105.4,40.1]),new SpotsInfo('A','03B',true,[103.4,70.9]),new SpotsInfo('A','03C',true,[102.2,35.9])
+				,new SpotsInfo('A','03D',true,[101.3,67.8]),new SpotsInfo('A','03E',true,[100.8,93.6]),new SpotsInfo('A','03F',true,[99.7,31.8]),new SpotsInfo('A','040',true,[99.1,64.1]),new SpotsInfo('A','041',true,[98.5,89.5])
+				,new SpotsInfo('A','042',true,[96.7,59.8]),new SpotsInfo('A','043',true,[96.3,86.1]),new SpotsInfo('A','044',true,[94.4,56.1]),new SpotsInfo('A','045',true,[93.8,81.7]),new SpotsInfo('A','046',true,[92,52.1])
+				,new SpotsInfo('A','047',true,[91.6,78.4]),new SpotsInfo('A','048',true,[89.6,47.8]),new SpotsInfo('A','049',true,[89.4,75.2]),new SpotsInfo('A','04A',true,[87,72.1]),new SpotsInfo('A','04B',true,[86.9,44])
+				,new SpotsInfo('A','04C',true,[84.7,40.9]),new SpotsInfo('A','04D',true,[84.3,67.5]),new SpotsInfo('A','04E',true,[83.1,106]),new SpotsInfo('A','04F',true,[82.4,37.3]),new SpotsInfo('A','050',true,[82.3,64])
+				,new SpotsInfo('A','051',true,[81,102.7]),new SpotsInfo('A','052',true,[80.2,60.2]),new SpotsInfo('A','053',true,[79.8,99]),new SpotsInfo('A','054',true,[79.1,32.7]),new SpotsInfo('A','055',true,[77.5,95.8])
+				,new SpotsInfo('A','056',true,[77.4,55.5]),new SpotsInfo('A','057',true,[76.6,28.6]),new SpotsInfo('A','058',true,[75.7,91.8]),new SpotsInfo('A','059',true,[74.8,52.2]),new SpotsInfo('A','05A',true,[73.8,24.1])
+				,new SpotsInfo('A','05B',true,[73.8,87.8]),new SpotsInfo('A','05C',true,[72.5,48.5]),new SpotsInfo('A','05D',true,[71.6,83.9]),new SpotsInfo('A','05E',true,[70.1,45]),new SpotsInfo('A','05F',true,[69.8,79.3])
+				,new SpotsInfo('A','060',true,[67.2,40.7]),new SpotsInfo('A','061',true,[67,74.8]),new SpotsInfo('A','062',true,[65.3,71.4]),new SpotsInfo('A','063',true,[64.7,36.1]),new SpotsInfo('A','064',true,[63.2,68])
+				,new SpotsInfo('A','065',true,[62.7,31.5]),new SpotsInfo('A','066',true,[60.9,64.4]),new SpotsInfo('A','067',true,[58.9,60.6]),new SpotsInfo('A','068',true,[57,57.1]),new SpotsInfo('A','069',true,[55.3,54])
+				,new SpotsInfo('A','06A',true,[53.1,49.5]),new SpotsInfo('A','06B',true,[11.9,90.5]),new SpotsInfo('A','06C',true,[11.7,95.9]),new SpotsInfo('A','06D',true,[11.3,105.1]),new SpotsInfo('A','06E',true,[11.1,100.1])
+				,new SpotsInfo('A','06F',true,[11.1,128.5]),new SpotsInfo('A','070',true,[11.1,133.3]),new SpotsInfo('A','071',true,[11.1,137.7]),new SpotsInfo('A','072',true,[11.1,142.5]),new SpotsInfo('A','073',true,[11.1,152])
+				,new SpotsInfo('A','074',true,[11,147.1]),new SpotsInfo('A','075',true,[10.7,157.2]),new SpotsInfo('A','076',true,[10.6,161.7]),new SpotsInfo('A','077',true,[9.8,165.6]),new SpotsInfo('A','078',true,[9.5,170.1])
+				,new SpotsInfo('A','079',true,[8.8,175])];
 
 //Lot B - - - - - - - - - - - - - - - - - - - - - - - - -
-var B001 = new SpotsInfo('B','001',true,[0,0]);
-var B002 = new SpotsInfo('B','002',true,[0,0]);
-var B003 = new SpotsInfo('B','003',true,[0,0]);
-var B004 = new SpotsInfo('B','004',true,[0,0]);
-var B005 = new SpotsInfo('B','005',true,[0,0]);
-var B006 = new SpotsInfo('B','006',true,[0,0]);
-var B007 = new SpotsInfo('B','007',true,[0,0]);
-var B008 = new SpotsInfo('B','008',true,[0,0]);
-var B009 = new SpotsInfo('B','009',true,[0,0]);
-var B00A = new SpotsInfo('B','00A',true,[0,0]);
-var B00B = new SpotsInfo('B','00B',true,[0,0]);
-var B00C = new SpotsInfo('B','00C',true,[0,0]);
-var B00D = new SpotsInfo('B','00D',true,[0,0]);
-var B00E = new SpotsInfo('B','00E',true,[0,0]);
-var B00F = new SpotsInfo('B','00F',true,[0,0]);
-var B010 = new SpotsInfo('B','010',true,[0,0]);
-var B011 = new SpotsInfo('B','011',true,[0,0]);
-var B012 = new SpotsInfo('B','012',true,[0,0]);
-var B013 = new SpotsInfo('B','013',true,[0,0]);
-var B014 = new SpotsInfo('B','014',true,[0,0]);
-var B015 = new SpotsInfo('B','015',true,[0,0]);
-var B016 = new SpotsInfo('B','016',true,[0,0]);
-var B017 = new SpotsInfo('B','017',true,[0,0]);
-var B018 = new SpotsInfo('B','018',true,[0,0]);
-var B019 = new SpotsInfo('B','019',true,[0,0]);
-var B01A = new SpotsInfo('B','01A',true,[0,0]);
-var lotBSpots = [B001,B002,B003,B004,B005,B006,B007,B008,B009,B00A
-				,B00B,B00C,B00D,B00E,B00F,B010,B011,B012,B013,B014
-				,B015,B016,B017,B018,B019,B01A];
+var lotBSpots = [new SpotsInfo('B','001',true,[196,109.1]),new SpotsInfo('B','002',true,[191.7,31.5]),new SpotsInfo('B','003',true,[176.1,31.5]),new SpotsInfo('B','004',true,[173.2,109.3]),new SpotsInfo('B','005',true,[162.7,30.6])
+				,new SpotsInfo('B','006',true,[160.5,106.6]),new SpotsInfo('B','007',true,[148.6,29.2]),new SpotsInfo('B','008',true,[146.2,106.1]),new SpotsInfo('B','009',true,[133.4,28.6]),new SpotsInfo('B','00A',true,[131,104.1])
+				,new SpotsInfo('B','00B',true,[118.4,28.1]),new SpotsInfo('B','00C',true,[117,104.2]),new SpotsInfo('B','00D',true,[104.8,28.2]),new SpotsInfo('B','00E',true,[102.2,103.3]),new SpotsInfo('B','00F',true,[91.4,27.9])
+				,new SpotsInfo('B','010',true,[89,103]),new SpotsInfo('B','011',true,[74.8,27.9]),new SpotsInfo('B','012',true,[73.3,102.5]),new SpotsInfo('B','013',true,[61.4,27.2]),new SpotsInfo('B','014',true,[58.8,102.7])
+				,new SpotsInfo('B','015',true,[47.3,25.6]),new SpotsInfo('B','016',true,[43.2,104.2]),new SpotsInfo('B','017',true,[32.6,23.2]),new SpotsInfo('B','018',true,[30,106.3])];
 
 //Lot C - - - - - - - - - - - - - - - - - - - - - - - - -
-var C001 = new SpotsInfo('C','001',true,[0,0]);
-var C002 = new SpotsInfo('C','002',true,[0,0]);
-var C003 = new SpotsInfo('C','003',true,[0,0]);
-var C004 = new SpotsInfo('C','004',true,[0,0]);
-var C005 = new SpotsInfo('C','005',true,[0,0]);
-var C006 = new SpotsInfo('C','006',true,[0,0]);
-var C007 = new SpotsInfo('C','007',true,[0,0]);
-var C008 = new SpotsInfo('C','008',true,[0,0]);
-var C009 = new SpotsInfo('C','009',true,[0,0]);
-var C00A = new SpotsInfo('C','00A',true,[0,0]);
-var C00B = new SpotsInfo('C','00B',true,[0,0]);
-var C00C = new SpotsInfo('C','00C',true,[0,0]);
-var C00D = new SpotsInfo('C','00D',true,[0,0]);
-var C00E = new SpotsInfo('C','00E',true,[0,0]);
-var C00F = new SpotsInfo('C','00F',true,[0,0]);
-var C010 = new SpotsInfo('C','010',true,[0,0]);
-var C011 = new SpotsInfo('C','011',true,[0,0]);
-var C012 = new SpotsInfo('C','012',true,[0,0]);
-var C013 = new SpotsInfo('C','013',true,[0,0]);
-var C014 = new SpotsInfo('C','014',true,[0,0]);
-var lotCSpots = [C001,C002,C003,C004,C005,C006,C007,C008,C009,C00A
-				,C00B,C00C,C00D,C00E,C00F,C010,C011,C012,C013,C014
-				];
+var lotCSpots = [new SpotsInfo('C','001',true,[174.6,89.3]),new SpotsInfo('C','002',true,[156.5,89.2]),new SpotsInfo('C','003',true,[148.7,23.1]),new SpotsInfo('C','004',true,[136.4,22.6]),new SpotsInfo('C','005',true,[125.1,22.2])
+				,new SpotsInfo('C','006',true,[114.8,21.7]),new SpotsInfo('C','007',true,[104.1,22]),new SpotsInfo('C','008',true,[93.3,21]),new SpotsInfo('C','009',true,[82.3,20.4]),new SpotsInfo('C','00A',true,[71.5,18.6])
+				,new SpotsInfo('C','00B',true,[70.3,86]),new SpotsInfo('C','00C',true,[60.6,17.6]),new SpotsInfo('C','00D',true,[58.9,85.1]),new SpotsInfo('C','00E',true,[49.8,17.3]),new SpotsInfo('C','00F',true,[47.6,84.6])
+				,new SpotsInfo('C','010',true,[38.5,17.2]),new SpotsInfo('C','011',true,[36.5,84.6]),new SpotsInfo('C','012',true,[27.2,17.9]),new SpotsInfo('C','013',true,[26.7,81.6])];
 
 //Lot E - - - - - - - - - - - - - - - - - - - - - - - - -
-var E001 = new SpotsInfo('E','001',true,[0,0]);
-var E002 = new SpotsInfo('E','002',true,[0,0]);
-var E003 = new SpotsInfo('E','003',true,[0,0]);
-var E004 = new SpotsInfo('E','004',true,[0,0]);
-var E005 = new SpotsInfo('E','005',true,[0,0]);
-var E006 = new SpotsInfo('E','006',true,[0,0]);
-var E007 = new SpotsInfo('E','007',true,[0,0]);
-var E008 = new SpotsInfo('E','008',true,[0,0]);
-var E009 = new SpotsInfo('E','009',true,[0,0]);
-var E00A = new SpotsInfo('E','00A',true,[0,0]);
-var E00B = new SpotsInfo('E','00B',true,[0,0]);
-var E00C = new SpotsInfo('E','00C',true,[0,0]);
-var E00D = new SpotsInfo('E','00D',true,[0,0]);
-var E00E = new SpotsInfo('E','00E',true,[0,0]);
-var E00F = new SpotsInfo('E','00F',true,[0,0]);
-var E010 = new SpotsInfo('E','010',true,[0,0]);
-var E011 = new SpotsInfo('E','011',true,[0,0]);
-var E012 = new SpotsInfo('E','012',true,[0,0]);
-var E013 = new SpotsInfo('E','013',true,[0,0]);
-var E014 = new SpotsInfo('E','014',true,[0,0]);
-var E015 = new SpotsInfo('E','015',true,[0,0]);
-var E016 = new SpotsInfo('E','016',true,[0,0]);
-var E017 = new SpotsInfo('E','017',true,[0,0]);
-var E018 = new SpotsInfo('E','018',true,[0,0]);
-var E019 = new SpotsInfo('E','019',true,[0,0]);
-var E01A = new SpotsInfo('E','01A',true,[0,0]);
-var E01B = new SpotsInfo('E','01B',true,[0,0]);
-var E01C = new SpotsInfo('E','01C',true,[0,0]);
-var E01D = new SpotsInfo('E','01D',true,[0,0]);
-var E01E = new SpotsInfo('E','01E',true,[0,0]);
-var E01F = new SpotsInfo('E','01F',true,[0,0]);
-var E020 = new SpotsInfo('E','020',true,[0,0]);
-var E021 = new SpotsInfo('E','021',true,[0,0]);
-var E022 = new SpotsInfo('E','022',true,[0,0]);
-var E023 = new SpotsInfo('E','023',true,[0,0]);
-var E024 = new SpotsInfo('E','024',true,[0,0]);
-var E025 = new SpotsInfo('E','025',true,[0,0]);
-var E026 = new SpotsInfo('E','026',true,[0,0]);
-var E027 = new SpotsInfo('E','027',true,[0,0]);
-var E028 = new SpotsInfo('E','028',true,[0,0]);
-var E029 = new SpotsInfo('E','029',true,[0,0]);
-var E02A = new SpotsInfo('E','02A',true,[0,0]);
-var E02B = new SpotsInfo('E','02B',true,[0,0]);
-var E02C = new SpotsInfo('E','02C',true,[0,0]);
-var E02D = new SpotsInfo('E','02D',true,[0,0]);
-var E02E = new SpotsInfo('E','02E',true,[0,0]);
-var E02F = new SpotsInfo('E','02F',true,[0,0]);
-var E030 = new SpotsInfo('E','030',true,[0,0]);
-var E031 = new SpotsInfo('E','031',true,[0,0]);
-var E032 = new SpotsInfo('E','032',true,[0,0]);
-var E033 = new SpotsInfo('E','033',true,[0,0]);
-var E034 = new SpotsInfo('E','034',true,[0,0]);
-var E035 = new SpotsInfo('E','035',true,[0,0]);
-var E036 = new SpotsInfo('E','036',true,[0,0]);
-var E037 = new SpotsInfo('E','037',true,[0,0]);
-var E038 = new SpotsInfo('E','038',true,[0,0]);
-var E039 = new SpotsInfo('E','039',true,[0,0]);
-var E03A = new SpotsInfo('E','03A',true,[0,0]);
-var E03B = new SpotsInfo('E','03B',true,[0,0]);
-var E03C = new SpotsInfo('E','03C',true,[0,0]);
-var E03D = new SpotsInfo('E','03D',true,[0,0]);
-var E03E = new SpotsInfo('E','03E',true,[0,0]);
-var E03F = new SpotsInfo('E','03F',true,[0,0]);
-var E040 = new SpotsInfo('E','040',true,[0,0]);
-var E041 = new SpotsInfo('E','041',true,[0,0]);
-var E042 = new SpotsInfo('E','042',true,[0,0]);
-var E043 = new SpotsInfo('E','043',true,[0,0]);
-var E044 = new SpotsInfo('E','044',true,[0,0]);
-var E045 = new SpotsInfo('E','045',true,[0,0]);
-var E046 = new SpotsInfo('E','046',true,[0,0]);
-var E047 = new SpotsInfo('E','047',true,[0,0]);
-var E048 = new SpotsInfo('E','048',true,[0,0]);
-var E049 = new SpotsInfo('E','049',true,[0,0]);
-var E04A = new SpotsInfo('E','04A',true,[0,0]);
-var E04B = new SpotsInfo('E','04B',true,[0,0]);
-var E04C = new SpotsInfo('E','04C',true,[0,0]);
-var E04D = new SpotsInfo('E','04D',true,[0,0]);
-var E04E = new SpotsInfo('E','04E',true,[0,0]);
-var E04F = new SpotsInfo('E','04F',true,[0,0]);
-var E050 = new SpotsInfo('E','050',true,[0,0]);
-var E051 = new SpotsInfo('E','051',true,[0,0]);
-var E052 = new SpotsInfo('E','052',true,[0,0]);
-var E053 = new SpotsInfo('E','053',true,[0,0]);
-var E054 = new SpotsInfo('E','054',true,[0,0]);
-var E055 = new SpotsInfo('E','055',true,[0,0]);
-var E056 = new SpotsInfo('E','056',true,[0,0]);
-var E057 = new SpotsInfo('E','057',true,[0,0]);
-var E058 = new SpotsInfo('E','058',true,[0,0]);
-var E059 = new SpotsInfo('E','059',true,[0,0]);
-var E05A = new SpotsInfo('E','05A',true,[0,0]);
-var E05B = new SpotsInfo('E','05B',true,[0,0]);
-var E05C = new SpotsInfo('E','05C',true,[0,0]);
-var E05D = new SpotsInfo('E','05D',true,[0,0]);
-var E05E = new SpotsInfo('E','05E',true,[0,0]);
-var E05F = new SpotsInfo('E','05F',true,[0,0]);
-var E060 = new SpotsInfo('E','060',true,[0,0]);
-var E061 = new SpotsInfo('E','061',true,[0,0]);
-var E062 = new SpotsInfo('E','062',true,[0,0]);
-var E063 = new SpotsInfo('E','063',true,[0,0]);
-var E064 = new SpotsInfo('E','064',true,[0,0]);
-var E065 = new SpotsInfo('E','065',true,[0,0]);
-var E066 = new SpotsInfo('E','066',true,[0,0]);
-var E067 = new SpotsInfo('E','067',true,[0,0]);
-var E068 = new SpotsInfo('E','068',true,[0,0]);
-var E069 = new SpotsInfo('E','069',true,[0,0]);
-var E06A = new SpotsInfo('E','06A',true,[0,0]);
-var E06B = new SpotsInfo('E','06B',true,[0,0]);
-var E06C = new SpotsInfo('E','06C',true,[0,0]);
-var E06D = new SpotsInfo('E','06D',true,[0,0]);
-var E06E = new SpotsInfo('E','06E',true,[0,0]);
-var E06F = new SpotsInfo('E','06F',true,[0,0]);
-var E070 = new SpotsInfo('E','070',true,[0,0]);
-var E071 = new SpotsInfo('E','071',true,[0,0]);
-var E072 = new SpotsInfo('E','072',true,[0,0]);
-var E073 = new SpotsInfo('E','073',true,[0,0]);
-var E074 = new SpotsInfo('E','074',true,[0,0]);
-var E075 = new SpotsInfo('E','075',true,[0,0]);
-var E076 = new SpotsInfo('E','076',true,[0,0]);
-var E077 = new SpotsInfo('E','077',true,[0,0]);
-var E078 = new SpotsInfo('E','078',true,[0,0]);
-var E079 = new SpotsInfo('E','079',true,[0,0]);
-var E07A = new SpotsInfo('E','07A',true,[0,0]);
-var E07B = new SpotsInfo('E','07B',true,[0,0]);
-var E07C = new SpotsInfo('E','07C',true,[0,0]);
-var E07D = new SpotsInfo('E','07D',true,[0,0]);
-var E07E = new SpotsInfo('E','07E',true,[0,0]);
-var E07F = new SpotsInfo('E','07F',true,[0,0]);
-var E080 = new SpotsInfo('E','080',true,[0,0]);
-var E081 = new SpotsInfo('E','081',true,[0,0]);
-var E082 = new SpotsInfo('E','082',true,[0,0]);
-var E083 = new SpotsInfo('E','083',true,[0,0]);
-var E084 = new SpotsInfo('E','084',true,[0,0]);
-var E085 = new SpotsInfo('E','085',true,[0,0]);
-var E086 = new SpotsInfo('E','086',true,[0,0]);
-var E087 = new SpotsInfo('E','087',true,[0,0]);
-var E088 = new SpotsInfo('E','088',true,[0,0]);
-var E089 = new SpotsInfo('E','089',true,[0,0]);
-var E08A = new SpotsInfo('E','08A',true,[0,0]);
-var E08B = new SpotsInfo('E','08B',true,[0,0]);
-var E08C = new SpotsInfo('E','08C',true,[0,0]);
-var E08D = new SpotsInfo('E','08D',true,[0,0]);
-var E08E = new SpotsInfo('E','08E',true,[0,0]);
-var E08F = new SpotsInfo('E','08F',true,[0,0]);
-var E090 = new SpotsInfo('E','090',true,[0,0]);
-var E091 = new SpotsInfo('E','091',true,[0,0]);
-var E092 = new SpotsInfo('E','092',true,[0,0]);
-var E093 = new SpotsInfo('E','093',true,[0,0]);
-var E094 = new SpotsInfo('E','094',true,[0,0]);
-var E095 = new SpotsInfo('E','095',true,[0,0]);
-var E096 = new SpotsInfo('E','096',true,[0,0]);
-var E097 = new SpotsInfo('E','097',true,[0,0]);
-var E098 = new SpotsInfo('E','098',true,[0,0]);
-var E099 = new SpotsInfo('E','099',true,[0,0]);
-var E09A = new SpotsInfo('E','09A',true,[0,0]);
-var E09B = new SpotsInfo('E','09B',true,[0,0]);
-var E09C = new SpotsInfo('E','09C',true,[0,0]);
-var E09D = new SpotsInfo('E','09D',true,[0,0]);
-var E09E = new SpotsInfo('E','09E',true,[0,0]);
-var E09F = new SpotsInfo('E','09F',true,[0,0]);
-var E0A0 = new SpotsInfo('E','0A0',true,[0,0]);
-var E0A1 = new SpotsInfo('E','0A1',true,[0,0]);
-var E0A2 = new SpotsInfo('E','0A2',true,[0,0]);
-var E0A3 = new SpotsInfo('E','0A3',true,[0,0]);
-var E0A4 = new SpotsInfo('E','0A4',true,[0,0]);
-var E0A5 = new SpotsInfo('E','0A5',true,[0,0]);
-var E0A6 = new SpotsInfo('E','0A6',true,[0,0]);
-var E0A7 = new SpotsInfo('E','0A7',true,[0,0]);
-var E0A8 = new SpotsInfo('E','0A8',true,[0,0]);
-var E0A9 = new SpotsInfo('E','0A9',true,[0,0]);
-var E0AA = new SpotsInfo('E','0AA',true,[0,0]);
-var E0AB = new SpotsInfo('E','0AB',true,[0,0]);
-var E0AC = new SpotsInfo('E','0AC',true,[0,0]);
-var E0AD = new SpotsInfo('E','0AD',true,[0,0]);
-var E0AE = new SpotsInfo('E','0AE',true,[0,0]);
-var E0AF = new SpotsInfo('E','0AF',true,[0,0]);
-var E0B0 = new SpotsInfo('E','0B0',true,[0,0]);
-var E0B1 = new SpotsInfo('E','0B1',true,[0,0]);
-var E0B2 = new SpotsInfo('E','0B2',true,[0,0]);
-var E0B3 = new SpotsInfo('E','0B3',true,[0,0]);
-var E0B4 = new SpotsInfo('E','0B4',true,[0,0]);
-var E0B5 = new SpotsInfo('E','0B5',true,[0,0]);
-var E0B6 = new SpotsInfo('E','0B6',true,[0,0]);
-var E0B7 = new SpotsInfo('E','0B7',true,[0,0]);
-var E0B8 = new SpotsInfo('E','0B8',true,[0,0]);
-var E0B9 = new SpotsInfo('E','0B9',true,[0,0]);
-var E0BA = new SpotsInfo('E','0BA',true,[0,0]);
-var E0BB = new SpotsInfo('E','0BB',true,[0,0]);
-var E0BC = new SpotsInfo('E','0BC',true,[0,0]);
-var E0BD = new SpotsInfo('E','0BD',true,[0,0]);
-var E0BE = new SpotsInfo('E','0BE',true,[0,0]);
-var E0BF = new SpotsInfo('E','0BF',true,[0,0]);
-var E0C0 = new SpotsInfo('E','0C0',true,[0,0]);
-var E0C1 = new SpotsInfo('E','0C1',true,[0,0]);
-var E0C2 = new SpotsInfo('E','0C2',true,[0,0]);
-var E0C3 = new SpotsInfo('E','0C3',true,[0,0]);
-var E0C4 = new SpotsInfo('E','0C4',true,[0,0]);
-var E0C5 = new SpotsInfo('E','0C5',true,[0,0]);
-var E0C6 = new SpotsInfo('E','0C6',true,[0,0]);
-var E0C7 = new SpotsInfo('E','0C7',true,[0,0]);
-var E0C8 = new SpotsInfo('E','0C8',true,[0,0]);
-var E0C9 = new SpotsInfo('E','0C9',true,[0,0]);
-var E0CA = new SpotsInfo('E','0CA',true,[0,0]);
-var E0CB = new SpotsInfo('E','0CB',true,[0,0]);
-var E0CC = new SpotsInfo('E','0CC',true,[0,0]);
-var E0CD = new SpotsInfo('E','0CD',true,[0,0]);
-var E0CE = new SpotsInfo('E','0CE',true,[0,0]);
-var E0CF = new SpotsInfo('E','0CF',true,[0,0]);
-var E0D0 = new SpotsInfo('E','0D0',true,[0,0]);
-var E0D1 = new SpotsInfo('E','0D1',true,[0,0]);
-var E0D2 = new SpotsInfo('E','0D2',true,[0,0]);
-var E0D3 = new SpotsInfo('E','0D3',true,[0,0]);
-var E0D4 = new SpotsInfo('E','0D4',true,[0,0]);
-var E0D5 = new SpotsInfo('E','0D5',true,[0,0]);
-var E0D6 = new SpotsInfo('E','0D6',true,[0,0]);
-var E0D7 = new SpotsInfo('E','0D7',true,[0,0]);
-var E0D8 = new SpotsInfo('E','0D8',true,[0,0]);
-var E0D9 = new SpotsInfo('E','0D9',true,[0,0]);
-var E0DA = new SpotsInfo('E','0DA',true,[0,0]);
-var E0DB = new SpotsInfo('E','0DB',true,[0,0]);
-var E0DC = new SpotsInfo('E','0DC',true,[0,0]);
-var E0DD = new SpotsInfo('E','0DD',true,[0,0]);
-var E0DE = new SpotsInfo('E','0DE',true,[0,0]);
-var E0DF = new SpotsInfo('E','0DF',true,[0,0]);
-var E0E0 = new SpotsInfo('E','0E0',true,[0,0]);
-var E0E1 = new SpotsInfo('E','0E1',true,[0,0]);
-var E0E2 = new SpotsInfo('E','0E2',true,[0,0]);
-var E0E3 = new SpotsInfo('E','0E3',true,[0,0]);
-var E0E4 = new SpotsInfo('E','0E4',true,[0,0]);
-var E0E5 = new SpotsInfo('E','0E5',true,[0,0]);
-var E0E6 = new SpotsInfo('E','0E6',true,[0,0]);
-var E0E7 = new SpotsInfo('E','0E7',true,[0,0]);
-var E0E8 = new SpotsInfo('E','0E8',true,[0,0]);
-var E0E9 = new SpotsInfo('E','0E9',true,[0,0]);
-var E0EA = new SpotsInfo('E','0EA',true,[0,0]);
-var E0EB = new SpotsInfo('E','0EB',true,[0,0]);
-var E0EC = new SpotsInfo('E','0EC',true,[0,0]);
-var E0ED = new SpotsInfo('E','0ED',true,[0,0]);
-var E0EE = new SpotsInfo('E','0EE',true,[0,0]);
-var E0EF = new SpotsInfo('E','0EF',true,[0,0]);
-var E0F0 = new SpotsInfo('E','0F0',true,[0,0]);
-var E0F1 = new SpotsInfo('E','0F1',true,[0,0]);
-var E0F2 = new SpotsInfo('E','0F2',true,[0,0]);
-var E0F3 = new SpotsInfo('E','0F3',true,[0,0]);
-var E0F4 = new SpotsInfo('E','0F4',true,[0,0]);
-var E0F5 = new SpotsInfo('E','0F5',true,[0,0]);
-var E0F6 = new SpotsInfo('E','0F6',true,[0,0]);
-var E0F7 = new SpotsInfo('E','0F7',true,[0,0]);
-var E0F8 = new SpotsInfo('E','0F8',true,[0,0]);
-var E0F9 = new SpotsInfo('E','0F9',true,[0,0]);
-var E0FA = new SpotsInfo('E','0FA',true,[0,0]);
-var E0FB = new SpotsInfo('E','0FB',true,[0,0]);
-var E0FC = new SpotsInfo('E','0FC',true,[0,0]);
-var E0FD = new SpotsInfo('E','0FD',true,[0,0]);
-var E0FE = new SpotsInfo('E','0FE',true,[0,0]);
-var E0FF = new SpotsInfo('E','0FF',true,[0,0]);
-var E100 = new SpotsInfo('E','100',true,[0,0]);
-var E101 = new SpotsInfo('E','101',true,[0,0]);
-var E102 = new SpotsInfo('E','102',true,[0,0]);
-var E103 = new SpotsInfo('E','103',true,[0,0]);
-var E104 = new SpotsInfo('E','104',true,[0,0]);
-var E105 = new SpotsInfo('E','105',true,[0,0]);
-var E106 = new SpotsInfo('E','106',true,[0,0]);
-var E107 = new SpotsInfo('E','107',true,[0,0]);
-var E108 = new SpotsInfo('E','108',true,[0,0]);
-var E109 = new SpotsInfo('E','109',true,[0,0]);
-var E10A = new SpotsInfo('E','10A',true,[0,0]);
-var E10B = new SpotsInfo('E','10B',true,[0,0]);
-var E10C = new SpotsInfo('E','10C',true,[0,0]);
-var E10D = new SpotsInfo('E','10D',true,[0,0]);
-var E10E = new SpotsInfo('E','10E',true,[0,0]);
-var E10F = new SpotsInfo('E','10F',true,[0,0]);
-var E110 = new SpotsInfo('E','110',true,[0,0]);
-var E111 = new SpotsInfo('E','111',true,[0,0]);
-var E112 = new SpotsInfo('E','112',true,[0,0]);
-var E113 = new SpotsInfo('E','113',true,[0,0]);
-var E114 = new SpotsInfo('E','114',true,[0,0]);
-var E115 = new SpotsInfo('E','115',true,[0,0]);
-var E116 = new SpotsInfo('E','116',true,[0,0]);
-var E117 = new SpotsInfo('E','117',true,[0,0]);
-var E118 = new SpotsInfo('E','118',true,[0,0]);
-var E119 = new SpotsInfo('E','119',true,[0,0]);
-var E11A = new SpotsInfo('E','11A',true,[0,0]);
-var E11B = new SpotsInfo('E','11B',true,[0,0]);
-var E11C = new SpotsInfo('E','11C',true,[0,0]);
-var E11D = new SpotsInfo('E','11D',true,[0,0]);
-var E11E = new SpotsInfo('E','11E',true,[0,0]);
-var E11F = new SpotsInfo('E','11F',true,[0,0]);
-var E120 = new SpotsInfo('E','120',true,[0,0]);
-var E121 = new SpotsInfo('E','121',true,[0,0]);
-var E122 = new SpotsInfo('E','122',true,[0,0]);
-var E123 = new SpotsInfo('E','123',true,[0,0]);
-var E124 = new SpotsInfo('E','124',true,[0,0]);
-var E125 = new SpotsInfo('E','125',true,[0,0]);
-var E126 = new SpotsInfo('E','126',true,[0,0]);
-var E127 = new SpotsInfo('E','127',true,[0,0]);
-var E128 = new SpotsInfo('E','128',true,[0,0]);
-var E129 = new SpotsInfo('E','129',true,[0,0]);
-var E12A = new SpotsInfo('E','12A',true,[0,0]);
-var E12B = new SpotsInfo('E','12B',true,[0,0]);
-var E12C = new SpotsInfo('E','12C',true,[0,0]);
-var E12D = new SpotsInfo('E','12D',true,[0,0]);
-var E12E = new SpotsInfo('E','12E',true,[0,0]);
-var E12F = new SpotsInfo('E','12F',true,[0,0]);
-var E130 = new SpotsInfo('E','130',true,[0,0]);
-var E131 = new SpotsInfo('E','131',true,[0,0]);
-var E132 = new SpotsInfo('E','132',true,[0,0]);
-var E133 = new SpotsInfo('E','133',true,[0,0]);
-var E134 = new SpotsInfo('E','134',true,[0,0]);
-var E135 = new SpotsInfo('E','135',true,[0,0]);
-var E136 = new SpotsInfo('E','136',true,[0,0]);
-var E137 = new SpotsInfo('E','137',true,[0,0]);
-var E138 = new SpotsInfo('E','138',true,[0,0]);
-var E139 = new SpotsInfo('E','139',true,[0,0]);
-var E13A = new SpotsInfo('E','13A',true,[0,0]);
-var E13B = new SpotsInfo('E','13B',true,[0,0]);
-var E13C = new SpotsInfo('E','13C',true,[0,0]);
-var E13D = new SpotsInfo('E','13D',true,[0,0]);
-var E13E = new SpotsInfo('E','13E',true,[0,0]);
-var E13F = new SpotsInfo('E','13F',true,[0,0]);
-var E140 = new SpotsInfo('E','140',true,[0,0]);
-var E141 = new SpotsInfo('E','141',true,[0,0]);
-var E142 = new SpotsInfo('E','142',true,[0,0]);
-var E143 = new SpotsInfo('E','143',true,[0,0]);
-var E144 = new SpotsInfo('E','144',true,[0,0]);
-var E145 = new SpotsInfo('E','145',true,[0,0]);
-var E146 = new SpotsInfo('E','146',true,[0,0]);
-var E147 = new SpotsInfo('E','147',true,[0,0]);
-var E148 = new SpotsInfo('E','148',true,[0,0]);
-var E149 = new SpotsInfo('E','149',true,[0,0]);
-var E14A = new SpotsInfo('E','14A',true,[0,0]);
-var E14B = new SpotsInfo('E','14B',true,[0,0]);
-var E14C = new SpotsInfo('E','14C',true,[0,0]);
-var E14D = new SpotsInfo('E','14D',true,[0,0]);
-var E14E = new SpotsInfo('E','14E',true,[0,0]);
-var E14F = new SpotsInfo('E','14F',true,[0,0]);
-var E150 = new SpotsInfo('E','150',true,[0,0]);
-var E151 = new SpotsInfo('E','151',true,[0,0]);
-var E152 = new SpotsInfo('E','152',true,[0,0]);
-var E153 = new SpotsInfo('E','153',true,[0,0]);
-var E154 = new SpotsInfo('E','154',true,[0,0]);
-var E155 = new SpotsInfo('E','155',true,[0,0]);
-var E156 = new SpotsInfo('E','156',true,[0,0]);
-var E157 = new SpotsInfo('E','157',true,[0,0]);
-var E158 = new SpotsInfo('E','158',true,[0,0]);
-var E159 = new SpotsInfo('E','159',true,[0,0]);
-var E15A = new SpotsInfo('E','15A',true,[0,0]);
-var E15B = new SpotsInfo('E','15B',true,[0,0]);
-var E15C = new SpotsInfo('E','15C',true,[0,0]);
-var E15D = new SpotsInfo('E','15D',true,[0,0]);
-var E15E = new SpotsInfo('E','15E',true,[0,0]);
-var E15F = new SpotsInfo('E','15F',true,[0,0]);
-var E160 = new SpotsInfo('E','160',true,[0,0]);
-var E161 = new SpotsInfo('E','161',true,[0,0]);
-var E162 = new SpotsInfo('E','162',true,[0,0]);
-var E163 = new SpotsInfo('E','163',true,[0,0]);
-var E164 = new SpotsInfo('E','164',true,[0,0]);
-var E165 = new SpotsInfo('E','165',true,[0,0]);
-var E166 = new SpotsInfo('E','166',true,[0,0]);
-var E167 = new SpotsInfo('E','167',true,[0,0]);
-var E168 = new SpotsInfo('E','168',true,[0,0]);
-var E169 = new SpotsInfo('E','169',true,[0,0]);
-var lotESpots = [E001,E002,E003,E004,E005,E006,E007,E008,E009,E00A
-				,E00B,E00C,E00D,E00E,E00F,E010,E011,E012,E013,E014
-				,E015,E016,E017,E018,E019,E01A,E01B,E01C,E01D,E01E
-				,E01F,E020,E021,E022,E023,E024,E025,E026,E027,E028
-				,E029,E02A,E02B,E02C,E02D,E02E,E02F,E030,E031,E032
-				,E033,E034,E035,E036,E037,E038,E039,E03A,E03B,E03C
-				,E03D,E03E,E03F,E040,E041,E042,E043,E044,E045,E046
-				,E047,E048,E049,E04A,E04B,E04C,E04D,E04E,E04F,E050
-				,E051,E052,E053,E054,E055,E056,E057,E058,E059,E05A
-				,E05B,E05C,E05D,E05E,E05F,E060,E061,E062,E063,E064
-				,E065,E066,E067,E068,E069,E06A,E06B,E06C,E06D,E06E
-				,E06F,E070,E071,E072,E073,E074,E075,E076,E077,E078
-				,E079,E07A,E07B,E07C,E07D,E07E,E07F,E080,E081,E082
-				,E083,E084,E085,E086,E087,E088,E089,E08A,E08B,E08C
-				,E08D,E08E,E08F,E090,E091,E092,E093,E094,E095,E096
-				,E097,E098,E099,E09A,E09B,E09C,E09D,E09E,E09F,E0A0
-				,E0A1,E0A2,E0A3,E0A4,E0A5,E0A6,E0A7,E0A8,E0A9,E0AA
-				,E0AB,E0AC,E0AD,E0AE,E0AF,E0B0,E0B1,E0B2,E0B3,E0B4
-				,E0B5,E0B6,E0B7,E0B8,E0B9,E0BA,E0BB,E0BC,E0BD,E0BE
-				,E0BF,E0C0,E0C1,E0C2,E0C3,E0C4,E0C5,E0C6,E0C7,E0C8
-				,E0C9,E0CA,E0CB,E0CC,E0CD,E0CE,E0CF,E0D0,E0D1,E0D2
-				,E0D3,E0D4,E0D5,E0D6,E0D7,E0D8,E0D9,E0DA,E0DB,E0DC
-				,E0DD,E0DE,E0DF,E0E0,E0E1,E0E2,E0E3,E0E4,E0E5,E0E6
-				,E0E7,E0E8,E0E9,E0EA,E0EB,E0EC,E0ED,E0EE,E0EF,E0F0
-				,E0F1,E0F2,E0F3,E0F4,E0F5,E0F6,E0F7,E0F8,E0F9,E0FA
-				,E0FB,E0FC,E0FD,E0FE,E0FF,E100,E101,E102,E103,E104
-				,E105,E106,E107,E108,E109,E10A,E10B,E10C,E10D,E10E
-				,E10F,E110,E111,E112,E113,E114,E115,E116,E117,E118
-				,E119,E11A,E11B,E11C,E11D,E11E,E11F,E120,E121,E122
-				,E123,E124,E125,E126,E127,E128,E129,E12A,E12B,E12C
-				,E12D,E12E,E12F,E130,E131,E132,E133,E134,E135,E136
-				,E137,E138,E139,E13A,E13B,E13C,E13D,E13E,E13F,E140
-				,E141,E142,E143,E144,E145,E146,E147,E148,E149,E14A
-				,E14B,E14C,E14D,E14E,E14F,E150,E151,E152,E153,E154
-				,E155,E156,E157,E158,E159,E15A,E15B,E15C,E15D,E15E
-				,E15F,E160,E161,E162,E163,E164,E165,E166,E167,E168
-				,E169];
+var lotESpots = [new SpotsInfo('E','001',true,[320,224.5]),new SpotsInfo('E','002',true,[318.7,255.2]),new SpotsInfo('E','003',true,[313.2,224.4]),new SpotsInfo('E','004',true,[309.9,254.8]),new SpotsInfo('E','005',true,[305,224.9])
+				,new SpotsInfo('E','006',true,[302.5,252.1]),new SpotsInfo('E','007',true,[298.7,225]),new SpotsInfo('E','008',true,[294.7,254.4]),new SpotsInfo('E','009',true,[290.9,224.4]),new SpotsInfo('E','00A',true,[287.9,253.4])
+				,new SpotsInfo('E','00B',true,[283.1,224]),new SpotsInfo('E','00C',true,[280.3,254.8]),new SpotsInfo('E','00D',true,[274.2,223.3]),new SpotsInfo('E','00E',true,[272.7,254.3]),new SpotsInfo('E','00F',true,[267.1,224.5])
+				,new SpotsInfo('E','010',true,[264.7,252.7]),new SpotsInfo('E','011',true,[259.7,224.1]),new SpotsInfo('E','012',true,[257.5,253.6]),new SpotsInfo('E','013',true,[251.9,224]),new SpotsInfo('E','014',true,[250.1,253.6])
+				,new SpotsInfo('E','015',true,[244.8,224.2]),new SpotsInfo('E','016',true,[241.8,253.2]),new SpotsInfo('E','017',true,[240.5,299.8]),new SpotsInfo('E','018',true,[240.5,312]),new SpotsInfo('E','019',true,[240.4,305.6])
+				,new SpotsInfo('E','01A',true,[240.2,318.4]),new SpotsInfo('E','01B',true,[239.6,323.9]),new SpotsInfo('E','01C',true,[239.2,337.6]),new SpotsInfo('E','01D',true,[239.1,329.8]),new SpotsInfo('E','01E',true,[238.6,366.7])
+				,new SpotsInfo('E','01F',true,[238.4,349]),new SpotsInfo('E','020',true,[238.3,343.7]),new SpotsInfo('E','021',true,[238.3,354.7]),new SpotsInfo('E','022',true,[238.3,360.6]),new SpotsInfo('E','023',true,[238.3,373.7])
+				,new SpotsInfo('E','024',true,[238.3,379.6]),new SpotsInfo('E','025',true,[238.2,398.7]),new SpotsInfo('E','026',true,[238,385]),new SpotsInfo('E','027',true,[238,391.5]),new SpotsInfo('E','028',true,[237.9,412])
+				,new SpotsInfo('E','029',true,[237.8,405.5]),new SpotsInfo('E','02A',true,[237.8,416.9]),new SpotsInfo('E','02B',true,[237.8,423.1]),new SpotsInfo('E','02C',true,[237.7,430]),new SpotsInfo('E','02D',true,[237.6,436.5])
+				,new SpotsInfo('E','02E',true,[237.6,447.3]),new SpotsInfo('E','02F',true,[237.5,441.3]),new SpotsInfo('E','030',true,[237.3,480.1]),new SpotsInfo('E','031',true,[237.1,472.3]),new SpotsInfo('E','032',true,[237,486.5])
+				,new SpotsInfo('E','033',true,[236.8,497.8]),new SpotsInfo('E','034',true,[236.6,460.6]),new SpotsInfo('E','035',true,[236.6,465.3]),new SpotsInfo('E','036',true,[236.5,454.5]),new SpotsInfo('E','037',true,[236.4,223.5])
+				,new SpotsInfo('E','038',true,[236.4,492]),new SpotsInfo('E','039',true,[236.4,529.8]),new SpotsInfo('E','03A',true,[236.3,504]),new SpotsInfo('E','03B',true,[236.2,511]),new SpotsInfo('E','03C',true,[235.9,523.7])
+				,new SpotsInfo('E','03D',true,[235.8,517.2]),new SpotsInfo('E','03E',true,[235.5,253.8]),new SpotsInfo('E','03F',true,[228.5,223.9]),new SpotsInfo('E','040',true,[228.3,252.5]),new SpotsInfo('E','041',true,[221.8,223.7])
+				,new SpotsInfo('E','042',true,[218.6,252.9]),new SpotsInfo('E','043',true,[214.1,223.2]),new SpotsInfo('E','044',true,[212.1,253.4]),new SpotsInfo('E','045',true,[204.5,299.7]),new SpotsInfo('E','046',true,[204.4,332])
+				,new SpotsInfo('E','047',true,[204.2,313.3]),new SpotsInfo('E','048',true,[204.1,305.8]),new SpotsInfo('E','049',true,[203.9,319.4]),new SpotsInfo('E','04A',true,[203.6,326.1]),new SpotsInfo('E','04B',true,[203.4,338.2])
+				,new SpotsInfo('E','04C',true,[202.9,344]),new SpotsInfo('E','04D',true,[202.2,349.8]),new SpotsInfo('E','04E',true,[202.2,374.8]),new SpotsInfo('E','04F',true,[202,362.5]),new SpotsInfo('E','050',true,[202,380.3])
+				,new SpotsInfo('E','051',true,[201.9,355.3]),new SpotsInfo('E','052',true,[201.9,367.9]),new SpotsInfo('E','053',true,[201.8,385.7]),new SpotsInfo('E','054',true,[201.5,392.9]),new SpotsInfo('E','055',true,[201,406.8])
+				,new SpotsInfo('E','056',true,[200.9,400]),new SpotsInfo('E','057',true,[200.3,413.3]),new SpotsInfo('E','058',true,[200,418.5]),new SpotsInfo('E','059',true,[199.9,424.9]),new SpotsInfo('E','05A',true,[199.9,430.1])
+				,new SpotsInfo('E','05B',true,[199.8,436.8]),new SpotsInfo('E','05C',true,[199.6,442.7]),new SpotsInfo('E','05D',true,[199.4,448.9]),new SpotsInfo('E','05E',true,[198.5,455.1]),new SpotsInfo('E','05F',true,[198.4,461.7])
+				,new SpotsInfo('E','060',true,[198.3,467.2]),new SpotsInfo('E','061',true,[198.3,503.2]),new SpotsInfo('E','062',true,[198.1,473]),new SpotsInfo('E','063',true,[198.1,477.8]),new SpotsInfo('E','064',true,[198,483.5])
+				,new SpotsInfo('E','065',true,[198,490.1]),new SpotsInfo('E','066',true,[198,509]),new SpotsInfo('E','067',true,[198,523.8]),new SpotsInfo('E','068',true,[197.8,517.8]),new SpotsInfo('E','069',true,[197.7,496.8])
+				,new SpotsInfo('E','06A',true,[183.3,299.2]),new SpotsInfo('E','06B',true,[182.8,306.3]),new SpotsInfo('E','06C',true,[182.6,332.2]),new SpotsInfo('E','06D',true,[182.4,319.1]),new SpotsInfo('E','06E',true,[182.4,443])
+				,new SpotsInfo('E','06F',true,[182.2,337.4]),new SpotsInfo('E','070',true,[182.1,326.2]),new SpotsInfo('E','071',true,[182,343.4]),new SpotsInfo('E','072',true,[181.9,349]),new SpotsInfo('E','073',true,[181.9,368.2])
+				,new SpotsInfo('E','074',true,[181.9,380.1]),new SpotsInfo('E','075',true,[181.8,374]),new SpotsInfo('E','076',true,[181.7,313.2]),new SpotsInfo('E','077',true,[181.6,362.2]),new SpotsInfo('E','078',true,[181.6,413.4])
+				,new SpotsInfo('E','079',true,[181.6,419.8]),new SpotsInfo('E','07A',true,[181.5,355.1]),new SpotsInfo('E','07B',true,[181.5,430.7]),new SpotsInfo('E','07C',true,[181.5,435.6]),new SpotsInfo('E','07D',true,[181.4,386.5])
+				,new SpotsInfo('E','07E',true,[181.4,425.4]),new SpotsInfo('E','07F',true,[181.3,406.9]),new SpotsInfo('E','080',true,[181.2,400.2]),new SpotsInfo('E','081',true,[181.1,392.8]),new SpotsInfo('E','082',true,[179.8,490.5])
+				,new SpotsInfo('E','083',true,[179.6,252.6]),new SpotsInfo('E','084',true,[179.5,484.2]),new SpotsInfo('E','085',true,[179.4,496.5]),new SpotsInfo('E','086',true,[179.3,516.6]),new SpotsInfo('E','087',true,[179.2,450])
+				,new SpotsInfo('E','088',true,[179.1,501.7]),new SpotsInfo('E','089',true,[179,460.6]),new SpotsInfo('E','08A',true,[178.9,455.1]),new SpotsInfo('E','08B',true,[178.9,509.3]),new SpotsInfo('E','08C',true,[178.9,523.1])
+				,new SpotsInfo('E','08D',true,[178.7,472.7]),new SpotsInfo('E','08E',true,[178.5,478]),new SpotsInfo('E','08F',true,[178.2,221.5]),new SpotsInfo('E','090',true,[177.7,467]),new SpotsInfo('E','091',true,[172,252.2])
+				,new SpotsInfo('E','092',true,[171.6,223]),new SpotsInfo('E','093',true,[164.4,251.9]),new SpotsInfo('E','094',true,[163.7,222.9]),new SpotsInfo('E','095',true,[156.9,252.3]),new SpotsInfo('E','096',true,[156,223.4])
+				,new SpotsInfo('E','097',true,[149.9,251.6]),new SpotsInfo('E','098',true,[147.9,223.1]),new SpotsInfo('E','099',true,[146.9,319.5]),new SpotsInfo('E','09A',true,[146.4,326]),new SpotsInfo('E','09B',true,[145.9,298.9])
+				,new SpotsInfo('E','09C',true,[145.9,305.3]),new SpotsInfo('E','09D',true,[145.6,332.7]),new SpotsInfo('E','09E',true,[145.6,338.3]),new SpotsInfo('E','09F',true,[145.5,313.6]),new SpotsInfo('E','0A0',true,[145.4,344])
+				,new SpotsInfo('E','0A1',true,[145.3,348.8]),new SpotsInfo('E','0A2',true,[145.2,362.6]),new SpotsInfo('E','0A3',true,[145,355.3]),new SpotsInfo('E','0A4',true,[145,367.9]),new SpotsInfo('E','0A5',true,[144.9,374.5])
+				,new SpotsInfo('E','0A6',true,[144.7,380.2]),new SpotsInfo('E','0A7',true,[144.7,399.9]),new SpotsInfo('E','0A8',true,[144.4,393.1]),new SpotsInfo('E','0A9',true,[144.3,386.7]),new SpotsInfo('E','0AA',true,[144.1,406.7])
+				,new SpotsInfo('E','0AB',true,[143.9,419.1]),new SpotsInfo('E','0AC',true,[143.6,413.4]),new SpotsInfo('E','0AD',true,[143.6,425.2]),new SpotsInfo('E','0AE',true,[143.2,430.9]),new SpotsInfo('E','0AF',true,[142.9,436.6])
+				,new SpotsInfo('E','0B0',true,[142.9,443.7]),new SpotsInfo('E','0B1',true,[141.3,251.1]),new SpotsInfo('E','0B2',true,[141,222.9]),new SpotsInfo('E','0B3',true,[140.7,449.3]),new SpotsInfo('E','0B4',true,[140.5,455.1])
+				,new SpotsInfo('E','0B5',true,[140.5,461.5]),new SpotsInfo('E','0B6',true,[140.4,508.5]),new SpotsInfo('E','0B7',true,[140.3,467]),new SpotsInfo('E','0B8',true,[140.3,472.9]),new SpotsInfo('E','0B9',true,[140.1,497.2])
+				,new SpotsInfo('E','0BA',true,[140.1,502.9]),new SpotsInfo('E','0BB',true,[140,478.4]),new SpotsInfo('E','0BC',true,[140,483.9]),new SpotsInfo('E','0BD',true,[139.7,490.8]),new SpotsInfo('E','0BE',true,[133.7,222.9])
+				,new SpotsInfo('E','0BF',true,[132.2,251.4]),new SpotsInfo('E','0C0',true,[126.8,299.7]),new SpotsInfo('E','0C1',true,[126.2,222.6]),new SpotsInfo('E','0C2',true,[126.1,305.9]),new SpotsInfo('E','0C3',true,[125.9,312.4])
+				,new SpotsInfo('E','0C4',true,[125.8,337.8]),new SpotsInfo('E','0C5',true,[125.4,319.3]),new SpotsInfo('E','0C6',true,[125.3,251.8]),new SpotsInfo('E','0C7',true,[125.2,343.8]),new SpotsInfo('E','0C8',true,[125.2,348.8])
+				,new SpotsInfo('E','0C9',true,[125.1,332.3]),new SpotsInfo('E','0CA',true,[124.6,325.5]),new SpotsInfo('E','0CB',true,[123.9,355.6]),new SpotsInfo('E','0CC',true,[123.9,362.1]),new SpotsInfo('E','0CD',true,[123.6,368.2])
+				,new SpotsInfo('E','0CE',true,[123.6,374.6]),new SpotsInfo('E','0CF',true,[123.5,386.4]),new SpotsInfo('E','0D0',true,[123.4,380.1]),new SpotsInfo('E','0D1',true,[123.1,425.2]),new SpotsInfo('E','0D2',true,[123.1,467.1])
+				,new SpotsInfo('E','0D3',true,[123,393.4]),new SpotsInfo('E','0D4',true,[123,461.1]),new SpotsInfo('E','0D5',true,[122.9,400.3]),new SpotsInfo('E','0D6',true,[122.8,419.3]),new SpotsInfo('E','0D7',true,[122.7,412.9])
+				,new SpotsInfo('E','0D8',true,[122.6,473]),new SpotsInfo('E','0D9',true,[122.5,406.2]),new SpotsInfo('E','0DA',true,[122.5,477.9]),new SpotsInfo('E','0DB',true,[122.2,436.5]),new SpotsInfo('E','0DC',true,[122.2,484])
+				,new SpotsInfo('E','0DD',true,[122.1,431]),new SpotsInfo('E','0DE',true,[122,509]),new SpotsInfo('E','0DF',true,[121.9,449]),new SpotsInfo('E','0E0',true,[121.9,455.2]),new SpotsInfo('E','0E1',true,[121.8,443])
+				,new SpotsInfo('E','0E2',true,[121.4,490.2]),new SpotsInfo('E','0E3',true,[121.4,496.7]),new SpotsInfo('E','0E4',true,[121.1,502.8]),new SpotsInfo('E','0E5',true,[118.4,222.5]),new SpotsInfo('E','0E6',true,[117.4,251.4])
+				,new SpotsInfo('E','0E7',true,[110.9,222.1]),new SpotsInfo('E','0E8',true,[110.4,252]),new SpotsInfo('E','0E9',true,[103.2,222]),new SpotsInfo('E','0EA',true,[102.9,251.2]),new SpotsInfo('E','0EB',true,[96,222.5])
+				,new SpotsInfo('E','0EC',true,[94.7,250.4]),new SpotsInfo('E','0ED',true,[88.4,221.8]),new SpotsInfo('E','0EE',true,[87.8,334.9]),new SpotsInfo('E','0EF',true,[87.5,322.7]),new SpotsInfo('E','0F0',true,[87.5,329.4])
+				,new SpotsInfo('E','0F1',true,[86.9,340.4]),new SpotsInfo('E','0F2',true,[86.7,347]),new SpotsInfo('E','0F3',true,[86.4,310.3]),new SpotsInfo('E','0F4',true,[86.2,251.3]),new SpotsInfo('E','0F5',true,[86.2,298.1])
+				,new SpotsInfo('E','0F6',true,[86.2,303.5]),new SpotsInfo('E','0F7',true,[86.2,316.9]),new SpotsInfo('E','0F8',true,[86.1,352.7]),new SpotsInfo('E','0F9',true,[85,359.4]),new SpotsInfo('E','0FA',true,[84.6,365.6])
+				,new SpotsInfo('E','0FB',true,[84.6,380.1]),new SpotsInfo('E','0FC',true,[84.6,415.6]),new SpotsInfo('E','0FD',true,[84.6,440]),new SpotsInfo('E','0FE',true,[84.5,372.5]),new SpotsInfo('E','0FF',true,[84.5,391.9])
+				,new SpotsInfo('E','100',true,[84.5,404.5]),new SpotsInfo('E','101',true,[84.5,409.6]),new SpotsInfo('E','102',true,[84.5,428.7]),new SpotsInfo('E','103',true,[84.5,461]),new SpotsInfo('E','104',true,[84.4,421.9])
+				,new SpotsInfo('E','105',true,[84.3,398.2]),new SpotsInfo('E','106',true,[84.3,434.1]),new SpotsInfo('E','107',true,[84.3,454.5]),new SpotsInfo('E','108',true,[84.3,466.2]),new SpotsInfo('E','109',true,[84.2,385.6])
+				,new SpotsInfo('E','10A',true,[84.2,447.2]),new SpotsInfo('E','10B',true,[84.1,472.6]),new SpotsInfo('E','10C',true,[83.7,478]),new SpotsInfo('E','10D',true,[82.6,485]),new SpotsInfo('E','10E',true,[82.6,497.4])
+				,new SpotsInfo('E','10F',true,[82.5,491.1]),new SpotsInfo('E','110',true,[81.6,221.6]),new SpotsInfo('E','111',true,[79,250.9]),new SpotsInfo('E','112',true,[74,222]),new SpotsInfo('E','113',true,[71.1,250.2])
+				,new SpotsInfo('E','114',true,[69.5,298.1]),new SpotsInfo('E','115',true,[68.9,304]),new SpotsInfo('E','116',true,[68.7,329]),new SpotsInfo('E','117',true,[68.6,316.4]),new SpotsInfo('E','118',true,[68.4,310.2])
+				,new SpotsInfo('E','119',true,[68.4,322.6]),new SpotsInfo('E','11A',true,[68.3,334.2]),new SpotsInfo('E','11B',true,[66,340.4]),new SpotsInfo('E','11C',true,[65.8,347.1]),new SpotsInfo('E','11D',true,[65.7,353.1])
+				,new SpotsInfo('E','11E',true,[65.5,359.8]),new SpotsInfo('E','11F',true,[65.3,460.3]),new SpotsInfo('E','120',true,[65,365.8]),new SpotsInfo('E','121',true,[64.9,447.1]),new SpotsInfo('E','122',true,[64.8,372.3])
+				,new SpotsInfo('E','123',true,[64.8,465.8]),new SpotsInfo('E','124',true,[64.7,455.3]),new SpotsInfo('E','125',true,[64.6,440.2]),new SpotsInfo('E','126',true,[64.3,379.3]),new SpotsInfo('E','127',true,[64.3,392])
+				,new SpotsInfo('E','128',true,[64.3,472.2]),new SpotsInfo('E','129',true,[64,398]),new SpotsInfo('E','12A',true,[64,496.6]),new SpotsInfo('E','12B',true,[63.7,415.2]),new SpotsInfo('E','12C',true,[63.7,433.7])
+				,new SpotsInfo('E','12D',true,[63.7,490.3]),new SpotsInfo('E','12E',true,[63.6,421.9]),new SpotsInfo('E','12F',true,[63.6,485.1]),new SpotsInfo('E','130',true,[63.5,384.9]),new SpotsInfo('E','131',true,[63.5,404.3])
+				,new SpotsInfo('E','132',true,[63.3,478.5]),new SpotsInfo('E','133',true,[63.2,427.6]),new SpotsInfo('E','134',true,[63.1,409.5]),new SpotsInfo('E','135',true,[51,14.2]),new SpotsInfo('E','136',true,[50.9,20])
+				,new SpotsInfo('E','137',true,[50.2,51.3]),new SpotsInfo('E','138',true,[50,26.4]),new SpotsInfo('E','139',true,[49.9,33]),new SpotsInfo('E','13A',true,[49.9,37.8]),new SpotsInfo('E','13B',true,[49.8,182.2])
+				,new SpotsInfo('E','13C',true,[49.6,113.4]),new SpotsInfo('E','13D',true,[49.5,56.9]),new SpotsInfo('E','13E',true,[49.5,119.1]),new SpotsInfo('E','13F',true,[49.4,44]),new SpotsInfo('E','140',true,[49.3,106.9])
+				,new SpotsInfo('E','141',true,[49.3,156.6]),new SpotsInfo('E','142',true,[49.3,163.6]),new SpotsInfo('E','143',true,[49.3,169.7]),new SpotsInfo('E','144',true,[49.2,138]),new SpotsInfo('E','145',true,[49.2,175.4])
+				,new SpotsInfo('E','146',true,[49.1,63.5]),new SpotsInfo('E','147',true,[49.1,74.2]),new SpotsInfo('E','148',true,[49.1,126.1]),new SpotsInfo('E','149',true,[49,94]),new SpotsInfo('E','14A',true,[49,101.2])
+				,new SpotsInfo('E','14B',true,[48.9,68.4]),new SpotsInfo('E','14C',true,[48.9,81.5]),new SpotsInfo('E','14D',true,[48.8,88.6]),new SpotsInfo('E','14E',true,[48.7,131.7]),new SpotsInfo('E','14F',true,[48.7,144.2])
+				,new SpotsInfo('E','150',true,[48.7,187.8]),new SpotsInfo('E','151',true,[48.6,150.6]),new SpotsInfo('E','152',true,[48.6,195.3]),new SpotsInfo('E','153',true,[48.4,202]),new SpotsInfo('E','154',true,[32.4,316.6])
+				,new SpotsInfo('E','155',true,[32.4,321]),new SpotsInfo('E','156',true,[32.2,298.6]),new SpotsInfo('E','157',true,[32,310.2]),new SpotsInfo('E','158',true,[31.7,329.1]),new SpotsInfo('E','159',true,[31.6,304])
+				,new SpotsInfo('E','15A',true,[31,335.7]),new SpotsInfo('E','15B',true,[30.7,390.7]),new SpotsInfo('E','15C',true,[30.7,403.3]),new SpotsInfo('E','15D',true,[30.6,364.4]),new SpotsInfo('E','15E',true,[30.5,372.8])
+				,new SpotsInfo('E','15F',true,[30.4,357.7]),new SpotsInfo('E','160',true,[30.4,410.1]),new SpotsInfo('E','161',true,[30.3,378]),new SpotsInfo('E','162',true,[30.3,383.6]),new SpotsInfo('E','163',true,[30.2,341.5])
+				,new SpotsInfo('E','164',true,[30.2,395.9]),new SpotsInfo('E','165',true,[30.1,347]),new SpotsInfo('E','166',true,[29.9,352.6]),new SpotsInfo('E','167',true,[29.7,416]),new SpotsInfo('E','168',true,[29.6,422])
+				,new SpotsInfo('E','169',true,[29.2,434.7]),new SpotsInfo('E','16A',true,[29,427.8]),new SpotsInfo('E','16B',true,[29,445.5]),new SpotsInfo('E','16C',true,[28.9,439.5]),new SpotsInfo('E','16D',true,[28.7,470.1])
+				,new SpotsInfo('E','16E',true,[28.6,451.8]),new SpotsInfo('E','16F',true,[28.5,458.3]),new SpotsInfo('E','170',true,[28.5,463.7]),new SpotsInfo('E','171',true,[28.1,477.7]),new SpotsInfo('E','172',true,[28,484.1])
+				,new SpotsInfo('E','173',true,[27.7,495.3]),new SpotsInfo('E','174',true,[27.6,489.5]),new SpotsInfo('E','175',true,[17.2,8.7]),new SpotsInfo('E','176',true,[17.1,14.5]),new SpotsInfo('E','177',true,[17,20.1])
+				,new SpotsInfo('E','178',true,[16.9,38.3]),new SpotsInfo('E','179',true,[16.9,62.9]),new SpotsInfo('E','17A',true,[16.7,31.9]),new SpotsInfo('E','17B',true,[16.5,25.4]),new SpotsInfo('E','17C',true,[16.5,44.6])
+				,new SpotsInfo('E','17D',true,[16.4,57.3]),new SpotsInfo('E','17E',true,[16.2,51.6]),new SpotsInfo('E','17F',true,[16.1,68.9]),new SpotsInfo('E','180',true,[15.8,74.7]),new SpotsInfo('E','181',true,[15.5,88.4])
+				,new SpotsInfo('E','182',true,[15.1,93.7]),new SpotsInfo('E','183',true,[15,82.2]),new SpotsInfo('E','184',true,[14.6,100.1]),new SpotsInfo('E','185',true,[14.6,106.4]),new SpotsInfo('E','186',true,[14.5,112.1])
+				,new SpotsInfo('E','187',true,[13.7,148.1]),new SpotsInfo('E','188',true,[13.6,119.6]),new SpotsInfo('E','189',true,[13.5,131.9]),new SpotsInfo('E','18A',true,[13.5,137]),new SpotsInfo('E','18B',true,[13.4,125.9])
+				,new SpotsInfo('E','18C',true,[13.4,142.2]),new SpotsInfo('E','18D',true,[13.2,161.8]),new SpotsInfo('E','18E',true,[13.2,168.5]),new SpotsInfo('E','18F',true,[13,155.2]),new SpotsInfo('E','190',true,[12.7,174.8])
+				,new SpotsInfo('E','191',true,[12.5,199.8]),new SpotsInfo('E','192',true,[12.3,179.4]),new SpotsInfo('E','193',true,[12.1,193.6]),new SpotsInfo('E','194',true,[12,185.7])];
 
 //Lot F - - - - - - - - - - - - - - - - - - - - - - - - -
-var F001 = new SpotsInfo('F','001',true,[0,0]);
-var F002 = new SpotsInfo('F','002',true,[0,0]);
-var F003 = new SpotsInfo('F','003',true,[0,0]);
-var F004 = new SpotsInfo('F','004',true,[0,0]);
-var F005 = new SpotsInfo('F','005',true,[0,0]);
-var F006 = new SpotsInfo('F','006',true,[0,0]);
-var F007 = new SpotsInfo('F','007',true,[0,0]);
-var F008 = new SpotsInfo('F','008',true,[0,0]);
-var F009 = new SpotsInfo('F','009',true,[0,0]);
-var F00A = new SpotsInfo('F','00A',true,[0,0]);
-var F00B = new SpotsInfo('F','00B',true,[0,0]);
-var F00C = new SpotsInfo('F','00C',true,[0,0]);
-var F00D = new SpotsInfo('F','00D',true,[0,0]);
-var F00E = new SpotsInfo('F','00E',true,[0,0]);
-var F00F = new SpotsInfo('F','00F',true,[0,0]);
-var F010 = new SpotsInfo('F','010',true,[0,0]);
-var F011 = new SpotsInfo('F','011',true,[0,0]);
-var F012 = new SpotsInfo('F','012',true,[0,0]);
-var F013 = new SpotsInfo('F','013',true,[0,0]);
-var F014 = new SpotsInfo('F','014',true,[0,0]);
-var F015 = new SpotsInfo('F','015',true,[0,0]);
-var F016 = new SpotsInfo('F','016',true,[0,0]);
-var F017 = new SpotsInfo('F','017',true,[0,0]);
-var F018 = new SpotsInfo('F','018',true,[0,0]);
-var F019 = new SpotsInfo('F','019',true,[0,0]);
-var F01A = new SpotsInfo('F','01A',true,[0,0]);
-var F01B = new SpotsInfo('F','01B',true,[0,0]);
-var F01C = new SpotsInfo('F','01C',true,[0,0]);
-var F01D = new SpotsInfo('F','01D',true,[0,0]);
-var F01E = new SpotsInfo('F','01E',true,[0,0]);
-var F01F = new SpotsInfo('F','01F',true,[0,0]);
-var F020 = new SpotsInfo('F','020',true,[0,0]);
-var F021 = new SpotsInfo('F','021',true,[0,0]);
-var F022 = new SpotsInfo('F','022',true,[0,0]);
-var F023 = new SpotsInfo('F','023',true,[0,0]);
-var F024 = new SpotsInfo('F','024',true,[0,0]);
-var F025 = new SpotsInfo('F','025',true,[0,0]);
-var F026 = new SpotsInfo('F','026',true,[0,0]);
-var F027 = new SpotsInfo('F','027',true,[0,0]);
-var F028 = new SpotsInfo('F','028',true,[0,0]);
-var F029 = new SpotsInfo('F','029',true,[0,0]);
-var F02A = new SpotsInfo('F','02A',true,[0,0]);
-var F02B = new SpotsInfo('F','02B',true,[0,0]);
-var F02C = new SpotsInfo('F','02C',true,[0,0]);
-var F02D = new SpotsInfo('F','02D',true,[0,0]);
-var F02E = new SpotsInfo('F','02E',true,[0,0]);
-var F02F = new SpotsInfo('F','02F',true,[0,0]);
-var F030 = new SpotsInfo('F','030',true,[0,0]);
-var F031 = new SpotsInfo('F','031',true,[0,0]);
-var F032 = new SpotsInfo('F','032',true,[0,0]);
-var F033 = new SpotsInfo('F','033',true,[0,0]);
-var F034 = new SpotsInfo('F','034',true,[0,0]);
-var F035 = new SpotsInfo('F','035',true,[0,0]);
-var F036 = new SpotsInfo('F','036',true,[0,0]);
-var F037 = new SpotsInfo('F','037',true,[0,0]);
-var F038 = new SpotsInfo('F','038',true,[0,0]);
-var F039 = new SpotsInfo('F','039',true,[0,0]);
-var F03A = new SpotsInfo('F','03A',true,[0,0]);
-var F03B = new SpotsInfo('F','03B',true,[0,0]);
-var F03C = new SpotsInfo('F','03C',true,[0,0]);
-var lotFSpots = [F001,F002,F003,F004,F005,F006,F007,F008,F009,F00A
-				,F00B,F00C,F00D,F00E,F00F,F010,F011,F012,F013,F014
-				,F015,F016,F017,F018,F019,F01A,F01B,F01C,F01D,F01E
-				,F01F,F020,F021,F022,F023,F024,F025,F026,F027,F028
-				,F029,F02A,F02B,F02C,F02D,F02E,F02F,F030,F031,F032
-				,F033,F034,F035,F036,F037,F038,F039,F03A,F03B,F03C
-				];
+var lotFSpots = [new SpotsInfo('F','001',true,[148.9,120.3]),new SpotsInfo('F','002',true,[148.6,129.2]),new SpotsInfo('F','003',true,[147.8,75]),new SpotsInfo('F','004',true,[147.7,18.3]),new SpotsInfo('F','005',true,[147.7,27.6])
+				,new SpotsInfo('F','006',true,[147.7,37.6]),new SpotsInfo('F','007',true,[147.7,47.3]),new SpotsInfo('F','008',true,[147.7,58.2]),new SpotsInfo('F','009',true,[128.8,152.8]),new SpotsInfo('F','00A',true,[121.6,152.9])
+				,new SpotsInfo('F','00B',true,[115,152.7]),new SpotsInfo('F','00C',true,[109.4,38]),new SpotsInfo('F','00D',true,[109.1,7.8]),new SpotsInfo('F','00E',true,[108.9,30.5]),new SpotsInfo('F','00F',true,[108.7,15])
+				,new SpotsInfo('F','010',true,[108.7,46.5]),new SpotsInfo('F','011',true,[108.6,54.3]),new SpotsInfo('F','012',true,[108.5,22.1]),new SpotsInfo('F','013',true,[108.4,71.8]),new SpotsInfo('F','014',true,[108.4,103.3])
+				,new SpotsInfo('F','015',true,[108.3,152.2]),new SpotsInfo('F','016',true,[108.2,95.9]),new SpotsInfo('F','017',true,[108,79.8]),new SpotsInfo('F','018',true,[108,88.1]),new SpotsInfo('F','019',true,[107.9,62.1])
+				,new SpotsInfo('F','01A',true,[100.6,152]),new SpotsInfo('F','01B',true,[93.6,152]),new SpotsInfo('F','01C',true,[91.8,6.8]),new SpotsInfo('F','01D',true,[91.5,22.5]),new SpotsInfo('F','01E',true,[91.3,95.7])
+				,new SpotsInfo('F','01F',true,[91.2,14.8]),new SpotsInfo('F','020',true,[91.2,29.9]),new SpotsInfo('F','021',true,[91.2,54.5]),new SpotsInfo('F','022',true,[91.2,103.4]),new SpotsInfo('F','023',true,[91.1,38.8])
+				,new SpotsInfo('F','024',true,[91.1,70.4]),new SpotsInfo('F','025',true,[91.1,79.2]),new SpotsInfo('F','026',true,[91.1,86.6]),new SpotsInfo('F','027',true,[91.1,111.4]),new SpotsInfo('F','028',true,[91,62.4])
+				,new SpotsInfo('F','029',true,[90.5,46.7]),new SpotsInfo('F','02A',true,[86.9,152.1]),new SpotsInfo('F','02B',true,[79.1,152.5]),new SpotsInfo('F','02C',true,[72,152.7]),new SpotsInfo('F','02D',true,[64.7,152.4])
+				,new SpotsInfo('F','02E',true,[58.3,152.5]),new SpotsInfo('F','02F',true,[52.8,38.4]),new SpotsInfo('F','030',true,[52.7,30.3]),new SpotsInfo('F','031',true,[52.6,110.9]),new SpotsInfo('F','032',true,[52.5,22.5])
+				,new SpotsInfo('F','033',true,[52.5,46.4]),new SpotsInfo('F','034',true,[52.4,62.6]),new SpotsInfo('F','035',true,[52.4,70.9]),new SpotsInfo('F','036',true,[52.3,102.8]),new SpotsInfo('F','037',true,[52.2,14.2])
+				,new SpotsInfo('F','038',true,[52.1,6.6]),new SpotsInfo('F','039',true,[52.1,54.5]),new SpotsInfo('F','03A',true,[52.1,78.9]),new SpotsInfo('F','03B',true,[52.1,86.8]),new SpotsInfo('F','03C',true,[52.1,94.6])
+				,new SpotsInfo('F','03D',true,[49.9,152.8]),new SpotsInfo('F','03E',true,[43.5,152.9]),new SpotsInfo('F','03F',true,[37.3,153.3]),new SpotsInfo('F','040',true,[29.6,153.3])];
 
 //Lot G - - - - - - - - - - - - - - - - - - - - - - - - -
-var G001 = new SpotsInfo('G','001',true,[0,0]);
-var G002 = new SpotsInfo('G','002',true,[0,0]);
-var G003 = new SpotsInfo('G','003',true,[0,0]);
-var G004 = new SpotsInfo('G','004',true,[0,0]);
-var G005 = new SpotsInfo('G','005',true,[0,0]);
-var G006 = new SpotsInfo('G','006',true,[0,0]);
-var G007 = new SpotsInfo('G','007',true,[0,0]);
-var G008 = new SpotsInfo('G','008',true,[0,0]);
-var G009 = new SpotsInfo('G','009',true,[0,0]);
-var G00A = new SpotsInfo('G','00A',true,[0,0]);
-var G00B = new SpotsInfo('G','00B',true,[0,0]);
-var G00C = new SpotsInfo('G','00C',true,[0,0]);
-var G00D = new SpotsInfo('G','00D',true,[0,0]);
-var G00E = new SpotsInfo('G','00E',true,[0,0]);
-var G00F = new SpotsInfo('G','00F',true,[0,0]);
-var G010 = new SpotsInfo('G','010',true,[0,0]);
-var G011 = new SpotsInfo('G','011',true,[0,0]);
-var G012 = new SpotsInfo('G','012',true,[0,0]);
-var G013 = new SpotsInfo('G','013',true,[0,0]);
-var G014 = new SpotsInfo('G','014',true,[0,0]);
-var G015 = new SpotsInfo('G','015',true,[0,0]);
-var G016 = new SpotsInfo('G','016',true,[0,0]);
-var G017 = new SpotsInfo('G','017',true,[0,0]);
-var G018 = new SpotsInfo('G','018',true,[0,0]);
-var G019 = new SpotsInfo('G','019',true,[0,0]);
-var G01A = new SpotsInfo('G','01A',true,[0,0]);
-var G01B = new SpotsInfo('G','01B',true,[0,0]);
-var G01C = new SpotsInfo('G','01C',true,[0,0]);
-var G01D = new SpotsInfo('G','01D',true,[0,0]);
-var G01E = new SpotsInfo('G','01E',true,[0,0]);
-var G01F = new SpotsInfo('G','01F',true,[0,0]);
-var G020 = new SpotsInfo('G','020',true,[0,0]);
-var G021 = new SpotsInfo('G','021',true,[0,0]);
-var G022 = new SpotsInfo('G','022',true,[0,0]);
-var G023 = new SpotsInfo('G','023',true,[0,0]);
-var G024 = new SpotsInfo('G','024',true,[0,0]);
-var G025 = new SpotsInfo('G','025',true,[0,0]);
-var G026 = new SpotsInfo('G','026',true,[0,0]);
-var G027 = new SpotsInfo('G','027',true,[0,0]);
-var G028 = new SpotsInfo('G','028',true,[0,0]);
-var G029 = new SpotsInfo('G','029',true,[0,0]);
-var G02A = new SpotsInfo('G','02A',true,[0,0]);
-var G02B = new SpotsInfo('G','02B',true,[0,0]);
-var G02C = new SpotsInfo('G','02C',true,[0,0]);
-var G02D = new SpotsInfo('G','02D',true,[0,0]);
-var G02E = new SpotsInfo('G','02E',true,[0,0]);
-var lotGSpots = [G001,G002,G003,G004,G005,G006,G007,G008,G009,G00A
-				,G00B,G00C,G00D,G00E,G00F,G010,G011,G012,G013,G014
-				,G015,G016,G017,G018,G019,G01A,G01B,G01C,G01D,G01E
-				,G01F,G020,G021,G022,G023,G024,G025,G026,G027,G028
-				,G029,G02A,G02B,G02C,G02D,G02E];
+var lotGSpots = [new SpotsInfo('G','001',true,[89.7,125.6]),new SpotsInfo('G','002',true,[89.7,214.1]),new SpotsInfo('G','003',true,[89.6,66.8]),new SpotsInfo('G','004',true,[89.4,78.8]),new SpotsInfo('G','005',true,[89.4,203.5])
+				,new SpotsInfo('G','006',true,[89.3,44.1]),new SpotsInfo('G','007',true,[89.3,118.6]),new SpotsInfo('G','008',true,[89.1,13.1]),new SpotsInfo('G','009',true,[89.1,52.3]),new SpotsInfo('G','00A',true,[89.1,111.2])
+				,new SpotsInfo('G','00B',true,[88.9,100.3]),new SpotsInfo('G','00C',true,[88.9,132.9]),new SpotsInfo('G','00D',true,[88.9,139.9]),new SpotsInfo('G','00E',true,[88.7,36.9]),new SpotsInfo('G','00F',true,[88.6,147.1])
+				,new SpotsInfo('G','010',true,[88.6,154.8]),new SpotsInfo('G','011',true,[88.4,29.5]),new SpotsInfo('G','012',true,[88.4,59.6]),new SpotsInfo('G','013',true,[88.3,161.7]),new SpotsInfo('G','014',true,[88.2,21.8])
+				,new SpotsInfo('G','015',true,[87.6,169.5]),new SpotsInfo('G','016',true,[86.7,177.1]),new SpotsInfo('G','017',true,[86.4,184]),new SpotsInfo('G','018',true,[30.1,213.3]),new SpotsInfo('G','019',true,[29.5,13.9])
+				,new SpotsInfo('G','01A',true,[29.5,109.7]),new SpotsInfo('G','01B',true,[29.5,190.8]),new SpotsInfo('G','01C',true,[29.4,21.2]),new SpotsInfo('G','01D',true,[29.4,28.8]),new SpotsInfo('G','01E',true,[29.4,117.2])
+				,new SpotsInfo('G','01F',true,[29.4,169.5]),new SpotsInfo('G','020',true,[29.4,183.2]),new SpotsInfo('G','021',true,[29.4,198.8]),new SpotsInfo('G','022',true,[29.4,205.6]),new SpotsInfo('G','023',true,[29.3,155])
+				,new SpotsInfo('G','024',true,[29.3,161.5]),new SpotsInfo('G','025',true,[29.3,175.5]),new SpotsInfo('G','026',true,[29.2,66.1]),new SpotsInfo('G','027',true,[29.2,126]),new SpotsInfo('G','028',true,[29.1,133.8])
+				,new SpotsInfo('G','029',true,[29,148.3]),new SpotsInfo('G','02A',true,[28.8,141.2]),new SpotsInfo('G','02B',true,[28.6,58.8]),new SpotsInfo('G','02C',true,[28.5,36.6]),new SpotsInfo('G','02D',true,[28.5,51.7])
+				,new SpotsInfo('G','02E',true,[28.2,44])];
 
 //Lot H - - - - - - - - - - - - - - - - - - - - - - - - -
-var H001 = new SpotsInfo('H','001',true,[0,0]);
-var H002 = new SpotsInfo('H','002',true,[0,0]);
-var H003 = new SpotsInfo('H','003',true,[0,0]);
-var H004 = new SpotsInfo('H','004',true,[0,0]);
-var H005 = new SpotsInfo('H','005',true,[0,0]);
-var H006 = new SpotsInfo('H','006',true,[0,0]);
-var H007 = new SpotsInfo('H','007',true,[0,0]);
-var H008 = new SpotsInfo('H','008',true,[0,0]);
-var lotHSpots = [H001,H002,H003,H004,H005,H006,H007,H008];
+var lotHSpots = [new SpotsInfo('H','001',true,[162.4,37.2]),new SpotsInfo('H','002',true,[151.1,36.6]),new SpotsInfo('H','003',true,[134.8,37.1]),new SpotsInfo('H','004',true,[122.9,36.7]),new SpotsInfo('H','005',true,[109.6,37.6])
+				,new SpotsInfo('H','006',true,[98.4,36.6]),new SpotsInfo('H','007',true,[87.2,36.5]),new SpotsInfo('H','008',true,[78.2,33.7])];
 
 //Lot I - - - - - - - - - - - - - - - - - - - - - - - - -
-var I001 = new SpotsInfo('I','001',true,[190,20]);
-var I002 = new SpotsInfo('I','002',true,[140,20]);
-var I003 = new SpotsInfo('I','003',true,[115,20]);
-var I004 = new SpotsInfo('I','004',true,[90,20]);
-var I005 = new SpotsInfo('I','005',true,[65,20]);
-var I006 = new SpotsInfo('I','006',true,[40,20]);
-var I007 = new SpotsInfo('I','007',true,[15,20]);
-var I008 = new SpotsInfo('I','008',true,[165,120]);
-var I009 = new SpotsInfo('I','009',true,[140,120]);
-var I00A = new SpotsInfo('I','00A',true,[102.5,120]);
-var I00B = new SpotsInfo('I','00B',true,[77.5,120]);
-var I00C = new SpotsInfo('I','00C',true,[40,120]);
-var lotISpots = [I001,I002,I003,I004,I005,I006,I007,I008,I009,I00A
-				,I00B,I00C];
+var lotISpots = [new SpotsInfo('I','001',true,[189.4,14.6]),new SpotsInfo('I','002',true,[165.8,120.5]),new SpotsInfo('I','003',true,[139,120.9]),new SpotsInfo('I','004',true,[138.9,16.2]),new SpotsInfo('I','005',true,[115.5,17])
+				,new SpotsInfo('I','006',true,[101.8,121.4]),new SpotsInfo('I','007',true,[90.1,16.7]),new SpotsInfo('I','008',true,[78.4,121.3]),new SpotsInfo('I','009',true,[64,17.2]),new SpotsInfo('I','00A',true,[40.8,16.1])
+				,new SpotsInfo('I','00B',true,[40.2,121.3]),new SpotsInfo('I','00C',true,[14.4,16.5])];
 
 //Lot J - - - - - - - - - - - - - - - - - - - - - - - - -
-var J001 = new SpotsInfo('J','001',true,[0,0]);
-var J002 = new SpotsInfo('J','002',true,[0,0]);
-var J003 = new SpotsInfo('J','003',true,[0,0]);
-var J004 = new SpotsInfo('J','004',true,[0,0]);
-var J005 = new SpotsInfo('J','005',true,[0,0]);
-var J006 = new SpotsInfo('J','006',true,[0,0]);
-var J007 = new SpotsInfo('J','007',true,[0,0]);
-var J008 = new SpotsInfo('J','008',true,[0,0]);
-var J009 = new SpotsInfo('J','009',true,[0,0]);
-var J00A = new SpotsInfo('J','00A',true,[0,0]);
-var J00B = new SpotsInfo('J','00B',true,[0,0]);
-var J00C = new SpotsInfo('J','00C',true,[0,0]);
-var J00D = new SpotsInfo('J','00D',true,[0,0]);
-var J00E = new SpotsInfo('J','00E',true,[0,0]);
-var J00F = new SpotsInfo('J','00F',true,[0,0]);
-var J010 = new SpotsInfo('J','010',true,[0,0]);
-var J011 = new SpotsInfo('J','011',true,[0,0]);
-var J012 = new SpotsInfo('J','012',true,[0,0]);
-var J013 = new SpotsInfo('J','013',true,[0,0]);
-var J014 = new SpotsInfo('J','014',true,[0,0]);
-var J015 = new SpotsInfo('J','015',true,[0,0]);
-var J016 = new SpotsInfo('J','016',true,[0,0]);
-var J017 = new SpotsInfo('J','017',true,[0,0]);
-var J018 = new SpotsInfo('J','018',true,[0,0]);
-var J019 = new SpotsInfo('J','019',true,[0,0]);
-var J01A = new SpotsInfo('J','01A',true,[0,0]);
-var J01B = new SpotsInfo('J','01B',true,[0,0]);
-var J01C = new SpotsInfo('J','01C',true,[0,0]);
-var J01D = new SpotsInfo('J','01D',true,[0,0]);
-var J01E = new SpotsInfo('J','01E',true,[0,0]);
-var J01F = new SpotsInfo('J','01F',true,[0,0]);
-var J020 = new SpotsInfo('J','020',true,[0,0]);
-var J021 = new SpotsInfo('J','021',true,[0,0]);
-var J022 = new SpotsInfo('J','022',true,[0,0]);
-var J023 = new SpotsInfo('J','023',true,[0,0]);
-var J024 = new SpotsInfo('J','024',true,[0,0]);
-var lotJSpots = [J001,J002,J003,J004,J005,J006,J007,J008,J009,J00A
-				,J00B,J00C,J00D,J00E,J00F,J010,J011,J012,J013,J014
-				,J015,J016,J017,J018,J019,J01A,J01B,J01C,J01D,J01E
-				,J01F,J020,J021,J022,J023,J024];
+var lotJSpots = [new SpotsInfo('J','001',true,[77.3,61.7]),new SpotsInfo('J','002',true,[74.4,64.7]),new SpotsInfo('J','003',true,[70.5,68.1]),new SpotsInfo('J','004',true,[66.9,71.6]),new SpotsInfo('J','005',true,[64.4,74.7])
+				,new SpotsInfo('J','006',true,[61.5,77.9]),new SpotsInfo('J','007',true,[57.6,81.2]),new SpotsInfo('J','008',true,[54.2,85.1]),new SpotsInfo('J','009',true,[53.5,187.2]),new SpotsInfo('J','00A',true,[53.5,190.7])
+				,new SpotsInfo('J','00B',true,[53.5,196.2]),new SpotsInfo('J','00C',true,[53.4,181.5]),new SpotsInfo('J','00D',true,[53.2,62.1]),new SpotsInfo('J','00E',true,[51.2,88.3]),new SpotsInfo('J','00F',true,[50.8,65.3])
+				,new SpotsInfo('J','010',true,[48.1,91.7]),new SpotsInfo('J','011',true,[48,210.4]),new SpotsInfo('J','012',true,[47.6,68.6]),new SpotsInfo('J','013',true,[45.2,94.6]),new SpotsInfo('J','014',true,[44.7,72.4])
+				,new SpotsInfo('J','015',true,[42.7,219.3]),new SpotsInfo('J','016',true,[41.5,98.5]),new SpotsInfo('J','017',true,[41.4,75.3]),new SpotsInfo('J','018',true,[38.5,101.9]),new SpotsInfo('J','019',true,[37.7,79])
+				,new SpotsInfo('J','01A',true,[35.3,106.2]),new SpotsInfo('J','01B',true,[34.4,82.2]),new SpotsInfo('J','01C',true,[32.3,109.5]),new SpotsInfo('J','01D',true,[30.4,85.5]),new SpotsInfo('J','01E',true,[27.6,89])
+				,new SpotsInfo('J','01F',true,[24.6,92.2]),new SpotsInfo('J','020',true,[21.6,95.2]),new SpotsInfo('J','021',true,[18.2,98.7]),new SpotsInfo('J','022',true,[18,184]),new SpotsInfo('J','023',true,[18,187.4])
+				,new SpotsInfo('J','024',true,[17.9,191.3]),new SpotsInfo('J','025',true,[17.7,194.8]),new SpotsInfo('J','026',true,[17.6,180.3]),new SpotsInfo('J','027',true,[17.1,199]),new SpotsInfo('J','028',true,[15,203.1])
+				,new SpotsInfo('J','029',true,[14.7,102.4]),new SpotsInfo('J','02A',true,[13,206.2]),new SpotsInfo('J','02B',true,[12.8,105.6]),new SpotsInfo('J','02C',true,[10.6,209.5]),new SpotsInfo('J','02D',true,[8.2,212.8])
+				];
 
 //Lot K - - - - - - - - - - - - - - - - - - - - - - - - -
-var K001 = new SpotsInfo('K','001',true,[0,0]);
-var K002 = new SpotsInfo('K','002',true,[0,0]);
-var K003 = new SpotsInfo('K','003',true,[0,0]);
-var K004 = new SpotsInfo('K','004',true,[0,0]);
-var K005 = new SpotsInfo('K','005',true,[0,0]);
-var K006 = new SpotsInfo('K','006',true,[0,0]);
-var K007 = new SpotsInfo('K','007',true,[0,0]);
-var K008 = new SpotsInfo('K','008',true,[0,0]);
-var K009 = new SpotsInfo('K','009',true,[0,0]);
-var K00A = new SpotsInfo('K','00A',true,[0,0]);
-var K00B = new SpotsInfo('K','00B',true,[0,0]);
-var K00C = new SpotsInfo('K','00C',true,[0,0]);
-var K00D = new SpotsInfo('K','00D',true,[0,0]);
-var K00E = new SpotsInfo('K','00E',true,[0,0]);
-var K00F = new SpotsInfo('K','00F',true,[0,0]);
-var K010 = new SpotsInfo('K','010',true,[0,0]);
-var K011 = new SpotsInfo('K','011',true,[0,0]);
-var K012 = new SpotsInfo('K','012',true,[0,0]);
-var K013 = new SpotsInfo('K','013',true,[0,0]);
-var K014 = new SpotsInfo('K','014',true,[0,0]);
-var K015 = new SpotsInfo('K','015',true,[0,0]);
-var K016 = new SpotsInfo('K','016',true,[0,0]);
-var lotKSpots = [K001,K002,K003,K004,K005,K006,K007,K008,K009,K00A
-				,K00B,K00C,K00D,K00E,K00F,K010,K011,K012,K013,K014
-				,K015,K016];
+var lotKSpots = [new SpotsInfo('K','001',true,[84.4,145]),new SpotsInfo('K','002',true,[84,87.7]),new SpotsInfo('K','003',true,[83.9,55.6]),new SpotsInfo('K','004',true,[83.9,116.9]),new SpotsInfo('K','005',true,[83.8,72.3])
+				,new SpotsInfo('K','006',true,[83.8,130.4]),new SpotsInfo('K','007',true,[83.7,11.9]),new SpotsInfo('K','008',true,[83.5,159.8]),new SpotsInfo('K','009',true,[83.3,101.9]),new SpotsInfo('K','00A',true,[83.2,27])
+				,new SpotsInfo('K','00B',true,[83,42.1]),new SpotsInfo('K','00C',true,[18.2,10.9]),new SpotsInfo('K','00D',true,[18.2,24.9]),new SpotsInfo('K','00E',true,[18.1,70.5]),new SpotsInfo('K','00F',true,[18,55.6])
+				,new SpotsInfo('K','010',true,[18,100.7]),new SpotsInfo('K','011',true,[17.9,40.2]),new SpotsInfo('K','012',true,[17.5,114.3]),new SpotsInfo('K','013',true,[17.4,129.4]),new SpotsInfo('K','014',true,[17.3,144.2])
+				,new SpotsInfo('K','015',true,[17.1,85.4]),new SpotsInfo('K','016',true,[16.9,159.2])];
 
 //Lot M - - - - - - - - - - - - - - - - - - - - - - - - -
-var M001 = new SpotsInfo('M','001',true,[0,0]);
-var M002 = new SpotsInfo('M','002',true,[0,0]);
-var M003 = new SpotsInfo('M','003',true,[0,0]);
-var M004 = new SpotsInfo('M','004',true,[0,0]);
-var M005 = new SpotsInfo('M','005',true,[0,0]);
-var M006 = new SpotsInfo('M','006',true,[0,0]);
-var M007 = new SpotsInfo('M','007',true,[0,0]);
-var M008 = new SpotsInfo('M','008',true,[0,0]);
-var M009 = new SpotsInfo('M','009',true,[0,0]);
-var M00A = new SpotsInfo('M','00A',true,[0,0]);
-var M00B = new SpotsInfo('M','00B',true,[0,0]);
-var M00C = new SpotsInfo('M','00C',true,[0,0]);
-var M00D = new SpotsInfo('M','00D',true,[0,0]);
-var M00E = new SpotsInfo('M','00E',true,[0,0]);
-var M00F = new SpotsInfo('M','00F',true,[0,0]);
-var M010 = new SpotsInfo('M','010',true,[0,0]);
-var M011 = new SpotsInfo('M','011',true,[0,0]);
-var M012 = new SpotsInfo('M','012',true,[0,0]);
-var M013 = new SpotsInfo('M','013',true,[0,0]);
-var M014 = new SpotsInfo('M','014',true,[0,0]);
-var M015 = new SpotsInfo('M','015',true,[0,0]);
-var M016 = new SpotsInfo('M','016',true,[0,0]);
-var M017 = new SpotsInfo('M','017',true,[0,0]);
-var M018 = new SpotsInfo('M','018',true,[0,0]);
-var M019 = new SpotsInfo('M','019',true,[0,0]);
-var M01A = new SpotsInfo('M','01A',true,[0,0]);
-var M01B = new SpotsInfo('M','01B',true,[0,0]);
-var M01C = new SpotsInfo('M','01C',true,[0,0]);
-var M01D = new SpotsInfo('M','01D',true,[0,0]);
-var M01E = new SpotsInfo('M','01E',true,[0,0]);
-var M01F = new SpotsInfo('M','01F',true,[0,0]);
-var M020 = new SpotsInfo('M','020',true,[0,0]);
-var M021 = new SpotsInfo('M','021',true,[0,0]);
-var M022 = new SpotsInfo('M','022',true,[0,0]);
-var M023 = new SpotsInfo('M','023',true,[0,0]);
-var M024 = new SpotsInfo('M','024',true,[0,0]);
-var M025 = new SpotsInfo('M','025',true,[0,0]);
-var M026 = new SpotsInfo('M','026',true,[0,0]);
-var M027 = new SpotsInfo('M','027',true,[0,0]);
-var M028 = new SpotsInfo('M','028',true,[0,0]);
-var M029 = new SpotsInfo('M','029',true,[0,0]);
-var M02A = new SpotsInfo('M','02A',true,[0,0]);
-var M02B = new SpotsInfo('M','02B',true,[0,0]);
-var M02C = new SpotsInfo('M','02C',true,[0,0]);
-var M02D = new SpotsInfo('M','02D',true,[0,0]);
-var M02E = new SpotsInfo('M','02E',true,[0,0]);
-var M02F = new SpotsInfo('M','02F',true,[0,0]);
-var M030 = new SpotsInfo('M','030',true,[0,0]);
-var M031 = new SpotsInfo('M','031',true,[0,0]);
-var M032 = new SpotsInfo('M','032',true,[0,0]);
-var M033 = new SpotsInfo('M','033',true,[0,0]);
-var M034 = new SpotsInfo('M','034',true,[0,0]);
-var M035 = new SpotsInfo('M','035',true,[0,0]);
-var M036 = new SpotsInfo('M','036',true,[0,0]);
-var M037 = new SpotsInfo('M','037',true,[0,0]);
-var M038 = new SpotsInfo('M','038',true,[0,0]);
-var M039 = new SpotsInfo('M','039',true,[0,0]);
-var M03A = new SpotsInfo('M','03A',true,[0,0]);
-var M03B = new SpotsInfo('M','03B',true,[0,0]);
-var M03C = new SpotsInfo('M','03C',true,[0,0]);
-var M03D = new SpotsInfo('M','03D',true,[0,0]);
-var M03E = new SpotsInfo('M','03E',true,[0,0]);
-var M03F = new SpotsInfo('M','03F',true,[0,0]);
-var M040 = new SpotsInfo('M','040',true,[0,0]);
-var M041 = new SpotsInfo('M','041',true,[0,0]);
-var M042 = new SpotsInfo('M','042',true,[0,0]);
-var M043 = new SpotsInfo('M','043',true,[0,0]);
-var M044 = new SpotsInfo('M','044',true,[0,0]);
-var M045 = new SpotsInfo('M','045',true,[0,0]);
-var M046 = new SpotsInfo('M','046',true,[0,0]);
-var M047 = new SpotsInfo('M','047',true,[0,0]);
-var M048 = new SpotsInfo('M','048',true,[0,0]);
-var M049 = new SpotsInfo('M','049',true,[0,0]);
-var M04A = new SpotsInfo('M','04A',true,[0,0]);
-var M04B = new SpotsInfo('M','04B',true,[0,0]);
-var M04C = new SpotsInfo('M','04C',true,[0,0]);
-var M04D = new SpotsInfo('M','04D',true,[0,0]);
-var M04E = new SpotsInfo('M','04E',true,[0,0]);
-var M04F = new SpotsInfo('M','04F',true,[0,0]);
-var M050 = new SpotsInfo('M','050',true,[0,0]);
-var M051 = new SpotsInfo('M','051',true,[0,0]);
-var M052 = new SpotsInfo('M','052',true,[0,0]);
-var M053 = new SpotsInfo('M','053',true,[0,0]);
-var M054 = new SpotsInfo('M','054',true,[0,0]);
-var M055 = new SpotsInfo('M','055',true,[0,0]);
-var M056 = new SpotsInfo('M','056',true,[0,0]);
-var M057 = new SpotsInfo('M','057',true,[0,0]);
-var M058 = new SpotsInfo('M','058',true,[0,0]);
-var M059 = new SpotsInfo('M','059',true,[0,0]);
-var M05A = new SpotsInfo('M','05A',true,[0,0]);
-var M05B = new SpotsInfo('M','05B',true,[0,0]);
-var M05C = new SpotsInfo('M','05C',true,[0,0]);
-var M05D = new SpotsInfo('M','05D',true,[0,0]);
-var M05E = new SpotsInfo('M','05E',true,[0,0]);
-var M05F = new SpotsInfo('M','05F',true,[0,0]);
-var M060 = new SpotsInfo('M','060',true,[0,0]);
-var M061 = new SpotsInfo('M','061',true,[0,0]);
-var M062 = new SpotsInfo('M','062',true,[0,0]);
-var M063 = new SpotsInfo('M','063',true,[0,0]);
-var M064 = new SpotsInfo('M','064',true,[0,0]);
-var M065 = new SpotsInfo('M','065',true,[0,0]);
-var M066 = new SpotsInfo('M','066',true,[0,0]);
-var M067 = new SpotsInfo('M','067',true,[0,0]);
-var M068 = new SpotsInfo('M','068',true,[0,0]);
-var M069 = new SpotsInfo('M','069',true,[0,0]);
-var M06A = new SpotsInfo('M','06A',true,[0,0]);
-var M06B = new SpotsInfo('M','06B',true,[0,0]);
-var M06C = new SpotsInfo('M','06C',true,[0,0]);
-var M06D = new SpotsInfo('M','06D',true,[0,0]);
-var M06E = new SpotsInfo('M','06E',true,[0,0]);
-var M06F = new SpotsInfo('M','06F',true,[0,0]);
-var M070 = new SpotsInfo('M','070',true,[0,0]);
-var M071 = new SpotsInfo('M','071',true,[0,0]);
-var M072 = new SpotsInfo('M','072',true,[0,0]);
-var M073 = new SpotsInfo('M','073',true,[0,0]);
-var M074 = new SpotsInfo('M','074',true,[0,0]);
-var M075 = new SpotsInfo('M','075',true,[0,0]);
-var M076 = new SpotsInfo('M','076',true,[0,0]);
-var M077 = new SpotsInfo('M','077',true,[0,0]);
-var M078 = new SpotsInfo('M','078',true,[0,0]);
-var M079 = new SpotsInfo('M','079',true,[0,0]);
-var M07A = new SpotsInfo('M','07A',true,[0,0]);
-var M07B = new SpotsInfo('M','07B',true,[0,0]);
-var M07C = new SpotsInfo('M','07C',true,[0,0]);
-var M07D = new SpotsInfo('M','07D',true,[0,0]);
-var M07E = new SpotsInfo('M','07E',true,[0,0]);
-var M07F = new SpotsInfo('M','07F',true,[0,0]);
-var M080 = new SpotsInfo('M','080',true,[0,0]);
-var M081 = new SpotsInfo('M','081',true,[0,0]);
-var M082 = new SpotsInfo('M','082',true,[0,0]);
-var M083 = new SpotsInfo('M','083',true,[0,0]);
-var M084 = new SpotsInfo('M','084',true,[0,0]);
-var M085 = new SpotsInfo('M','085',true,[0,0]);
-var M086 = new SpotsInfo('M','086',true,[0,0]);
-var M087 = new SpotsInfo('M','087',true,[0,0]);
-var M088 = new SpotsInfo('M','088',true,[0,0]);
-var M089 = new SpotsInfo('M','089',true,[0,0]);
-var M08A = new SpotsInfo('M','08A',true,[0,0]);
-var M08B = new SpotsInfo('M','08B',true,[0,0]);
-var M08C = new SpotsInfo('M','08C',true,[0,0]);
-var M08D = new SpotsInfo('M','08D',true,[0,0]);
-var M08E = new SpotsInfo('M','08E',true,[0,0]);
-var M08F = new SpotsInfo('M','08F',true,[0,0]);
-var M090 = new SpotsInfo('M','090',true,[0,0]);
-var M091 = new SpotsInfo('M','091',true,[0,0]);
-var M092 = new SpotsInfo('M','092',true,[0,0]);
-var M093 = new SpotsInfo('M','093',true,[0,0]);
-var lotMSpots = [M001,M002,M003,M004,M005,M006,M007,M008,M009,M00A
-				,M00B,M00C,M00D,M00E,M00F,M010,M011,M012,M013,M014
-				,M015,M016,M017,M018,M019,M01A,M01B,M01C,M01D,M01E
-				,M01F,M020,M021,M022,M023,M024,M025,M026,M027,M028
-				,M029,M02A,M02B,M02C,M02D,M02E,M02F,M030,M031,M032
-				,M033,M034,M035,M036,M037,M038,M039,M03A,M03B,M03C
-				,M03D,M03E,M03F,M040,M041,M042,M043,M044,M045,M046
-				,M047,M048,M049,M04A,M04B,M04C,M04D,M04E,M04F,M050
-				,M051,M052,M053,M054,M055,M056,M057,M058,M059,M05A
-				,M05B,M05C,M05D,M05E,M05F,M060,M061,M062,M063,M064
-				,M065,M066,M067,M068,M069,M06A,M06B,M06C,M06D,M06E
-				,M06F,M070,M071,M072,M073,M074,M075,M076,M077,M078
-				,M079,M07A,M07B,M07C,M07D,M07E,M07F,M080,M081,M082
-				,M083,M084,M085,M086,M087,M088,M089,M08A,M08B,M08C
-				,M08D,M08E,M08F,M090,M091,M092,M093];
+var lotMSpots = [new SpotsInfo('M','001',true,[128.3,15.3]),new SpotsInfo('M','002',true,[128.2,22.7]),new SpotsInfo('M','003',true,[128.1,28.4]),new SpotsInfo('M','004',true,[127.9,34.7]),new SpotsInfo('M','005',true,[127.7,41.2])
+				,new SpotsInfo('M','006',true,[127.5,47.9]),new SpotsInfo('M','007',true,[127.5,54.1]),new SpotsInfo('M','008',true,[127.1,59.5]),new SpotsInfo('M','009',true,[127.1,65.3]),new SpotsInfo('M','00A',true,[126.8,84.6])
+				,new SpotsInfo('M','00B',true,[126.7,73.7]),new SpotsInfo('M','00C',true,[126.7,79.5]),new SpotsInfo('M','00D',true,[126.6,91.4]),new SpotsInfo('M','00E',true,[126.5,97.6]),new SpotsInfo('M','00F',true,[126.2,103.8])
+				,new SpotsInfo('M','010',true,[125.9,121.7]),new SpotsInfo('M','011',true,[125.8,128.8]),new SpotsInfo('M','012',true,[125.7,110.5]),new SpotsInfo('M','013',true,[125.6,156.4]),new SpotsInfo('M','014',true,[125.3,135.5])
+				,new SpotsInfo('M','015',true,[124.7,143.1]),new SpotsInfo('M','016',true,[124.5,163.3]),new SpotsInfo('M','017',true,[124.2,168.4]),new SpotsInfo('M','018',true,[124.2,175.1]),new SpotsInfo('M','019',true,[124.2,182.3])
+				,new SpotsInfo('M','01A',true,[123.9,188]),new SpotsInfo('M','01B',true,[123.7,194.4]),new SpotsInfo('M','01C',true,[123.6,244.9]),new SpotsInfo('M','01D',true,[123.4,219.9]),new SpotsInfo('M','01E',true,[123,207.1])
+				,new SpotsInfo('M','01F',true,[122.9,233.4]),new SpotsInfo('M','020',true,[122.8,201]),new SpotsInfo('M','021',true,[122.7,212.8]),new SpotsInfo('M','022',true,[122.5,238.2]),new SpotsInfo('M','023',true,[117.8,8.4])
+				,new SpotsInfo('M','024',true,[114.6,253.1]),new SpotsInfo('M','025',true,[110.3,9]),new SpotsInfo('M','026',true,[105.7,251.2]),new SpotsInfo('M','027',true,[101.8,9.9]),new SpotsInfo('M','028',true,[97.8,250.8])
+				,new SpotsInfo('M','029',true,[93.5,10.3]),new SpotsInfo('M','02A',true,[89.1,250]),new SpotsInfo('M','02B',true,[88.7,34.5]),new SpotsInfo('M','02C',true,[88.5,66]),new SpotsInfo('M','02D',true,[88.4,53.2])
+				,new SpotsInfo('M','02E',true,[88.4,59.3]),new SpotsInfo('M','02F',true,[88.3,46.9]),new SpotsInfo('M','030',true,[88.2,85.1]),new SpotsInfo('M','031',true,[88.1,72.4]),new SpotsInfo('M','032',true,[88,40])
+				,new SpotsInfo('M','033',true,[88,78.6]),new SpotsInfo('M','034',true,[88,90.7]),new SpotsInfo('M','035',true,[87.3,104.3]),new SpotsInfo('M','036',true,[87.2,110.6]),new SpotsInfo('M','037',true,[87.2,142.5])
+				,new SpotsInfo('M','038',true,[87.1,116.9]),new SpotsInfo('M','039',true,[86.9,97.8]),new SpotsInfo('M','03A',true,[86.8,154.9]),new SpotsInfo('M','03B',true,[86.7,122.9]),new SpotsInfo('M','03C',true,[86.6,135.7])
+				,new SpotsInfo('M','03D',true,[86.6,148.9]),new SpotsInfo('M','03E',true,[86.5,129.3]),new SpotsInfo('M','03F',true,[86.2,160.8]),new SpotsInfo('M','040',true,[85.9,167]),new SpotsInfo('M','041',true,[85.2,192.6])
+				,new SpotsInfo('M','042',true,[85.1,173.4]),new SpotsInfo('M','043',true,[85.1,179.7]),new SpotsInfo('M','044',true,[85.1,223.8]),new SpotsInfo('M','045',true,[85,198.3]),new SpotsInfo('M','046',true,[84.9,10.3])
+				,new SpotsInfo('M','047',true,[84.9,185.8]),new SpotsInfo('M','048',true,[84.8,204.4]),new SpotsInfo('M','049',true,[84.8,211.2]),new SpotsInfo('M','04A',true,[84.5,217.2]),new SpotsInfo('M','04B',true,[80.6,249.3])
+				,new SpotsInfo('M','04C',true,[76.5,11.2]),new SpotsInfo('M','04D',true,[73.1,248.6]),new SpotsInfo('M','04E',true,[69.5,40.2]),new SpotsInfo('M','04F',true,[69.3,34.9]),new SpotsInfo('M','050',true,[69.1,46.5])
+				,new SpotsInfo('M','051',true,[68.7,53.5]),new SpotsInfo('M','052',true,[68.7,65.8]),new SpotsInfo('M','053',true,[68.6,72]),new SpotsInfo('M','054',true,[68.6,84.8]),new SpotsInfo('M','055',true,[68.5,59.6])
+				,new SpotsInfo('M','056',true,[68.5,78.3]),new SpotsInfo('M','057',true,[68.5,98]),new SpotsInfo('M','058',true,[68.4,91.2]),new SpotsInfo('M','059',true,[68.1,103.9]),new SpotsInfo('M','05A',true,[67.9,116.6])
+				,new SpotsInfo('M','05B',true,[67.8,110.3]),new SpotsInfo('M','05C',true,[67.8,193.5]),new SpotsInfo('M','05D',true,[67.7,122.4]),new SpotsInfo('M','05E',true,[67.7,129.2]),new SpotsInfo('M','05F',true,[67.5,149.3])
+				,new SpotsInfo('M','060',true,[67.4,142.2]),new SpotsInfo('M','061',true,[67.4,186.5]),new SpotsInfo('M','062',true,[67.4,198.8]),new SpotsInfo('M','063',true,[67.3,154.3]),new SpotsInfo('M','064',true,[67.3,167.2])
+				,new SpotsInfo('M','065',true,[67.3,205.1]),new SpotsInfo('M','066',true,[67.3,223.9]),new SpotsInfo('M','067',true,[67.2,9.9]),new SpotsInfo('M','068',true,[67.2,136.3]),new SpotsInfo('M','069',true,[67.2,161.1])
+				,new SpotsInfo('M','06A',true,[67.1,217.7]),new SpotsInfo('M','06B',true,[67,211.1]),new SpotsInfo('M','06C',true,[66.5,173.5]),new SpotsInfo('M','06D',true,[66.5,179.4]),new SpotsInfo('M','06E',true,[64.2,248.6])
+				,new SpotsInfo('M','06F',true,[60,10]),new SpotsInfo('M','070',true,[55.3,248.7]),new SpotsInfo('M','071',true,[51.2,10.3]),new SpotsInfo('M','072',true,[47.1,248.6]),new SpotsInfo('M','073',true,[43.8,10.1])
+				,new SpotsInfo('M','074',true,[38.7,248.8]),new SpotsInfo('M','075',true,[30.2,16.5]),new SpotsInfo('M','076',true,[30.2,22.9]),new SpotsInfo('M','077',true,[30.1,29.7]),new SpotsInfo('M','078',true,[30.1,48.4])
+				,new SpotsInfo('M','079',true,[30.1,54.6]),new SpotsInfo('M','07A',true,[30,60]),new SpotsInfo('M','07B',true,[29.9,41.8]),new SpotsInfo('M','07C',true,[29.9,73.9]),new SpotsInfo('M','07D',true,[29.8,67])
+				,new SpotsInfo('M','07E',true,[29.7,35.8]),new SpotsInfo('M','07F',true,[29.7,80.3]),new SpotsInfo('M','080',true,[28.2,113]),new SpotsInfo('M','081',true,[28.1,106.8]),new SpotsInfo('M','082',true,[28.1,138.9])
+				,new SpotsInfo('M','083',true,[28,132.4]),new SpotsInfo('M','084',true,[27.9,125.7]),new SpotsInfo('M','085',true,[27.8,119]),new SpotsInfo('M','086',true,[27.8,144.9]),new SpotsInfo('M','087',true,[27.8,150.7])
+				,new SpotsInfo('M','088',true,[27.6,157]),new SpotsInfo('M','089',true,[27.4,163.6]),new SpotsInfo('M','08A',true,[27.2,176]),new SpotsInfo('M','08B',true,[27,182.3]),new SpotsInfo('M','08C',true,[26.9,170])
+				,new SpotsInfo('M','08D',true,[26.5,202]),new SpotsInfo('M','08E',true,[26.4,188.3]),new SpotsInfo('M','08F',true,[26.1,194.9]),new SpotsInfo('M','090',true,[26.1,208.5]),new SpotsInfo('M','091',true,[25.8,239.8])
+				,new SpotsInfo('M','092',true,[25.7,228.1]),new SpotsInfo('M','093',true,[25.7,233.7]),new SpotsInfo('M','094',true,[25.6,214.9]),new SpotsInfo('M','095',true,[25.6,220.6])];
 
 //Lot N - - - - - - - - - - - - - - - - - - - - - - - - -
-var N001 = new SpotsInfo('N','001',true,[0,0]);
-var N002 = new SpotsInfo('N','002',true,[0,0]);
-var N003 = new SpotsInfo('N','003',true,[0,0]);
-var N004 = new SpotsInfo('N','004',true,[0,0]);
-var N005 = new SpotsInfo('N','005',true,[0,0]);
-var N006 = new SpotsInfo('N','006',true,[0,0]);
-var N007 = new SpotsInfo('N','007',true,[0,0]);
-var N008 = new SpotsInfo('N','008',true,[0,0]);
-var N009 = new SpotsInfo('N','009',true,[0,0]);
-var N00A = new SpotsInfo('N','00A',true,[0,0]);
-var N00B = new SpotsInfo('N','00B',true,[0,0]);
-var N00C = new SpotsInfo('N','00C',true,[0,0]);
-var N00D = new SpotsInfo('N','00D',true,[0,0]);
-var N00E = new SpotsInfo('N','00E',true,[0,0]);
-var N00F = new SpotsInfo('N','00F',true,[0,0]);
-var N010 = new SpotsInfo('N','010',true,[0,0]);
-var N011 = new SpotsInfo('N','011',true,[0,0]);
-var N012 = new SpotsInfo('N','012',true,[0,0]);
-var N013 = new SpotsInfo('N','013',true,[0,0]);
-var N014 = new SpotsInfo('N','014',true,[0,0]);
-var N015 = new SpotsInfo('N','015',true,[0,0]);
-var N016 = new SpotsInfo('N','016',true,[0,0]);
-var N017 = new SpotsInfo('N','017',true,[0,0]);
-var N018 = new SpotsInfo('N','018',true,[0,0]);
-var N019 = new SpotsInfo('N','019',true,[0,0]);
-var N01A = new SpotsInfo('N','01A',true,[0,0]);
-var N01B = new SpotsInfo('N','01B',true,[0,0]);
-var N01C = new SpotsInfo('N','01C',true,[0,0]);
-var N01D = new SpotsInfo('N','01D',true,[0,0]);
-var N01E = new SpotsInfo('N','01E',true,[0,0]);
-var N01F = new SpotsInfo('N','01F',true,[0,0]);
-var N020 = new SpotsInfo('N','020',true,[0,0]);
-var N021 = new SpotsInfo('N','021',true,[0,0]);
-var N022 = new SpotsInfo('N','022',true,[0,0]);
-var N023 = new SpotsInfo('N','023',true,[0,0]);
-var N024 = new SpotsInfo('N','024',true,[0,0]);
-var N025 = new SpotsInfo('N','025',true,[0,0]);
-var N026 = new SpotsInfo('N','026',true,[0,0]);
-var N027 = new SpotsInfo('N','027',true,[0,0]);
-var N028 = new SpotsInfo('N','028',true,[0,0]);
-var N029 = new SpotsInfo('N','029',true,[0,0]);
-var N02A = new SpotsInfo('N','02A',true,[0,0]);
-var N02B = new SpotsInfo('N','02B',true,[0,0]);
-var N02C = new SpotsInfo('N','02C',true,[0,0]);
-var N02D = new SpotsInfo('N','02D',true,[0,0]);
-var N02E = new SpotsInfo('N','02E',true,[0,0]);
-var N02F = new SpotsInfo('N','02F',true,[0,0]);
-var N030 = new SpotsInfo('N','030',true,[0,0]);
-var N031 = new SpotsInfo('N','031',true,[0,0]);
-var N032 = new SpotsInfo('N','032',true,[0,0]);
-var N033 = new SpotsInfo('N','033',true,[0,0]);
-var N034 = new SpotsInfo('N','034',true,[0,0]);
-var N035 = new SpotsInfo('N','035',true,[0,0]);
-var N036 = new SpotsInfo('N','036',true,[0,0]);
-var N037 = new SpotsInfo('N','037',true,[0,0]);
-var N038 = new SpotsInfo('N','038',true,[0,0]);
-var N039 = new SpotsInfo('N','039',true,[0,0]);
-var N03A = new SpotsInfo('N','03A',true,[0,0]);
-var N03B = new SpotsInfo('N','03B',true,[0,0]);
-var N03C = new SpotsInfo('N','03C',true,[0,0]);
-var N03D = new SpotsInfo('N','03D',true,[0,0]);
-var N03E = new SpotsInfo('N','03E',true,[0,0]);
-var lotNSpots = [N001,N002,N003,N004,N005,N006,N007,N008,N009,N00A
-				,N00B,N00C,N00D,N00E,N00F,N010,N011,N012,N013,N014
-				,N015,N016,N017,N018,N019,N01A,N01B,N01C,N01D,N01E
-				,N01F,N020,N021,N022,N023,N024,N025,N026,N027,N028
-				,N029,N02A,N02B,N02C,N02D,N02E,N02F,N030,N031,N032
-				,N033,N034,N035,N036,N037,N038,N039,N03A,N03B,N03C
-				,N03D,N03E];
+var lotNSpots = [new SpotsInfo('N','001',true,[370.6,148.8]),new SpotsInfo('N','002',true,[369.3,111.9]),new SpotsInfo('N','003',true,[369.2,89.2]),new SpotsInfo('N','004',true,[369.1,138.6]),new SpotsInfo('N','005',true,[369,125.8])
+				,new SpotsInfo('N','006',true,[368.9,100.8]),new SpotsInfo('N','007',true,[368.8,12.7]),new SpotsInfo('N','008',true,[368.5,62.6]),new SpotsInfo('N','009',true,[368.4,25.2]),new SpotsInfo('N','00A',true,[368.2,51.1])
+				,new SpotsInfo('N','00B',true,[368,37.3]),new SpotsInfo('N','00C',true,[306.8,96.2]),new SpotsInfo('N','00D',true,[306.8,108]),new SpotsInfo('N','00E',true,[306,84.4]),new SpotsInfo('N','00F',true,[305.9,57.4])
+				,new SpotsInfo('N','010',true,[305.5,72.6]),new SpotsInfo('N','011',true,[282.6,84.7]),new SpotsInfo('N','012',true,[282.5,96.9]),new SpotsInfo('N','013',true,[282.3,56.9]),new SpotsInfo('N','014',true,[282,108.3])
+				,new SpotsInfo('N','015',true,[281.9,72.4]),new SpotsInfo('N','016',true,[213.1,73.4]),new SpotsInfo('N','017',true,[212.6,102.3]),new SpotsInfo('N','018',true,[200.3,102.1]),new SpotsInfo('N','019',true,[200.2,73.9])
+				,new SpotsInfo('N','01A',true,[198.2,160.2]),new SpotsInfo('N','01B',true,[197.8,16.3]),new SpotsInfo('N','01C',true,[186.3,160.9]),new SpotsInfo('N','01D',true,[186.1,101.4]),new SpotsInfo('N','01E',true,[185.9,74.4])
+				,new SpotsInfo('N','01F',true,[174.7,74.6]),new SpotsInfo('N','020',true,[173.8,101.6]),new SpotsInfo('N','021',true,[173.3,159.4]),new SpotsInfo('N','022',true,[173,16.5]),new SpotsInfo('N','023',true,[161.4,100.8])
+				,new SpotsInfo('N','024',true,[161.3,73.4]),new SpotsInfo('N','025',true,[160.6,16.6]),new SpotsInfo('N','026',true,[160.1,159.8]),new SpotsInfo('N','027',true,[148.4,101.9]),new SpotsInfo('N','028',true,[148.1,75.3])
+				,new SpotsInfo('N','029',true,[146.4,161]),new SpotsInfo('N','02A',true,[146.1,16]),new SpotsInfo('N','02B',true,[136.5,101.3]),new SpotsInfo('N','02C',true,[135.8,75]),new SpotsInfo('N','02D',true,[133.3,16])
+				,new SpotsInfo('N','02E',true,[132.7,158.1]),new SpotsInfo('N','02F',true,[124.1,101.2]),new SpotsInfo('N','030',true,[123.7,72.9]),new SpotsInfo('N','031',true,[120,18.4]),new SpotsInfo('N','032',true,[119.7,160.8])
+				,new SpotsInfo('N','033',true,[111.5,75.9]),new SpotsInfo('N','034',true,[110.4,101.6]),new SpotsInfo('N','035',true,[107.7,159.7]),new SpotsInfo('N','036',true,[106.1,17.8]),new SpotsInfo('N','037',true,[97.9,101.5])
+				,new SpotsInfo('N','038',true,[97.4,75.2]),new SpotsInfo('N','039',true,[95.3,158.8]),new SpotsInfo('N','03A',true,[94.9,18]),new SpotsInfo('N','03B',true,[84.3,101]),new SpotsInfo('N','03C',true,[83.7,76.1])
+				,new SpotsInfo('N','03D',true,[83.3,159.6]),new SpotsInfo('N','03E',true,[82.7,21]),new SpotsInfo('N','03F',true,[70.3,17.4]),new SpotsInfo('N','040',true,[70.2,159.3]),new SpotsInfo('N','041',true,[58,16.8])
+				,new SpotsInfo('N','042',true,[56.8,158.8])];
 
 //Lot P - - - - - - - - - - - - - - - - - - - - - - - - -
-var P001 = new SpotsInfo('P','001',true,[0,0]);
-var P002 = new SpotsInfo('P','002',true,[0,0]);
-var P003 = new SpotsInfo('P','003',true,[0,0]);
-var P004 = new SpotsInfo('P','004',true,[0,0]);
-var P005 = new SpotsInfo('P','005',true,[0,0]);
-var P006 = new SpotsInfo('P','006',true,[0,0]);
-var P007 = new SpotsInfo('P','007',true,[0,0]);
-var P008 = new SpotsInfo('P','008',true,[0,0]);
-var P009 = new SpotsInfo('P','009',true,[0,0]);
-var P00A = new SpotsInfo('P','00A',true,[0,0]);
-var P00B = new SpotsInfo('P','00B',true,[0,0]);
-var P00C = new SpotsInfo('P','00C',true,[0,0]);
-var P00D = new SpotsInfo('P','00D',true,[0,0]);
-var P00E = new SpotsInfo('P','00E',true,[0,0]);
-var P00F = new SpotsInfo('P','00F',true,[0,0]);
-var P010 = new SpotsInfo('P','010',true,[0,0]);
-var P011 = new SpotsInfo('P','011',true,[0,0]);
-var P012 = new SpotsInfo('P','012',true,[0,0]);
-var P013 = new SpotsInfo('P','013',true,[0,0]);
-var P014 = new SpotsInfo('P','014',true,[0,0]);
-var P015 = new SpotsInfo('P','015',true,[0,0]);
-var P016 = new SpotsInfo('P','016',true,[0,0]);
-var P017 = new SpotsInfo('P','017',true,[0,0]);
-var P018 = new SpotsInfo('P','018',true,[0,0]);
-var lotPSpots = [P001,P002,P003,P004,P005,P006,P007,P008,P009,P00A
-				,P00B,P00C,P00D,P00E,P00F,P010,P011,P012,P013,P014
-				,P015,P016,P017,P018];
+var lotPSpots = [new SpotsInfo('P','001',true,[85,149.9]),new SpotsInfo('P','002',true,[85,193.3]),new SpotsInfo('P','003',true,[84.8,121.1]),new SpotsInfo('P','004',true,[84.6,104.3]),new SpotsInfo('P','005',true,[84.6,134.7])
+				,new SpotsInfo('P','006',true,[84.4,89.7]),new SpotsInfo('P','007',true,[84.2,164.1]),new SpotsInfo('P','008',true,[84,12.5]),new SpotsInfo('P','009',true,[84,177.3]),new SpotsInfo('P','00A',true,[83.4,59.5])
+				,new SpotsInfo('P','00B',true,[83,30.1]),new SpotsInfo('P','00C',true,[18.6,191.7]),new SpotsInfo('P','00D',true,[18,133.9]),new SpotsInfo('P','00E',true,[17.8,119.7]),new SpotsInfo('P','00F',true,[17.4,29.7])
+				,new SpotsInfo('P','010',true,[17.4,161.5]),new SpotsInfo('P','011',true,[17.2,103.9]),new SpotsInfo('P','012',true,[17,14.1]),new SpotsInfo('P','013',true,[17,88.7]),new SpotsInfo('P','014',true,[17,148.3])
+				,new SpotsInfo('P','015',true,[17,177.9]),new SpotsInfo('P','016',true,[16.8,74.1]),new SpotsInfo('P','017',true,[16.2,44.5]),new SpotsInfo('P','018',true,[16.2,59.7])];
 
 //Lot R - - - - - - - - - - - - - - - - - - - - - - - - -
-var R001 = new SpotsInfo('R','001',true,[0,0]);
-var R002 = new SpotsInfo('R','002',true,[0,0]);
-var R003 = new SpotsInfo('R','003',true,[0,0]);
-var R004 = new SpotsInfo('R','004',true,[0,0]);
-var R005 = new SpotsInfo('R','005',true,[0,0]);
-var R006 = new SpotsInfo('R','006',true,[0,0]);
-var R007 = new SpotsInfo('R','007',true,[0,0]);
-var R008 = new SpotsInfo('R','008',true,[0,0]);
-var R009 = new SpotsInfo('R','009',true,[0,0]);
-var R00A = new SpotsInfo('R','00A',true,[0,0]);
-var R00B = new SpotsInfo('R','00B',true,[0,0]);
-var R00C = new SpotsInfo('R','00C',true,[0,0]);
-var R00D = new SpotsInfo('R','00D',true,[0,0]);
-var R00E = new SpotsInfo('R','00E',true,[0,0]);
-var R00F = new SpotsInfo('R','00F',true,[0,0]);
-var R010 = new SpotsInfo('R','010',true,[0,0]);
-var R011 = new SpotsInfo('R','011',true,[0,0]);
-var R012 = new SpotsInfo('R','012',true,[0,0]);
-var R013 = new SpotsInfo('R','013',true,[0,0]);
-var R014 = new SpotsInfo('R','014',true,[0,0]);
-var R015 = new SpotsInfo('R','015',true,[0,0]);
-var R016 = new SpotsInfo('R','016',true,[0,0]);
-var R017 = new SpotsInfo('R','017',true,[0,0]);
-var R018 = new SpotsInfo('R','018',true,[0,0]);
-var R019 = new SpotsInfo('R','019',true,[0,0]);
-var R01A = new SpotsInfo('R','01A',true,[0,0]);
-var R01B = new SpotsInfo('R','01B',true,[0,0]);
-var R01C = new SpotsInfo('R','01C',true,[0,0]);
-var R01D = new SpotsInfo('R','01D',true,[0,0]);
-var R01E = new SpotsInfo('R','01E',true,[0,0]);
-var R01F = new SpotsInfo('R','01F',true,[0,0]);
-var R020 = new SpotsInfo('R','020',true,[0,0]);
-var R021 = new SpotsInfo('R','021',true,[0,0]);
-var R022 = new SpotsInfo('R','022',true,[0,0]);
-var R023 = new SpotsInfo('R','023',true,[0,0]);
-var lotRSpots = [R001,R002,R003,R004,R005,R006,R007,R008,R009,R00A
-				,R00B,R00C,R00D,R00E,R00F,R010,R011,R012,R013,R014
-				,R015,R016,R017,R018,R019,R01A,R01B,R01C,R01D,R01E
-				,R01F,R020,R021,R022,R023];
+var lotRSpots = [new SpotsInfo('R','001',true,[174.3,56.3]),new SpotsInfo('R','002',true,[174.3,80.9]),new SpotsInfo('R','003',true,[174.1,109.4]),new SpotsInfo('R','004',true,[174,94.5]),new SpotsInfo('R','005',true,[173.4,124.5])
+				,new SpotsInfo('R','006',true,[173.4,170.4]),new SpotsInfo('R','007',true,[173.2,140]),new SpotsInfo('R','008',true,[173.2,154.9]),new SpotsInfo('R','009',true,[152.3,197.2]),new SpotsInfo('R','00A',true,[137.6,217.2])
+				,new SpotsInfo('R','00B',true,[118.9,231]),new SpotsInfo('R','00C',true,[100.2,231.8]),new SpotsInfo('R','00D',true,[100,70]),new SpotsInfo('R','00E',true,[99.9,134.1]),new SpotsInfo('R','00F',true,[99.4,168])
+				,new SpotsInfo('R','010',true,[85,132]),new SpotsInfo('R','011',true,[85,231.9]),new SpotsInfo('R','012',true,[84.6,167.6]),new SpotsInfo('R','013',true,[84.4,71.3]),new SpotsInfo('R','014',true,[70.5,170.4])
+				,new SpotsInfo('R','015',true,[70.5,232.9]),new SpotsInfo('R','016',true,[69.9,71.7]),new SpotsInfo('R','017',true,[69.9,130.6]),new SpotsInfo('R','018',true,[55.4,72]),new SpotsInfo('R','019',true,[55.3,233.6])
+				,new SpotsInfo('R','01A',true,[55.2,169.4]),new SpotsInfo('R','01B',true,[54.7,132.6]),new SpotsInfo('R','01C',true,[41.5,170.7]),new SpotsInfo('R','01D',true,[40,233.7]),new SpotsInfo('R','01E',true,[39.6,134.1])
+				,new SpotsInfo('R','01F',true,[38.8,70]),new SpotsInfo('R','020',true,[25.6,70]),new SpotsInfo('R','021',true,[25.1,171.4]),new SpotsInfo('R','022',true,[24.8,133.9]),new SpotsInfo('R','023',true,[24.7,234.5])
+				];
 
 //Lot S - - - - - - - - - - - - - - - - - - - - - - - - -
-var S001 = new SpotsInfo('S','001',true,[0,0]);
-var S002 = new SpotsInfo('S','002',true,[0,0]);
-var S003 = new SpotsInfo('S','003',true,[0,0]);
-var S004 = new SpotsInfo('S','004',true,[0,0]);
-var S005 = new SpotsInfo('S','005',true,[0,0]);
-var S006 = new SpotsInfo('S','006',true,[0,0]);
-var S007 = new SpotsInfo('S','007',true,[0,0]);
-var S008 = new SpotsInfo('S','008',true,[0,0]);
-var S009 = new SpotsInfo('S','009',true,[0,0]);
-var S00A = new SpotsInfo('S','00A',true,[0,0]);
-var S00B = new SpotsInfo('S','00B',true,[0,0]);
-var S00C = new SpotsInfo('S','00C',true,[0,0]);
-var S00D = new SpotsInfo('S','00D',true,[0,0]);
-var S00E = new SpotsInfo('S','00E',true,[0,0]);
-var S00F = new SpotsInfo('S','00F',true,[0,0]);
-var S010 = new SpotsInfo('S','010',true,[0,0]);
-var S011 = new SpotsInfo('S','011',true,[0,0]);
-var S012 = new SpotsInfo('S','012',true,[0,0]);
-var S013 = new SpotsInfo('S','013',true,[0,0]);
-var S014 = new SpotsInfo('S','014',true,[0,0]);
-var S015 = new SpotsInfo('S','015',true,[0,0]);
-var S016 = new SpotsInfo('S','016',true,[0,0]);
-var S017 = new SpotsInfo('S','017',true,[0,0]);
-var S018 = new SpotsInfo('S','018',true,[0,0]);
-var S019 = new SpotsInfo('S','019',true,[0,0]);
-var S01A = new SpotsInfo('S','01A',true,[0,0]);
-var S01B = new SpotsInfo('S','01B',true,[0,0]);
-var S01C = new SpotsInfo('S','01C',true,[0,0]);
-var S01D = new SpotsInfo('S','01D',true,[0,0]);
-var S01E = new SpotsInfo('S','01E',true,[0,0]);
-var S01F = new SpotsInfo('S','01F',true,[0,0]);
-var S020 = new SpotsInfo('S','020',true,[0,0]);
-var S021 = new SpotsInfo('S','021',true,[0,0]);
-var S022 = new SpotsInfo('S','022',true,[0,0]);
-var S023 = new SpotsInfo('S','023',true,[0,0]);
-var S024 = new SpotsInfo('S','024',true,[0,0]);
-var S025 = new SpotsInfo('S','025',true,[0,0]);
-var S026 = new SpotsInfo('S','026',true,[0,0]);
-var S027 = new SpotsInfo('S','027',true,[0,0]);
-var S028 = new SpotsInfo('S','028',true,[0,0]);
-var S029 = new SpotsInfo('S','029',true,[0,0]);
-var S02A = new SpotsInfo('S','02A',true,[0,0]);
-var S02B = new SpotsInfo('S','02B',true,[0,0]);
-var lotSSpots = [S001,S002,S003,S004,S005,S006,S007,S008,S009,S00A
-				,S00B,S00C,S00D,S00E,S00F,S010,S011,S012,S013,S014
-				,S015,S016,S017,S018,S019,S01A,S01B,S01C,S01D,S01E
-				,S01F,S020,S021,S022,S023,S024,S025,S026,S027,S028
-				,S029,S02A,S02B];
+var lotSSpots = [new SpotsInfo('S','001',true,[147.6,27]),new SpotsInfo('S','002',true,[146.9,92.1]),new SpotsInfo('S','003',true,[146.5,202.5]),new SpotsInfo('S','004',true,[146.4,118.5]),new SpotsInfo('S','005',true,[134.2,118])
+				,new SpotsInfo('S','006',true,[134.1,27.3]),new SpotsInfo('S','007',true,[133.5,203.9]),new SpotsInfo('S','008',true,[133.4,92.8]),new SpotsInfo('S','009',true,[122.3,204.1]),new SpotsInfo('S','00A',true,[122,29.9])
+				,new SpotsInfo('S','00B',true,[121.4,117.7]),new SpotsInfo('S','00C',true,[120.7,92.4]),new SpotsInfo('S','00D',true,[109.7,29.4]),new SpotsInfo('S','00E',true,[109.5,118.1]),new SpotsInfo('S','00F',true,[108.6,203.4])
+				,new SpotsInfo('S','010',true,[108.5,92.5]),new SpotsInfo('S','011',true,[97.7,203.9]),new SpotsInfo('S','012',true,[96.6,29.2]),new SpotsInfo('S','013',true,[96.6,91.5]),new SpotsInfo('S','014',true,[96.6,118.9])
+				,new SpotsInfo('S','015',true,[85,29.8]),new SpotsInfo('S','016',true,[84.5,92.4]),new SpotsInfo('S','017',true,[84.2,118.1]),new SpotsInfo('S','018',true,[71.8,204.2]),new SpotsInfo('S','019',true,[71.6,28.6])
+				,new SpotsInfo('S','01A',true,[71.5,118.5]),new SpotsInfo('S','01B',true,[71.4,91.8]),new SpotsInfo('S','01C',true,[60.1,29.4]),new SpotsInfo('S','01D',true,[59.8,118.7]),new SpotsInfo('S','01E',true,[58.9,203.2])
+				,new SpotsInfo('S','01F',true,[58.8,92.5]),new SpotsInfo('S','020',true,[47.9,29.4]),new SpotsInfo('S','021',true,[47.3,92.9]),new SpotsInfo('S','022',true,[47.2,118.5]),new SpotsInfo('S','023',true,[46.6,204.4])
+				,new SpotsInfo('S','024',true,[35.3,118.5]),new SpotsInfo('S','025',true,[34.7,30.2]),new SpotsInfo('S','026',true,[34.6,94.4]),new SpotsInfo('S','027',true,[34.6,204.2]),new SpotsInfo('S','028',true,[23.9,120.2])
+				,new SpotsInfo('S','029',true,[23.2,93.6]),new SpotsInfo('S','02A',true,[23.1,28.9]),new SpotsInfo('S','02B',true,[21.9,204.8])];
 
 //Lot U - - - - - - - - - - - - - - - - - - - - - - - - -
-var U001 = new SpotsInfo('U','001',true,[0,0]);
-var U002 = new SpotsInfo('U','002',true,[0,0]);
-var U003 = new SpotsInfo('U','003',true,[0,0]);
-var U004 = new SpotsInfo('U','004',true,[0,0]);
-var U005 = new SpotsInfo('U','005',true,[0,0]);
-var U006 = new SpotsInfo('U','006',true,[0,0]);
-var U007 = new SpotsInfo('U','007',true,[0,0]);
-var U008 = new SpotsInfo('U','008',true,[0,0]);
-var U009 = new SpotsInfo('U','009',true,[0,0]);
-var U00A = new SpotsInfo('U','00A',true,[0,0]);
-var U00B = new SpotsInfo('U','00B',true,[0,0]);
-var U00C = new SpotsInfo('U','00C',true,[0,0]);
-var U00D = new SpotsInfo('U','00D',true,[0,0]);
-var U00E = new SpotsInfo('U','00E',true,[0,0]);
-var U00F = new SpotsInfo('U','00F',true,[0,0]);
-var U010 = new SpotsInfo('U','010',true,[0,0]);
-var U011 = new SpotsInfo('U','011',true,[0,0]);
-var U012 = new SpotsInfo('U','012',true,[0,0]);
-var U013 = new SpotsInfo('U','013',true,[0,0]);
-var U014 = new SpotsInfo('U','014',true,[0,0]);
-var U015 = new SpotsInfo('U','015',true,[0,0]);
-var U016 = new SpotsInfo('U','016',true,[0,0]);
-var U017 = new SpotsInfo('U','017',true,[0,0]);
-var U018 = new SpotsInfo('U','018',true,[0,0]);
-var U019 = new SpotsInfo('U','019',true,[0,0]);
-var U01A = new SpotsInfo('U','01A',true,[0,0]);
-var U01B = new SpotsInfo('U','01B',true,[0,0]);
-var U01C = new SpotsInfo('U','01C',true,[0,0]);
-var U01D = new SpotsInfo('U','01D',true,[0,0]);
-var U01E = new SpotsInfo('U','01E',true,[0,0]);
-var U01F = new SpotsInfo('U','01F',true,[0,0]);
-var U020 = new SpotsInfo('U','020',true,[0,0]);
-var U021 = new SpotsInfo('U','021',true,[0,0]);
-var U022 = new SpotsInfo('U','022',true,[0,0]);
-var U023 = new SpotsInfo('U','023',true,[0,0]);
-var U024 = new SpotsInfo('U','024',true,[0,0]);
-var U025 = new SpotsInfo('U','025',true,[0,0]);
-var U026 = new SpotsInfo('U','026',true,[0,0]);
-var U027 = new SpotsInfo('U','027',true,[0,0]);
-var U028 = new SpotsInfo('U','028',true,[0,0]);
-var U029 = new SpotsInfo('U','029',true,[0,0]);
-var U02A = new SpotsInfo('U','02A',true,[0,0]);
-var U02B = new SpotsInfo('U','02B',true,[0,0]);
-var U02C = new SpotsInfo('U','02C',true,[0,0]);
-var U02D = new SpotsInfo('U','02D',true,[0,0]);
-var U02E = new SpotsInfo('U','02E',true,[0,0]);
-var U02F = new SpotsInfo('U','02F',true,[0,0]);
-var U030 = new SpotsInfo('U','030',true,[0,0]);
-var U031 = new SpotsInfo('U','031',true,[0,0]);
-var U032 = new SpotsInfo('U','032',true,[0,0]);
-var U033 = new SpotsInfo('U','033',true,[0,0]);
-var U034 = new SpotsInfo('U','034',true,[0,0]);
-var U035 = new SpotsInfo('U','035',true,[0,0]);
-var U036 = new SpotsInfo('U','036',true,[0,0]);
-var U037 = new SpotsInfo('U','037',true,[0,0]);
-var U038 = new SpotsInfo('U','038',true,[0,0]);
-var U039 = new SpotsInfo('U','039',true,[0,0]);
-var U03A = new SpotsInfo('U','03A',true,[0,0]);
-var U03B = new SpotsInfo('U','03B',true,[0,0]);
-var U03C = new SpotsInfo('U','03C',true,[0,0]);
-var U03D = new SpotsInfo('U','03D',true,[0,0]);
-var U03E = new SpotsInfo('U','03E',true,[0,0]);
-var U03F = new SpotsInfo('U','03F',true,[0,0]);
-var U040 = new SpotsInfo('U','040',true,[0,0]);
-var U041 = new SpotsInfo('U','041',true,[0,0]);
-var U042 = new SpotsInfo('U','042',true,[0,0]);
-var U043 = new SpotsInfo('U','043',true,[0,0]);
-var U044 = new SpotsInfo('U','044',true,[0,0]);
-var U045 = new SpotsInfo('U','045',true,[0,0]);
-var U046 = new SpotsInfo('U','046',true,[0,0]);
-var U047 = new SpotsInfo('U','047',true,[0,0]);
-var U048 = new SpotsInfo('U','048',true,[0,0]);
-var U049 = new SpotsInfo('U','049',true,[0,0]);
-var U04A = new SpotsInfo('U','04A',true,[0,0]);
-var U04B = new SpotsInfo('U','04B',true,[0,0]);
-var U04C = new SpotsInfo('U','04C',true,[0,0]);
-var U04D = new SpotsInfo('U','04D',true,[0,0]);
-var U04E = new SpotsInfo('U','04E',true,[0,0]);
-var U04F = new SpotsInfo('U','04F',true,[0,0]);
-var U050 = new SpotsInfo('U','050',true,[0,0]);
-var U051 = new SpotsInfo('U','051',true,[0,0]);
-var U052 = new SpotsInfo('U','052',true,[0,0]);
-var U053 = new SpotsInfo('U','053',true,[0,0]);
-var U054 = new SpotsInfo('U','054',true,[0,0]);
-var U055 = new SpotsInfo('U','055',true,[0,0]);
-var U056 = new SpotsInfo('U','056',true,[0,0]);
-var U057 = new SpotsInfo('U','057',true,[0,0]);
-var U058 = new SpotsInfo('U','058',true,[0,0]);
-var U059 = new SpotsInfo('U','059',true,[0,0]);
-var U05A = new SpotsInfo('U','05A',true,[0,0]);
-var U05B = new SpotsInfo('U','05B',true,[0,0]);
-var U05C = new SpotsInfo('U','05C',true,[0,0]);
-var U05D = new SpotsInfo('U','05D',true,[0,0]);
-var U05E = new SpotsInfo('U','05E',true,[0,0]);
-var U05F = new SpotsInfo('U','05F',true,[0,0]);
-var U060 = new SpotsInfo('U','060',true,[0,0]);
-var U061 = new SpotsInfo('U','061',true,[0,0]);
-var U062 = new SpotsInfo('U','062',true,[0,0]);
-var U063 = new SpotsInfo('U','063',true,[0,0]);
-var U064 = new SpotsInfo('U','064',true,[0,0]);
-var U065 = new SpotsInfo('U','065',true,[0,0]);
-var U066 = new SpotsInfo('U','066',true,[0,0]);
-var U067 = new SpotsInfo('U','067',true,[0,0]);
-var U068 = new SpotsInfo('U','068',true,[0,0]);
-var U069 = new SpotsInfo('U','069',true,[0,0]);
-var U06A = new SpotsInfo('U','06A',true,[0,0]);
-var U06B = new SpotsInfo('U','06B',true,[0,0]);
-var U06C = new SpotsInfo('U','06C',true,[0,0]);
-var U06D = new SpotsInfo('U','06D',true,[0,0]);
-var U06E = new SpotsInfo('U','06E',true,[0,0]);
-var U06F = new SpotsInfo('U','06F',true,[0,0]);
-var U070 = new SpotsInfo('U','070',true,[0,0]);
-var U071 = new SpotsInfo('U','071',true,[0,0]);
-var U072 = new SpotsInfo('U','072',true,[0,0]);
-var U073 = new SpotsInfo('U','073',true,[0,0]);
-var U074 = new SpotsInfo('U','074',true,[0,0]);
-var U075 = new SpotsInfo('U','075',true,[0,0]);
-var U076 = new SpotsInfo('U','076',true,[0,0]);
-var U077 = new SpotsInfo('U','077',true,[0,0]);
-var U078 = new SpotsInfo('U','078',true,[0,0]);
-var U079 = new SpotsInfo('U','079',true,[0,0]);
-var U07A = new SpotsInfo('U','07A',true,[0,0]);
-var U07B = new SpotsInfo('U','07B',true,[0,0]);
-var U07C = new SpotsInfo('U','07C',true,[0,0]);
-var U07D = new SpotsInfo('U','07D',true,[0,0]);
-var U07E = new SpotsInfo('U','07E',true,[0,0]);
-var U07F = new SpotsInfo('U','07F',true,[0,0]);
-var U080 = new SpotsInfo('U','080',true,[0,0]);
-var U081 = new SpotsInfo('U','081',true,[0,0]);
-var U082 = new SpotsInfo('U','082',true,[0,0]);
-var U083 = new SpotsInfo('U','083',true,[0,0]);
-var U084 = new SpotsInfo('U','084',true,[0,0]);
-var U085 = new SpotsInfo('U','085',true,[0,0]);
-var U086 = new SpotsInfo('U','086',true,[0,0]);
-var U087 = new SpotsInfo('U','087',true,[0,0]);
-var U088 = new SpotsInfo('U','088',true,[0,0]);
-var U089 = new SpotsInfo('U','089',true,[0,0]);
-var U08A = new SpotsInfo('U','08A',true,[0,0]);
-var U08B = new SpotsInfo('U','08B',true,[0,0]);
-var U08C = new SpotsInfo('U','08C',true,[0,0]);
-var U08D = new SpotsInfo('U','08D',true,[0,0]);
-var U08E = new SpotsInfo('U','08E',true,[0,0]);
-var U08F = new SpotsInfo('U','08F',true,[0,0]);
-var U090 = new SpotsInfo('U','090',true,[0,0]);
-var U091 = new SpotsInfo('U','091',true,[0,0]);
-var U092 = new SpotsInfo('U','092',true,[0,0]);
-var U093 = new SpotsInfo('U','093',true,[0,0]);
-var U094 = new SpotsInfo('U','094',true,[0,0]);
-var U095 = new SpotsInfo('U','095',true,[0,0]);
-var U096 = new SpotsInfo('U','096',true,[0,0]);
-var U097 = new SpotsInfo('U','097',true,[0,0]);
-var U098 = new SpotsInfo('U','098',true,[0,0]);
-var U099 = new SpotsInfo('U','099',true,[0,0]);
-var U09A = new SpotsInfo('U','09A',true,[0,0]);
-var U09B = new SpotsInfo('U','09B',true,[0,0]);
-var U09C = new SpotsInfo('U','09C',true,[0,0]);
-var U09D = new SpotsInfo('U','09D',true,[0,0]);
-var U09E = new SpotsInfo('U','09E',true,[0,0]);
-var U09F = new SpotsInfo('U','09F',true,[0,0]);
-var U0A0 = new SpotsInfo('U','0A0',true,[0,0]);
-var U0A1 = new SpotsInfo('U','0A1',true,[0,0]);
-var U0A2 = new SpotsInfo('U','0A2',true,[0,0]);
-var U0A3 = new SpotsInfo('U','0A3',true,[0,0]);
-var U0A4 = new SpotsInfo('U','0A4',true,[0,0]);
-var U0A5 = new SpotsInfo('U','0A5',true,[0,0]);
-var U0A6 = new SpotsInfo('U','0A6',true,[0,0]);
-var U0A7 = new SpotsInfo('U','0A7',true,[0,0]);
-var U0A8 = new SpotsInfo('U','0A8',true,[0,0]);
-var U0A9 = new SpotsInfo('U','0A9',true,[0,0]);
-var U0AA = new SpotsInfo('U','0AA',true,[0,0]);
-var U0AB = new SpotsInfo('U','0AB',true,[0,0]);
-var U0AC = new SpotsInfo('U','0AC',true,[0,0]);
-var U0AD = new SpotsInfo('U','0AD',true,[0,0]);
-var U0AE = new SpotsInfo('U','0AE',true,[0,0]);
-var U0AF = new SpotsInfo('U','0AF',true,[0,0]);
-var U0B0 = new SpotsInfo('U','0B0',true,[0,0]);
-var U0B1 = new SpotsInfo('U','0B1',true,[0,0]);
-var U0B2 = new SpotsInfo('U','0B2',true,[0,0]);
-var U0B3 = new SpotsInfo('U','0B3',true,[0,0]);
-var U0B4 = new SpotsInfo('U','0B4',true,[0,0]);
-var U0B5 = new SpotsInfo('U','0B5',true,[0,0]);
-var U0B6 = new SpotsInfo('U','0B6',true,[0,0]);
-var U0B7 = new SpotsInfo('U','0B7',true,[0,0]);
-var U0B8 = new SpotsInfo('U','0B8',true,[0,0]);
-var U0B9 = new SpotsInfo('U','0B9',true,[0,0]);
-var U0BA = new SpotsInfo('U','0BA',true,[0,0]);
-var U0BB = new SpotsInfo('U','0BB',true,[0,0]);
-var U0BC = new SpotsInfo('U','0BC',true,[0,0]);
-var U0BD = new SpotsInfo('U','0BD',true,[0,0]);
-var U0BE = new SpotsInfo('U','0BE',true,[0,0]);
-var U0BF = new SpotsInfo('U','0BF',true,[0,0]);
-var U0C0 = new SpotsInfo('U','0C0',true,[0,0]);
-var U0C1 = new SpotsInfo('U','0C1',true,[0,0]);
-var U0C2 = new SpotsInfo('U','0C2',true,[0,0]);
-var U0C3 = new SpotsInfo('U','0C3',true,[0,0]);
-var U0C4 = new SpotsInfo('U','0C4',true,[0,0]);
-var U0C5 = new SpotsInfo('U','0C5',true,[0,0]);
-var U0C6 = new SpotsInfo('U','0C6',true,[0,0]);
-var U0C7 = new SpotsInfo('U','0C7',true,[0,0]);
-var U0C8 = new SpotsInfo('U','0C8',true,[0,0]);
-var U0C9 = new SpotsInfo('U','0C9',true,[0,0]);
-var U0CA = new SpotsInfo('U','0CA',true,[0,0]);
-var U0CB = new SpotsInfo('U','0CB',true,[0,0]);
-var U0CC = new SpotsInfo('U','0CC',true,[0,0]);
-var U0CD = new SpotsInfo('U','0CD',true,[0,0]);
-var U0CE = new SpotsInfo('U','0CE',true,[0,0]);
-var U0CF = new SpotsInfo('U','0CF',true,[0,0]);
-var U0D0 = new SpotsInfo('U','0D0',true,[0,0]);
-var U0D1 = new SpotsInfo('U','0D1',true,[0,0]);
-var U0D2 = new SpotsInfo('U','0D2',true,[0,0]);
-var U0D3 = new SpotsInfo('U','0D3',true,[0,0]);
-var U0D4 = new SpotsInfo('U','0D4',true,[0,0]);
-var U0D5 = new SpotsInfo('U','0D5',true,[0,0]);
-var U0D6 = new SpotsInfo('U','0D6',true,[0,0]);
-var U0D7 = new SpotsInfo('U','0D7',true,[0,0]);
-var U0D8 = new SpotsInfo('U','0D8',true,[0,0]);
-var U0D9 = new SpotsInfo('U','0D9',true,[0,0]);
-var U0DA = new SpotsInfo('U','0DA',true,[0,0]);
-var U0DB = new SpotsInfo('U','0DB',true,[0,0]);
-var U0DC = new SpotsInfo('U','0DC',true,[0,0]);
-var U0DD = new SpotsInfo('U','0DD',true,[0,0]);
-var U0DE = new SpotsInfo('U','0DE',true,[0,0]);
-var U0DF = new SpotsInfo('U','0DF',true,[0,0]);
-var U0E0 = new SpotsInfo('U','0E0',true,[0,0]);
-var U0E1 = new SpotsInfo('U','0E1',true,[0,0]);
-var U0E2 = new SpotsInfo('U','0E2',true,[0,0]);
-var U0E3 = new SpotsInfo('U','0E3',true,[0,0]);
-var U0E4 = new SpotsInfo('U','0E4',true,[0,0]);
-var U0E5 = new SpotsInfo('U','0E5',true,[0,0]);
-var U0E6 = new SpotsInfo('U','0E6',true,[0,0]);
-var U0E7 = new SpotsInfo('U','0E7',true,[0,0]);
-var U0E8 = new SpotsInfo('U','0E8',true,[0,0]);
-var U0E9 = new SpotsInfo('U','0E9',true,[0,0]);
-var U0EA = new SpotsInfo('U','0EA',true,[0,0]);
-var U0EB = new SpotsInfo('U','0EB',true,[0,0]);
-var U0EC = new SpotsInfo('U','0EC',true,[0,0]);
-var U0ED = new SpotsInfo('U','0ED',true,[0,0]);
-var U0EE = new SpotsInfo('U','0EE',true,[0,0]);
-var U0EF = new SpotsInfo('U','0EF',true,[0,0]);
-var U0F0 = new SpotsInfo('U','0F0',true,[0,0]);
-var U0F1 = new SpotsInfo('U','0F1',true,[0,0]);
-var U0F2 = new SpotsInfo('U','0F2',true,[0,0]);
-var U0F3 = new SpotsInfo('U','0F3',true,[0,0]);
-var U0F4 = new SpotsInfo('U','0F4',true,[0,0]);
-var U0F5 = new SpotsInfo('U','0F5',true,[0,0]);
-var U0F6 = new SpotsInfo('U','0F6',true,[0,0]);
-var U0F7 = new SpotsInfo('U','0F7',true,[0,0]);
-var U0F8 = new SpotsInfo('U','0F8',true,[0,0]);
-var U0F9 = new SpotsInfo('U','0F9',true,[0,0]);
-var U0FA = new SpotsInfo('U','0FA',true,[0,0]);
-var U0FB = new SpotsInfo('U','0FB',true,[0,0]);
-var U0FC = new SpotsInfo('U','0FC',true,[0,0]);
-var U0FD = new SpotsInfo('U','0FD',true,[0,0]);
-var U0FE = new SpotsInfo('U','0FE',true,[0,0]);
-var U0FF = new SpotsInfo('U','0FF',true,[0,0]);
-var U100 = new SpotsInfo('U','100',true,[0,0]);
-var U101 = new SpotsInfo('U','101',true,[0,0]);
-var U102 = new SpotsInfo('U','102',true,[0,0]);
-var U103 = new SpotsInfo('U','103',true,[0,0]);
-var U104 = new SpotsInfo('U','104',true,[0,0]);
-var U105 = new SpotsInfo('U','105',true,[0,0]);
-var U106 = new SpotsInfo('U','106',true,[0,0]);
-var U107 = new SpotsInfo('U','107',true,[0,0]);
-var U108 = new SpotsInfo('U','108',true,[0,0]);
-var U109 = new SpotsInfo('U','109',true,[0,0]);
-var U10A = new SpotsInfo('U','10A',true,[0,0]);
-var U10B = new SpotsInfo('U','10B',true,[0,0]);
-var U10C = new SpotsInfo('U','10C',true,[0,0]);
-var U10D = new SpotsInfo('U','10D',true,[0,0]);
-var U10E = new SpotsInfo('U','10E',true,[0,0]);
-var U10F = new SpotsInfo('U','10F',true,[0,0]);
-var U110 = new SpotsInfo('U','110',true,[0,0]);
-var U111 = new SpotsInfo('U','111',true,[0,0]);
-var U112 = new SpotsInfo('U','112',true,[0,0]);
-var U113 = new SpotsInfo('U','113',true,[0,0]);
-var U114 = new SpotsInfo('U','114',true,[0,0]);
-var U115 = new SpotsInfo('U','115',true,[0,0]);
-var U116 = new SpotsInfo('U','116',true,[0,0]);
-var lotUSpots = [U001,U002,U003,U004,U005,U006,U007,U008,U009,U00A
-				,U00B,U00C,U00D,U00E,U00F,U010,U011,U012,U013,U014
-				,U015,U016,U017,U018,U019,U01A,U01B,U01C,U01D,U01E
-				,U01F,U020,U021,U022,U023,U024,U025,U026,U027,U028
-				,U029,U02A,U02B,U02C,U02D,U02E,U02F,U030,U031,U032
-				,U033,U034,U035,U036,U037,U038,U039,U03A,U03B,U03C
-				,U03D,U03E,U03F,U040,U041,U042,U043,U044,U045,U046
-				,U047,U048,U049,U04A,U04B,U04C,U04D,U04E,U04F,U050
-				,U051,U052,U053,U054,U055,U056,U057,U058,U059,U05A
-				,U05B,U05C,U05D,U05E,U05F,U060,U061,U062,U063,U064
-				,U065,U066,U067,U068,U069,U06A,U06B,U06C,U06D,U06E
-				,U06F,U070,U071,U072,U073,U074,U075,U076,U077,U078
-				,U079,U07A,U07B,U07C,U07D,U07E,U07F,U080,U081,U082
-				,U083,U084,U085,U086,U087,U088,U089,U08A,U08B,U08C
-				,U08D,U08E,U08F,U090,U091,U092,U093,U094,U095,U096
-				,U097,U098,U099,U09A,U09B,U09C,U09D,U09E,U09F,U0A0
-				,U0A1,U0A2,U0A3,U0A4,U0A5,U0A6,U0A7,U0A8,U0A9,U0AA
-				,U0AB,U0AC,U0AD,U0AE,U0AF,U0B0,U0B1,U0B2,U0B3,U0B4
-				,U0B5,U0B6,U0B7,U0B8,U0B9,U0BA,U0BB,U0BC,U0BD,U0BE
-				,U0BF,U0C0,U0C1,U0C2,U0C3,U0C4,U0C5,U0C6,U0C7,U0C8
-				,U0C9,U0CA,U0CB,U0CC,U0CD,U0CE,U0CF,U0D0,U0D1,U0D2
-				,U0D3,U0D4,U0D5,U0D6,U0D7,U0D8,U0D9,U0DA,U0DB,U0DC
-				,U0DD,U0DE,U0DF,U0E0,U0E1,U0E2,U0E3,U0E4,U0E5,U0E6
-				,U0E7,U0E8,U0E9,U0EA,U0EB,U0EC,U0ED,U0EE,U0EF,U0F0
-				,U0F1,U0F2,U0F3,U0F4,U0F5,U0F6,U0F7,U0F8,U0F9,U0FA
-				,U0FB,U0FC,U0FD,U0FE,U0FF,U100,U101,U102,U103,U104
-				,U105,U106,U107,U108,U109,U10A,U10B,U10C,U10D,U10E
-				,U10F,U110,U111,U112,U113,U114,U115,U116];
+var lotUSpots = [new SpotsInfo('U','001',true,[139.6,61.3]),new SpotsInfo('U','002',true,[139.6,131.3]),new SpotsInfo('U','003',true,[139.5,125.8]),new SpotsInfo('U','004',true,[139.5,164.5]),new SpotsInfo('U','005',true,[139.4,115.3])
+				,new SpotsInfo('U','006',true,[139.4,120.5]),new SpotsInfo('U','007',true,[139.4,153.7]),new SpotsInfo('U','008',true,[139.4,180.5]),new SpotsInfo('U','009',true,[139.3,159.4]),new SpotsInfo('U','00A',true,[139.1,143.3])
+				,new SpotsInfo('U','00B',true,[139.1,148.6]),new SpotsInfo('U','00C',true,[139.1,169.9]),new SpotsInfo('U','00D',true,[139,93.9]),new SpotsInfo('U','00E',true,[139,109.9]),new SpotsInfo('U','00F',true,[139,174.7])
+				,new SpotsInfo('U','010',true,[138.9,78]),new SpotsInfo('U','011',true,[138.9,88.8]),new SpotsInfo('U','012',true,[138.9,99.1]),new SpotsInfo('U','013',true,[138.8,73.3]),new SpotsInfo('U','014',true,[138.8,256.7])
+				,new SpotsInfo('U','015',true,[138.8,267.2]),new SpotsInfo('U','016',true,[138.7,68.1]),new SpotsInfo('U','017',true,[138.7,262]),new SpotsInfo('U','018',true,[138.7,283.8]),new SpotsInfo('U','019',true,[138.7,310.1])
+				,new SpotsInfo('U','01A',true,[138.6,104.7]),new SpotsInfo('U','01B',true,[138.6,191.3]),new SpotsInfo('U','01C',true,[138.6,201.9]),new SpotsInfo('U','01D',true,[138.6,241.5]),new SpotsInfo('U','01E',true,[138.6,246])
+				,new SpotsInfo('U','01F',true,[138.6,251.5]),new SpotsInfo('U','020',true,[138.6,272.6]),new SpotsInfo('U','021',true,[138.6,288.8]),new SpotsInfo('U','022',true,[138.6,294]),new SpotsInfo('U','023',true,[138.6,315.1])
+				,new SpotsInfo('U','024',true,[138.5,196.5]),new SpotsInfo('U','025',true,[138.5,207.5]),new SpotsInfo('U','026',true,[138.5,235.1]),new SpotsInfo('U','027',true,[138.5,277.9]),new SpotsInfo('U','028',true,[138.5,304.8])
+				,new SpotsInfo('U','029',true,[138.4,83.1]),new SpotsInfo('U','02A',true,[138.4,186.1]),new SpotsInfo('U','02B',true,[138.4,212.3]),new SpotsInfo('U','02C',true,[138.4,299.4]),new SpotsInfo('U','02D',true,[138.2,223.1])
+				,new SpotsInfo('U','02E',true,[138.2,320.7]),new SpotsInfo('U','02F',true,[138.2,340.9]),new SpotsInfo('U','030',true,[138.1,217.8]),new SpotsInfo('U','031',true,[138.1,336]),new SpotsInfo('U','032',true,[138,325.7])
+				,new SpotsInfo('U','033',true,[138,330.6]),new SpotsInfo('U','034',true,[129.3,13.4]),new SpotsInfo('U','035',true,[122.8,13.7]),new SpotsInfo('U','036',true,[116,13.5]),new SpotsInfo('U','037',true,[115.9,353])
+				,new SpotsInfo('U','038',true,[109.2,13.5]),new SpotsInfo('U','039',true,[109,170.5]),new SpotsInfo('U','03A',true,[108.9,180.9]),new SpotsInfo('U','03B',true,[108.8,111.3]),new SpotsInfo('U','03C',true,[108.8,138.1])
+				,new SpotsInfo('U','03D',true,[108.8,143.6]),new SpotsInfo('U','03E',true,[108.8,159]),new SpotsInfo('U','03F',true,[108.7,175.7]),new SpotsInfo('U','040',true,[108.6,117]),new SpotsInfo('U','041',true,[108.6,122.3])
+				,new SpotsInfo('U','042',true,[108.6,165.2]),new SpotsInfo('U','043',true,[108.5,41.7]),new SpotsInfo('U','044',true,[108.5,105.7]),new SpotsInfo('U','045',true,[108.5,352.7]),new SpotsInfo('U','046',true,[108.4,100.5])
+				,new SpotsInfo('U','047',true,[108.4,127.3]),new SpotsInfo('U','048',true,[108.4,132.8]),new SpotsInfo('U','049',true,[108.4,148.5]),new SpotsInfo('U','04A',true,[108.4,154.3]),new SpotsInfo('U','04B',true,[108.3,47.2])
+				,new SpotsInfo('U','04C',true,[108.3,79.2]),new SpotsInfo('U','04D',true,[108.3,95.4]),new SpotsInfo('U','04E',true,[108.1,74]),new SpotsInfo('U','04F',true,[108.1,89.1]),new SpotsInfo('U','050',true,[108.1,186.5])
+				,new SpotsInfo('U','051',true,[108.1,207.9]),new SpotsInfo('U','052',true,[108,52.1]),new SpotsInfo('U','053',true,[108,57.9]),new SpotsInfo('U','054',true,[108,63.1]),new SpotsInfo('U','055',true,[108,320.1])
+				,new SpotsInfo('U','056',true,[107.9,84.3]),new SpotsInfo('U','057',true,[107.9,192]),new SpotsInfo('U','058',true,[107.9,197.2]),new SpotsInfo('U','059',true,[107.9,266.4]),new SpotsInfo('U','05A',true,[107.9,288.1])
+				,new SpotsInfo('U','05B',true,[107.9,309.2]),new SpotsInfo('U','05C',true,[107.9,325.6]),new SpotsInfo('U','05D',true,[107.8,68.2]),new SpotsInfo('U','05E',true,[107.8,202.7]),new SpotsInfo('U','05F',true,[107.8,298.5])
+				,new SpotsInfo('U','060',true,[107.8,303.7]),new SpotsInfo('U','061',true,[107.7,260.8]),new SpotsInfo('U','062',true,[107.7,282.4]),new SpotsInfo('U','063',true,[107.7,293.3]),new SpotsInfo('U','064',true,[107.7,314.4])
+				,new SpotsInfo('U','065',true,[107.6,239.8]),new SpotsInfo('U','066',true,[107.6,250.4]),new SpotsInfo('U','067',true,[107.6,256]),new SpotsInfo('U','068',true,[107.6,277]),new SpotsInfo('U','069',true,[107.4,244.7])
+				,new SpotsInfo('U','06A',true,[107.4,271.8]),new SpotsInfo('U','06B',true,[102.9,13.4]),new SpotsInfo('U','06C',true,[101.8,352.9]),new SpotsInfo('U','06D',true,[95.9,13.4]),new SpotsInfo('U','06E',true,[95.4,352.5])
+				,new SpotsInfo('U','06F',true,[91.4,42.3]),new SpotsInfo('U','070',true,[91.2,47]),new SpotsInfo('U','071',true,[90.7,63]),new SpotsInfo('U','072',true,[90.7,277.2]),new SpotsInfo('U','073',true,[90.6,52])
+				,new SpotsInfo('U','074',true,[90.6,271.8]),new SpotsInfo('U','075',true,[90.5,68.5]),new SpotsInfo('U','076',true,[90.5,239.1]),new SpotsInfo('U','077',true,[90.4,57.9]),new SpotsInfo('U','078',true,[90.3,73.9])
+				,new SpotsInfo('U','079',true,[90.3,100.6]),new SpotsInfo('U','07A',true,[90.3,105.6]),new SpotsInfo('U','07B',true,[90.1,78.9]),new SpotsInfo('U','07C',true,[90.1,111.5]),new SpotsInfo('U','07D',true,[90.1,180.9])
+				,new SpotsInfo('U','07E',true,[90,116.5]),new SpotsInfo('U','07F',true,[90,121.8]),new SpotsInfo('U','080',true,[90,159.7]),new SpotsInfo('U','081',true,[90,164.9]),new SpotsInfo('U','082',true,[90,175.8])
+				,new SpotsInfo('U','083',true,[90,266.4]),new SpotsInfo('U','084',true,[90,320.2]),new SpotsInfo('U','085',true,[89.9,143.7]),new SpotsInfo('U','086',true,[89.9,154.2]),new SpotsInfo('U','087',true,[89.9,170.6])
+				,new SpotsInfo('U','088',true,[89.9,245]),new SpotsInfo('U','089',true,[89.9,250.7]),new SpotsInfo('U','08A',true,[89.9,261.2]),new SpotsInfo('U','08B',true,[89.9,325.7]),new SpotsInfo('U','08C',true,[89.8,84.3])
+				,new SpotsInfo('U','08D',true,[89.8,138.1]),new SpotsInfo('U','08E',true,[89.8,148.8]),new SpotsInfo('U','08F',true,[89.8,255.7]),new SpotsInfo('U','090',true,[89.7,89.9]),new SpotsInfo('U','091',true,[89.6,95.1])
+				,new SpotsInfo('U','092',true,[89.5,127.5]),new SpotsInfo('U','093',true,[89.5,132.8]),new SpotsInfo('U','094',true,[89.5,196.9]),new SpotsInfo('U','095',true,[89.5,202.7]),new SpotsInfo('U','096',true,[89.5,207.8])
+				,new SpotsInfo('U','097',true,[89.4,282.9]),new SpotsInfo('U','098',true,[89.3,186.2]),new SpotsInfo('U','099',true,[89.3,293.2]),new SpotsInfo('U','09A',true,[89.2,191.7]),new SpotsInfo('U','09B',true,[89.2,287.2])
+				,new SpotsInfo('U','09C',true,[89.2,298.4]),new SpotsInfo('U','09D',true,[89,314.7]),new SpotsInfo('U','09E',true,[88.9,304.1]),new SpotsInfo('U','09F',true,[88.9,309.4]),new SpotsInfo('U','0A0',true,[88.6,352.7])
+				,new SpotsInfo('U','0A1',true,[80.8,353.3]),new SpotsInfo('U','0A2',true,[73.8,354]),new SpotsInfo('U','0A3',true,[59,130.5]),new SpotsInfo('U','0A4',true,[58.9,135.7]),new SpotsInfo('U','0A5',true,[58.8,124.4])
+				,new SpotsInfo('U','0A6',true,[58.8,259.9]),new SpotsInfo('U','0A7',true,[58.7,194.4]),new SpotsInfo('U','0A8',true,[58.6,141]),new SpotsInfo('U','0A9',true,[58.6,151.9]),new SpotsInfo('U','0AA',true,[58.6,157.4])
+				,new SpotsInfo('U','0AB',true,[58.6,173.6]),new SpotsInfo('U','0AC',true,[58.6,178.7]),new SpotsInfo('U','0AD',true,[58.6,189.5]),new SpotsInfo('U','0AE',true,[58.5,146.7]),new SpotsInfo('U','0AF',true,[58.5,162.7])
+				,new SpotsInfo('U','0B0',true,[58.5,167.8]),new SpotsInfo('U','0B1',true,[58.5,184.3]),new SpotsInfo('U','0B2',true,[58.5,199.9]),new SpotsInfo('U','0B3',true,[58.5,286.7]),new SpotsInfo('U','0B4',true,[58.3,281.2])
+				,new SpotsInfo('U','0B5',true,[58.3,334.6]),new SpotsInfo('U','0B6',true,[58.3,339.5]),new SpotsInfo('U','0B7',true,[58.2,265.7]),new SpotsInfo('U','0B8',true,[58.2,270.8]),new SpotsInfo('U','0B9',true,[58.2,275.7])
+				,new SpotsInfo('U','0BA',true,[58,60.5]),new SpotsInfo('U','0BB',true,[58,297]),new SpotsInfo('U','0BC',true,[57.9,291.6]),new SpotsInfo('U','0BD',true,[57.9,329.3]),new SpotsInfo('U','0BE',true,[57.8,49.5])
+				,new SpotsInfo('U','0BF',true,[57.8,307.8]),new SpotsInfo('U','0C0',true,[57.8,312.9]),new SpotsInfo('U','0C1',true,[57.8,318.4]),new SpotsInfo('U','0C2',true,[57.8,324]),new SpotsInfo('U','0C3',true,[57.7,65.9])
+				,new SpotsInfo('U','0C4',true,[57.7,113.8]),new SpotsInfo('U','0C5',true,[57.7,302.6]),new SpotsInfo('U','0C6',true,[57.6,71]),new SpotsInfo('U','0C7',true,[57.5,108.5]),new SpotsInfo('U','0C8',true,[57.3,55.5])
+				,new SpotsInfo('U','0C9',true,[57.3,92.7]),new SpotsInfo('U','0CA',true,[57.2,77.1]),new SpotsInfo('U','0CB',true,[57.2,87.1]),new SpotsInfo('U','0CC',true,[57.2,103.2]),new SpotsInfo('U','0CD',true,[57.1,98.2])
+				,new SpotsInfo('U','0CE',true,[56.7,81.5]),new SpotsInfo('U','0CF',true,[50.8,247.2]),new SpotsInfo('U','0D0',true,[47.2,20.1]),new SpotsInfo('U','0D1',true,[46,243.3]),new SpotsInfo('U','0D2',true,[42.1,195.5])
+				,new SpotsInfo('U','0D3',true,[41.7,239.1]),new SpotsInfo('U','0D4',true,[41.1,179]),new SpotsInfo('U','0D5',true,[41,147]),new SpotsInfo('U','0D6',true,[41,152.4]),new SpotsInfo('U','0D7',true,[41,190.1])
+				,new SpotsInfo('U','0D8',true,[40.9,131.1]),new SpotsInfo('U','0D9',true,[40.9,136.1]),new SpotsInfo('U','0DA',true,[40.9,141.9]),new SpotsInfo('U','0DB',true,[40.9,157.5]),new SpotsInfo('U','0DC',true,[40.9,184.3])
+				,new SpotsInfo('U','0DD',true,[40.7,173.8]),new SpotsInfo('U','0DE',true,[40.5,125.4]),new SpotsInfo('U','0DF',true,[40.5,162.5]),new SpotsInfo('U','0E0',true,[40.4,167.9]),new SpotsInfo('U','0E1',true,[39.9,20.3])
+				,new SpotsInfo('U','0E2',true,[39.8,49.5]),new SpotsInfo('U','0E3',true,[39.4,54.4]),new SpotsInfo('U','0E4',true,[39.2,60.6]),new SpotsInfo('U','0E5',true,[39.1,65.8]),new SpotsInfo('U','0E6',true,[39,76.4])
+				,new SpotsInfo('U','0E7',true,[38.9,81.4]),new SpotsInfo('U','0E8',true,[38.8,70.8]),new SpotsInfo('U','0E9',true,[38.4,86.9]),new SpotsInfo('U','0EA',true,[38.3,91.9]),new SpotsInfo('U','0EB',true,[38.2,114])
+				,new SpotsInfo('U','0EC',true,[38,97.8]),new SpotsInfo('U','0ED',true,[38,103]),new SpotsInfo('U','0EE',true,[38,235.1]),new SpotsInfo('U','0EF',true,[37.9,108.3]),new SpotsInfo('U','0F0',true,[34.1,230.5])
+				,new SpotsInfo('U','0F1',true,[33,20.3]),new SpotsInfo('U','0F2',true,[30.3,226.1]),new SpotsInfo('U','0F3',true,[26.3,20.4]),new SpotsInfo('U','0F4',true,[26.3,221.9]),new SpotsInfo('U','0F5',true,[21.8,217.5])
+				,new SpotsInfo('U','0F6',true,[19.8,20.2]),new SpotsInfo('U','0F7',true,[17.7,213.3]),new SpotsInfo('U','0F8',true,[9.5,157.9]),new SpotsInfo('U','0F9',true,[9.4,126.1]),new SpotsInfo('U','0FA',true,[9.4,131.3])
+				,new SpotsInfo('U','0FB',true,[9.4,147.7]),new SpotsInfo('U','0FC',true,[9.3,190]),new SpotsInfo('U','0FD',true,[9.2,142.4]),new SpotsInfo('U','0FE',true,[9.1,120.2]),new SpotsInfo('U','0FF',true,[9.1,136.5])
+				,new SpotsInfo('U','100',true,[9.1,152.5]),new SpotsInfo('U','101',true,[9,50.8]),new SpotsInfo('U','102',true,[9,115.2]),new SpotsInfo('U','103',true,[8.9,99.8]),new SpotsInfo('U','104',true,[8.9,104.4])
+				,new SpotsInfo('U','105',true,[8.8,163.3]),new SpotsInfo('U','106',true,[8.7,35.1]),new SpotsInfo('U','107',true,[8.7,88.4]),new SpotsInfo('U','108',true,[8.7,93.9]),new SpotsInfo('U','109',true,[8.7,110.1])
+				,new SpotsInfo('U','10A',true,[8.7,185.1]),new SpotsInfo('U','10B',true,[8.6,45.8]),new SpotsInfo('U','10C',true,[8.6,179.7]),new SpotsInfo('U','10D',true,[8.5,78.3]),new SpotsInfo('U','10E',true,[8.5,174.3])
+				,new SpotsInfo('U','10F',true,[8.4,67.5]),new SpotsInfo('U','110',true,[8.4,72.6]),new SpotsInfo('U','111',true,[8.4,83.3]),new SpotsInfo('U','112',true,[8.4,168.4]),new SpotsInfo('U','113',true,[8.3,39.9])
+				,new SpotsInfo('U','114',true,[8.2,56.4]),new SpotsInfo('U','115',true,[8.1,28.6]),new SpotsInfo('U','116',true,[8.1,62])];
 
 //Lot X - - - - - - - - - - - - - - - - - - - - - - - - -
-var X001 = new SpotsInfo('X','001',true,[0,0]);
-var X002 = new SpotsInfo('X','002',true,[0,0]);
-var lotXSpots = [X001,X002];
+var lotXSpots = [new SpotsInfo('X','001',true,[25.9,105.8]),new SpotsInfo('X','002',true,[25.4,95.1])];
 
 //Lot Y - - - - - - - - - - - - - - - - - - - - - - - - -
-var Y001 = new SpotsInfo('Y','001',true,[0,0]);
-var Y002 = new SpotsInfo('Y','002',true,[0,0]);
-var Y003 = new SpotsInfo('Y','003',true,[0,0]);
-var Y004 = new SpotsInfo('Y','004',true,[0,0]);
-var Y005 = new SpotsInfo('Y','005',true,[0,0]);
-var Y006 = new SpotsInfo('Y','006',true,[0,0]);
-var Y007 = new SpotsInfo('Y','007',true,[0,0]);
-var Y008 = new SpotsInfo('Y','008',true,[0,0]);
-var Y009 = new SpotsInfo('Y','009',true,[0,0]);
-var Y00A = new SpotsInfo('Y','00A',true,[0,0]);
-var Y00B = new SpotsInfo('Y','00B',true,[0,0]);
-var Y00C = new SpotsInfo('Y','00C',true,[0,0]);
-var Y00D = new SpotsInfo('Y','00D',true,[0,0]);
-var Y00E = new SpotsInfo('Y','00E',true,[0,0]);
-var Y00F = new SpotsInfo('Y','00F',true,[0,0]);
-var Y010 = new SpotsInfo('Y','010',true,[0,0]);
-var Y011 = new SpotsInfo('Y','011',true,[0,0]);
-var Y012 = new SpotsInfo('Y','012',true,[0,0]);
-var Y013 = new SpotsInfo('Y','013',true,[0,0]);
-var Y014 = new SpotsInfo('Y','014',true,[0,0]);
-var Y015 = new SpotsInfo('Y','015',true,[0,0]);
-var Y016 = new SpotsInfo('Y','016',true,[0,0]);
-var Y017 = new SpotsInfo('Y','017',true,[0,0]);
-var Y018 = new SpotsInfo('Y','018',true,[0,0]);
-var Y019 = new SpotsInfo('Y','019',true,[0,0]);
-var Y01A = new SpotsInfo('Y','01A',true,[0,0]);
-var Y01B = new SpotsInfo('Y','01B',true,[0,0]);
-var Y01C = new SpotsInfo('Y','01C',true,[0,0]);
-var Y01D = new SpotsInfo('Y','01D',true,[0,0]);
-var Y01E = new SpotsInfo('Y','01E',true,[0,0]);
-var Y01F = new SpotsInfo('Y','01F',true,[0,0]);
-var Y020 = new SpotsInfo('Y','020',true,[0,0]);
-var Y021 = new SpotsInfo('Y','021',true,[0,0]);
-var Y022 = new SpotsInfo('Y','022',true,[0,0]);
-var Y023 = new SpotsInfo('Y','023',true,[0,0]);
-var Y024 = new SpotsInfo('Y','024',true,[0,0]);
-var Y025 = new SpotsInfo('Y','025',true,[0,0]);
-var Y026 = new SpotsInfo('Y','026',true,[0,0]);
-var Y027 = new SpotsInfo('Y','027',true,[0,0]);
-var Y028 = new SpotsInfo('Y','028',true,[0,0]);
-var Y029 = new SpotsInfo('Y','029',true,[0,0]);
-var Y02A = new SpotsInfo('Y','02A',true,[0,0]);
-var Y02B = new SpotsInfo('Y','02B',true,[0,0]);
-var Y02C = new SpotsInfo('Y','02C',true,[0,0]);
-var Y02D = new SpotsInfo('Y','02D',true,[0,0]);
-var Y02E = new SpotsInfo('Y','02E',true,[0,0]);
-var Y02F = new SpotsInfo('Y','02F',true,[0,0]);
-var Y030 = new SpotsInfo('Y','030',true,[0,0]);
-var Y031 = new SpotsInfo('Y','031',true,[0,0]);
-var Y032 = new SpotsInfo('Y','032',true,[0,0]);
-var Y033 = new SpotsInfo('Y','033',true,[0,0]);
-var Y034 = new SpotsInfo('Y','034',true,[0,0]);
-var Y035 = new SpotsInfo('Y','035',true,[0,0]);
-var Y036 = new SpotsInfo('Y','036',true,[0,0]);
-var Y037 = new SpotsInfo('Y','037',true,[0,0]);
-var Y038 = new SpotsInfo('Y','038',true,[0,0]);
-var Y039 = new SpotsInfo('Y','039',true,[0,0]);
-var Y03A = new SpotsInfo('Y','03A',true,[0,0]);
-var Y03B = new SpotsInfo('Y','03B',true,[0,0]);
-var Y03C = new SpotsInfo('Y','03C',true,[0,0]);
-var Y03D = new SpotsInfo('Y','03D',true,[0,0]);
-var Y03E = new SpotsInfo('Y','03E',true,[0,0]);
-var lotYSpots = [Y001,Y002,Y003,Y004,Y005,Y006,Y007,Y008,Y009,Y00A
-				,Y00B,Y00C,Y00D,Y00E,Y00F,Y010,Y011,Y012,Y013,Y014
-				,Y015,Y016,Y017,Y018,Y019,Y01A,Y01B,Y01C,Y01D,Y01E
-				,Y01F,Y020,Y021,Y022,Y023,Y024,Y025,Y026,Y027,Y028
-				,Y029,Y02A,Y02B,Y02C,Y02D,Y02E,Y02F,Y030,Y031,Y032
-				,Y033,Y034,Y035,Y036,Y037,Y038,Y039,Y03A,Y03B,Y03C
-				,Y03D,Y03E];
+var lotYSpots = [new SpotsInfo('Y','001',true,[216.6,62.1]),new SpotsInfo('Y','002',true,[216.5,48.3]),new SpotsInfo('Y','003',true,[216.3,37.6]),new SpotsInfo('Y','004',true,[216,133.9]),new SpotsInfo('Y','005',true,[215.6,77.5])
+				,new SpotsInfo('Y','006',true,[215.5,93.4]),new SpotsInfo('Y','007',true,[215.2,108]),new SpotsInfo('Y','008',true,[215,121.6]),new SpotsInfo('Y','009',true,[188.2,168.6]),new SpotsInfo('Y','00A',true,[180.4,167.3])
+				,new SpotsInfo('Y','00B',true,[172.8,70.7]),new SpotsInfo('Y','00C',true,[172.5,167.8]),new SpotsInfo('Y','00D',true,[172.4,93.4]),new SpotsInfo('Y','00E',true,[164.8,94.1]),new SpotsInfo('Y','00F',true,[164.5,70.8])
+				,new SpotsInfo('Y','010',true,[163.5,167.7]),new SpotsInfo('Y','011',true,[156.9,167.1]),new SpotsInfo('Y','012',true,[156.4,71]),new SpotsInfo('Y','013',true,[156.4,93.4]),new SpotsInfo('Y','014',true,[148.3,167.5])
+				,new SpotsInfo('Y','015',true,[148.1,71.2]),new SpotsInfo('Y','016',true,[148.1,92.8]),new SpotsInfo('Y','017',true,[140.6,93.4]),new SpotsInfo('Y','018',true,[140.5,71]),new SpotsInfo('Y','019',true,[140.4,167.8])
+				,new SpotsInfo('Y','01A',true,[133.2,93.3]),new SpotsInfo('Y','01B',true,[132.9,168]),new SpotsInfo('Y','01C',true,[132.5,71.4]),new SpotsInfo('Y','01D',true,[125.2,71.7]),new SpotsInfo('Y','01E',true,[125.2,167.1])
+				,new SpotsInfo('Y','01F',true,[124.9,93]),new SpotsInfo('Y','020',true,[115.9,167.3]),new SpotsInfo('Y','021',true,[108.5,168.3]),new SpotsInfo('Y','022',true,[105.7,71.9]),new SpotsInfo('Y','023',true,[105.6,92.9])
+				,new SpotsInfo('Y','024',true,[97.9,71.8]),new SpotsInfo('Y','025',true,[97.7,93.2]),new SpotsInfo('Y','026',true,[89.2,73.2]),new SpotsInfo('Y','027',true,[89.1,93.1]),new SpotsInfo('Y','028',true,[81.8,92.1])
+				,new SpotsInfo('Y','029',true,[81.4,73.2]),new SpotsInfo('Y','02A',true,[73.3,71.4]),new SpotsInfo('Y','02B',true,[73.3,94]),new SpotsInfo('Y','02C',true,[65.1,71.6]),new SpotsInfo('Y','02D',true,[65,91.8])
+				,new SpotsInfo('Y','02E',true,[61,162.5]),new SpotsInfo('Y','02F',true,[56.5,70.9]),new SpotsInfo('Y','030',true,[56.5,92.2]),new SpotsInfo('Y','031',true,[52.6,161.8]),new SpotsInfo('Y','032',true,[49.5,72.8])
+				,new SpotsInfo('Y','033',true,[49.3,91.7]),new SpotsInfo('Y','034',true,[44.8,162.3]),new SpotsInfo('Y','035',true,[37.2,162.1]),new SpotsInfo('Y','036',true,[29.9,162.5]),new SpotsInfo('Y','037',true,[10.7,136])
+				,new SpotsInfo('Y','038',true,[10.1,123.3]),new SpotsInfo('Y','039',true,[10,83]),new SpotsInfo('Y','03A',true,[9.9,95.7]),new SpotsInfo('Y','03B',true,[9.8,109.1]),new SpotsInfo('Y','03C',true,[9.7,70.7])
+				,new SpotsInfo('Y','03D',true,[9.4,41.1]),new SpotsInfo('Y','03E',true,[9.3,56.2])];
 
 //Lot Z - - - - - - - - - - - - - - - - - - - - - - - - -
-var Z001 = new SpotsInfo('Z','001',true,[0,0]);
-var Z002 = new SpotsInfo('Z','002',true,[0,0]);
-var Z003 = new SpotsInfo('Z','003',true,[0,0]);
-var Z004 = new SpotsInfo('Z','004',true,[0,0]);
-var Z005 = new SpotsInfo('Z','005',true,[0,0]);
-var Z006 = new SpotsInfo('Z','006',true,[0,0]);
-var Z007 = new SpotsInfo('Z','007',true,[0,0]);
-var Z008 = new SpotsInfo('Z','008',true,[0,0]);
-var Z009 = new SpotsInfo('Z','009',true,[0,0]);
-var Z00A = new SpotsInfo('Z','00A',true,[0,0]);
-var Z00B = new SpotsInfo('Z','00B',true,[0,0]);
-var Z00C = new SpotsInfo('Z','00C',true,[0,0]);
-var Z00D = new SpotsInfo('Z','00D',true,[0,0]);
-var Z00E = new SpotsInfo('Z','00E',true,[0,0]);
-var Z00F = new SpotsInfo('Z','00F',true,[0,0]);
-var Z010 = new SpotsInfo('Z','010',true,[0,0]);
-var Z011 = new SpotsInfo('Z','011',true,[0,0]);
-var Z012 = new SpotsInfo('Z','012',true,[0,0]);
-var Z013 = new SpotsInfo('Z','013',true,[0,0]);
-var Z014 = new SpotsInfo('Z','014',true,[0,0]);
-var Z015 = new SpotsInfo('Z','015',true,[0,0]);
-var Z016 = new SpotsInfo('Z','016',true,[0,0]);
-var Z017 = new SpotsInfo('Z','017',true,[0,0]);
-var Z018 = new SpotsInfo('Z','018',true,[0,0]);
-var Z019 = new SpotsInfo('Z','019',true,[0,0]);
-var Z01A = new SpotsInfo('Z','01A',true,[0,0]);
-var Z01B = new SpotsInfo('Z','01B',true,[0,0]);
-var Z01C = new SpotsInfo('Z','01C',true,[0,0]);
-var Z01D = new SpotsInfo('Z','01D',true,[0,0]);
-var Z01E = new SpotsInfo('Z','01E',true,[0,0]);
-var Z01F = new SpotsInfo('Z','01F',true,[0,0]);
-var Z020 = new SpotsInfo('Z','020',true,[0,0]);
-var Z021 = new SpotsInfo('Z','021',true,[0,0]);
-var Z022 = new SpotsInfo('Z','022',true,[0,0]);
-var Z023 = new SpotsInfo('Z','023',true,[0,0]);
-var Z024 = new SpotsInfo('Z','024',true,[0,0]);
-var Z025 = new SpotsInfo('Z','025',true,[0,0]);
-var Z026 = new SpotsInfo('Z','026',true,[0,0]);
-var Z027 = new SpotsInfo('Z','027',true,[0,0]);
-var Z028 = new SpotsInfo('Z','028',true,[0,0]);
-var Z029 = new SpotsInfo('Z','029',true,[0,0]);
-var Z02A = new SpotsInfo('Z','02A',true,[0,0]);
-var Z02B = new SpotsInfo('Z','02B',true,[0,0]);
-var Z02C = new SpotsInfo('Z','02C',true,[0,0]);
-var Z02D = new SpotsInfo('Z','02D',true,[0,0]);
-var Z02E = new SpotsInfo('Z','02E',true,[0,0]);
-var Z02F = new SpotsInfo('Z','02F',true,[0,0]);
-var Z030 = new SpotsInfo('Z','030',true,[0,0]);
-var Z031 = new SpotsInfo('Z','031',true,[0,0]);
-var Z032 = new SpotsInfo('Z','032',true,[0,0]);
-var Z033 = new SpotsInfo('Z','033',true,[0,0]);
-var Z034 = new SpotsInfo('Z','034',true,[0,0]);
-var Z035 = new SpotsInfo('Z','035',true,[0,0]);
-var Z036 = new SpotsInfo('Z','036',true,[0,0]);
-var Z037 = new SpotsInfo('Z','037',true,[0,0]);
-var Z038 = new SpotsInfo('Z','038',true,[0,0]);
-var Z039 = new SpotsInfo('Z','039',true,[0,0]);
-var Z03A = new SpotsInfo('Z','03A',true,[0,0]);
-var Z03B = new SpotsInfo('Z','03B',true,[0,0]);
-var Z03C = new SpotsInfo('Z','03C',true,[0,0]);
-var Z03D = new SpotsInfo('Z','03D',true,[0,0]);
-var Z03E = new SpotsInfo('Z','03E',true,[0,0]);
-var Z03F = new SpotsInfo('Z','03F',true,[0,0]);
-var Z040 = new SpotsInfo('Z','040',true,[0,0]);
-var Z041 = new SpotsInfo('Z','041',true,[0,0]);
-var Z042 = new SpotsInfo('Z','042',true,[0,0]);
-var Z043 = new SpotsInfo('Z','043',true,[0,0]);
-var Z044 = new SpotsInfo('Z','044',true,[0,0]);
-var Z045 = new SpotsInfo('Z','045',true,[0,0]);
-var Z046 = new SpotsInfo('Z','046',true,[0,0]);
-var Z047 = new SpotsInfo('Z','047',true,[0,0]);
-var Z048 = new SpotsInfo('Z','048',true,[0,0]);
-var Z049 = new SpotsInfo('Z','049',true,[0,0]);
-var Z04A = new SpotsInfo('Z','04A',true,[0,0]);
-var Z04B = new SpotsInfo('Z','04B',true,[0,0]);
-var Z04C = new SpotsInfo('Z','04C',true,[0,0]);
-var Z04D = new SpotsInfo('Z','04D',true,[0,0]);
-var Z04E = new SpotsInfo('Z','04E',true,[0,0]);
-var Z04F = new SpotsInfo('Z','04F',true,[0,0]);
-var Z050 = new SpotsInfo('Z','050',true,[0,0]);
-var Z051 = new SpotsInfo('Z','051',true,[0,0]);
-var Z052 = new SpotsInfo('Z','052',true,[0,0]);
-var Z053 = new SpotsInfo('Z','053',true,[0,0]);
-var Z054 = new SpotsInfo('Z','054',true,[0,0]);
-var Z055 = new SpotsInfo('Z','055',true,[0,0]);
-var Z056 = new SpotsInfo('Z','056',true,[0,0]);
-var Z057 = new SpotsInfo('Z','057',true,[0,0]);
-var Z058 = new SpotsInfo('Z','058',true,[0,0]);
-var Z059 = new SpotsInfo('Z','059',true,[0,0]);
-var Z05A = new SpotsInfo('Z','05A',true,[0,0]);
-var Z05B = new SpotsInfo('Z','05B',true,[0,0]);
-var Z05C = new SpotsInfo('Z','05C',true,[0,0]);
-var Z05D = new SpotsInfo('Z','05D',true,[0,0]);
-var Z05E = new SpotsInfo('Z','05E',true,[0,0]);
-var Z05F = new SpotsInfo('Z','05F',true,[0,0]);
-var Z060 = new SpotsInfo('Z','060',true,[0,0]);
-var Z061 = new SpotsInfo('Z','061',true,[0,0]);
-var Z062 = new SpotsInfo('Z','062',true,[0,0]);
-var Z063 = new SpotsInfo('Z','063',true,[0,0]);
-var Z064 = new SpotsInfo('Z','064',true,[0,0]);
-var Z065 = new SpotsInfo('Z','065',true,[0,0]);
-var Z066 = new SpotsInfo('Z','066',true,[0,0]);
-var Z067 = new SpotsInfo('Z','067',true,[0,0]);
-var Z068 = new SpotsInfo('Z','068',true,[0,0]);
-var Z069 = new SpotsInfo('Z','069',true,[0,0]);
-var Z06A = new SpotsInfo('Z','06A',true,[0,0]);
-var Z06B = new SpotsInfo('Z','06B',true,[0,0]);
-var Z06C = new SpotsInfo('Z','06C',true,[0,0]);
-var Z06D = new SpotsInfo('Z','06D',true,[0,0]);
-var Z06E = new SpotsInfo('Z','06E',true,[0,0]);
-var Z06F = new SpotsInfo('Z','06F',true,[0,0]);
-var Z070 = new SpotsInfo('Z','070',true,[0,0]);
-var Z071 = new SpotsInfo('Z','071',true,[0,0]);
-var Z072 = new SpotsInfo('Z','072',true,[0,0]);
-var Z073 = new SpotsInfo('Z','073',true,[0,0]);
-var Z074 = new SpotsInfo('Z','074',true,[0,0]);
-var Z075 = new SpotsInfo('Z','075',true,[0,0]);
-var Z076 = new SpotsInfo('Z','076',true,[0,0]);
-var Z077 = new SpotsInfo('Z','077',true,[0,0]);
-var Z078 = new SpotsInfo('Z','078',true,[0,0]);
-var Z079 = new SpotsInfo('Z','079',true,[0,0]);
-var Z07A = new SpotsInfo('Z','07A',true,[0,0]);
-var Z07B = new SpotsInfo('Z','07B',true,[0,0]);
-var Z07C = new SpotsInfo('Z','07C',true,[0,0]);
-var Z07D = new SpotsInfo('Z','07D',true,[0,0]);
-var Z07E = new SpotsInfo('Z','07E',true,[0,0]);
-var Z07F = new SpotsInfo('Z','07F',true,[0,0]);
-var Z080 = new SpotsInfo('Z','080',true,[0,0]);
-var Z081 = new SpotsInfo('Z','081',true,[0,0]);
-var Z082 = new SpotsInfo('Z','082',true,[0,0]);
-var Z083 = new SpotsInfo('Z','083',true,[0,0]);
-var Z084 = new SpotsInfo('Z','084',true,[0,0]);
-var Z085 = new SpotsInfo('Z','085',true,[0,0]);
-var Z086 = new SpotsInfo('Z','086',true,[0,0]);
-var Z087 = new SpotsInfo('Z','087',true,[0,0]);
-var Z088 = new SpotsInfo('Z','088',true,[0,0]);
-var Z089 = new SpotsInfo('Z','089',true,[0,0]);
-var Z08A = new SpotsInfo('Z','08A',true,[0,0]);
-var Z08B = new SpotsInfo('Z','08B',true,[0,0]);
-var Z08C = new SpotsInfo('Z','08C',true,[0,0]);
-var Z08D = new SpotsInfo('Z','08D',true,[0,0]);
-var Z08E = new SpotsInfo('Z','08E',true,[0,0]);
-var Z08F = new SpotsInfo('Z','08F',true,[0,0]);
-var Z090 = new SpotsInfo('Z','090',true,[0,0]);
-var Z091 = new SpotsInfo('Z','091',true,[0,0]);
-var Z092 = new SpotsInfo('Z','092',true,[0,0]);
-var Z093 = new SpotsInfo('Z','093',true,[0,0]);
-var Z094 = new SpotsInfo('Z','094',true,[0,0]);
-var Z095 = new SpotsInfo('Z','095',true,[0,0]);
-var Z096 = new SpotsInfo('Z','096',true,[0,0]);
-var Z097 = new SpotsInfo('Z','097',true,[0,0]);
-var Z098 = new SpotsInfo('Z','098',true,[0,0]);
-var Z099 = new SpotsInfo('Z','099',true,[0,0]);
-var Z09A = new SpotsInfo('Z','09A',true,[0,0]);
-var Z09B = new SpotsInfo('Z','09B',true,[0,0]);
-var Z09C = new SpotsInfo('Z','09C',true,[0,0]);
-var Z09D = new SpotsInfo('Z','09D',true,[0,0]);
-var Z09E = new SpotsInfo('Z','09E',true,[0,0]);
-var Z09F = new SpotsInfo('Z','09F',true,[0,0]);
-var Z0A0 = new SpotsInfo('Z','0A0',true,[0,0]);
-var Z0A1 = new SpotsInfo('Z','0A1',true,[0,0]);
-var Z0A2 = new SpotsInfo('Z','0A2',true,[0,0]);
-var Z0A3 = new SpotsInfo('Z','0A3',true,[0,0]);
-var Z0A4 = new SpotsInfo('Z','0A4',true,[0,0]);
-var Z0A5 = new SpotsInfo('Z','0A5',true,[0,0]);
-var Z0A6 = new SpotsInfo('Z','0A6',true,[0,0]);
-var Z0A7 = new SpotsInfo('Z','0A7',true,[0,0]);
-var Z0A8 = new SpotsInfo('Z','0A8',true,[0,0]);
-var Z0A9 = new SpotsInfo('Z','0A9',true,[0,0]);
-var Z0AA = new SpotsInfo('Z','0AA',true,[0,0]);
-var Z0AB = new SpotsInfo('Z','0AB',true,[0,0]);
-var Z0AC = new SpotsInfo('Z','0AC',true,[0,0]);
-var Z0AD = new SpotsInfo('Z','0AD',true,[0,0]);
-var Z0AE = new SpotsInfo('Z','0AE',true,[0,0]);
-var Z0AF = new SpotsInfo('Z','0AF',true,[0,0]);
-var Z0B0 = new SpotsInfo('Z','0B0',true,[0,0]);
-var Z0B1 = new SpotsInfo('Z','0B1',true,[0,0]);
-var Z0B2 = new SpotsInfo('Z','0B2',true,[0,0]);
-var Z0B3 = new SpotsInfo('Z','0B3',true,[0,0]);
-var Z0B4 = new SpotsInfo('Z','0B4',true,[0,0]);
-var Z0B5 = new SpotsInfo('Z','0B5',true,[0,0]);
-var Z0B6 = new SpotsInfo('Z','0B6',true,[0,0]);
-var Z0B7 = new SpotsInfo('Z','0B7',true,[0,0]);
-var Z0B8 = new SpotsInfo('Z','0B8',true,[0,0]);
-var Z0B9 = new SpotsInfo('Z','0B9',true,[0,0]);
-var Z0BA = new SpotsInfo('Z','0BA',true,[0,0]);
-var Z0BB = new SpotsInfo('Z','0BB',true,[0,0]);
-var Z0BC = new SpotsInfo('Z','0BC',true,[0,0]);
-var Z0BD = new SpotsInfo('Z','0BD',true,[0,0]);
-var Z0BE = new SpotsInfo('Z','0BE',true,[0,0]);
-var Z0BF = new SpotsInfo('Z','0BF',true,[0,0]);
-var Z0C0 = new SpotsInfo('Z','0C0',true,[0,0]);
-var Z0C1 = new SpotsInfo('Z','0C1',true,[0,0]);
-var Z0C2 = new SpotsInfo('Z','0C2',true,[0,0]);
-var Z0C3 = new SpotsInfo('Z','0C3',true,[0,0]);
-var Z0C4 = new SpotsInfo('Z','0C4',true,[0,0]);
-var Z0C5 = new SpotsInfo('Z','0C5',true,[0,0]);
-var Z0C6 = new SpotsInfo('Z','0C6',true,[0,0]);
-var Z0C7 = new SpotsInfo('Z','0C7',true,[0,0]);
-var Z0C8 = new SpotsInfo('Z','0C8',true,[0,0]);
-var Z0C9 = new SpotsInfo('Z','0C9',true,[0,0]);
-var Z0CA = new SpotsInfo('Z','0CA',true,[0,0]);
-var Z0CB = new SpotsInfo('Z','0CB',true,[0,0]);
-var Z0CC = new SpotsInfo('Z','0CC',true,[0,0]);
-var Z0CD = new SpotsInfo('Z','0CD',true,[0,0]);
-var Z0CE = new SpotsInfo('Z','0CE',true,[0,0]);
-var Z0CF = new SpotsInfo('Z','0CF',true,[0,0]);
-var Z0D0 = new SpotsInfo('Z','0D0',true,[0,0]);
-var Z0D1 = new SpotsInfo('Z','0D1',true,[0,0]);
-var Z0D2 = new SpotsInfo('Z','0D2',true,[0,0]);
-var Z0D3 = new SpotsInfo('Z','0D3',true,[0,0]);
-var Z0D4 = new SpotsInfo('Z','0D4',true,[0,0]);
-var Z0D5 = new SpotsInfo('Z','0D5',true,[0,0]);
-var Z0D6 = new SpotsInfo('Z','0D6',true,[0,0]);
-var Z0D7 = new SpotsInfo('Z','0D7',true,[0,0]);
-var Z0D8 = new SpotsInfo('Z','0D8',true,[0,0]);
-var Z0D9 = new SpotsInfo('Z','0D9',true,[0,0]);
-var Z0DA = new SpotsInfo('Z','0DA',true,[0,0]);
-var Z0DB = new SpotsInfo('Z','0DB',true,[0,0]);
-var Z0DC = new SpotsInfo('Z','0DC',true,[0,0]);
-var Z0DD = new SpotsInfo('Z','0DD',true,[0,0]);
-var Z0DE = new SpotsInfo('Z','0DE',true,[0,0]);
-var Z0DF = new SpotsInfo('Z','0DF',true,[0,0]);
-var Z0E0 = new SpotsInfo('Z','0E0',true,[0,0]);
-var Z0E1 = new SpotsInfo('Z','0E1',true,[0,0]);
-var Z0E2 = new SpotsInfo('Z','0E2',true,[0,0]);
-var Z0E3 = new SpotsInfo('Z','0E3',true,[0,0]);
-var Z0E4 = new SpotsInfo('Z','0E4',true,[0,0]);
-var Z0E5 = new SpotsInfo('Z','0E5',true,[0,0]);
-var Z0E6 = new SpotsInfo('Z','0E6',true,[0,0]);
-var Z0E7 = new SpotsInfo('Z','0E7',true,[0,0]);
-var Z0E8 = new SpotsInfo('Z','0E8',true,[0,0]);
-var Z0E9 = new SpotsInfo('Z','0E9',true,[0,0]);
-var Z0EA = new SpotsInfo('Z','0EA',true,[0,0]);
-var Z0EB = new SpotsInfo('Z','0EB',true,[0,0]);
-var Z0EC = new SpotsInfo('Z','0EC',true,[0,0]);
-var Z0ED = new SpotsInfo('Z','0ED',true,[0,0]);
-var Z0EE = new SpotsInfo('Z','0EE',true,[0,0]);
-var Z0EF = new SpotsInfo('Z','0EF',true,[0,0]);
-var Z0F0 = new SpotsInfo('Z','0F0',true,[0,0]);
-var Z0F1 = new SpotsInfo('Z','0F1',true,[0,0]);
-var Z0F2 = new SpotsInfo('Z','0F2',true,[0,0]);
-var Z0F3 = new SpotsInfo('Z','0F3',true,[0,0]);
-var Z0F4 = new SpotsInfo('Z','0F4',true,[0,0]);
-var Z0F5 = new SpotsInfo('Z','0F5',true,[0,0]);
-var Z0F6 = new SpotsInfo('Z','0F6',true,[0,0]);
-var Z0F7 = new SpotsInfo('Z','0F7',true,[0,0]);
-var Z0F8 = new SpotsInfo('Z','0F8',true,[0,0]);
-var Z0F9 = new SpotsInfo('Z','0F9',true,[0,0]);
-var Z0FA = new SpotsInfo('Z','0FA',true,[0,0]);
-var Z0FB = new SpotsInfo('Z','0FB',true,[0,0]);
-var Z0FC = new SpotsInfo('Z','0FC',true,[0,0]);
-var Z0FD = new SpotsInfo('Z','0FD',true,[0,0]);
-var Z0FE = new SpotsInfo('Z','0FE',true,[0,0]);
-var Z0FF = new SpotsInfo('Z','0FF',true,[0,0]);
-var Z100 = new SpotsInfo('Z','100',true,[0,0]);
-var Z101 = new SpotsInfo('Z','101',true,[0,0]);
-var Z102 = new SpotsInfo('Z','102',true,[0,0]);
-var Z103 = new SpotsInfo('Z','103',true,[0,0]);
-var Z104 = new SpotsInfo('Z','104',true,[0,0]);
-var Z105 = new SpotsInfo('Z','105',true,[0,0]);
-var Z106 = new SpotsInfo('Z','106',true,[0,0]);
-var Z107 = new SpotsInfo('Z','107',true,[0,0]);
-var Z108 = new SpotsInfo('Z','108',true,[0,0]);
-var Z109 = new SpotsInfo('Z','109',true,[0,0]);
-var Z10A = new SpotsInfo('Z','10A',true,[0,0]);
-var Z10B = new SpotsInfo('Z','10B',true,[0,0]);
-var Z10C = new SpotsInfo('Z','10C',true,[0,0]);
-var Z10D = new SpotsInfo('Z','10D',true,[0,0]);
-var Z10E = new SpotsInfo('Z','10E',true,[0,0]);
-var Z10F = new SpotsInfo('Z','10F',true,[0,0]);
-var Z110 = new SpotsInfo('Z','110',true,[0,0]);
-var Z111 = new SpotsInfo('Z','111',true,[0,0]);
-var Z112 = new SpotsInfo('Z','112',true,[0,0]);
-var Z113 = new SpotsInfo('Z','113',true,[0,0]);
-var Z114 = new SpotsInfo('Z','114',true,[0,0]);
-var Z115 = new SpotsInfo('Z','115',true,[0,0]);
-var Z116 = new SpotsInfo('Z','116',true,[0,0]);
-var Z117 = new SpotsInfo('Z','117',true,[0,0]);
-var Z118 = new SpotsInfo('Z','118',true,[0,0]);
-var Z119 = new SpotsInfo('Z','119',true,[0,0]);
-var Z11A = new SpotsInfo('Z','11A',true,[0,0]);
-var Z11B = new SpotsInfo('Z','11B',true,[0,0]);
-var Z11C = new SpotsInfo('Z','11C',true,[0,0]);
-var Z11D = new SpotsInfo('Z','11D',true,[0,0]);
-var Z11E = new SpotsInfo('Z','11E',true,[0,0]);
-var Z11F = new SpotsInfo('Z','11F',true,[0,0]);
-var Z120 = new SpotsInfo('Z','120',true,[0,0]);
-var Z121 = new SpotsInfo('Z','121',true,[0,0]);
-var Z122 = new SpotsInfo('Z','122',true,[0,0]);
-var Z123 = new SpotsInfo('Z','123',true,[0,0]);
-var Z124 = new SpotsInfo('Z','124',true,[0,0]);
-var Z125 = new SpotsInfo('Z','125',true,[0,0]);
-var Z126 = new SpotsInfo('Z','126',true,[0,0]);
-var Z127 = new SpotsInfo('Z','127',true,[0,0]);
-var Z128 = new SpotsInfo('Z','128',true,[0,0]);
-var Z129 = new SpotsInfo('Z','129',true,[0,0]);
-var Z12A = new SpotsInfo('Z','12A',true,[0,0]);
-var Z12B = new SpotsInfo('Z','12B',true,[0,0]);
-var Z12C = new SpotsInfo('Z','12C',true,[0,0]);
-var Z12D = new SpotsInfo('Z','12D',true,[0,0]);
-var Z12E = new SpotsInfo('Z','12E',true,[0,0]);
-var Z12F = new SpotsInfo('Z','12F',true,[0,0]);
-var Z130 = new SpotsInfo('Z','130',true,[0,0]);
-var Z131 = new SpotsInfo('Z','131',true,[0,0]);
-var Z132 = new SpotsInfo('Z','132',true,[0,0]);
-var Z133 = new SpotsInfo('Z','133',true,[0,0]);
-var Z134 = new SpotsInfo('Z','134',true,[0,0]);
-var Z135 = new SpotsInfo('Z','135',true,[0,0]);
-var Z136 = new SpotsInfo('Z','136',true,[0,0]);
-var Z137 = new SpotsInfo('Z','137',true,[0,0]);
-var Z138 = new SpotsInfo('Z','138',true,[0,0]);
-var Z139 = new SpotsInfo('Z','139',true,[0,0]);
-var Z13A = new SpotsInfo('Z','13A',true,[0,0]);
-var Z13B = new SpotsInfo('Z','13B',true,[0,0]);
-var Z13C = new SpotsInfo('Z','13C',true,[0,0]);
-var Z13D = new SpotsInfo('Z','13D',true,[0,0]);
-var Z13E = new SpotsInfo('Z','13E',true,[0,0]);
-var Z13F = new SpotsInfo('Z','13F',true,[0,0]);
-var Z140 = new SpotsInfo('Z','140',true,[0,0]);
-var Z141 = new SpotsInfo('Z','141',true,[0,0]);
-var Z142 = new SpotsInfo('Z','142',true,[0,0]);
-var Z143 = new SpotsInfo('Z','143',true,[0,0]);
-var Z144 = new SpotsInfo('Z','144',true,[0,0]);
-var Z145 = new SpotsInfo('Z','145',true,[0,0]);
-var Z146 = new SpotsInfo('Z','146',true,[0,0]);
-var Z147 = new SpotsInfo('Z','147',true,[0,0]);
-var Z148 = new SpotsInfo('Z','148',true,[0,0]);
-var Z149 = new SpotsInfo('Z','149',true,[0,0]);
-var Z14A = new SpotsInfo('Z','14A',true,[0,0]);
-var Z14B = new SpotsInfo('Z','14B',true,[0,0]);
-var Z14C = new SpotsInfo('Z','14C',true,[0,0]);
-var Z14D = new SpotsInfo('Z','14D',true,[0,0]);
-var Z14E = new SpotsInfo('Z','14E',true,[0,0]);
-var Z14F = new SpotsInfo('Z','14F',true,[0,0]);
-var Z150 = new SpotsInfo('Z','150',true,[0,0]);
-var Z151 = new SpotsInfo('Z','151',true,[0,0]);
-var Z152 = new SpotsInfo('Z','152',true,[0,0]);
-var Z153 = new SpotsInfo('Z','153',true,[0,0]);
-var Z154 = new SpotsInfo('Z','154',true,[0,0]);
-var Z155 = new SpotsInfo('Z','155',true,[0,0]);
-var Z156 = new SpotsInfo('Z','156',true,[0,0]);
-var Z157 = new SpotsInfo('Z','157',true,[0,0]);
-var Z158 = new SpotsInfo('Z','158',true,[0,0]);
-var Z159 = new SpotsInfo('Z','159',true,[0,0]);
-var Z15A = new SpotsInfo('Z','15A',true,[0,0]);
-var Z15B = new SpotsInfo('Z','15B',true,[0,0]);
-var Z15C = new SpotsInfo('Z','15C',true,[0,0]);
-var Z15D = new SpotsInfo('Z','15D',true,[0,0]);
-var Z15E = new SpotsInfo('Z','15E',true,[0,0]);
-var Z15F = new SpotsInfo('Z','15F',true,[0,0]);
-var Z160 = new SpotsInfo('Z','160',true,[0,0]);
-var Z161 = new SpotsInfo('Z','161',true,[0,0]);
-var Z162 = new SpotsInfo('Z','162',true,[0,0]);
-var Z163 = new SpotsInfo('Z','163',true,[0,0]);
-var Z164 = new SpotsInfo('Z','164',true,[0,0]);
-var Z165 = new SpotsInfo('Z','165',true,[0,0]);
-var Z166 = new SpotsInfo('Z','166',true,[0,0]);
-var Z167 = new SpotsInfo('Z','167',true,[0,0]);
-var Z168 = new SpotsInfo('Z','168',true,[0,0]);
-var Z169 = new SpotsInfo('Z','169',true,[0,0]);
-var Z16A = new SpotsInfo('Z','16A',true,[0,0]);
-var Z16B = new SpotsInfo('Z','16B',true,[0,0]);
-var Z16C = new SpotsInfo('Z','16C',true,[0,0]);
-var Z16D = new SpotsInfo('Z','16D',true,[0,0]);
-var Z16E = new SpotsInfo('Z','16E',true,[0,0]);
-var Z16F = new SpotsInfo('Z','16F',true,[0,0]);
-var Z170 = new SpotsInfo('Z','170',true,[0,0]);
-var Z171 = new SpotsInfo('Z','171',true,[0,0]);
-var Z172 = new SpotsInfo('Z','172',true,[0,0]);
-var Z173 = new SpotsInfo('Z','173',true,[0,0]);
-var Z174 = new SpotsInfo('Z','174',true,[0,0]);
-var Z175 = new SpotsInfo('Z','175',true,[0,0]);
-var Z176 = new SpotsInfo('Z','176',true,[0,0]);
-var Z177 = new SpotsInfo('Z','177',true,[0,0]);
-var Z178 = new SpotsInfo('Z','178',true,[0,0]);
-var Z179 = new SpotsInfo('Z','179',true,[0,0]);
-var Z17A = new SpotsInfo('Z','17A',true,[0,0]);
-var Z17B = new SpotsInfo('Z','17B',true,[0,0]);
-var Z17C = new SpotsInfo('Z','17C',true,[0,0]);
-var Z17D = new SpotsInfo('Z','17D',true,[0,0]);
-var Z17E = new SpotsInfo('Z','17E',true,[0,0]);
-var Z17F = new SpotsInfo('Z','17F',true,[0,0]);
-var Z180 = new SpotsInfo('Z','180',true,[0,0]);
-var Z181 = new SpotsInfo('Z','181',true,[0,0]);
-var Z182 = new SpotsInfo('Z','182',true,[0,0]);
-var Z183 = new SpotsInfo('Z','183',true,[0,0]);
-var Z184 = new SpotsInfo('Z','184',true,[0,0]);
-var Z185 = new SpotsInfo('Z','185',true,[0,0]);
-var Z186 = new SpotsInfo('Z','186',true,[0,0]);
-var Z187 = new SpotsInfo('Z','187',true,[0,0]);
-var Z188 = new SpotsInfo('Z','188',true,[0,0]);
-var Z189 = new SpotsInfo('Z','189',true,[0,0]);
-var Z18A = new SpotsInfo('Z','18A',true,[0,0]);
-var Z18B = new SpotsInfo('Z','18B',true,[0,0]);
-var Z18C = new SpotsInfo('Z','18C',true,[0,0]);
-var Z18D = new SpotsInfo('Z','18D',true,[0,0]);
-var Z18E = new SpotsInfo('Z','18E',true,[0,0]);
-var Z18F = new SpotsInfo('Z','18F',true,[0,0]);
-var Z190 = new SpotsInfo('Z','190',true,[0,0]);
-var Z191 = new SpotsInfo('Z','191',true,[0,0]);
-var Z192 = new SpotsInfo('Z','192',true,[0,0]);
-var Z193 = new SpotsInfo('Z','193',true,[0,0]);
-var Z194 = new SpotsInfo('Z','194',true,[0,0]);
-var Z195 = new SpotsInfo('Z','195',true,[0,0]);
-var Z196 = new SpotsInfo('Z','196',true,[0,0]);
-var Z197 = new SpotsInfo('Z','197',true,[0,0]);
-var Z198 = new SpotsInfo('Z','198',true,[0,0]);
-var Z199 = new SpotsInfo('Z','199',true,[0,0]);
-var Z19A = new SpotsInfo('Z','19A',true,[0,0]);
-var Z19B = new SpotsInfo('Z','19B',true,[0,0]);
-var Z19C = new SpotsInfo('Z','19C',true,[0,0]);
-var Z19D = new SpotsInfo('Z','19D',true,[0,0]);
-var Z19E = new SpotsInfo('Z','19E',true,[0,0]);
-var Z19F = new SpotsInfo('Z','19F',true,[0,0]);
-var Z1A0 = new SpotsInfo('Z','1A0',true,[0,0]);
-var Z1A1 = new SpotsInfo('Z','1A1',true,[0,0]);
-var Z1A2 = new SpotsInfo('Z','1A2',true,[0,0]);
-var lotZSpots = [Z001,Z002,Z003,Z004,Z005,Z006,Z007,Z008,Z009,Z00A
-				,Z00B,Z00C,Z00D,Z00E,Z00F,Z010,Z011,Z012,Z013,Z014
-				,Z015,Z016,Z017,Z018,Z019,Z01A,Z01B,Z01C,Z01D,Z01E
-				,Z01F,Z020,Z021,Z022,Z023,Z024,Z025,Z026,Z027,Z028
-				,Z029,Z02A,Z02B,Z02C,Z02D,Z02E,Z02F,Z030,Z031,Z032
-				,Z033,Z034,Z035,Z036,Z037,Z038,Z039,Z03A,Z03B,Z03C
-				,Z03D,Z03E,Z03F,Z040,Z041,Z042,Z043,Z044,Z045,Z046
-				,Z047,Z048,Z049,Z04A,Z04B,Z04C,Z04D,Z04E,Z04F,Z050
-				,Z051,Z052,Z053,Z054,Z055,Z056,Z057,Z058,Z059,Z05A
-				,Z05B,Z05C,Z05D,Z05E,Z05F,Z060,Z061,Z062,Z063,Z064
-				,Z065,Z066,Z067,Z068,Z069,Z06A,Z06B,Z06C,Z06D,Z06E
-				,Z06F,Z070,Z071,Z072,Z073,Z074,Z075,Z076,Z077,Z078
-				,Z079,Z07A,Z07B,Z07C,Z07D,Z07E,Z07F,Z080,Z081,Z082
-				,Z083,Z084,Z085,Z086,Z087,Z088,Z089,Z08A,Z08B,Z08C
-				,Z08D,Z08E,Z08F,Z090,Z091,Z092,Z093,Z094,Z095,Z096
-				,Z097,Z098,Z099,Z09A,Z09B,Z09C,Z09D,Z09E,Z09F,Z0A0
-				,Z0A1,Z0A2,Z0A3,Z0A4,Z0A5,Z0A6,Z0A7,Z0A8,Z0A9,Z0AA
-				,Z0AB,Z0AC,Z0AD,Z0AE,Z0AF,Z0B0,Z0B1,Z0B2,Z0B3,Z0B4
-				,Z0B5,Z0B6,Z0B7,Z0B8,Z0B9,Z0BA,Z0BB,Z0BC,Z0BD,Z0BE
-				,Z0BF,Z0C0,Z0C1,Z0C2,Z0C3,Z0C4,Z0C5,Z0C6,Z0C7,Z0C8
-				,Z0C9,Z0CA,Z0CB,Z0CC,Z0CD,Z0CE,Z0CF,Z0D0,Z0D1,Z0D2
-				,Z0D3,Z0D4,Z0D5,Z0D6,Z0D7,Z0D8,Z0D9,Z0DA,Z0DB,Z0DC
-				,Z0DD,Z0DE,Z0DF,Z0E0,Z0E1,Z0E2,Z0E3,Z0E4,Z0E5,Z0E6
-				,Z0E7,Z0E8,Z0E9,Z0EA,Z0EB,Z0EC,Z0ED,Z0EE,Z0EF,Z0F0
-				,Z0F1,Z0F2,Z0F3,Z0F4,Z0F5,Z0F6,Z0F7,Z0F8,Z0F9,Z0FA
-				,Z0FB,Z0FC,Z0FD,Z0FE,Z0FF,Z100,Z101,Z102,Z103,Z104
-				,Z105,Z106,Z107,Z108,Z109,Z10A,Z10B,Z10C,Z10D,Z10E
-				,Z10F,Z110,Z111,Z112,Z113,Z114,Z115,Z116,Z117,Z118
-				,Z119,Z11A,Z11B,Z11C,Z11D,Z11E,Z11F,Z120,Z121,Z122
-				,Z123,Z124,Z125,Z126,Z127,Z128,Z129,Z12A,Z12B,Z12C
-				,Z12D,Z12E,Z12F,Z130,Z131,Z132,Z133,Z134,Z135,Z136
-				,Z137,Z138,Z139,Z13A,Z13B,Z13C,Z13D,Z13E,Z13F,Z140
-				,Z141,Z142,Z143,Z144,Z145,Z146,Z147,Z148,Z149,Z14A
-				,Z14B,Z14C,Z14D,Z14E,Z14F,Z150,Z151,Z152,Z153,Z154
-				,Z155,Z156,Z157,Z158,Z159,Z15A,Z15B,Z15C,Z15D,Z15E
-				,Z15F,Z160,Z161,Z162,Z163,Z164,Z165,Z166,Z167,Z168
-				,Z169,Z16A,Z16B,Z16C,Z16D,Z16E,Z16F,Z170,Z171,Z172
-				,Z173,Z174,Z175,Z176,Z177,Z178,Z179,Z17A,Z17B,Z17C
-				,Z17D,Z17E,Z17F,Z180,Z181,Z182,Z183,Z184,Z185,Z186
-				,Z187,Z188,Z189,Z18A,Z18B,Z18C,Z18D,Z18E,Z18F,Z190
-				,Z191,Z192,Z193,Z194,Z195,Z196,Z197,Z198,Z199,Z19A
-				,Z19B,Z19C,Z19D,Z19E,Z19F,Z1A0,Z1A1,Z1A2];
+var lotZSpots = [new SpotsInfo('Z','001',true,[75.8,24]),new SpotsInfo('Z','002',true,[75.7,27.5]),new SpotsInfo('Z','003',true,[75.7,31]),new SpotsInfo('Z','004',true,[75.7,51.3]),new SpotsInfo('Z','005',true,[75.6,20.3])
+				,new SpotsInfo('Z','006',true,[75.6,34.4]),new SpotsInfo('Z','007',true,[75.6,37.6]),new SpotsInfo('Z','008',true,[75.5,12.8]),new SpotsInfo('Z','009',true,[75.5,16.7]),new SpotsInfo('Z','00A',true,[75.5,212.9])
+				,new SpotsInfo('Z','00B',true,[75.4,55.1]),new SpotsInfo('Z','00C',true,[75.4,59]),new SpotsInfo('Z','00D',true,[75.4,229.1]),new SpotsInfo('Z','00E',true,[75.3,62.5]),new SpotsInfo('Z','00F',true,[75.3,83.1])
+				,new SpotsInfo('Z','010',true,[75.3,87.1]),new SpotsInfo('Z','011',true,[75.3,188.5]),new SpotsInfo('Z','012',true,[75.3,192.3]),new SpotsInfo('Z','013',true,[75.2,66.1]),new SpotsInfo('Z','014',true,[75.2,69.5])
+				,new SpotsInfo('Z','015',true,[75.2,76.6]),new SpotsInfo('Z','016',true,[75.2,79.6]),new SpotsInfo('Z','017',true,[75.2,115.1]),new SpotsInfo('Z','018',true,[75.2,184.7]),new SpotsInfo('Z','019',true,[75.1,72.9])
+				,new SpotsInfo('Z','01A',true,[75.1,90.7]),new SpotsInfo('Z','01B',true,[75.1,150.2]),new SpotsInfo('Z','01C',true,[75.1,157.6]),new SpotsInfo('Z','01D',true,[75.1,164.5]),new SpotsInfo('Z','01E',true,[75,104.4])
+				,new SpotsInfo('Z','01F',true,[75,107.9]),new SpotsInfo('Z','020',true,[75,153.7]),new SpotsInfo('Z','021',true,[75,161]),new SpotsInfo('Z','022',true,[75,171.7]),new SpotsInfo('Z','023',true,[75,206.3])
+				,new SpotsInfo('Z','024',true,[75,209.3]),new SpotsInfo('Z','025',true,[75,232.4]),new SpotsInfo('Z','026',true,[74.9,94.2]),new SpotsInfo('Z','027',true,[74.9,97.5]),new SpotsInfo('Z','028',true,[74.9,101.1])
+				,new SpotsInfo('Z','029',true,[74.9,111.5]),new SpotsInfo('Z','02A',true,[74.9,118.9]),new SpotsInfo('Z','02B',true,[74.9,126.1]),new SpotsInfo('Z','02C',true,[74.9,129.8]),new SpotsInfo('Z','02D',true,[74.9,195.6])
+				,new SpotsInfo('Z','02E',true,[74.8,122.6]),new SpotsInfo('Z','02F',true,[74.8,136.5]),new SpotsInfo('Z','030',true,[74.8,181.4]),new SpotsInfo('Z','031',true,[74.8,199.1]),new SpotsInfo('Z','032',true,[74.8,202.7])
+				,new SpotsInfo('Z','033',true,[74.8,235.6]),new SpotsInfo('Z','034',true,[74.7,133.3]),new SpotsInfo('Z','035',true,[74.7,178]),new SpotsInfo('Z','036',true,[74.7,239.4]),new SpotsInfo('Z','037',true,[74.6,168])
+				,new SpotsInfo('Z','038',true,[74.6,175.2]),new SpotsInfo('Z','039',true,[74.5,243.2]),new SpotsInfo('Z','03A',true,[74.5,249.8]),new SpotsInfo('Z','03B',true,[74.4,246.4]),new SpotsInfo('Z','03C',true,[74.4,253.6])
+				,new SpotsInfo('Z','03D',true,[74.3,257.1]),new SpotsInfo('Z','03E',true,[73.9,260.1]),new SpotsInfo('Z','03F',true,[73.9,264.1]),new SpotsInfo('Z','040',true,[73.8,267.6]),new SpotsInfo('Z','041',true,[73.7,271])
+				,new SpotsInfo('Z','042',true,[73.4,274.6]),new SpotsInfo('Z','043',true,[73.2,278.2]),new SpotsInfo('Z','044',true,[72.9,281.4]),new SpotsInfo('Z','045',true,[72.5,284.7]),new SpotsInfo('Z','046',true,[72.2,292])
+				,new SpotsInfo('Z','047',true,[72.2,299.1]),new SpotsInfo('Z','048',true,[72.1,288.7]),new SpotsInfo('Z','049',true,[72.1,295.5]),new SpotsInfo('Z','04A',true,[72,302.5]),new SpotsInfo('Z','04B',true,[72,309.8])
+				,new SpotsInfo('Z','04C',true,[71.5,306.2]),new SpotsInfo('Z','04D',true,[71.5,313.1]),new SpotsInfo('Z','04E',true,[71,316.6]),new SpotsInfo('Z','04F',true,[70.8,320.2]),new SpotsInfo('Z','050',true,[70.7,323.3])
+				,new SpotsInfo('Z','051',true,[70.7,327.5]),new SpotsInfo('Z','052',true,[70.4,330.9]),new SpotsInfo('Z','053',true,[70,333.9]),new SpotsInfo('Z','054',true,[70,341.8]),new SpotsInfo('Z','055',true,[69.8,345])
+				,new SpotsInfo('Z','056',true,[69.8,348.2]),new SpotsInfo('Z','057',true,[69.7,337.9]),new SpotsInfo('Z','058',true,[69.4,150.2]),new SpotsInfo('Z','059',true,[69.4,362.6]),new SpotsInfo('Z','05A',true,[69.3,20.5])
+				,new SpotsInfo('Z','05B',true,[69.3,351.6]),new SpotsInfo('Z','05C',true,[69.2,31]),new SpotsInfo('Z','05D',true,[69.2,34.7]),new SpotsInfo('Z','05E',true,[69.2,185]),new SpotsInfo('Z','05F',true,[69.2,199.2])
+				,new SpotsInfo('Z','060',true,[69.1,24.2]),new SpotsInfo('Z','061',true,[69.1,27.6]),new SpotsInfo('Z','062',true,[69.1,37.9]),new SpotsInfo('Z','063',true,[69.1,69.7]),new SpotsInfo('Z','064',true,[69.1,195.8])
+				,new SpotsInfo('Z','065',true,[69.1,228.3]),new SpotsInfo('Z','066',true,[69,55.3]),new SpotsInfo('Z','067',true,[69,115.2]),new SpotsInfo('Z','068',true,[69,181.3]),new SpotsInfo('Z','069',true,[69,366.1])
+				,new SpotsInfo('Z','06A',true,[68.9,16.8]),new SpotsInfo('Z','06B',true,[68.9,51.6]),new SpotsInfo('Z','06C',true,[68.9,66]),new SpotsInfo('Z','06D',true,[68.9,73.5]),new SpotsInfo('Z','06E',true,[68.9,108])
+				,new SpotsInfo('Z','06F',true,[68.9,111.3]),new SpotsInfo('Z','070',true,[68.9,154.1]),new SpotsInfo('Z','071',true,[68.9,209.9]),new SpotsInfo('Z','072',true,[68.9,355.5]),new SpotsInfo('Z','073',true,[68.9,358.4])
+				,new SpotsInfo('Z','074',true,[68.9,369.3]),new SpotsInfo('Z','075',true,[68.8,104.7]),new SpotsInfo('Z','076',true,[68.8,157.9]),new SpotsInfo('Z','077',true,[68.8,161.3]),new SpotsInfo('Z','078',true,[68.8,164.7])
+				,new SpotsInfo('Z','079',true,[68.8,171.9]),new SpotsInfo('Z','07A',true,[68.8,178.1]),new SpotsInfo('Z','07B',true,[68.8,202.7]),new SpotsInfo('Z','07C',true,[68.8,206.1]),new SpotsInfo('Z','07D',true,[68.8,232.2])
+				,new SpotsInfo('Z','07E',true,[68.7,13.1]),new SpotsInfo('Z','07F',true,[68.7,59.2]),new SpotsInfo('Z','080',true,[68.7,118.9]),new SpotsInfo('Z','081',true,[68.7,213.3]),new SpotsInfo('Z','082',true,[68.6,76.5])
+				,new SpotsInfo('Z','083',true,[68.6,83]),new SpotsInfo('Z','084',true,[68.6,101.1]),new SpotsInfo('Z','085',true,[68.6,122.9]),new SpotsInfo('Z','086',true,[68.6,126.4]),new SpotsInfo('Z','087',true,[68.6,136.9])
+				,new SpotsInfo('Z','088',true,[68.6,168.4]),new SpotsInfo('Z','089',true,[68.6,175.1]),new SpotsInfo('Z','08A',true,[68.6,192.5]),new SpotsInfo('Z','08B',true,[68.5,62.5]),new SpotsInfo('Z','08C',true,[68.5,86.6])
+				,new SpotsInfo('Z','08D',true,[68.5,94.3]),new SpotsInfo('Z','08E',true,[68.5,129.9]),new SpotsInfo('Z','08F',true,[68.5,133.2]),new SpotsInfo('Z','090',true,[68.5,188.8]),new SpotsInfo('Z','091',true,[68.5,372.8])
+				,new SpotsInfo('Z','092',true,[68.4,79.7]),new SpotsInfo('Z','093',true,[68.4,235.5]),new SpotsInfo('Z','094',true,[68.3,97.6]),new SpotsInfo('Z','095',true,[68.3,380]),new SpotsInfo('Z','096',true,[68.2,90.7])
+				,new SpotsInfo('Z','097',true,[68.2,376.6]),new SpotsInfo('Z','098',true,[68.1,239.2]),new SpotsInfo('Z','099',true,[68.1,242.8]),new SpotsInfo('Z','09A',true,[68.1,383.1]),new SpotsInfo('Z','09B',true,[67.9,390.6])
+				,new SpotsInfo('Z','09C',true,[67.8,386.7]),new SpotsInfo('Z','09D',true,[67.6,246]),new SpotsInfo('Z','09E',true,[67.5,394.1]),new SpotsInfo('Z','09F',true,[67.4,249.4]),new SpotsInfo('Z','0A0',true,[67.2,253.1])
+				,new SpotsInfo('Z','0A1',true,[67.2,256.6]),new SpotsInfo('Z','0A2',true,[67.1,397.4]),new SpotsInfo('Z','0A3',true,[67.1,404.4]),new SpotsInfo('Z','0A4',true,[67,259.8]),new SpotsInfo('Z','0A5',true,[67,400.7])
+				,new SpotsInfo('Z','0A6',true,[66.8,267]),new SpotsInfo('Z','0A7',true,[66.7,263.8]),new SpotsInfo('Z','0A8',true,[66.6,270.6]),new SpotsInfo('Z','0A9',true,[66.5,274.2]),new SpotsInfo('Z','0AA',true,[66.4,407.5])
+				,new SpotsInfo('Z','0AB',true,[66.3,277.5]),new SpotsInfo('Z','0AC',true,[66.3,281.1]),new SpotsInfo('Z','0AD',true,[66.3,411.3]),new SpotsInfo('Z','0AE',true,[66.1,418.7]),new SpotsInfo('Z','0AF',true,[65.7,414.9])
+				,new SpotsInfo('Z','0B0',true,[65.5,284.6]),new SpotsInfo('Z','0B1',true,[65.5,288.1]),new SpotsInfo('Z','0B2',true,[65.3,291.6]),new SpotsInfo('Z','0B3',true,[65,295.3]),new SpotsInfo('Z','0B4',true,[64.6,298.8])
+				,new SpotsInfo('Z','0B5',true,[64.5,309.1]),new SpotsInfo('Z','0B6',true,[64.5,313.1]),new SpotsInfo('Z','0B7',true,[64.4,302.4]),new SpotsInfo('Z','0B8',true,[64.2,305.8]),new SpotsInfo('Z','0B9',true,[64.2,316.7])
+				,new SpotsInfo('Z','0BA',true,[64.1,323.3]),new SpotsInfo('Z','0BB',true,[64.1,330.5]),new SpotsInfo('Z','0BC',true,[64,326.9]),new SpotsInfo('Z','0BD',true,[64,341]),new SpotsInfo('Z','0BE',true,[63.9,319.7])
+				,new SpotsInfo('Z','0BF',true,[63.7,334.1]),new SpotsInfo('Z','0C0',true,[63.6,337.6]),new SpotsInfo('Z','0C1',true,[63.1,344.4]),new SpotsInfo('Z','0C2',true,[63.1,355.1]),new SpotsInfo('Z','0C3',true,[63,347.6])
+				,new SpotsInfo('Z','0C4',true,[63,351.6]),new SpotsInfo('Z','0C5',true,[62.8,358.3]),new SpotsInfo('Z','0C6',true,[62.5,365.6]),new SpotsInfo('Z','0C7',true,[62.4,362.2]),new SpotsInfo('Z','0C8',true,[62.1,372.6])
+				,new SpotsInfo('Z','0C9',true,[61.9,369.1]),new SpotsInfo('Z','0CA',true,[61.5,376.4]),new SpotsInfo('Z','0CB',true,[61.5,379.8]),new SpotsInfo('Z','0CC',true,[60.9,390.5]),new SpotsInfo('Z','0CD',true,[60.7,397.1])
+				,new SpotsInfo('Z','0CE',true,[60.5,382.9]),new SpotsInfo('Z','0CF',true,[60.4,386.7]),new SpotsInfo('Z','0D0',true,[60.4,393.8]),new SpotsInfo('Z','0D1',true,[60.4,403.9]),new SpotsInfo('Z','0D2',true,[60.3,400.7])
+				,new SpotsInfo('Z','0D3',true,[60.2,407.5]),new SpotsInfo('Z','0D4',true,[60.2,411.1]),new SpotsInfo('Z','0D5',true,[59.7,414.8]),new SpotsInfo('Z','0D6',true,[59.7,418]),new SpotsInfo('Z','0D7',true,[51.6,55.2])
+				,new SpotsInfo('Z','0D8',true,[51.6,115.8]),new SpotsInfo('Z','0D9',true,[51.4,59]),new SpotsInfo('Z','0DA',true,[51.3,16.5]),new SpotsInfo('Z','0DB',true,[51.3,51.7]),new SpotsInfo('Z','0DC',true,[51.3,102.4])
+				,new SpotsInfo('Z','0DD',true,[51.2,66.3]),new SpotsInfo('Z','0DE',true,[51.2,80.1]),new SpotsInfo('Z','0DF',true,[51.2,94.6]),new SpotsInfo('Z','0E0',true,[51.2,105.5]),new SpotsInfo('Z','0E1',true,[51.2,192.4])
+				,new SpotsInfo('Z','0E2',true,[51.2,227.2]),new SpotsInfo('Z','0E3',true,[51.1,69.9]),new SpotsInfo('Z','0E4',true,[51.1,98.5]),new SpotsInfo('Z','0E5',true,[51.1,209.4]),new SpotsInfo('Z','0E6',true,[51.1,235])
+				,new SpotsInfo('Z','0E7',true,[51.1,238.4]),new SpotsInfo('Z','0E8',true,[51.1,245.4]),new SpotsInfo('Z','0E9',true,[51,13.1]),new SpotsInfo('Z','0EA',true,[51,34.2]),new SpotsInfo('Z','0EB',true,[51,62.8])
+				,new SpotsInfo('Z','0EC',true,[51,84.1]),new SpotsInfo('Z','0ED',true,[51,87.8]),new SpotsInfo('Z','0EE',true,[51,108.3]),new SpotsInfo('Z','0EF',true,[51,122.7]),new SpotsInfo('Z','0F0',true,[51,167.4])
+				,new SpotsInfo('Z','0F1',true,[51,185]),new SpotsInfo('Z','0F2',true,[51,231.2]),new SpotsInfo('Z','0F3',true,[51,249]),new SpotsInfo('Z','0F4',true,[50.9,20.2]),new SpotsInfo('Z','0F5',true,[50.9,30.9])
+				,new SpotsInfo('Z','0F6',true,[50.9,76.9]),new SpotsInfo('Z','0F7',true,[50.9,91.3]),new SpotsInfo('Z','0F8',true,[50.9,126.2]),new SpotsInfo('Z','0F9',true,[50.9,136.5]),new SpotsInfo('Z','0FA',true,[50.9,149.6])
+				,new SpotsInfo('Z','0FB',true,[50.9,153.1]),new SpotsInfo('Z','0FC',true,[50.9,164]),new SpotsInfo('Z','0FD',true,[50.9,189]),new SpotsInfo('Z','0FE',true,[50.9,199.3]),new SpotsInfo('Z','0FF',true,[50.9,206.3])
+				,new SpotsInfo('Z','100',true,[50.8,27.4]),new SpotsInfo('Z','101',true,[50.8,38]),new SpotsInfo('Z','102',true,[50.8,119.3]),new SpotsInfo('Z','103',true,[50.8,171]),new SpotsInfo('Z','104',true,[50.8,174.4])
+				,new SpotsInfo('Z','105',true,[50.8,181.6]),new SpotsInfo('Z','106',true,[50.8,202.8]),new SpotsInfo('Z','107',true,[50.7,73.2]),new SpotsInfo('Z','108',true,[50.7,111.8]),new SpotsInfo('Z','109',true,[50.7,156.7])
+				,new SpotsInfo('Z','10A',true,[50.7,160.6]),new SpotsInfo('Z','10B',true,[50.7,177.5]),new SpotsInfo('Z','10C',true,[50.7,196]),new SpotsInfo('Z','10D',true,[50.7,241.8]),new SpotsInfo('Z','10E',true,[50.6,24.1])
+				,new SpotsInfo('Z','10F',true,[50.6,129.6]),new SpotsInfo('Z','110',true,[50.5,133.4]),new SpotsInfo('Z','111',true,[49.9,252.2]),new SpotsInfo('Z','112',true,[49.9,259.2]),new SpotsInfo('Z','113',true,[49.8,255.8])
+				,new SpotsInfo('Z','114',true,[49.7,263]),new SpotsInfo('Z','115',true,[49.3,266]),new SpotsInfo('Z','116',true,[49.3,273.7]),new SpotsInfo('Z','117',true,[49.2,269.9]),new SpotsInfo('Z','118',true,[49,277])
+				,new SpotsInfo('Z','119',true,[48.9,280.7]),new SpotsInfo('Z','11A',true,[48.4,284]),new SpotsInfo('Z','11B',true,[48.3,287.3]),new SpotsInfo('Z','11C',true,[48.2,290.9]),new SpotsInfo('Z','11D',true,[48.1,294.4])
+				,new SpotsInfo('Z','11E',true,[48.1,298.1]),new SpotsInfo('Z','11F',true,[48.1,312]),new SpotsInfo('Z','120',true,[48,301.3]),new SpotsInfo('Z','121',true,[48,304.9]),new SpotsInfo('Z','122',true,[47.8,308.3])
+				,new SpotsInfo('Z','123',true,[47.2,322.6]),new SpotsInfo('Z','124',true,[47.1,314.7]),new SpotsInfo('Z','125',true,[47,325.8]),new SpotsInfo('Z','126',true,[46.7,318.7]),new SpotsInfo('Z','127',true,[46.1,343.7])
+				,new SpotsInfo('Z','128',true,[45.9,347.1]),new SpotsInfo('Z','129',true,[45.8,354]),new SpotsInfo('Z','12A',true,[45.7,350.8]),new SpotsInfo('Z','12B',true,[45.5,115.7]),new SpotsInfo('Z','12C',true,[45.5,357.8])
+				,new SpotsInfo('Z','12D',true,[45.4,364.7]),new SpotsInfo('Z','12E',true,[45.3,99]),new SpotsInfo('Z','12F',true,[45.3,368.3]),new SpotsInfo('Z','130',true,[45.2,361.2]),new SpotsInfo('Z','131',true,[45.1,122.9])
+				,new SpotsInfo('Z','132',true,[44.9,34.7]),new SpotsInfo('Z','133',true,[44.9,88.2]),new SpotsInfo('Z','134',true,[44.9,91.4]),new SpotsInfo('Z','135',true,[44.9,102.3]),new SpotsInfo('Z','136',true,[44.9,108.5])
+				,new SpotsInfo('Z','137',true,[44.8,95.1]),new SpotsInfo('Z','138',true,[44.8,119.4]),new SpotsInfo('Z','139',true,[44.7,16.1]),new SpotsInfo('Z','13A',true,[44.7,20.5]),new SpotsInfo('Z','13B',true,[44.6,13])
+				,new SpotsInfo('Z','13C',true,[44.6,105.7]),new SpotsInfo('Z','13D',true,[44.5,30.7]),new SpotsInfo('Z','13E',true,[44.5,84.1]),new SpotsInfo('Z','13F',true,[44.5,111.9]),new SpotsInfo('Z','140',true,[44.4,24.2])
+				,new SpotsInfo('Z','141',true,[44.4,133.8]),new SpotsInfo('Z','142',true,[44.4,137]),new SpotsInfo('Z','143',true,[44.4,149.5]),new SpotsInfo('Z','144',true,[44.4,378.6]),new SpotsInfo('Z','145',true,[44.3,27.3])
+				,new SpotsInfo('Z','146',true,[44.3,55.3]),new SpotsInfo('Z','147',true,[44.3,62.8]),new SpotsInfo('Z','148',true,[44.2,213]),new SpotsInfo('Z','149',true,[44.2,375.3]),new SpotsInfo('Z','14A',true,[44.1,37.9])
+				,new SpotsInfo('Z','14B',true,[44.1,59.3]),new SpotsInfo('Z','14C',true,[44.1,66.4]),new SpotsInfo('Z','14D',true,[44.1,196]),new SpotsInfo('Z','14E',true,[44.1,209.7]),new SpotsInfo('Z','14F',true,[44.1,371.7])
+				,new SpotsInfo('Z','150',true,[44,52.1]),new SpotsInfo('Z','151',true,[44,80.4]),new SpotsInfo('Z','152',true,[44,126.3]),new SpotsInfo('Z','153',true,[44,199.5]),new SpotsInfo('Z','154',true,[44,234.5])
+				,new SpotsInfo('Z','155',true,[43.9,69.8]),new SpotsInfo('Z','156',true,[43.9,73.5]),new SpotsInfo('Z','157',true,[43.9,130.1]),new SpotsInfo('Z','158',true,[43.9,153.2]),new SpotsInfo('Z','159',true,[43.9,157])
+				,new SpotsInfo('Z','15A',true,[43.9,164]),new SpotsInfo('Z','15B',true,[43.9,181.8]),new SpotsInfo('Z','15C',true,[43.9,202.7]),new SpotsInfo('Z','15D',true,[43.9,206.4]),new SpotsInfo('Z','15E',true,[43.9,238.1])
+				,new SpotsInfo('Z','15F',true,[43.8,160.5]),new SpotsInfo('Z','160',true,[43.8,189]),new SpotsInfo('Z','161',true,[43.8,382.5]),new SpotsInfo('Z','162',true,[43.7,76.9]),new SpotsInfo('Z','163',true,[43.7,167.2])
+				,new SpotsInfo('Z','164',true,[43.7,171.1]),new SpotsInfo('Z','165',true,[43.7,174.5]),new SpotsInfo('Z','166',true,[43.7,185.2]),new SpotsInfo('Z','167',true,[43.7,192.5]),new SpotsInfo('Z','168',true,[43.7,241.4])
+				,new SpotsInfo('Z','169',true,[43.6,177.9]),new SpotsInfo('Z','16A',true,[43.6,385.5]),new SpotsInfo('Z','16B',true,[43.4,245.2]),new SpotsInfo('Z','16C',true,[43.3,392.5]),new SpotsInfo('Z','16D',true,[43.2,248.5])
+				,new SpotsInfo('Z','16E',true,[43.2,406.9]),new SpotsInfo('Z','16F',true,[43.1,389.3]),new SpotsInfo('Z','170',true,[43.1,395.8]),new SpotsInfo('Z','171',true,[42.9,402.9]),new SpotsInfo('Z','172',true,[42.9,410])
+				,new SpotsInfo('Z','173',true,[42.8,417]),new SpotsInfo('Z','174',true,[42.7,399.2]),new SpotsInfo('Z','175',true,[42.7,413.3]),new SpotsInfo('Z','176',true,[42.5,252]),new SpotsInfo('Z','177',true,[42.3,255.8])
+				,new SpotsInfo('Z','178',true,[42.2,259.1]),new SpotsInfo('Z','179',true,[42.2,262.6]),new SpotsInfo('Z','17A',true,[41.8,265.9]),new SpotsInfo('Z','17B',true,[41.8,273]),new SpotsInfo('Z','17C',true,[41.6,269.7])
+				,new SpotsInfo('Z','17D',true,[41.5,283.8]),new SpotsInfo('Z','17E',true,[41.4,294.1]),new SpotsInfo('Z','17F',true,[41.2,287]),new SpotsInfo('Z','180',true,[41.2,290.6]),new SpotsInfo('Z','181',true,[41,276.7])
+				,new SpotsInfo('Z','182',true,[40.9,280.2]),new SpotsInfo('Z','183',true,[40.9,297.5]),new SpotsInfo('Z','184',true,[40.7,304.7]),new SpotsInfo('Z','185',true,[40.6,300.9]),new SpotsInfo('Z','186',true,[40.5,308.1])
+				,new SpotsInfo('Z','187',true,[40.4,311.1]),new SpotsInfo('Z','188',true,[40.3,315]),new SpotsInfo('Z','189',true,[40.2,329.1]),new SpotsInfo('Z','18A',true,[40.1,322.2]),new SpotsInfo('Z','18B',true,[39.9,318.7])
+				,new SpotsInfo('Z','18C',true,[39.9,325.2]),new SpotsInfo('Z','18D',true,[39.1,343.3]),new SpotsInfo('Z','18E',true,[39,346.7]),new SpotsInfo('Z','18F',true,[38.6,349.9]),new SpotsInfo('Z','190',true,[38.5,354.1])
+				,new SpotsInfo('Z','191',true,[38.2,371.4]),new SpotsInfo('Z','192',true,[38.1,360.8]),new SpotsInfo('Z','193',true,[38.1,374.7]),new SpotsInfo('Z','194',true,[38,357.4]),new SpotsInfo('Z','195',true,[37.8,364.3])
+				,new SpotsInfo('Z','196',true,[37.8,378.5]),new SpotsInfo('Z','197',true,[37.7,368.1]),new SpotsInfo('Z','198',true,[37.6,382]),new SpotsInfo('Z','199',true,[37.2,389.1]),new SpotsInfo('Z','19A',true,[37.1,395.8])
+				,new SpotsInfo('Z','19B',true,[37,385.3]),new SpotsInfo('Z','19C',true,[37,392.6]),new SpotsInfo('Z','19D',true,[37,402.9]),new SpotsInfo('Z','19E',true,[36.2,406.5]),new SpotsInfo('Z','19F',true,[36.1,409.8])
+				,new SpotsInfo('Z','1A0',true,[35.9,416.6]),new SpotsInfo('Z','1A1',true,[35.8,398.9]),new SpotsInfo('Z','1A2',true,[35.7,413.3])];
 
 //Lot AA - - - - - - - - - - - - - - - - - - - - - - - - -
-var AA001 = new SpotsInfo('AA','001',true,[0,0]);
-var AA002 = new SpotsInfo('AA','002',true,[0,0]);
-var AA003 = new SpotsInfo('AA','003',true,[0,0]);
-var AA004 = new SpotsInfo('AA','004',true,[0,0]);
-var AA005 = new SpotsInfo('AA','005',true,[0,0]);
-var AA006 = new SpotsInfo('AA','006',true,[0,0]);
-var AA007 = new SpotsInfo('AA','007',true,[0,0]);
-var AA008 = new SpotsInfo('AA','008',true,[0,0]);
-var AA009 = new SpotsInfo('AA','009',true,[0,0]);
-var AA00A = new SpotsInfo('AA','00A',true,[0,0]);
-var AA00B = new SpotsInfo('AA','00B',true,[0,0]);
-var AA00C = new SpotsInfo('AA','00C',true,[0,0]);
-var AA00D = new SpotsInfo('AA','00D',true,[0,0]);
-var AA00E = new SpotsInfo('AA','00E',true,[0,0]);
-var AA00F = new SpotsInfo('AA','00F',true,[0,0]);
-var AA010 = new SpotsInfo('AA','010',true,[0,0]);
-var AA011 = new SpotsInfo('AA','011',true,[0,0]);
-var AA012 = new SpotsInfo('AA','012',true,[0,0]);
-var AA013 = new SpotsInfo('AA','013',true,[0,0]);
-var AA014 = new SpotsInfo('AA','014',true,[0,0]);
-var AA015 = new SpotsInfo('AA','015',true,[0,0]);
-var AA016 = new SpotsInfo('AA','016',true,[0,0]);
-var AA017 = new SpotsInfo('AA','017',true,[0,0]);
-var AA018 = new SpotsInfo('AA','018',true,[0,0]);
-var AA019 = new SpotsInfo('AA','019',true,[0,0]);
-var AA01A = new SpotsInfo('AA','01A',true,[0,0]);
-var AA01B = new SpotsInfo('AA','01B',true,[0,0]);
-var AA01C = new SpotsInfo('AA','01C',true,[0,0]);
-var AA01D = new SpotsInfo('AA','01D',true,[0,0]);
-var AA01E = new SpotsInfo('AA','01E',true,[0,0]);
-var AA01F = new SpotsInfo('AA','01F',true,[0,0]);
-var AA020 = new SpotsInfo('AA','020',true,[0,0]);
-var AA021 = new SpotsInfo('AA','021',true,[0,0]);
-var AA022 = new SpotsInfo('AA','022',true,[0,0]);
-var AA023 = new SpotsInfo('AA','023',true,[0,0]);
-var AA024 = new SpotsInfo('AA','024',true,[0,0]);
-var AA025 = new SpotsInfo('AA','025',true,[0,0]);
-var AA026 = new SpotsInfo('AA','026',true,[0,0]);
-var AA027 = new SpotsInfo('AA','027',true,[0,0]);
-var AA028 = new SpotsInfo('AA','028',true,[0,0]);
-var AA029 = new SpotsInfo('AA','029',true,[0,0]);
-var AA02A = new SpotsInfo('AA','02A',true,[0,0]);
-var AA02B = new SpotsInfo('AA','02B',true,[0,0]);
-var AA02C = new SpotsInfo('AA','02C',true,[0,0]);
-var AA02D = new SpotsInfo('AA','02D',true,[0,0]);
-var AA02E = new SpotsInfo('AA','02E',true,[0,0]);
-var AA02F = new SpotsInfo('AA','02F',true,[0,0]);
-var AA030 = new SpotsInfo('AA','030',true,[0,0]);
-var AA031 = new SpotsInfo('AA','031',true,[0,0]);
-var AA032 = new SpotsInfo('AA','032',true,[0,0]);
-var lotAASpots = [AA001,AA002,AA003,AA004,AA005,AA006,AA007,AA008,AA009,AA00A
-				 ,AA00B,AA00C,AA00D,AA00E,AA00F,AA010,AA011,AA012,AA013,AA014
-				 ,AA015,AA016,AA017,AA018,AA019,AA01A,AA01B,AA01C,AA01D,AA01E
-				 ,AA01F,AA020,AA021,AA022,AA023,AA024,AA025,AA026,AA027,AA028
-				 ,AA029,AA02A,AA02B,AA02C,AA02D,AA02E,AA02F,AA030,AA031,AA032
-				 ];
+var lotAASpots = [new SpotsInfo('AA','001',true,[186.8,110.8]),new SpotsInfo('AA','002',true,[186.5,99.5]),new SpotsInfo('AA','003',true,[186.4,122]),new SpotsInfo('AA','004',true,[147.7,125.7]),new SpotsInfo('AA','005',true,[147.5,147.9])
+				 ,new SpotsInfo('AA','006',true,[145.9,97]),new SpotsInfo('AA','007',true,[138.5,78]),new SpotsInfo('AA','008',true,[127.8,127.3]),new SpotsInfo('AA','009',true,[127.7,116.3]),new SpotsInfo('AA','00A',true,[127.6,149.9])
+				 ,new SpotsInfo('AA','00B',true,[127.4,138.4]),new SpotsInfo('AA','00C',true,[126.7,104.1]),new SpotsInfo('AA','00D',true,[117.3,207.2]),new SpotsInfo('AA','00E',true,[106.4,207]),new SpotsInfo('AA','00F',true,[104,62.8])
+				 ,new SpotsInfo('AA','010',true,[97.3,206.7]),new SpotsInfo('AA','011',true,[87.9,206.5]),new SpotsInfo('AA','012',true,[83.8,81.1]),new SpotsInfo('AA','013',true,[83.3,93.1]),new SpotsInfo('AA','014',true,[83.3,104.8])
+				 ,new SpotsInfo('AA','015',true,[83.2,62.7]),new SpotsInfo('AA','016',true,[82.4,139.9]),new SpotsInfo('AA','017',true,[82.3,116.1]),new SpotsInfo('AA','018',true,[82.2,151.8]),new SpotsInfo('AA','019',true,[82.1,128.1])
+				 ,new SpotsInfo('AA','01A',true,[79,206.4]),new SpotsInfo('AA','01B',true,[69.4,206]),new SpotsInfo('AA','01C',true,[62.1,80.5]),new SpotsInfo('AA','01D',true,[61.7,93.2]),new SpotsInfo('AA','01E',true,[61.7,116.6])
+				 ,new SpotsInfo('AA','01F',true,[61.6,105.1]),new SpotsInfo('AA','020',true,[61.5,127.4]),new SpotsInfo('AA','021',true,[61.5,139.7]),new SpotsInfo('AA','022',true,[61.4,151.7]),new SpotsInfo('AA','023',true,[60.4,206.2])
+				 ,new SpotsInfo('AA','024',true,[50.9,206.5]),new SpotsInfo('AA','025',true,[43.3,21.6]),new SpotsInfo('AA','026',true,[41.6,206.2]),new SpotsInfo('AA','027',true,[34.5,25]),new SpotsInfo('AA','028',true,[32.3,206.2])
+				 ,new SpotsInfo('AA','029',true,[25.5,30.8]),new SpotsInfo('AA','02A',true,[18.8,186]),new SpotsInfo('AA','02B',true,[18.3,106]),new SpotsInfo('AA','02C',true,[18.3,173.3]),new SpotsInfo('AA','02D',true,[18.2,128.9])
+				 ,new SpotsInfo('AA','02E',true,[18,117.3]),new SpotsInfo('AA','02F',true,[17.8,139.9]),new SpotsInfo('AA','030',true,[17.7,94.5]),new SpotsInfo('AA','031',true,[17.7,162]),new SpotsInfo('AA','032',true,[17.5,150.7])
+				 ,new SpotsInfo('AA','033',true,[17.4,82.3])];
 
 //Lot BB - - - - - - - - - - - - - - - - - - - - - - - - -
-var BB001 = new SpotsInfo('BB','001',true,[0,0]);
-var BB002 = new SpotsInfo('BB','002',true,[0,0]);
-var BB003 = new SpotsInfo('BB','003',true,[0,0]);
-var BB004 = new SpotsInfo('BB','004',true,[0,0]);
-var BB005 = new SpotsInfo('BB','005',true,[0,0]);
-var BB006 = new SpotsInfo('BB','006',true,[0,0]);
-var BB007 = new SpotsInfo('BB','007',true,[0,0]);
-var BB008 = new SpotsInfo('BB','008',true,[0,0]);
-var BB009 = new SpotsInfo('BB','009',true,[0,0]);
-var BB00A = new SpotsInfo('BB','00A',true,[0,0]);
-var BB00B = new SpotsInfo('BB','00B',true,[0,0]);
-var BB00C = new SpotsInfo('BB','00C',true,[0,0]);
-var BB00D = new SpotsInfo('BB','00D',true,[0,0]);
-var BB00E = new SpotsInfo('BB','00E',true,[0,0]);
-var BB00F = new SpotsInfo('BB','00F',true,[0,0]);
-var BB010 = new SpotsInfo('BB','010',true,[0,0]);
-var BB011 = new SpotsInfo('BB','011',true,[0,0]);
-var BB012 = new SpotsInfo('BB','012',true,[0,0]);
-var BB013 = new SpotsInfo('BB','013',true,[0,0]);
-var BB014 = new SpotsInfo('BB','014',true,[0,0]);
-var BB015 = new SpotsInfo('BB','015',true,[0,0]);
-var BB016 = new SpotsInfo('BB','016',true,[0,0]);
-var BB017 = new SpotsInfo('BB','017',true,[0,0]);
-var BB018 = new SpotsInfo('BB','018',true,[0,0]);
-var BB019 = new SpotsInfo('BB','019',true,[0,0]);
-var BB01A = new SpotsInfo('BB','01A',true,[0,0]);
-var BB01B = new SpotsInfo('BB','01B',true,[0,0]);
-var BB01C = new SpotsInfo('BB','01C',true,[0,0]);
-var BB01D = new SpotsInfo('BB','01D',true,[0,0]);
-var BB01E = new SpotsInfo('BB','01E',true,[0,0]);
-var BB01F = new SpotsInfo('BB','01F',true,[0,0]);
-var BB020 = new SpotsInfo('BB','020',true,[0,0]);
-var BB021 = new SpotsInfo('BB','021',true,[0,0]);
-var BB022 = new SpotsInfo('BB','022',true,[0,0]);
-var lotBBSpots = [BB001,BB002,BB003,BB004,BB005,BB006,BB007,BB008,BB009,BB00A
-				 ,BB00B,BB00C,BB00D,BB00E,BB00F,BB010,BB011,BB012,BB013,BB014
-				 ,BB015,BB016,BB017,BB018,BB019,BB01A,BB01B,BB01C,BB01D,BB01E
-				 ,BB01F,BB020,BB021,BB022];
+var lotBBSpots = [new SpotsInfo('BB','001',true,[142.8,103.6]),new SpotsInfo('BB','002',true,[142.6,113.4]),new SpotsInfo('BB','003',true,[142.4,94.8]),new SpotsInfo('BB','004',true,[142,69.4]),new SpotsInfo('BB','005',true,[141.3,85.7])
+				 ,new SpotsInfo('BB','006',true,[141.2,78.9]),new SpotsInfo('BB','007',true,[129,277.5]),new SpotsInfo('BB','008',true,[128.8,285.4]),new SpotsInfo('BB','009',true,[128.7,268.4]),new SpotsInfo('BB','00A',true,[128.2,260.2])
+				 ,new SpotsInfo('BB','00B',true,[127.8,251.7]),new SpotsInfo('BB','00C',true,[127.5,243.3]),new SpotsInfo('BB','00D',true,[127,235.1]),new SpotsInfo('BB','00E',true,[126.9,228.3]),new SpotsInfo('BB','00F',true,[126.4,218.1])
+				 ,new SpotsInfo('BB','010',true,[82,210.3]),new SpotsInfo('BB','011',true,[81.2,234.5]),new SpotsInfo('BB','012',true,[81.2,241.9]),new SpotsInfo('BB','013',true,[81.1,226.5]),new SpotsInfo('BB','014',true,[81,202.3])
+				 ,new SpotsInfo('BB','015',true,[80.7,219.6]),new SpotsInfo('BB','016',true,[80.2,194.8]),new SpotsInfo('BB','017',true,[80.2,251]),new SpotsInfo('BB','018',true,[79.8,185.7]),new SpotsInfo('BB','019',true,[79.8,259])
+				 ,new SpotsInfo('BB','01A',true,[79.8,267.2]),new SpotsInfo('BB','01B',true,[79.5,169.5]),new SpotsInfo('BB','01C',true,[79.5,177.3]),new SpotsInfo('BB','01D',true,[78.4,161]),new SpotsInfo('BB','01E',true,[78,151.5])
+				 ,new SpotsInfo('BB','01F',true,[77.6,144.5]),new SpotsInfo('BB','020',true,[76.7,135.5]),new SpotsInfo('BB','021',true,[75.6,126.5]),new SpotsInfo('BB','022',true,[74.9,118.2]),new SpotsInfo('BB','023',true,[73.6,108.6])
+				 ,new SpotsInfo('BB','024',true,[13.4,51.9]),new SpotsInfo('BB','025',true,[13,42.4]),new SpotsInfo('BB','026',true,[12.7,33.9])];
 
 //Lot BF - - - - - - - - - - - - - - - - - - - - - - - - -
-var BF001 = new SpotsInfo('BF','001',true,[0,0]);
-var BF002 = new SpotsInfo('BF','002',true,[0,0]);
-var BF003 = new SpotsInfo('BF','003',true,[0,0]);
-var BF004 = new SpotsInfo('BF','004',true,[0,0]);
-var BF005 = new SpotsInfo('BF','005',true,[0,0]);
-var BF006 = new SpotsInfo('BF','006',true,[0,0]);
-var BF007 = new SpotsInfo('BF','007',true,[0,0]);
-var BF008 = new SpotsInfo('BF','008',true,[0,0]);
-var BF009 = new SpotsInfo('BF','009',true,[0,0]);
-var BF00A = new SpotsInfo('BF','00A',true,[0,0]);
-var BF00B = new SpotsInfo('BF','00B',true,[0,0]);
-var BF00C = new SpotsInfo('BF','00C',true,[0,0]);
-var BF00D = new SpotsInfo('BF','00D',true,[0,0]);
-var BF00E = new SpotsInfo('BF','00E',true,[0,0]);
-var BF00F = new SpotsInfo('BF','00F',true,[0,0]);
-var BF010 = new SpotsInfo('BF','010',true,[0,0]);
-var BF011 = new SpotsInfo('BF','011',true,[0,0]);
-var BF012 = new SpotsInfo('BF','012',true,[0,0]);
-var BF013 = new SpotsInfo('BF','013',true,[0,0]);
-var BF014 = new SpotsInfo('BF','014',true,[0,0]);
-var BF015 = new SpotsInfo('BF','015',true,[0,0]);
-var BF016 = new SpotsInfo('BF','016',true,[0,0]);
-var BF017 = new SpotsInfo('BF','017',true,[0,0]);
-var BF018 = new SpotsInfo('BF','018',true,[0,0]);
-var BF019 = new SpotsInfo('BF','019',true,[0,0]);
-var BF01A = new SpotsInfo('BF','01A',true,[0,0]);
-var BF01B = new SpotsInfo('BF','01B',true,[0,0]);
-var BF01C = new SpotsInfo('BF','01C',true,[0,0]);
-var BF01D = new SpotsInfo('BF','01D',true,[0,0]);
-var BF01E = new SpotsInfo('BF','01E',true,[0,0]);
-var BF01F = new SpotsInfo('BF','01F',true,[0,0]);
-var BF020 = new SpotsInfo('BF','020',true,[0,0]);
-var BF021 = new SpotsInfo('BF','021',true,[0,0]);
-var BF022 = new SpotsInfo('BF','022',true,[0,0]);
-var BF023 = new SpotsInfo('BF','023',true,[0,0]);
-var BF024 = new SpotsInfo('BF','024',true,[0,0]);
-var BF025 = new SpotsInfo('BF','025',true,[0,0]);
-var BF026 = new SpotsInfo('BF','026',true,[0,0]);
-var BF027 = new SpotsInfo('BF','027',true,[0,0]);
-var BF028 = new SpotsInfo('BF','028',true,[0,0]);
-var BF029 = new SpotsInfo('BF','029',true,[0,0]);
-var BF02A = new SpotsInfo('BF','02A',true,[0,0]);
-var BF02B = new SpotsInfo('BF','02B',true,[0,0]);
-var BF02C = new SpotsInfo('BF','02C',true,[0,0]);
-var BF02D = new SpotsInfo('BF','02D',true,[0,0]);
-var BF02E = new SpotsInfo('BF','02E',true,[0,0]);
-var BF02F = new SpotsInfo('BF','02F',true,[0,0]);
-var BF030 = new SpotsInfo('BF','030',true,[0,0]);
-var BF031 = new SpotsInfo('BF','031',true,[0,0]);
-var BF032 = new SpotsInfo('BF','032',true,[0,0]);
-var BF033 = new SpotsInfo('BF','033',true,[0,0]);
-var BF034 = new SpotsInfo('BF','034',true,[0,0]);
-var BF035 = new SpotsInfo('BF','035',true,[0,0]);
-var BF036 = new SpotsInfo('BF','036',true,[0,0]);
-var BF037 = new SpotsInfo('BF','037',true,[0,0]);
-var BF038 = new SpotsInfo('BF','038',true,[0,0]);
-var BF039 = new SpotsInfo('BF','039',true,[0,0]);
-var BF03A = new SpotsInfo('BF','03A',true,[0,0]);
-var BF03B = new SpotsInfo('BF','03B',true,[0,0]);
-var BF03C = new SpotsInfo('BF','03C',true,[0,0]);
-var BF03D = new SpotsInfo('BF','03D',true,[0,0]);
-var BF03E = new SpotsInfo('BF','03E',true,[0,0]);
-var BF03F = new SpotsInfo('BF','03F',true,[0,0]);
-var BF040 = new SpotsInfo('BF','040',true,[0,0]);
-var BF041 = new SpotsInfo('BF','041',true,[0,0]);
-var BF042 = new SpotsInfo('BF','042',true,[0,0]);
-var BF043 = new SpotsInfo('BF','043',true,[0,0]);
-var BF044 = new SpotsInfo('BF','044',true,[0,0]);
-var BF045 = new SpotsInfo('BF','045',true,[0,0]);
-var BF046 = new SpotsInfo('BF','046',true,[0,0]);
-var BF047 = new SpotsInfo('BF','047',true,[0,0]);
-var BF048 = new SpotsInfo('BF','048',true,[0,0]);
-var BF049 = new SpotsInfo('BF','049',true,[0,0]);
-var BF04A = new SpotsInfo('BF','04A',true,[0,0]);
-var BF04B = new SpotsInfo('BF','04B',true,[0,0]);
-var BF04C = new SpotsInfo('BF','04C',true,[0,0]);
-var BF04D = new SpotsInfo('BF','04D',true,[0,0]);
-var BF04E = new SpotsInfo('BF','04E',true,[0,0]);
-var BF04F = new SpotsInfo('BF','04F',true,[0,0]);
-var BF050 = new SpotsInfo('BF','050',true,[0,0]);
-var BF051 = new SpotsInfo('BF','051',true,[0,0]);
-var BF052 = new SpotsInfo('BF','052',true,[0,0]);
-var BF053 = new SpotsInfo('BF','053',true,[0,0]);
-var BF054 = new SpotsInfo('BF','054',true,[0,0]);
-var BF055 = new SpotsInfo('BF','055',true,[0,0]);
-var BF056 = new SpotsInfo('BF','056',true,[0,0]);
-var BF057 = new SpotsInfo('BF','057',true,[0,0]);
-var BF058 = new SpotsInfo('BF','058',true,[0,0]);
-var BF059 = new SpotsInfo('BF','059',true,[0,0]);
-var BF05A = new SpotsInfo('BF','05A',true,[0,0]);
-var BF05B = new SpotsInfo('BF','05B',true,[0,0]);
-var BF05C = new SpotsInfo('BF','05C',true,[0,0]);
-var BF05D = new SpotsInfo('BF','05D',true,[0,0]);
-var BF05E = new SpotsInfo('BF','05E',true,[0,0]);
-var BF05F = new SpotsInfo('BF','05F',true,[0,0]);
-var BF060 = new SpotsInfo('BF','060',true,[0,0]);
-var BF061 = new SpotsInfo('BF','061',true,[0,0]);
-var BF062 = new SpotsInfo('BF','062',true,[0,0]);
-var BF063 = new SpotsInfo('BF','063',true,[0,0]);
-var BF064 = new SpotsInfo('BF','064',true,[0,0]);
-var BF065 = new SpotsInfo('BF','065',true,[0,0]);
-var BF066 = new SpotsInfo('BF','066',true,[0,0]);
-var BF067 = new SpotsInfo('BF','067',true,[0,0]);
-var lotBFSpots = [BF001,BF002,BF003,BF004,BF005,BF006,BF007,BF008,BF009,BF00A
-				 ,BF00B,BF00C,BF00D,BF00E,BF00F,BF010,BF011,BF012,BF013,BF014
-				 ,BF015,BF016,BF017,BF018,BF019,BF01A,BF01B,BF01C,BF01D,BF01E
-				 ,BF01F,BF020,BF021,BF022,BF023,BF024,BF025,BF026,BF027,BF028
-				 ,BF029,BF02A,BF02B,BF02C,BF02D,BF02E,BF02F,BF030,BF031,BF032
-				 ,BF033,BF034,BF035,BF036,BF037,BF038,BF039,BF03A,BF03B,BF03C
-				 ,BF03D,BF03E,BF03F,BF040,BF041,BF042,BF043,BF044,BF045,BF046
-				 ,BF047,BF048,BF049,BF04A,BF04B,BF04C,BF04D,BF04E,BF04F,BF050
-				 ,BF051,BF052,BF053,BF054,BF055,BF056,BF057,BF058,BF059,BF05A
-				 ,BF05B,BF05C,BF05D,BF05E,BF05F,BF060,BF061,BF062,BF063,BF064
-				 ,BF065,BF066,BF067];
+var lotBFSpots = [new SpotsInfo('BF','001',true,[209.4,41.9]),new SpotsInfo('BF','002',true,[209.2,138]),new SpotsInfo('BF','003',true,[202.3,147.9]),new SpotsInfo('BF','004',true,[202.2,33.2]),new SpotsInfo('BF','005',true,[195,158.1])
+				 ,new SpotsInfo('BF','006',true,[168.7,171.8]),new SpotsInfo('BF','007',true,[165.8,11.2]),new SpotsInfo('BF','008',true,[159.8,171.3]),new SpotsInfo('BF','009',true,[157.5,11.4]),new SpotsInfo('BF','00A',true,[151.5,171.9])
+				 ,new SpotsInfo('BF','00B',true,[149.7,11.8]),new SpotsInfo('BF','00C',true,[144.4,173.4]),new SpotsInfo('BF','00D',true,[143.9,112.3]),new SpotsInfo('BF','00E',true,[143.8,131.5]),new SpotsInfo('BF','00F',true,[142.7,71.2])
+				 ,new SpotsInfo('BF','010',true,[142.4,53.9]),new SpotsInfo('BF','011',true,[141.9,12.3]),new SpotsInfo('BF','012',true,[136.4,172.5]),new SpotsInfo('BF','013',true,[136.2,114.5]),new SpotsInfo('BF','014',true,[135.9,132.2])
+				 ,new SpotsInfo('BF','015',true,[135,71.7]),new SpotsInfo('BF','016',true,[134.8,54]),new SpotsInfo('BF','017',true,[133.8,12.4]),new SpotsInfo('BF','018',true,[128.3,173]),new SpotsInfo('BF','019',true,[127.9,133])
+				 ,new SpotsInfo('BF','01A',true,[127,73.8]),new SpotsInfo('BF','01B',true,[127,114.4]),new SpotsInfo('BF','01C',true,[126.8,13.2]),new SpotsInfo('BF','01D',true,[126.1,54.7]),new SpotsInfo('BF','01E',true,[120.9,174])
+				 ,new SpotsInfo('BF','01F',true,[120,132]),new SpotsInfo('BF','020',true,[119.9,114.7]),new SpotsInfo('BF','021',true,[118.7,13.2]),new SpotsInfo('BF','022',true,[118.1,74.4]),new SpotsInfo('BF','023',true,[118,54.6])
+				 ,new SpotsInfo('BF','024',true,[112.3,174.3]),new SpotsInfo('BF','025',true,[112.1,132.9]),new SpotsInfo('BF','026',true,[111.8,115.7]),new SpotsInfo('BF','027',true,[110.9,73.3]),new SpotsInfo('BF','028',true,[110.3,13.3])
+				 ,new SpotsInfo('BF','029',true,[110.3,55]),new SpotsInfo('BF','02A',true,[104.6,174.5]),new SpotsInfo('BF','02B',true,[103.8,132.7]),new SpotsInfo('BF','02C',true,[103.6,115]),new SpotsInfo('BF','02D',true,[102.6,72.9])
+				 ,new SpotsInfo('BF','02E',true,[102.3,13.3]),new SpotsInfo('BF','02F',true,[102,53.3]),new SpotsInfo('BF','030',true,[96.6,174.7]),new SpotsInfo('BF','031',true,[95.9,133.6]),new SpotsInfo('BF','032',true,[95.3,72.4])
+				 ,new SpotsInfo('BF','033',true,[95.3,113.6]),new SpotsInfo('BF','034',true,[95,12.8]),new SpotsInfo('BF','035',true,[94.3,53.8]),new SpotsInfo('BF','036',true,[88.8,174.5]),new SpotsInfo('BF','037',true,[87.7,114.7])
+				 ,new SpotsInfo('BF','038',true,[87.5,133.9]),new SpotsInfo('BF','039',true,[86.9,13.5]),new SpotsInfo('BF','03A',true,[86.5,71.8]),new SpotsInfo('BF','03B',true,[86.1,53.7]),new SpotsInfo('BF','03C',true,[81.3,174.7])
+				 ,new SpotsInfo('BF','03D',true,[80.3,133]),new SpotsInfo('BF','03E',true,[79.4,116.2]),new SpotsInfo('BF','03F',true,[78.4,73.8]),new SpotsInfo('BF','040',true,[78.2,54.1]),new SpotsInfo('BF','041',true,[78,13.5])
+				 ,new SpotsInfo('BF','042',true,[72.5,174.6]),new SpotsInfo('BF','043',true,[71.6,115.4]),new SpotsInfo('BF','044',true,[71.6,133.1]),new SpotsInfo('BF','045',true,[70.8,73.6]),new SpotsInfo('BF','046',true,[70.5,54.8])
+				 ,new SpotsInfo('BF','047',true,[69.6,13.9]),new SpotsInfo('BF','048',true,[65,175.2]),new SpotsInfo('BF','049',true,[64,133.6]),new SpotsInfo('BF','04A',true,[63.9,115.5]),new SpotsInfo('BF','04B',true,[63,73.4])
+				 ,new SpotsInfo('BF','04C',true,[62.2,54.8]),new SpotsInfo('BF','04D',true,[61.7,14.3]),new SpotsInfo('BF','04E',true,[56.9,175.3]),new SpotsInfo('BF','04F',true,[55.4,134.2]),new SpotsInfo('BF','050',true,[55.2,115.5])
+				 ,new SpotsInfo('BF','051',true,[54.2,74.1]),new SpotsInfo('BF','052',true,[53.8,55.3]),new SpotsInfo('BF','053',true,[53.7,15]),new SpotsInfo('BF','054',true,[48,175.6]),new SpotsInfo('BF','055',true,[47.6,134.7])
+				 ,new SpotsInfo('BF','056',true,[47.1,113.7]),new SpotsInfo('BF','057',true,[46.2,15.7]),new SpotsInfo('BF','058',true,[46,55.8]),new SpotsInfo('BF','059',true,[45.9,73.2]),new SpotsInfo('BF','05A',true,[40.1,176.1])
+				 ,new SpotsInfo('BF','05B',true,[39.7,134.9]),new SpotsInfo('BF','05C',true,[39.3,114]),new SpotsInfo('BF','05D',true,[38.5,72.9]),new SpotsInfo('BF','05E',true,[38.3,55.9]),new SpotsInfo('BF','05F',true,[37.4,14.9])
+				 ,new SpotsInfo('BF','060',true,[32.7,175.9]),new SpotsInfo('BF','061',true,[32.1,134.6]),new SpotsInfo('BF','062',true,[31.5,115.8]),new SpotsInfo('BF','063',true,[30.2,74.2]),new SpotsInfo('BF','064',true,[29.8,57.2])
+				 ,new SpotsInfo('BF','065',true,[29.7,16.3]),new SpotsInfo('BF','066',true,[24.1,175.6]),new SpotsInfo('BF','067',true,[23.7,136.3]),new SpotsInfo('BF','068',true,[23.1,116.2]),new SpotsInfo('BF','069',true,[21.7,74.4])
+				 ,new SpotsInfo('BF','06A',true,[20.6,56.5]),new SpotsInfo('BF','06B',true,[20.3,16])];
 
 //Lot BL - - - - - - - - - - - - - - - - - - - - - - - - -
-var BL001 = new SpotsInfo('BL','001',true,[0,0]);
-var BL002 = new SpotsInfo('BL','002',true,[0,0]);
-var BL003 = new SpotsInfo('BL','003',true,[0,0]);
-var BL004 = new SpotsInfo('BL','004',true,[0,0]);
-var BL005 = new SpotsInfo('BL','005',true,[0,0]);
-var BL006 = new SpotsInfo('BL','006',true,[0,0]);
-var BL007 = new SpotsInfo('BL','007',true,[0,0]);
-var BL008 = new SpotsInfo('BL','008',true,[0,0]);
-var BL009 = new SpotsInfo('BL','009',true,[0,0]);
-var BL00A = new SpotsInfo('BL','00A',true,[0,0]);
-var BL00B = new SpotsInfo('BL','00B',true,[0,0]);
-var BL00C = new SpotsInfo('BL','00C',true,[0,0]);
-var BL00D = new SpotsInfo('BL','00D',true,[0,0]);
-var BL00E = new SpotsInfo('BL','00E',true,[0,0]);
-var BL00F = new SpotsInfo('BL','00F',true,[0,0]);
-var BL010 = new SpotsInfo('BL','010',true,[0,0]);
-var BL011 = new SpotsInfo('BL','011',true,[0,0]);
-var BL012 = new SpotsInfo('BL','012',true,[0,0]);
-var BL013 = new SpotsInfo('BL','013',true,[0,0]);
-var BL014 = new SpotsInfo('BL','014',true,[0,0]);
-var BL015 = new SpotsInfo('BL','015',true,[0,0]);
-var BL016 = new SpotsInfo('BL','016',true,[0,0]);
-var BL017 = new SpotsInfo('BL','017',true,[0,0]);
-var BL018 = new SpotsInfo('BL','018',true,[0,0]);
-var BL019 = new SpotsInfo('BL','019',true,[0,0]);
-var BL01A = new SpotsInfo('BL','01A',true,[0,0]);
-var BL01B = new SpotsInfo('BL','01B',true,[0,0]);
-var BL01C = new SpotsInfo('BL','01C',true,[0,0]);
-var BL01D = new SpotsInfo('BL','01D',true,[0,0]);
-var BL01E = new SpotsInfo('BL','01E',true,[0,0]);
-var BL01F = new SpotsInfo('BL','01F',true,[0,0]);
-var BL020 = new SpotsInfo('BL','020',true,[0,0]);
-var BL021 = new SpotsInfo('BL','021',true,[0,0]);
-var BL022 = new SpotsInfo('BL','022',true,[0,0]);
-var BL023 = new SpotsInfo('BL','023',true,[0,0]);
-var BL024 = new SpotsInfo('BL','024',true,[0,0]);
-var BL025 = new SpotsInfo('BL','025',true,[0,0]);
-var BL026 = new SpotsInfo('BL','026',true,[0,0]);
-var BL027 = new SpotsInfo('BL','027',true,[0,0]);
-var BL028 = new SpotsInfo('BL','028',true,[0,0]);
-var BL029 = new SpotsInfo('BL','029',true,[0,0]);
-var BL02A = new SpotsInfo('BL','02A',true,[0,0]);
-var BL02B = new SpotsInfo('BL','02B',true,[0,0]);
-var BL02C = new SpotsInfo('BL','02C',true,[0,0]);
-var BL02D = new SpotsInfo('BL','02D',true,[0,0]);
-var BL02E = new SpotsInfo('BL','02E',true,[0,0]);
-var BL02F = new SpotsInfo('BL','02F',true,[0,0]);
-var BL030 = new SpotsInfo('BL','030',true,[0,0]);
-var BL031 = new SpotsInfo('BL','031',true,[0,0]);
-var BL032 = new SpotsInfo('BL','032',true,[0,0]);
-var BL033 = new SpotsInfo('BL','033',true,[0,0]);
-var BL034 = new SpotsInfo('BL','034',true,[0,0]);
-var BL035 = new SpotsInfo('BL','035',true,[0,0]);
-var BL036 = new SpotsInfo('BL','036',true,[0,0]);
-var BL037 = new SpotsInfo('BL','037',true,[0,0]);
-var BL038 = new SpotsInfo('BL','038',true,[0,0]);
-var BL039 = new SpotsInfo('BL','039',true,[0,0]);
-var BL03A = new SpotsInfo('BL','03A',true,[0,0]);
-var BL03B = new SpotsInfo('BL','03B',true,[0,0]);
-var BL03C = new SpotsInfo('BL','03C',true,[0,0]);
-var BL03D = new SpotsInfo('BL','03D',true,[0,0]);
-var BL03E = new SpotsInfo('BL','03E',true,[0,0]);
-var BL03F = new SpotsInfo('BL','03F',true,[0,0]);
-var BL040 = new SpotsInfo('BL','040',true,[0,0]);
-var BL041 = new SpotsInfo('BL','041',true,[0,0]);
-var BL042 = new SpotsInfo('BL','042',true,[0,0]);
-var BL043 = new SpotsInfo('BL','043',true,[0,0]);
-var BL044 = new SpotsInfo('BL','044',true,[0,0]);
-var BL045 = new SpotsInfo('BL','045',true,[0,0]);
-var BL046 = new SpotsInfo('BL','046',true,[0,0]);
-var BL047 = new SpotsInfo('BL','047',true,[0,0]);
-var BL048 = new SpotsInfo('BL','048',true,[0,0]);
-var BL049 = new SpotsInfo('BL','049',true,[0,0]);
-var BL04A = new SpotsInfo('BL','04A',true,[0,0]);
-var BL04B = new SpotsInfo('BL','04B',true,[0,0]);
-var BL04C = new SpotsInfo('BL','04C',true,[0,0]);
-var BL04D = new SpotsInfo('BL','04D',true,[0,0]);
-var BL04E = new SpotsInfo('BL','04E',true,[0,0]);
-var BL04F = new SpotsInfo('BL','04F',true,[0,0]);
-var BL050 = new SpotsInfo('BL','050',true,[0,0]);
-var BL051 = new SpotsInfo('BL','051',true,[0,0]);
-var BL052 = new SpotsInfo('BL','052',true,[0,0]);
-var BL053 = new SpotsInfo('BL','053',true,[0,0]);
-var BL054 = new SpotsInfo('BL','054',true,[0,0]);
-var BL055 = new SpotsInfo('BL','055',true,[0,0]);
-var BL056 = new SpotsInfo('BL','056',true,[0,0]);
-var BL057 = new SpotsInfo('BL','057',true,[0,0]);
-var BL058 = new SpotsInfo('BL','058',true,[0,0]);
-var BL059 = new SpotsInfo('BL','059',true,[0,0]);
-var BL05A = new SpotsInfo('BL','05A',true,[0,0]);
-var BL05B = new SpotsInfo('BL','05B',true,[0,0]);
-var BL05C = new SpotsInfo('BL','05C',true,[0,0]);
-var BL05D = new SpotsInfo('BL','05D',true,[0,0]);
-var BL05E = new SpotsInfo('BL','05E',true,[0,0]);
-var BL05F = new SpotsInfo('BL','05F',true,[0,0]);
-var BL060 = new SpotsInfo('BL','060',true,[0,0]);
-var BL061 = new SpotsInfo('BL','061',true,[0,0]);
-var BL062 = new SpotsInfo('BL','062',true,[0,0]);
-var BL063 = new SpotsInfo('BL','063',true,[0,0]);
-var BL064 = new SpotsInfo('BL','064',true,[0,0]);
-var BL065 = new SpotsInfo('BL','065',true,[0,0]);
-var BL066 = new SpotsInfo('BL','066',true,[0,0]);
-var BL067 = new SpotsInfo('BL','067',true,[0,0]);
-var BL068 = new SpotsInfo('BL','068',true,[0,0]);
-var BL069 = new SpotsInfo('BL','069',true,[0,0]);
-var BL06A = new SpotsInfo('BL','06A',true,[0,0]);
-var BL06B = new SpotsInfo('BL','06B',true,[0,0]);
-var BL06C = new SpotsInfo('BL','06C',true,[0,0]);
-var BL06D = new SpotsInfo('BL','06D',true,[0,0]);
-var BL06E = new SpotsInfo('BL','06E',true,[0,0]);
-var BL06F = new SpotsInfo('BL','06F',true,[0,0]);
-var BL070 = new SpotsInfo('BL','070',true,[0,0]);
-var BL071 = new SpotsInfo('BL','071',true,[0,0]);
-var BL072 = new SpotsInfo('BL','072',true,[0,0]);
-var BL073 = new SpotsInfo('BL','073',true,[0,0]);
-var BL074 = new SpotsInfo('BL','074',true,[0,0]);
-var BL075 = new SpotsInfo('BL','075',true,[0,0]);
-var BL076 = new SpotsInfo('BL','076',true,[0,0]);
-var BL077 = new SpotsInfo('BL','077',true,[0,0]);
-var lotBLSpots = [BL001,BL002,BL003,BL004,BL005,BL006,BL007,BL008,BL009,BL00A
-				 ,BL00B,BL00C,BL00D,BL00E,BL00F,BL010,BL011,BL012,BL013,BL014
-				 ,BL015,BL016,BL017,BL018,BL019,BL01A,BL01B,BL01C,BL01D,BL01E
-				 ,BL01F,BL020,BL021,BL022,BL023,BL024,BL025,BL026,BL027,BL028
-				 ,BL029,BL02A,BL02B,BL02C,BL02D,BL02E,BL02F,BL030,BL031,BL032
-				 ,BL033,BL034,BL035,BL036,BL037,BL038,BL039,BL03A,BL03B,BL03C
-				 ,BL03D,BL03E,BL03F,BL040,BL041,BL042,BL043,BL044,BL045,BL046
-				 ,BL047,BL048,BL049,BL04A,BL04B,BL04C,BL04D,BL04E,BL04F,BL050
-				 ,BL051,BL052,BL053,BL054,BL055,BL056,BL057,BL058,BL059,BL05A
-				 ,BL05B,BL05C,BL05D,BL05E,BL05F,BL060,BL061,BL062,BL063,BL064
-				 ,BL065,BL066,BL067,BL068,BL069,BL06A,BL06B,BL06C,BL06D,BL06E
-				 ,BL06F,BL070,BL071,BL072,BL073,BL074,BL075,BL076,BL077];
+var lotBLSpots = [new SpotsInfo('BL','001',true,[41.1,32.4]),new SpotsInfo('BL','002',true,[41.1,36.7]),new SpotsInfo('BL','003',true,[40.5,40.5]),new SpotsInfo('BL','004',true,[40.4,44.4]),new SpotsInfo('BL','005',true,[40.4,60.4])
+				 ,new SpotsInfo('BL','006',true,[40.3,48.7]),new SpotsInfo('BL','007',true,[40.3,52.6]),new SpotsInfo('BL','008',true,[40.3,64.7]),new SpotsInfo('BL','009',true,[40.2,68.8]),new SpotsInfo('BL','00A',true,[40.1,56.6])
+				 ,new SpotsInfo('BL','00B',true,[40.1,72.8]),new SpotsInfo('BL','00C',true,[39.9,76.5]),new SpotsInfo('BL','00D',true,[39.7,80.5]),new SpotsInfo('BL','00E',true,[39.7,85]),new SpotsInfo('BL','00F',true,[39.7,92.6])
+				 ,new SpotsInfo('BL','010',true,[39.3,101]),new SpotsInfo('BL','011',true,[39.1,104.9]),new SpotsInfo('BL','012',true,[39.1,124.7]),new SpotsInfo('BL','013',true,[39.1,132.7]),new SpotsInfo('BL','014',true,[39.1,136.8])
+				 ,new SpotsInfo('BL','015',true,[39,96.8]),new SpotsInfo('BL','016',true,[39,128.7]),new SpotsInfo('BL','017',true,[38.9,120.8]),new SpotsInfo('BL','018',true,[38.8,89.1]),new SpotsInfo('BL','019',true,[38.8,108.8])
+				 ,new SpotsInfo('BL','01A',true,[38.7,112.8]),new SpotsInfo('BL','01B',true,[38.7,141.4]),new SpotsInfo('BL','01C',true,[38.7,184.6]),new SpotsInfo('BL','01D',true,[38.6,116.9]),new SpotsInfo('BL','01E',true,[38.6,172.5])
+				 ,new SpotsInfo('BL','01F',true,[38.6,178.3]),new SpotsInfo('BL','020',true,[38.5,148.7]),new SpotsInfo('BL','021',true,[37.8,201.1]),new SpotsInfo('BL','022',true,[37.5,189]),new SpotsInfo('BL','023',true,[37.5,193.2])
+				 ,new SpotsInfo('BL','024',true,[37.5,197.2]),new SpotsInfo('BL','025',true,[37.5,204.7]),new SpotsInfo('BL','026',true,[37.4,208.8]),new SpotsInfo('BL','027',true,[37.3,213]),new SpotsInfo('BL','028',true,[37.3,217.6])
+				 ,new SpotsInfo('BL','029',true,[37.3,221.4]),new SpotsInfo('BL','02A',true,[37.3,225.1]),new SpotsInfo('BL','02B',true,[37.2,282.5]),new SpotsInfo('BL','02C',true,[37.1,233]),new SpotsInfo('BL','02D',true,[37,228.8])
+				 ,new SpotsInfo('BL','02E',true,[36.9,236.8]),new SpotsInfo('BL','02F',true,[36.9,245.1]),new SpotsInfo('BL','030',true,[36.9,276.9]),new SpotsInfo('BL','031',true,[36.8,241]),new SpotsInfo('BL','032',true,[36.8,248.6])
+				 ,new SpotsInfo('BL','033',true,[36.7,257.1]),new SpotsInfo('BL','034',true,[36.6,260.8]),new SpotsInfo('BL','035',true,[36.6,265]),new SpotsInfo('BL','036',true,[36.6,269]),new SpotsInfo('BL','037',true,[36.6,273])
+				 ,new SpotsInfo('BL','038',true,[36.4,253.1]),new SpotsInfo('BL','039',true,[19.2,47.5]),new SpotsInfo('BL','03A',true,[19,8.8]),new SpotsInfo('BL','03B',true,[18.7,50.8]),new SpotsInfo('BL','03C',true,[18.6,14.5])
+				 ,new SpotsInfo('BL','03D',true,[18.6,39.1]),new SpotsInfo('BL','03E',true,[18.4,55.3]),new SpotsInfo('BL','03F',true,[18.4,58.8]),new SpotsInfo('BL','040',true,[18.2,22.4]),new SpotsInfo('BL','041',true,[18.2,63])
+				 ,new SpotsInfo('BL','042',true,[18.1,18.5]),new SpotsInfo('BL','043',true,[18.1,67]),new SpotsInfo('BL','044',true,[18,26.5]),new SpotsInfo('BL','045',true,[17.9,30.7]),new SpotsInfo('BL','046',true,[17.8,34.2])
+				 ,new SpotsInfo('BL','047',true,[17.8,71.1]),new SpotsInfo('BL','048',true,[17.4,78.9]),new SpotsInfo('BL','049',true,[17.4,86.9]),new SpotsInfo('BL','04A',true,[17.2,74.9]),new SpotsInfo('BL','04B',true,[17.2,82.4])
+				 ,new SpotsInfo('BL','04C',true,[17.1,90.6]),new SpotsInfo('BL','04D',true,[16.8,102.9]),new SpotsInfo('BL','04E',true,[16.6,94.6]),new SpotsInfo('BL','04F',true,[16.5,98.5]),new SpotsInfo('BL','050',true,[16.4,106.9])
+				 ,new SpotsInfo('BL','051',true,[16,110.9]),new SpotsInfo('BL','052',true,[16,115.5]),new SpotsInfo('BL','053',true,[16,119.4]),new SpotsInfo('BL','054',true,[15.9,123.1]),new SpotsInfo('BL','055',true,[15.8,131.5])
+				 ,new SpotsInfo('BL','056',true,[15.7,127.4]),new SpotsInfo('BL','057',true,[15.5,151.9]),new SpotsInfo('BL','058',true,[15.4,159.4]),new SpotsInfo('BL','059',true,[15.3,147.8]),new SpotsInfo('BL','05A',true,[15.3,163.7])
+				 ,new SpotsInfo('BL','05B',true,[15.2,135.4]),new SpotsInfo('BL','05C',true,[15,143.4]),new SpotsInfo('BL','05D',true,[15,167.6]),new SpotsInfo('BL','05E',true,[14.9,139.2]),new SpotsInfo('BL','05F',true,[14.9,155.2])
+				 ,new SpotsInfo('BL','060',true,[14.8,171.6]),new SpotsInfo('BL','061',true,[14.8,175.4]),new SpotsInfo('BL','062',true,[14.6,179.4]),new SpotsInfo('BL','063',true,[14.6,184]),new SpotsInfo('BL','064',true,[14.6,187.8])
+				 ,new SpotsInfo('BL','065',true,[14.5,191.6]),new SpotsInfo('BL','066',true,[14.5,207.4]),new SpotsInfo('BL','067',true,[14.3,195.7]),new SpotsInfo('BL','068',true,[14.3,211.6]),new SpotsInfo('BL','069',true,[14.1,199.8])
+				 ,new SpotsInfo('BL','06A',true,[14.1,215.5]),new SpotsInfo('BL','06B',true,[13.9,203.1]),new SpotsInfo('BL','06C',true,[13.9,219.5]),new SpotsInfo('BL','06D',true,[13.7,248]),new SpotsInfo('BL','06E',true,[13.5,223.2])
+				 ,new SpotsInfo('BL','06F',true,[13.5,235.9]),new SpotsInfo('BL','070',true,[13.5,252.1]),new SpotsInfo('BL','071',true,[13.4,231.5]),new SpotsInfo('BL','072',true,[13.3,263.7]),new SpotsInfo('BL','073',true,[13.2,243.6])
+				 ,new SpotsInfo('BL','074',true,[13.2,256.3]),new SpotsInfo('BL','075',true,[13.1,227.7]),new SpotsInfo('BL','076',true,[13.1,239.5]),new SpotsInfo('BL','077',true,[12.9,267.8]),new SpotsInfo('BL','078',true,[12.8,259.9])
+				 ];
 
 //Lot CC - - - - - - - - - - - - - - - - - - - - - - - - -
-var CC001 = new SpotsInfo('CC','001',true,[0,0]);
-var CC002 = new SpotsInfo('CC','002',true,[0,0]);
-var CC003 = new SpotsInfo('CC','003',true,[0,0]);
-var CC004 = new SpotsInfo('CC','004',true,[0,0]);
-var CC005 = new SpotsInfo('CC','005',true,[0,0]);
-var CC006 = new SpotsInfo('CC','006',true,[0,0]);
-var CC007 = new SpotsInfo('CC','007',true,[0,0]);
-var CC008 = new SpotsInfo('CC','008',true,[0,0]);
-var CC009 = new SpotsInfo('CC','009',true,[0,0]);
-var CC00A = new SpotsInfo('CC','00A',true,[0,0]);
-var CC00B = new SpotsInfo('CC','00B',true,[0,0]);
-var CC00C = new SpotsInfo('CC','00C',true,[0,0]);
-var CC00D = new SpotsInfo('CC','00D',true,[0,0]);
-var CC00E = new SpotsInfo('CC','00E',true,[0,0]);
-var CC00F = new SpotsInfo('CC','00F',true,[0,0]);
-var CC010 = new SpotsInfo('CC','010',true,[0,0]);
-var CC011 = new SpotsInfo('CC','011',true,[0,0]);
-var CC012 = new SpotsInfo('CC','012',true,[0,0]);
-var CC013 = new SpotsInfo('CC','013',true,[0,0]);
-var CC014 = new SpotsInfo('CC','014',true,[0,0]);
-var CC015 = new SpotsInfo('CC','015',true,[0,0]);
-var CC016 = new SpotsInfo('CC','016',true,[0,0]);
-var CC017 = new SpotsInfo('CC','017',true,[0,0]);
-var CC018 = new SpotsInfo('CC','018',true,[0,0]);
-var CC019 = new SpotsInfo('CC','019',true,[0,0]);
-var CC01A = new SpotsInfo('CC','01A',true,[0,0]);
-var CC01B = new SpotsInfo('CC','01B',true,[0,0]);
-var CC01C = new SpotsInfo('CC','01C',true,[0,0]);
-var CC01D = new SpotsInfo('CC','01D',true,[0,0]);
-var CC01E = new SpotsInfo('CC','01E',true,[0,0]);
-var CC01F = new SpotsInfo('CC','01F',true,[0,0]);
-var CC020 = new SpotsInfo('CC','020',true,[0,0]);
-var CC021 = new SpotsInfo('CC','021',true,[0,0]);
-var CC022 = new SpotsInfo('CC','022',true,[0,0]);
-var CC023 = new SpotsInfo('CC','023',true,[0,0]);
-var CC024 = new SpotsInfo('CC','024',true,[0,0]);
-var CC025 = new SpotsInfo('CC','025',true,[0,0]);
-var CC026 = new SpotsInfo('CC','026',true,[0,0]);
-var CC027 = new SpotsInfo('CC','027',true,[0,0]);
-var CC028 = new SpotsInfo('CC','028',true,[0,0]);
-var CC029 = new SpotsInfo('CC','029',true,[0,0]);
-var CC02A = new SpotsInfo('CC','02A',true,[0,0]);
-var CC02B = new SpotsInfo('CC','02B',true,[0,0]);
-var CC02C = new SpotsInfo('CC','02C',true,[0,0]);
-var CC02D = new SpotsInfo('CC','02D',true,[0,0]);
-var CC02E = new SpotsInfo('CC','02E',true,[0,0]);
-var CC02F = new SpotsInfo('CC','02F',true,[0,0]);
-var CC030 = new SpotsInfo('CC','030',true,[0,0]);
-var CC031 = new SpotsInfo('CC','031',true,[0,0]);
-var CC032 = new SpotsInfo('CC','032',true,[0,0]);
-var CC033 = new SpotsInfo('CC','033',true,[0,0]);
-var CC034 = new SpotsInfo('CC','034',true,[0,0]);
-var CC035 = new SpotsInfo('CC','035',true,[0,0]);
-var CC036 = new SpotsInfo('CC','036',true,[0,0]);
-var CC037 = new SpotsInfo('CC','037',true,[0,0]);
-var CC038 = new SpotsInfo('CC','038',true,[0,0]);
-var CC039 = new SpotsInfo('CC','039',true,[0,0]);
-var CC03A = new SpotsInfo('CC','03A',true,[0,0]);
-var CC03B = new SpotsInfo('CC','03B',true,[0,0]);
-var CC03C = new SpotsInfo('CC','03C',true,[0,0]);
-var CC03D = new SpotsInfo('CC','03D',true,[0,0]);
-var CC03E = new SpotsInfo('CC','03E',true,[0,0]);
-var CC03F = new SpotsInfo('CC','03F',true,[0,0]);
-var CC040 = new SpotsInfo('CC','040',true,[0,0]);
-var CC041 = new SpotsInfo('CC','041',true,[0,0]);
-var CC042 = new SpotsInfo('CC','042',true,[0,0]);
-var CC043 = new SpotsInfo('CC','043',true,[0,0]);
-var CC044 = new SpotsInfo('CC','044',true,[0,0]);
-var CC045 = new SpotsInfo('CC','045',true,[0,0]);
-var CC046 = new SpotsInfo('CC','046',true,[0,0]);
-var CC047 = new SpotsInfo('CC','047',true,[0,0]);
-var CC048 = new SpotsInfo('CC','048',true,[0,0]);
-var CC049 = new SpotsInfo('CC','049',true,[0,0]);
-var CC04A = new SpotsInfo('CC','04A',true,[0,0]);
-var CC04B = new SpotsInfo('CC','04B',true,[0,0]);
-var CC04C = new SpotsInfo('CC','04C',true,[0,0]);
-var CC04D = new SpotsInfo('CC','04D',true,[0,0]);
-var CC04E = new SpotsInfo('CC','04E',true,[0,0]);
-var CC04F = new SpotsInfo('CC','04F',true,[0,0]);
-var CC050 = new SpotsInfo('CC','050',true,[0,0]);
-var CC051 = new SpotsInfo('CC','051',true,[0,0]);
-var CC052 = new SpotsInfo('CC','052',true,[0,0]);
-var CC053 = new SpotsInfo('CC','053',true,[0,0]);
-var CC054 = new SpotsInfo('CC','054',true,[0,0]);
-var CC055 = new SpotsInfo('CC','055',true,[0,0]);
-var CC056 = new SpotsInfo('CC','056',true,[0,0]);
-var CC057 = new SpotsInfo('CC','057',true,[0,0]);
-var CC058 = new SpotsInfo('CC','058',true,[0,0]);
-var CC059 = new SpotsInfo('CC','059',true,[0,0]);
-var CC05A = new SpotsInfo('CC','05A',true,[0,0]);
-var CC05B = new SpotsInfo('CC','05B',true,[0,0]);
-var CC05C = new SpotsInfo('CC','05C',true,[0,0]);
-var CC05D = new SpotsInfo('CC','05D',true,[0,0]);
-var CC05E = new SpotsInfo('CC','05E',true,[0,0]);
-var CC05F = new SpotsInfo('CC','05F',true,[0,0]);
-var CC060 = new SpotsInfo('CC','060',true,[0,0]);
-var CC061 = new SpotsInfo('CC','061',true,[0,0]);
-var CC062 = new SpotsInfo('CC','062',true,[0,0]);
-var CC063 = new SpotsInfo('CC','063',true,[0,0]);
-var CC064 = new SpotsInfo('CC','064',true,[0,0]);
-var CC065 = new SpotsInfo('CC','065',true,[0,0]);
-var CC066 = new SpotsInfo('CC','066',true,[0,0]);
-var CC067 = new SpotsInfo('CC','067',true,[0,0]);
-var CC068 = new SpotsInfo('CC','068',true,[0,0]);
-var CC069 = new SpotsInfo('CC','069',true,[0,0]);
-var CC06A = new SpotsInfo('CC','06A',true,[0,0]);
-var CC06B = new SpotsInfo('CC','06B',true,[0,0]);
-var CC06C = new SpotsInfo('CC','06C',true,[0,0]);
-var CC06D = new SpotsInfo('CC','06D',true,[0,0]);
-var CC06E = new SpotsInfo('CC','06E',true,[0,0]);
-var CC06F = new SpotsInfo('CC','06F',true,[0,0]);
-var CC070 = new SpotsInfo('CC','070',true,[0,0]);
-var CC071 = new SpotsInfo('CC','071',true,[0,0]);
-var CC072 = new SpotsInfo('CC','072',true,[0,0]);
-var CC073 = new SpotsInfo('CC','073',true,[0,0]);
-var CC074 = new SpotsInfo('CC','074',true,[0,0]);
-var CC075 = new SpotsInfo('CC','075',true,[0,0]);
-var CC076 = new SpotsInfo('CC','076',true,[0,0]);
-var CC077 = new SpotsInfo('CC','077',true,[0,0]);
-var CC078 = new SpotsInfo('CC','078',true,[0,0]);
-var CC079 = new SpotsInfo('CC','079',true,[0,0]);
-var CC07A = new SpotsInfo('CC','07A',true,[0,0]);
-var CC07B = new SpotsInfo('CC','07B',true,[0,0]);
-var CC07C = new SpotsInfo('CC','07C',true,[0,0]);
-var CC07D = new SpotsInfo('CC','07D',true,[0,0]);
-var CC07E = new SpotsInfo('CC','07E',true,[0,0]);
-var CC07F = new SpotsInfo('CC','07F',true,[0,0]);
-var CC080 = new SpotsInfo('CC','080',true,[0,0]);
-var CC081 = new SpotsInfo('CC','081',true,[0,0]);
-var CC082 = new SpotsInfo('CC','082',true,[0,0]);
-var CC083 = new SpotsInfo('CC','083',true,[0,0]);
-var CC084 = new SpotsInfo('CC','084',true,[0,0]);
-var CC085 = new SpotsInfo('CC','085',true,[0,0]);
-var CC086 = new SpotsInfo('CC','086',true,[0,0]);
-var CC087 = new SpotsInfo('CC','087',true,[0,0]);
-var CC088 = new SpotsInfo('CC','088',true,[0,0]);
-var CC089 = new SpotsInfo('CC','089',true,[0,0]);
-var CC08A = new SpotsInfo('CC','08A',true,[0,0]);
-var CC08B = new SpotsInfo('CC','08B',true,[0,0]);
-var CC08C = new SpotsInfo('CC','08C',true,[0,0]);
-var CC08D = new SpotsInfo('CC','08D',true,[0,0]);
-var CC08E = new SpotsInfo('CC','08E',true,[0,0]);
-var CC08F = new SpotsInfo('CC','08F',true,[0,0]);
-var CC090 = new SpotsInfo('CC','090',true,[0,0]);
-var CC091 = new SpotsInfo('CC','091',true,[0,0]);
-var CC092 = new SpotsInfo('CC','092',true,[0,0]);
-var CC093 = new SpotsInfo('CC','093',true,[0,0]);
-var CC094 = new SpotsInfo('CC','094',true,[0,0]);
-var CC095 = new SpotsInfo('CC','095',true,[0,0]);
-var CC096 = new SpotsInfo('CC','096',true,[0,0]);
-var CC097 = new SpotsInfo('CC','097',true,[0,0]);
-var CC098 = new SpotsInfo('CC','098',true,[0,0]);
-var CC099 = new SpotsInfo('CC','099',true,[0,0]);
-var CC09A = new SpotsInfo('CC','09A',true,[0,0]);
-var CC09B = new SpotsInfo('CC','09B',true,[0,0]);
-var CC09C = new SpotsInfo('CC','09C',true,[0,0]);
-var CC09D = new SpotsInfo('CC','09D',true,[0,0]);
-var CC09E = new SpotsInfo('CC','09E',true,[0,0]);
-var CC09F = new SpotsInfo('CC','09F',true,[0,0]);
-var CC0A0 = new SpotsInfo('CC','0A0',true,[0,0]);
-var CC0A1 = new SpotsInfo('CC','0A1',true,[0,0]);
-var CC0A2 = new SpotsInfo('CC','0A2',true,[0,0]);
-var CC0A3 = new SpotsInfo('CC','0A3',true,[0,0]);
-var CC0A4 = new SpotsInfo('CC','0A4',true,[0,0]);
-var CC0A5 = new SpotsInfo('CC','0A5',true,[0,0]);
-var CC0A6 = new SpotsInfo('CC','0A6',true,[0,0]);
-var CC0A7 = new SpotsInfo('CC','0A7',true,[0,0]);
-var CC0A8 = new SpotsInfo('CC','0A8',true,[0,0]);
-var CC0A9 = new SpotsInfo('CC','0A9',true,[0,0]);
-var CC0AA = new SpotsInfo('CC','0AA',true,[0,0]);
-var CC0AB = new SpotsInfo('CC','0AB',true,[0,0]);
-var CC0AC = new SpotsInfo('CC','0AC',true,[0,0]);
-var CC0AD = new SpotsInfo('CC','0AD',true,[0,0]);
-var CC0AE = new SpotsInfo('CC','0AE',true,[0,0]);
-var CC0AF = new SpotsInfo('CC','0AF',true,[0,0]);
-var CC0B0 = new SpotsInfo('CC','0B0',true,[0,0]);
-var CC0B1 = new SpotsInfo('CC','0B1',true,[0,0]);
-var CC0B2 = new SpotsInfo('CC','0B2',true,[0,0]);
-var CC0B3 = new SpotsInfo('CC','0B3',true,[0,0]);
-var CC0B4 = new SpotsInfo('CC','0B4',true,[0,0]);
-var CC0B5 = new SpotsInfo('CC','0B5',true,[0,0]);
-var CC0B6 = new SpotsInfo('CC','0B6',true,[0,0]);
-var CC0B7 = new SpotsInfo('CC','0B7',true,[0,0]);
-var CC0B8 = new SpotsInfo('CC','0B8',true,[0,0]);
-var CC0B9 = new SpotsInfo('CC','0B9',true,[0,0]);
-var CC0BA = new SpotsInfo('CC','0BA',true,[0,0]);
-var CC0BB = new SpotsInfo('CC','0BB',true,[0,0]);
-var CC0BC = new SpotsInfo('CC','0BC',true,[0,0]);
-var CC0BD = new SpotsInfo('CC','0BD',true,[0,0]);
-var CC0BE = new SpotsInfo('CC','0BE',true,[0,0]);
-var CC0BF = new SpotsInfo('CC','0BF',true,[0,0]);
-var CC0C0 = new SpotsInfo('CC','0C0',true,[0,0]);
-var CC0C1 = new SpotsInfo('CC','0C1',true,[0,0]);
-var CC0C2 = new SpotsInfo('CC','0C2',true,[0,0]);
-var CC0C3 = new SpotsInfo('CC','0C3',true,[0,0]);
-var CC0C4 = new SpotsInfo('CC','0C4',true,[0,0]);
-var CC0C5 = new SpotsInfo('CC','0C5',true,[0,0]);
-var CC0C6 = new SpotsInfo('CC','0C6',true,[0,0]);
-var CC0C7 = new SpotsInfo('CC','0C7',true,[0,0]);
-var CC0C8 = new SpotsInfo('CC','0C8',true,[0,0]);
-var CC0C9 = new SpotsInfo('CC','0C9',true,[0,0]);
-var CC0CA = new SpotsInfo('CC','0CA',true,[0,0]);
-var CC0CB = new SpotsInfo('CC','0CB',true,[0,0]);
-var CC0CC = new SpotsInfo('CC','0CC',true,[0,0]);
-var CC0CD = new SpotsInfo('CC','0CD',true,[0,0]);
-var CC0CE = new SpotsInfo('CC','0CE',true,[0,0]);
-var CC0CF = new SpotsInfo('CC','0CF',true,[0,0]);
-var CC0D0 = new SpotsInfo('CC','0D0',true,[0,0]);
-var CC0D1 = new SpotsInfo('CC','0D1',true,[0,0]);
-var CC0D2 = new SpotsInfo('CC','0D2',true,[0,0]);
-var CC0D3 = new SpotsInfo('CC','0D3',true,[0,0]);
-var CC0D4 = new SpotsInfo('CC','0D4',true,[0,0]);
-var CC0D5 = new SpotsInfo('CC','0D5',true,[0,0]);
-var CC0D6 = new SpotsInfo('CC','0D6',true,[0,0]);
-var CC0D7 = new SpotsInfo('CC','0D7',true,[0,0]);
-var CC0D8 = new SpotsInfo('CC','0D8',true,[0,0]);
-var CC0D9 = new SpotsInfo('CC','0D9',true,[0,0]);
-var CC0DA = new SpotsInfo('CC','0DA',true,[0,0]);
-var CC0DB = new SpotsInfo('CC','0DB',true,[0,0]);
-var CC0DC = new SpotsInfo('CC','0DC',true,[0,0]);
-var CC0DD = new SpotsInfo('CC','0DD',true,[0,0]);
-var CC0DE = new SpotsInfo('CC','0DE',true,[0,0]);
-var CC0DF = new SpotsInfo('CC','0DF',true,[0,0]);
-var CC0E0 = new SpotsInfo('CC','0E0',true,[0,0]);
-var CC0E1 = new SpotsInfo('CC','0E1',true,[0,0]);
-var CC0E2 = new SpotsInfo('CC','0E2',true,[0,0]);
-var CC0E3 = new SpotsInfo('CC','0E3',true,[0,0]);
-var CC0E4 = new SpotsInfo('CC','0E4',true,[0,0]);
-var CC0E5 = new SpotsInfo('CC','0E5',true,[0,0]);
-var CC0E6 = new SpotsInfo('CC','0E6',true,[0,0]);
-var CC0E7 = new SpotsInfo('CC','0E7',true,[0,0]);
-var CC0E8 = new SpotsInfo('CC','0E8',true,[0,0]);
-var CC0E9 = new SpotsInfo('CC','0E9',true,[0,0]);
-var CC0EA = new SpotsInfo('CC','0EA',true,[0,0]);
-var CC0EB = new SpotsInfo('CC','0EB',true,[0,0]);
-var CC0EC = new SpotsInfo('CC','0EC',true,[0,0]);
-var CC0ED = new SpotsInfo('CC','0ED',true,[0,0]);
-var CC0EE = new SpotsInfo('CC','0EE',true,[0,0]);
-var CC0EF = new SpotsInfo('CC','0EF',true,[0,0]);
-var CC0F0 = new SpotsInfo('CC','0F0',true,[0,0]);
-var CC0F1 = new SpotsInfo('CC','0F1',true,[0,0]);
-var CC0F2 = new SpotsInfo('CC','0F2',true,[0,0]);
-var CC0F3 = new SpotsInfo('CC','0F3',true,[0,0]);
-var CC0F4 = new SpotsInfo('CC','0F4',true,[0,0]);
-var CC0F5 = new SpotsInfo('CC','0F5',true,[0,0]);
-var CC0F6 = new SpotsInfo('CC','0F6',true,[0,0]);
-var CC0F7 = new SpotsInfo('CC','0F7',true,[0,0]);
-var CC0F8 = new SpotsInfo('CC','0F8',true,[0,0]);
-var CC0F9 = new SpotsInfo('CC','0F9',true,[0,0]);
-var CC0FA = new SpotsInfo('CC','0FA',true,[0,0]);
-var CC0FB = new SpotsInfo('CC','0FB',true,[0,0]);
-var CC0FC = new SpotsInfo('CC','0FC',true,[0,0]);
-var CC0FD = new SpotsInfo('CC','0FD',true,[0,0]);
-var CC0FE = new SpotsInfo('CC','0FE',true,[0,0]);
-var CC0FF = new SpotsInfo('CC','0FF',true,[0,0]);
-var CC100 = new SpotsInfo('CC','100',true,[0,0]);
-var CC101 = new SpotsInfo('CC','101',true,[0,0]);
-var CC102 = new SpotsInfo('CC','102',true,[0,0]);
-var CC103 = new SpotsInfo('CC','103',true,[0,0]);
-var CC104 = new SpotsInfo('CC','104',true,[0,0]);
-var CC105 = new SpotsInfo('CC','105',true,[0,0]);
-var CC106 = new SpotsInfo('CC','106',true,[0,0]);
-var CC107 = new SpotsInfo('CC','107',true,[0,0]);
-var CC108 = new SpotsInfo('CC','108',true,[0,0]);
-var CC109 = new SpotsInfo('CC','109',true,[0,0]);
-var CC10A = new SpotsInfo('CC','10A',true,[0,0]);
-var CC10B = new SpotsInfo('CC','10B',true,[0,0]);
-var CC10C = new SpotsInfo('CC','10C',true,[0,0]);
-var CC10D = new SpotsInfo('CC','10D',true,[0,0]);
-var CC10E = new SpotsInfo('CC','10E',true,[0,0]);
-var CC10F = new SpotsInfo('CC','10F',true,[0,0]);
-var CC110 = new SpotsInfo('CC','110',true,[0,0]);
-var CC111 = new SpotsInfo('CC','111',true,[0,0]);
-var CC112 = new SpotsInfo('CC','112',true,[0,0]);
-var CC113 = new SpotsInfo('CC','113',true,[0,0]);
-var CC114 = new SpotsInfo('CC','114',true,[0,0]);
-var CC115 = new SpotsInfo('CC','115',true,[0,0]);
-var CC116 = new SpotsInfo('CC','116',true,[0,0]);
-var CC117 = new SpotsInfo('CC','117',true,[0,0]);
-var CC118 = new SpotsInfo('CC','118',true,[0,0]);
-var CC119 = new SpotsInfo('CC','119',true,[0,0]);
-var CC11A = new SpotsInfo('CC','11A',true,[0,0]);
-var CC11B = new SpotsInfo('CC','11B',true,[0,0]);
-var CC11C = new SpotsInfo('CC','11C',true,[0,0]);
-var CC11D = new SpotsInfo('CC','11D',true,[0,0]);
-var CC11E = new SpotsInfo('CC','11E',true,[0,0]);
-var CC11F = new SpotsInfo('CC','11F',true,[0,0]);
-var CC120 = new SpotsInfo('CC','120',true,[0,0]);
-var CC121 = new SpotsInfo('CC','121',true,[0,0]);
-var CC122 = new SpotsInfo('CC','122',true,[0,0]);
-var CC123 = new SpotsInfo('CC','123',true,[0,0]);
-var CC124 = new SpotsInfo('CC','124',true,[0,0]);
-var CC125 = new SpotsInfo('CC','125',true,[0,0]);
-var CC126 = new SpotsInfo('CC','126',true,[0,0]);
-var CC127 = new SpotsInfo('CC','127',true,[0,0]);
-var CC128 = new SpotsInfo('CC','128',true,[0,0]);
-var CC129 = new SpotsInfo('CC','129',true,[0,0]);
-var CC12A = new SpotsInfo('CC','12A',true,[0,0]);
-var CC12B = new SpotsInfo('CC','12B',true,[0,0]);
-var CC12C = new SpotsInfo('CC','12C',true,[0,0]);
-var CC12D = new SpotsInfo('CC','12D',true,[0,0]);
-var CC12E = new SpotsInfo('CC','12E',true,[0,0]);
-var CC12F = new SpotsInfo('CC','12F',true,[0,0]);
-var CC130 = new SpotsInfo('CC','130',true,[0,0]);
-var CC131 = new SpotsInfo('CC','131',true,[0,0]);
-var CC132 = new SpotsInfo('CC','132',true,[0,0]);
-var CC133 = new SpotsInfo('CC','133',true,[0,0]);
-var CC134 = new SpotsInfo('CC','134',true,[0,0]);
-var CC135 = new SpotsInfo('CC','135',true,[0,0]);
-var CC136 = new SpotsInfo('CC','136',true,[0,0]);
-var CC137 = new SpotsInfo('CC','137',true,[0,0]);
-var CC138 = new SpotsInfo('CC','138',true,[0,0]);
-var CC139 = new SpotsInfo('CC','139',true,[0,0]);
-var CC13A = new SpotsInfo('CC','13A',true,[0,0]);
-var CC13B = new SpotsInfo('CC','13B',true,[0,0]);
-var CC13C = new SpotsInfo('CC','13C',true,[0,0]);
-var CC13D = new SpotsInfo('CC','13D',true,[0,0]);
-var CC13E = new SpotsInfo('CC','13E',true,[0,0]);
-var CC13F = new SpotsInfo('CC','13F',true,[0,0]);
-var CC140 = new SpotsInfo('CC','140',true,[0,0]);
-var CC141 = new SpotsInfo('CC','141',true,[0,0]);
-var CC142 = new SpotsInfo('CC','142',true,[0,0]);
-var CC143 = new SpotsInfo('CC','143',true,[0,0]);
-var CC144 = new SpotsInfo('CC','144',true,[0,0]);
-var CC145 = new SpotsInfo('CC','145',true,[0,0]);
-var CC146 = new SpotsInfo('CC','146',true,[0,0]);
-var CC147 = new SpotsInfo('CC','147',true,[0,0]);
-var CC148 = new SpotsInfo('CC','148',true,[0,0]);
-var CC149 = new SpotsInfo('CC','149',true,[0,0]);
-var CC14A = new SpotsInfo('CC','14A',true,[0,0]);
-var CC14B = new SpotsInfo('CC','14B',true,[0,0]);
-var CC14C = new SpotsInfo('CC','14C',true,[0,0]);
-var CC14D = new SpotsInfo('CC','14D',true,[0,0]);
-var CC14E = new SpotsInfo('CC','14E',true,[0,0]);
-var CC14F = new SpotsInfo('CC','14F',true,[0,0]);
-var CC150 = new SpotsInfo('CC','150',true,[0,0]);
-var CC151 = new SpotsInfo('CC','151',true,[0,0]);
-var CC152 = new SpotsInfo('CC','152',true,[0,0]);
-var CC153 = new SpotsInfo('CC','153',true,[0,0]);
-var CC154 = new SpotsInfo('CC','154',true,[0,0]);
-var CC155 = new SpotsInfo('CC','155',true,[0,0]);
-var CC156 = new SpotsInfo('CC','156',true,[0,0]);
-var CC157 = new SpotsInfo('CC','157',true,[0,0]);
-var CC158 = new SpotsInfo('CC','158',true,[0,0]);
-var CC159 = new SpotsInfo('CC','159',true,[0,0]);
-var CC15A = new SpotsInfo('CC','15A',true,[0,0]);
-var CC15B = new SpotsInfo('CC','15B',true,[0,0]);
-var CC15C = new SpotsInfo('CC','15C',true,[0,0]);
-var CC15D = new SpotsInfo('CC','15D',true,[0,0]);
-var CC15E = new SpotsInfo('CC','15E',true,[0,0]);
-var CC15F = new SpotsInfo('CC','15F',true,[0,0]);
-var CC160 = new SpotsInfo('CC','160',true,[0,0]);
-var CC161 = new SpotsInfo('CC','161',true,[0,0]);
-var CC162 = new SpotsInfo('CC','162',true,[0,0]);
-var CC163 = new SpotsInfo('CC','163',true,[0,0]);
-var CC164 = new SpotsInfo('CC','164',true,[0,0]);
-var CC165 = new SpotsInfo('CC','165',true,[0,0]);
-var CC166 = new SpotsInfo('CC','166',true,[0,0]);
-var CC167 = new SpotsInfo('CC','167',true,[0,0]);
-var CC168 = new SpotsInfo('CC','168',true,[0,0]);
-var CC169 = new SpotsInfo('CC','169',true,[0,0]);
-var CC16A = new SpotsInfo('CC','16A',true,[0,0]);
-var CC16B = new SpotsInfo('CC','16B',true,[0,0]);
-var CC16C = new SpotsInfo('CC','16C',true,[0,0]);
-var CC16D = new SpotsInfo('CC','16D',true,[0,0]);
-var CC16E = new SpotsInfo('CC','16E',true,[0,0]);
-var CC16F = new SpotsInfo('CC','16F',true,[0,0]);
-var CC170 = new SpotsInfo('CC','170',true,[0,0]);
-var CC171 = new SpotsInfo('CC','171',true,[0,0]);
-var CC172 = new SpotsInfo('CC','172',true,[0,0]);
-var CC173 = new SpotsInfo('CC','173',true,[0,0]);
-var CC174 = new SpotsInfo('CC','174',true,[0,0]);
-var CC175 = new SpotsInfo('CC','175',true,[0,0]);
-var CC176 = new SpotsInfo('CC','176',true,[0,0]);
-var CC177 = new SpotsInfo('CC','177',true,[0,0]);
-var CC178 = new SpotsInfo('CC','178',true,[0,0]);
-var CC179 = new SpotsInfo('CC','179',true,[0,0]);
-var CC17A = new SpotsInfo('CC','17A',true,[0,0]);
-var CC17B = new SpotsInfo('CC','17B',true,[0,0]);
-var CC17C = new SpotsInfo('CC','17C',true,[0,0]);
-var CC17D = new SpotsInfo('CC','17D',true,[0,0]);
-var CC17E = new SpotsInfo('CC','17E',true,[0,0]);
-var CC17F = new SpotsInfo('CC','17F',true,[0,0]);
-var CC180 = new SpotsInfo('CC','180',true,[0,0]);
-var CC181 = new SpotsInfo('CC','181',true,[0,0]);
-var CC182 = new SpotsInfo('CC','182',true,[0,0]);
-var CC183 = new SpotsInfo('CC','183',true,[0,0]);
-var CC184 = new SpotsInfo('CC','184',true,[0,0]);
-var CC185 = new SpotsInfo('CC','185',true,[0,0]);
-var CC186 = new SpotsInfo('CC','186',true,[0,0]);
-var CC187 = new SpotsInfo('CC','187',true,[0,0]);
-var CC188 = new SpotsInfo('CC','188',true,[0,0]);
-var CC189 = new SpotsInfo('CC','189',true,[0,0]);
-var CC18A = new SpotsInfo('CC','18A',true,[0,0]);
-var CC18B = new SpotsInfo('CC','18B',true,[0,0]);
-var CC18C = new SpotsInfo('CC','18C',true,[0,0]);
-var CC18D = new SpotsInfo('CC','18D',true,[0,0]);
-var CC18E = new SpotsInfo('CC','18E',true,[0,0]);
-var CC18F = new SpotsInfo('CC','18F',true,[0,0]);
-var CC190 = new SpotsInfo('CC','190',true,[0,0]);
-var CC191 = new SpotsInfo('CC','191',true,[0,0]);
-var CC192 = new SpotsInfo('CC','192',true,[0,0]);
-var CC193 = new SpotsInfo('CC','193',true,[0,0]);
-var CC194 = new SpotsInfo('CC','194',true,[0,0]);
-var CC195 = new SpotsInfo('CC','195',true,[0,0]);
-var CC196 = new SpotsInfo('CC','196',true,[0,0]);
-var CC197 = new SpotsInfo('CC','197',true,[0,0]);
-var CC198 = new SpotsInfo('CC','198',true,[0,0]);
-var CC199 = new SpotsInfo('CC','199',true,[0,0]);
-var CC19A = new SpotsInfo('CC','19A',true,[0,0]);
-var CC19B = new SpotsInfo('CC','19B',true,[0,0]);
-var CC19C = new SpotsInfo('CC','19C',true,[0,0]);
-var CC19D = new SpotsInfo('CC','19D',true,[0,0]);
-var CC19E = new SpotsInfo('CC','19E',true,[0,0]);
-var CC19F = new SpotsInfo('CC','19F',true,[0,0]);
-var CC1A0 = new SpotsInfo('CC','1A0',true,[0,0]);
-var CC1A1 = new SpotsInfo('CC','1A1',true,[0,0]);
-var CC1A2 = new SpotsInfo('CC','1A2',true,[0,0]);
-var CC1A3 = new SpotsInfo('CC','1A3',true,[0,0]);
-var CC1A4 = new SpotsInfo('CC','1A4',true,[0,0]);
-var CC1A5 = new SpotsInfo('CC','1A5',true,[0,0]);
-var CC1A6 = new SpotsInfo('CC','1A6',true,[0,0]);
-var CC1A7 = new SpotsInfo('CC','1A7',true,[0,0]);
-var CC1A8 = new SpotsInfo('CC','1A8',true,[0,0]);
-var CC1A9 = new SpotsInfo('CC','1A9',true,[0,0]);
-var CC1AA = new SpotsInfo('CC','1AA',true,[0,0]);
-var CC1AB = new SpotsInfo('CC','1AB',true,[0,0]);
-var CC1AC = new SpotsInfo('CC','1AC',true,[0,0]);
-var CC1AD = new SpotsInfo('CC','1AD',true,[0,0]);
-var CC1AE = new SpotsInfo('CC','1AE',true,[0,0]);
-var CC1AF = new SpotsInfo('CC','1AF',true,[0,0]);
-var CC1B0 = new SpotsInfo('CC','1B0',true,[0,0]);
-var CC1B1 = new SpotsInfo('CC','1B1',true,[0,0]);
-var CC1B2 = new SpotsInfo('CC','1B2',true,[0,0]);
-var CC1B3 = new SpotsInfo('CC','1B3',true,[0,0]);
-var CC1B4 = new SpotsInfo('CC','1B4',true,[0,0]);
-var CC1B5 = new SpotsInfo('CC','1B5',true,[0,0]);
-var CC1B6 = new SpotsInfo('CC','1B6',true,[0,0]);
-var CC1B7 = new SpotsInfo('CC','1B7',true,[0,0]);
-var CC1B8 = new SpotsInfo('CC','1B8',true,[0,0]);
-var CC1B9 = new SpotsInfo('CC','1B9',true,[0,0]);
-var CC1BA = new SpotsInfo('CC','1BA',true,[0,0]);
-var CC1BB = new SpotsInfo('CC','1BB',true,[0,0]);
-var CC1BC = new SpotsInfo('CC','1BC',true,[0,0]);
-var CC1BD = new SpotsInfo('CC','1BD',true,[0,0]);
-var CC1BE = new SpotsInfo('CC','1BE',true,[0,0]);
-var CC1BF = new SpotsInfo('CC','1BF',true,[0,0]);
-var CC1C0 = new SpotsInfo('CC','1C0',true,[0,0]);
-var CC1C1 = new SpotsInfo('CC','1C1',true,[0,0]);
-var CC1C2 = new SpotsInfo('CC','1C2',true,[0,0]);
-var CC1C3 = new SpotsInfo('CC','1C3',true,[0,0]);
-var CC1C4 = new SpotsInfo('CC','1C4',true,[0,0]);
-var CC1C5 = new SpotsInfo('CC','1C5',true,[0,0]);
-var CC1C6 = new SpotsInfo('CC','1C6',true,[0,0]);
-var CC1C7 = new SpotsInfo('CC','1C7',true,[0,0]);
-var CC1C8 = new SpotsInfo('CC','1C8',true,[0,0]);
-var CC1C9 = new SpotsInfo('CC','1C9',true,[0,0]);
-var CC1CA = new SpotsInfo('CC','1CA',true,[0,0]);
-var CC1CB = new SpotsInfo('CC','1CB',true,[0,0]);
-var CC1CC = new SpotsInfo('CC','1CC',true,[0,0]);
-var CC1CD = new SpotsInfo('CC','1CD',true,[0,0]);
-var CC1CE = new SpotsInfo('CC','1CE',true,[0,0]);
-var CC1CF = new SpotsInfo('CC','1CF',true,[0,0]);
-var CC1D0 = new SpotsInfo('CC','1D0',true,[0,0]);
-var CC1D1 = new SpotsInfo('CC','1D1',true,[0,0]);
-var CC1D2 = new SpotsInfo('CC','1D2',true,[0,0]);
-var CC1D3 = new SpotsInfo('CC','1D3',true,[0,0]);
-var CC1D4 = new SpotsInfo('CC','1D4',true,[0,0]);
-var CC1D5 = new SpotsInfo('CC','1D5',true,[0,0]);
-var CC1D6 = new SpotsInfo('CC','1D6',true,[0,0]);
-var CC1D7 = new SpotsInfo('CC','1D7',true,[0,0]);
-var CC1D8 = new SpotsInfo('CC','1D8',true,[0,0]);
-var CC1D9 = new SpotsInfo('CC','1D9',true,[0,0]);
-var CC1DA = new SpotsInfo('CC','1DA',true,[0,0]);
-var CC1DB = new SpotsInfo('CC','1DB',true,[0,0]);
-var CC1DC = new SpotsInfo('CC','1DC',true,[0,0]);
-var CC1DD = new SpotsInfo('CC','1DD',true,[0,0]);
-var CC1DE = new SpotsInfo('CC','1DE',true,[0,0]);
-var CC1DF = new SpotsInfo('CC','1DF',true,[0,0]);
-var CC1E0 = new SpotsInfo('CC','1E0',true,[0,0]);
-var CC1E1 = new SpotsInfo('CC','1E1',true,[0,0]);
-var CC1E2 = new SpotsInfo('CC','1E2',true,[0,0]);
-var CC1E3 = new SpotsInfo('CC','1E3',true,[0,0]);
-var CC1E4 = new SpotsInfo('CC','1E4',true,[0,0]);
-var CC1E5 = new SpotsInfo('CC','1E5',true,[0,0]);
-var CC1E6 = new SpotsInfo('CC','1E6',true,[0,0]);
-var CC1E7 = new SpotsInfo('CC','1E7',true,[0,0]);
-var CC1E8 = new SpotsInfo('CC','1E8',true,[0,0]);
-var CC1E9 = new SpotsInfo('CC','1E9',true,[0,0]);
-var CC1EA = new SpotsInfo('CC','1EA',true,[0,0]);
-var CC1EB = new SpotsInfo('CC','1EB',true,[0,0]);
-var lotCCSpots = [CC001,CC002,CC003,CC004,CC005,CC006,CC007,CC008,CC009,CC00A
-				 ,CC00B,CC00C,CC00D,CC00E,CC00F,CC010,CC011,CC012,CC013,CC014
-				 ,CC015,CC016,CC017,CC018,CC019,CC01A,CC01B,CC01C,CC01D,CC01E
-				 ,CC01F,CC020,CC021,CC022,CC023,CC024,CC025,CC026,CC027,CC028
-				 ,CC029,CC02A,CC02B,CC02C,CC02D,CC02E,CC02F,CC030,CC031,CC032
-				 ,CC033,CC034,CC035,CC036,CC037,CC038,CC039,CC03A,CC03B,CC03C
-				 ,CC03D,CC03E,CC03F,CC040,CC041,CC042,CC043,CC044,CC045,CC046
-				 ,CC047,CC048,CC049,CC04A,CC04B,CC04C,CC04D,CC04E,CC04F,CC050
-				 ,CC051,CC052,CC053,CC054,CC055,CC056,CC057,CC058,CC059,CC05A
-				 ,CC05B,CC05C,CC05D,CC05E,CC05F,CC060,CC061,CC062,CC063,CC064
-				 ,CC065,CC066,CC067,CC068,CC069,CC06A,CC06B,CC06C,CC06D,CC06E
-				 ,CC06F,CC070,CC071,CC072,CC073,CC074,CC075,CC076,CC077,CC078
-				 ,CC079,CC07A,CC07B,CC07C,CC07D,CC07E,CC07F,CC080,CC081,CC082
-				 ,CC083,CC084,CC085,CC086,CC087,CC088,CC089,CC08A,CC08B,CC08C
-				 ,CC08D,CC08E,CC08F,CC090,CC091,CC092,CC093,CC094,CC095,CC096
-				 ,CC097,CC098,CC099,CC09A,CC09B,CC09C,CC09D,CC09E,CC09F,CC0A0
-				 ,CC0A1,CC0A2,CC0A3,CC0A4,CC0A5,CC0A6,CC0A7,CC0A8,CC0A9,CC0AA
-				 ,CC0AB,CC0AC,CC0AD,CC0AE,CC0AF,CC0B0,CC0B1,CC0B2,CC0B3,CC0B4
-				 ,CC0B5,CC0B6,CC0B7,CC0B8,CC0B9,CC0BA,CC0BB,CC0BC,CC0BD,CC0BE
-				 ,CC0BF,CC0C0,CC0C1,CC0C2,CC0C3,CC0C4,CC0C5,CC0C6,CC0C7,CC0C8
-				 ,CC0C9,CC0CA,CC0CB,CC0CC,CC0CD,CC0CE,CC0CF,CC0D0,CC0D1,CC0D2
-				 ,CC0D3,CC0D4,CC0D5,CC0D6,CC0D7,CC0D8,CC0D9,CC0DA,CC0DB,CC0DC
-				 ,CC0DD,CC0DE,CC0DF,CC0E0,CC0E1,CC0E2,CC0E3,CC0E4,CC0E5,CC0E6
-				 ,CC0E7,CC0E8,CC0E9,CC0EA,CC0EB,CC0EC,CC0ED,CC0EE,CC0EF,CC0F0
-				 ,CC0F1,CC0F2,CC0F3,CC0F4,CC0F5,CC0F6,CC0F7,CC0F8,CC0F9,CC0FA
-				 ,CC0FB,CC0FC,CC0FD,CC0FE,CC0FF,CC100,CC101,CC102,CC103,CC104
-				 ,CC105,CC106,CC107,CC108,CC109,CC10A,CC10B,CC10C,CC10D,CC10E
-				 ,CC10F,CC110,CC111,CC112,CC113,CC114,CC115,CC116,CC117,CC118
-				 ,CC119,CC11A,CC11B,CC11C,CC11D,CC11E,CC11F,CC120,CC121,CC122
-				 ,CC123,CC124,CC125,CC126,CC127,CC128,CC129,CC12A,CC12B,CC12C
-				 ,CC12D,CC12E,CC12F,CC130,CC131,CC132,CC133,CC134,CC135,CC136
-				 ,CC137,CC138,CC139,CC13A,CC13B,CC13C,CC13D,CC13E,CC13F,CC140
-				 ,CC141,CC142,CC143,CC144,CC145,CC146,CC147,CC148,CC149,CC14A
-				 ,CC14B,CC14C,CC14D,CC14E,CC14F,CC150,CC151,CC152,CC153,CC154
-				 ,CC155,CC156,CC157,CC158,CC159,CC15A,CC15B,CC15C,CC15D,CC15E
-				 ,CC15F,CC160,CC161,CC162,CC163,CC164,CC165,CC166,CC167,CC168
-				 ,CC169,CC16A,CC16B,CC16C,CC16D,CC16E,CC16F,CC170,CC171,CC172
-				 ,CC173,CC174,CC175,CC176,CC177,CC178,CC179,CC17A,CC17B,CC17C
-				 ,CC17D,CC17E,CC17F,CC180,CC181,CC182,CC183,CC184,CC185,CC186
-				 ,CC187,CC188,CC189,CC18A,CC18B,CC18C,CC18D,CC18E,CC18F,CC190
-				 ,CC191,CC192,CC193,CC194,CC195,CC196,CC197,CC198,CC199,CC19A
-				 ,CC19B,CC19C,CC19D,CC19E,CC19F,CC1A0,CC1A1,CC1A2,CC1A3,CC1A4
-				 ,CC1A5,CC1A6,CC1A7,CC1A8,CC1A9,CC1AA,CC1AB,CC1AC,CC1AD,CC1AE
-				 ,CC1AF,CC1B0,CC1B1,CC1B2,CC1B3,CC1B4,CC1B5,CC1B6,CC1B7,CC1B8
-				 ,CC1B9,CC1BA,CC1BB,CC1BC,CC1BD,CC1BE,CC1BF,CC1C0,CC1C1,CC1C2
-				 ,CC1C3,CC1C4,CC1C5,CC1C6,CC1C7,CC1C8,CC1C9,CC1CA,CC1CB,CC1CC
-				 ,CC1CD,CC1CE,CC1CF,CC1D0,CC1D1,CC1D2,CC1D3,CC1D4,CC1D5,CC1D6
-				 ,CC1D7,CC1D8,CC1D9,CC1DA,CC1DB,CC1DC,CC1DD,CC1DE,CC1DF,CC1E0
-				 ,CC1E1,CC1E2,CC1E3,CC1E4,CC1E5,CC1E6,CC1E7,CC1E8,CC1E9,CC1EA
-				 ,CC1EB];
+var lotCCSpots = [new SpotsInfo('CC','001',true,[274.8,206.3]),new SpotsInfo('CC','002',true,[274.6,194.6]),new SpotsInfo('CC','003',true,[274.5,189.3]),new SpotsInfo('CC','004',true,[274.4,184]),new SpotsInfo('CC','005',true,[274.3,178.8])
+				 ,new SpotsInfo('CC','006',true,[274.3,212.9]),new SpotsInfo('CC','007',true,[273.8,218.9]),new SpotsInfo('CC','008',true,[273.2,172.6]),new SpotsInfo('CC','009',true,[272.8,224.1]),new SpotsInfo('CC','00A',true,[272.6,167.7])
+				 ,new SpotsInfo('CC','00B',true,[272.5,151]),new SpotsInfo('CC','00C',true,[272.5,229.4]),new SpotsInfo('CC','00D',true,[272.3,161.6]),new SpotsInfo('CC','00E',true,[271.9,156.7]),new SpotsInfo('CC','00F',true,[271.5,235.1])
+				 ,new SpotsInfo('CC','010',true,[270.9,146.4]),new SpotsInfo('CC','011',true,[270,140.7]),new SpotsInfo('CC','012',true,[270,240.7]),new SpotsInfo('CC','013',true,[269.8,135.2]),new SpotsInfo('CC','014',true,[269,245.8])
+				 ,new SpotsInfo('CC','015',true,[267.4,131]),new SpotsInfo('CC','016',true,[267.4,250]),new SpotsInfo('CC','017',true,[267,125.4]),new SpotsInfo('CC','018',true,[266.3,254.8]),new SpotsInfo('CC','019',true,[265.2,120.3])
+				 ,new SpotsInfo('CC','01A',true,[264.3,259.5]),new SpotsInfo('CC','01B',true,[263.6,114.7]),new SpotsInfo('CC','01C',true,[263.2,265]),new SpotsInfo('CC','01D',true,[261.5,109.7]),new SpotsInfo('CC','01E',true,[261.4,269.9])
+				 ,new SpotsInfo('CC','01F',true,[260.8,104.9]),new SpotsInfo('CC','020',true,[260,275.2]),new SpotsInfo('CC','021',true,[258.8,99.6]),new SpotsInfo('CC','022',true,[257.9,280]),new SpotsInfo('CC','023',true,[256.7,94.5])
+				 ,new SpotsInfo('CC','024',true,[256.1,285]),new SpotsInfo('CC','025',true,[255.7,89.7]),new SpotsInfo('CC','026',true,[254,84.4]),new SpotsInfo('CC','027',true,[253,79.2]),new SpotsInfo('CC','028',true,[252.9,290.7])
+				 ,new SpotsInfo('CC','029',true,[252,295.3]),new SpotsInfo('CC','02A',true,[251.4,75]),new SpotsInfo('CC','02B',true,[249.8,299.8]),new SpotsInfo('CC','02C',true,[248.7,68.6]),new SpotsInfo('CC','02D',true,[247.2,304.3])
+				 ,new SpotsInfo('CC','02E',true,[246.8,63.9]),new SpotsInfo('CC','02F',true,[245.7,309.1]),new SpotsInfo('CC','030',true,[244.8,183.3]),new SpotsInfo('CC','031',true,[244.7,167.5]),new SpotsInfo('CC','032',true,[244.7,173.2])
+				 ,new SpotsInfo('CC','033',true,[244.7,178.6]),new SpotsInfo('CC','034',true,[244.5,59.7]),new SpotsInfo('CC','035',true,[244.5,189.1]),new SpotsInfo('CC','036',true,[244.5,193.9]),new SpotsInfo('CC','037',true,[244.4,204.9])
+				 ,new SpotsInfo('CC','038',true,[244.2,210.2]),new SpotsInfo('CC','039',true,[244,215.1]),new SpotsInfo('CC','03A',true,[243.7,162.3]),new SpotsInfo('CC','03B',true,[243.5,157]),new SpotsInfo('CC','03C',true,[243.1,152])
+				 ,new SpotsInfo('CC','03D',true,[243,220.6]),new SpotsInfo('CC','03E',true,[243,314.4]),new SpotsInfo('CC','03F',true,[242.6,226.5]),new SpotsInfo('CC','040',true,[242.3,146.7]),new SpotsInfo('CC','041',true,[241.9,55.2])
+				 ,new SpotsInfo('CC','042',true,[241.5,231.3]),new SpotsInfo('CC','043',true,[241.3,141.4]),new SpotsInfo('CC','044',true,[241.3,318.8]),new SpotsInfo('CC','045',true,[240.7,136.4]),new SpotsInfo('CC','046',true,[240.1,236.2])
+				 ,new SpotsInfo('CC','047',true,[239.5,131.6]),new SpotsInfo('CC','048',true,[239.3,241.4]),new SpotsInfo('CC','049',true,[238.7,50.3]),new SpotsInfo('CC','04A',true,[238.6,127]),new SpotsInfo('CC','04B',true,[238.6,323.4])
+				 ,new SpotsInfo('CC','04C',true,[237.8,246.7]),new SpotsInfo('CC','04D',true,[237.5,121.5]),new SpotsInfo('CC','04E',true,[236.4,116.3]),new SpotsInfo('CC','04F',true,[236.4,252.4]),new SpotsInfo('CC','050',true,[235.5,328])
+				 ,new SpotsInfo('CC','051',true,[235.3,45.8]),new SpotsInfo('CC','052',true,[235.3,257.2]),new SpotsInfo('CC','053',true,[234.4,110.6]),new SpotsInfo('CC','054',true,[233.7,106.2]),new SpotsInfo('CC','055',true,[233.3,262.3])
+				 ,new SpotsInfo('CC','056',true,[232.7,333]),new SpotsInfo('CC','057',true,[232.2,266.6]),new SpotsInfo('CC','058',true,[232,188.8]),new SpotsInfo('CC','059',true,[232,203.9]),new SpotsInfo('CC','05A',true,[231.9,193.7])
+				 ,new SpotsInfo('CC','05B',true,[231.7,41.6]),new SpotsInfo('CC','05C',true,[231.6,100.7]),new SpotsInfo('CC','05D',true,[231.5,183.2]),new SpotsInfo('CC','05E',true,[231.2,173]),new SpotsInfo('CC','05F',true,[231.2,178.1])
+				 ,new SpotsInfo('CC','060',true,[231,208.8]),new SpotsInfo('CC','061',true,[230.6,95.6]),new SpotsInfo('CC','062',true,[230.6,167.5]),new SpotsInfo('CC','063',true,[230.6,215]),new SpotsInfo('CC','064',true,[230.5,162.6])
+				 ,new SpotsInfo('CC','065',true,[230.3,271.9]),new SpotsInfo('CC','066',true,[230.2,157.7]),new SpotsInfo('CC','067',true,[230,219.4]),new SpotsInfo('CC','068',true,[230,337]),new SpotsInfo('CC','069',true,[229.4,224.9])
+				 ,new SpotsInfo('CC','06A',true,[228.7,90.8]),new SpotsInfo('CC','06B',true,[228.7,151.7]),new SpotsInfo('CC','06C',true,[228.5,230.4]),new SpotsInfo('CC','06D',true,[228.4,37.7]),new SpotsInfo('CC','06E',true,[228.4,276.7])
+				 ,new SpotsInfo('CC','06F',true,[228.3,146.8]),new SpotsInfo('CC','070',true,[228.1,235.8]),new SpotsInfo('CC','071',true,[227.8,341.7]),new SpotsInfo('CC','072',true,[227.6,85.8]),new SpotsInfo('CC','073',true,[226.8,141])
+				 ,new SpotsInfo('CC','074',true,[226.5,240.8]),new SpotsInfo('CC','075',true,[226.5,281.7]),new SpotsInfo('CC','076',true,[225.8,136.9]),new SpotsInfo('CC','077',true,[225.6,81]),new SpotsInfo('CC','078',true,[225.5,245.6])
+				 ,new SpotsInfo('CC','079',true,[224.8,131.2]),new SpotsInfo('CC','07A',true,[224.6,34.1]),new SpotsInfo('CC','07B',true,[224.6,346.4]),new SpotsInfo('CC','07C',true,[224.5,286.4]),new SpotsInfo('CC','07D',true,[224,251])
+				 ,new SpotsInfo('CC','07E',true,[223.4,126.5]),new SpotsInfo('CC','07F',true,[223.1,76.1]),new SpotsInfo('CC','080',true,[222.8,350.5]),new SpotsInfo('CC','081',true,[222.7,255.9]),new SpotsInfo('CC','082',true,[222.4,291])
+				 ,new SpotsInfo('CC','083',true,[222.3,120.9]),new SpotsInfo('CC','084',true,[222.1,30.5]),new SpotsInfo('CC','085',true,[221.4,71.7]),new SpotsInfo('CC','086',true,[221.2,261.3]),new SpotsInfo('CC','087',true,[220.9,354.6])
+				 ,new SpotsInfo('CC','088',true,[220.5,116.2]),new SpotsInfo('CC','089',true,[220.4,266]),new SpotsInfo('CC','08A',true,[220.3,295.7]),new SpotsInfo('CC','08B',true,[219.2,300.4]),new SpotsInfo('CC','08C',true,[219.1,110.5])
+				 ,new SpotsInfo('CC','08D',true,[218.5,270.8]),new SpotsInfo('CC','08E',true,[217.9,27.1]),new SpotsInfo('CC','08F',true,[217,105.6]),new SpotsInfo('CC','090',true,[216.1,276.1]),new SpotsInfo('CC','091',true,[216,305.4])
+				 ,new SpotsInfo('CC','092',true,[215.7,101]),new SpotsInfo('CC','093',true,[214.9,96.2]),new SpotsInfo('CC','094',true,[214.5,280.5]),new SpotsInfo('CC','095',true,[213.6,310.2]),new SpotsInfo('CC','096',true,[213.3,23.5])
+				 ,new SpotsInfo('CC','097',true,[212.9,91.4]),new SpotsInfo('CC','098',true,[212.4,285.5]),new SpotsInfo('CC','099',true,[211.3,314.7]),new SpotsInfo('CC','09A',true,[210.6,85.9]),new SpotsInfo('CC','09B',true,[210.6,291.2])
+				 ,new SpotsInfo('CC','09C',true,[209.9,19.1]),new SpotsInfo('CC','09D',true,[208.6,319.8]),new SpotsInfo('CC','09E',true,[208.4,295.3]),new SpotsInfo('CC','09F',true,[207.5,79.3]),new SpotsInfo('CC','0A0',true,[206.5,193.6])
+				 ,new SpotsInfo('CC','0A1',true,[206.4,183.2]),new SpotsInfo('CC','0A2',true,[206.2,187.8]),new SpotsInfo('CC','0A3',true,[206,172.4]),new SpotsInfo('CC','0A4',true,[206,177.8]),new SpotsInfo('CC','0A5',true,[205.9,324])
+				 ,new SpotsInfo('CC','0A6',true,[205.8,16]),new SpotsInfo('CC','0A7',true,[205.7,205.6]),new SpotsInfo('CC','0A8',true,[205.6,301.2]),new SpotsInfo('CC','0A9',true,[205.3,167.2]),new SpotsInfo('CC','0AA',true,[204.8,211.2])
+				 ,new SpotsInfo('CC','0AB',true,[204.6,161.3]),new SpotsInfo('CC','0AC',true,[204.2,216.2]),new SpotsInfo('CC','0AD',true,[203.9,157.3]),new SpotsInfo('CC','0AE',true,[203.3,328.5]),new SpotsInfo('CC','0AF',true,[203,152.3])
+				 ,new SpotsInfo('CC','0B0',true,[202.9,147.2]),new SpotsInfo('CC','0B1',true,[202.8,220.8]),new SpotsInfo('CC','0B2',true,[202.8,304.8]),new SpotsInfo('CC','0B3',true,[202,140.8]),new SpotsInfo('CC','0B4',true,[201.9,225.7])
+				 ,new SpotsInfo('CC','0B5',true,[200.6,135.6]),new SpotsInfo('CC','0B6',true,[200.6,231.1]),new SpotsInfo('CC','0B7',true,[200.4,14.1]),new SpotsInfo('CC','0B8',true,[200.3,332.6]),new SpotsInfo('CC','0B9',true,[200.1,309.4])
+				 ,new SpotsInfo('CC','0BA',true,[199.8,235.8]),new SpotsInfo('CC','0BB',true,[199.6,131.3]),new SpotsInfo('CC','0BC',true,[198.8,241.3]),new SpotsInfo('CC','0BD',true,[198.2,126.1]),new SpotsInfo('CC','0BE',true,[198.2,314.2])
+				 ,new SpotsInfo('CC','0BF',true,[198,336.6]),new SpotsInfo('CC','0C0',true,[197.1,246.5]),new SpotsInfo('CC','0C1',true,[196.1,251.3]),new SpotsInfo('CC','0C2',true,[195.8,120.8]),new SpotsInfo('CC','0C3',true,[195.5,319.4])
+				 ,new SpotsInfo('CC','0C4',true,[195.3,13.2]),new SpotsInfo('CC','0C5',true,[194.5,115.7]),new SpotsInfo('CC','0C6',true,[194.4,256.2]),new SpotsInfo('CC','0C7',true,[192.9,111.2]),new SpotsInfo('CC','0C8',true,[192.6,323.5])
+				 ,new SpotsInfo('CC','0C9',true,[192.2,261]),new SpotsInfo('CC','0CA',true,[191.2,106.1]),new SpotsInfo('CC','0CB',true,[191.2,183.5]),new SpotsInfo('CC','0CC',true,[191,189.3]),new SpotsInfo('CC','0CD',true,[191,194.2])
+				 ,new SpotsInfo('CC','0CE',true,[190.9,178.3]),new SpotsInfo('CC','0CF',true,[190.7,12.4]),new SpotsInfo('CC','0D0',true,[190.7,173]),new SpotsInfo('CC','0D1',true,[190.4,266]),new SpotsInfo('CC','0D2',true,[190.3,205.3])
+				 ,new SpotsInfo('CC','0D3',true,[190,162.9]),new SpotsInfo('CC','0D4',true,[189.9,168.5]),new SpotsInfo('CC','0D5',true,[189.7,157.3]),new SpotsInfo('CC','0D6',true,[189.5,210]),new SpotsInfo('CC','0D7',true,[189.4,327.8])
+				 ,new SpotsInfo('CC','0D8',true,[189.2,100.9]),new SpotsInfo('CC','0D9',true,[188.6,214.5]),new SpotsInfo('CC','0DA',true,[188.3,270.6]),new SpotsInfo('CC','0DB',true,[188,152.2]),new SpotsInfo('CC','0DC',true,[188,220.4])
+				 ,new SpotsInfo('CC','0DD',true,[187.9,147.4]),new SpotsInfo('CC','0DE',true,[187.4,331.4]),new SpotsInfo('CC','0DF',true,[187.3,142.3]),new SpotsInfo('CC','0E0',true,[187.2,96.3]),new SpotsInfo('CC','0E1',true,[187.1,225.6])
+				 ,new SpotsInfo('CC','0E2',true,[186.5,276]),new SpotsInfo('CC','0E3',true,[186,10.3]),new SpotsInfo('CC','0E4',true,[185.6,231]),new SpotsInfo('CC','0E5',true,[185.5,137.5]),new SpotsInfo('CC','0E6',true,[184.4,90.9])
+				 ,new SpotsInfo('CC','0E7',true,[184.2,280.9]),new SpotsInfo('CC','0E8',true,[184.1,132.7]),new SpotsInfo('CC','0E9',true,[183.9,235.7]),new SpotsInfo('CC','0EA',true,[182.9,240.5]),new SpotsInfo('CC','0EB',true,[182.5,127.8])
+				 ,new SpotsInfo('CC','0EC',true,[182,285.1]),new SpotsInfo('CC','0ED',true,[181.2,245.6]),new SpotsInfo('CC','0EE',true,[180.8,122.6]),new SpotsInfo('CC','0EF',true,[180.3,250.6]),new SpotsInfo('CC','0F0',true,[179.9,289.2])
+				 ,new SpotsInfo('CC','0F1',true,[179.5,116.9]),new SpotsInfo('CC','0F2',true,[178.3,256.5]),new SpotsInfo('CC','0F3',true,[177.8,112.7]),new SpotsInfo('CC','0F4',true,[177.4,293.6]),new SpotsInfo('CC','0F5',true,[176.9,260.6])
+				 ,new SpotsInfo('CC','0F6',true,[176.6,107.2]),new SpotsInfo('CC','0F7',true,[175.6,298]),new SpotsInfo('CC','0F8',true,[174.5,265.4]),new SpotsInfo('CC','0F9',true,[173.3,102.6]),new SpotsInfo('CC','0FA',true,[172.4,302.9])
+				 ,new SpotsInfo('CC','0FB',true,[172.2,270]),new SpotsInfo('CC','0FC',true,[171.1,98.2]),new SpotsInfo('CC','0FD',true,[170.1,275.4]),new SpotsInfo('CC','0FE',true,[170,307.9]),new SpotsInfo('CC','0FF',true,[169,93.3])
+				 ,new SpotsInfo('CC','100',true,[168.1,187.9]),new SpotsInfo('CC','101',true,[168.1,193.6]),new SpotsInfo('CC','102',true,[168,183.2]),new SpotsInfo('CC','103',true,[168,280.3]),new SpotsInfo('CC','104',true,[167.9,311.4])
+				 ,new SpotsInfo('CC','105',true,[167.4,172.6]),new SpotsInfo('CC','106',true,[167.4,177.3]),new SpotsInfo('CC','107',true,[166.9,167.3]),new SpotsInfo('CC','108',true,[166.7,88.7]),new SpotsInfo('CC','109',true,[166.5,205.1])
+				 ,new SpotsInfo('CC','10A',true,[166.2,209.2]),new SpotsInfo('CC','10B',true,[165.9,315.8]),new SpotsInfo('CC','10C',true,[165.8,162.6]),new SpotsInfo('CC','10D',true,[165.8,285.3]),new SpotsInfo('CC','10E',true,[165.2,214.8])
+				 ,new SpotsInfo('CC','10F',true,[165.1,157]),new SpotsInfo('CC','110',true,[164.4,219.5]),new SpotsInfo('CC','111',true,[164,151.8]),new SpotsInfo('CC','112',true,[163.9,84.4]),new SpotsInfo('CC','113',true,[163.5,146.4])
+				 ,new SpotsInfo('CC','114',true,[163.4,289.3]),new SpotsInfo('CC','115',true,[162.8,224.5]),new SpotsInfo('CC','116',true,[162.4,141.5]),new SpotsInfo('CC','117',true,[161.9,230.2]),new SpotsInfo('CC','118',true,[161.3,78.9])
+				 ,new SpotsInfo('CC','119',true,[161,293.6]),new SpotsInfo('CC','11A',true,[160.6,136.1]),new SpotsInfo('CC','11B',true,[160.3,235.6]),new SpotsInfo('CC','11C',true,[159.1,240.2]),new SpotsInfo('CC','11D',true,[158.4,131.6])
+				 ,new SpotsInfo('CC','11E',true,[158.4,298.1]),new SpotsInfo('CC','11F',true,[158.2,74.8]),new SpotsInfo('CC','120',true,[157.7,245]),new SpotsInfo('CC','121',true,[157.1,126.5]),new SpotsInfo('CC','122',true,[155.9,70])
+				 ,new SpotsInfo('CC','123',true,[155.9,302.9]),new SpotsInfo('CC','124',true,[155.7,121.8]),new SpotsInfo('CC','125',true,[155.4,250.3]),new SpotsInfo('CC','126',true,[155,183.8]),new SpotsInfo('CC','127',true,[155,189.1])
+				 ,new SpotsInfo('CC','128',true,[154.9,194]),new SpotsInfo('CC','129',true,[154.9,203.1]),new SpotsInfo('CC','12A',true,[154.4,178.1]),new SpotsInfo('CC','12B',true,[153.9,207.4]),new SpotsInfo('CC','12C',true,[153.8,172.6])
+				 ,new SpotsInfo('CC','12D',true,[153.7,117.2]),new SpotsInfo('CC','12E',true,[153.6,167.6]),new SpotsInfo('CC','12F',true,[153.6,307.6]),new SpotsInfo('CC','130',true,[153.1,65.1]),new SpotsInfo('CC','131',true,[153.1,162.9])
+				 ,new SpotsInfo('CC','132',true,[153.1,254.4]),new SpotsInfo('CC','133',true,[152.6,157]),new SpotsInfo('CC','134',true,[152.6,212.5]),new SpotsInfo('CC','135',true,[152.2,218.6]),new SpotsInfo('CC','136',true,[151.3,151.8])
+				 ,new SpotsInfo('CC','137',true,[150.9,259.2]),new SpotsInfo('CC','138',true,[150.7,112]),new SpotsInfo('CC','139',true,[150.1,223.5]),new SpotsInfo('CC','13A',true,[149.7,146.8]),new SpotsInfo('CC','13B',true,[149.2,228.2])
+				 ,new SpotsInfo('CC','13C',true,[149.1,60.2]),new SpotsInfo('CC','13D',true,[148.9,107.9]),new SpotsInfo('CC','13E',true,[148.8,264.1]),new SpotsInfo('CC','13F',true,[148.1,142]),new SpotsInfo('CC','140',true,[148,233.4])
+				 ,new SpotsInfo('CC','141',true,[147,135.9]),new SpotsInfo('CC','142',true,[146.8,269.2]),new SpotsInfo('CC','143',true,[146.3,103]),new SpotsInfo('CC','144',true,[146.2,54.7]),new SpotsInfo('CC','145',true,[146.1,238.3])
+				 ,new SpotsInfo('CC','146',true,[145.6,131]),new SpotsInfo('CC','147',true,[144.6,273.9]),new SpotsInfo('CC','148',true,[144.1,243.3]),new SpotsInfo('CC','149',true,[143.9,98.4]),new SpotsInfo('CC','14A',true,[143.7,126.4])
+				 ,new SpotsInfo('CC','14B',true,[141.9,249.2]),new SpotsInfo('CC','14C',true,[141.9,278.3]),new SpotsInfo('CC','14D',true,[141.2,121.2]),new SpotsInfo('CC','14E',true,[140.9,93.6]),new SpotsInfo('CC','14F',true,[139.9,282.6])
+				 ,new SpotsInfo('CC','150',true,[139.5,254]),new SpotsInfo('CC','151',true,[138.6,89.4]),new SpotsInfo('CC','152',true,[138.6,116.8]),new SpotsInfo('CC','153',true,[137.9,288]),new SpotsInfo('CC','154',true,[137.5,258.5])
+				 ,new SpotsInfo('CC','155',true,[136.7,112.3]),new SpotsInfo('CC','156',true,[136.1,85.4]),new SpotsInfo('CC','157',true,[135.2,263.2]),new SpotsInfo('CC','158',true,[134.6,293.4]),new SpotsInfo('CC','159',true,[134.1,107.9])
+				 ,new SpotsInfo('CC','15A',true,[134,268.1]),new SpotsInfo('CC','15B',true,[132.5,81.1]),new SpotsInfo('CC','15C',true,[131.8,272.3]),new SpotsInfo('CC','15D',true,[131.6,102.9]),new SpotsInfo('CC','15E',true,[129.6,76.6])
+				 ,new SpotsInfo('CC','15F',true,[128.7,276.8]),new SpotsInfo('CC','160',true,[128.4,183]),new SpotsInfo('CC','161',true,[128.1,98.8]),new SpotsInfo('CC','162',true,[127.9,178.1]),new SpotsInfo('CC','163',true,[127.9,192.9])
+				 ,new SpotsInfo('CC','164',true,[127.8,188.1]),new SpotsInfo('CC','165',true,[127.3,172.9]),new SpotsInfo('CC','166',true,[127.2,204]),new SpotsInfo('CC','167',true,[126.7,209.3]),new SpotsInfo('CC','168',true,[126.5,167.6])
+				 ,new SpotsInfo('CC','169',true,[125.9,72.3]),new SpotsInfo('CC','16A',true,[125.9,163.4]),new SpotsInfo('CC','16B',true,[125.5,281.1]),new SpotsInfo('CC','16C',true,[125.4,213.9]),new SpotsInfo('CC','16D',true,[125.3,94.4])
+				 ,new SpotsInfo('CC','16E',true,[124.3,158.4]),new SpotsInfo('CC','16F',true,[124.3,218.8]),new SpotsInfo('CC','170',true,[123.7,285.6]),new SpotsInfo('CC','171',true,[123.4,223.4]),new SpotsInfo('CC','172',true,[123.1,153.1])
+				 ,new SpotsInfo('CC','173',true,[122.3,89.9]),new SpotsInfo('CC','174',true,[121.9,148.2]),new SpotsInfo('CC','175',true,[121.8,228.9]),new SpotsInfo('CC','176',true,[120.3,143.3]),new SpotsInfo('CC','177',true,[119.6,233.9])
+				 ,new SpotsInfo('CC','178',true,[119.2,86.4]),new SpotsInfo('CC','179',true,[118.5,238.4]),new SpotsInfo('CC','17A',true,[117.8,138.8]),new SpotsInfo('CC','17B',true,[116.3,243.2]),new SpotsInfo('CC','17C',true,[116,134.1])
+				 ,new SpotsInfo('CC','17D',true,[114.9,81.7]),new SpotsInfo('CC','17E',true,[114.6,248.3]),new SpotsInfo('CC','17F',true,[114.1,129.4]),new SpotsInfo('CC','180',true,[113.5,179.5]),new SpotsInfo('CC','181',true,[113.5,184.2])
+				 ,new SpotsInfo('CC','182',true,[113.4,195.2]),new SpotsInfo('CC','183',true,[113.3,189.5]),new SpotsInfo('CC','184',true,[112.8,200.4]),new SpotsInfo('CC','185',true,[112.7,205.5]),new SpotsInfo('CC','186',true,[112.4,174])
+				 ,new SpotsInfo('CC','187',true,[112.3,124.9]),new SpotsInfo('CC','188',true,[112,210.2]),new SpotsInfo('CC','189',true,[112,252.8]),new SpotsInfo('CC','18A',true,[111.6,168.5]),new SpotsInfo('CC','18B',true,[111,216.2])
+				 ,new SpotsInfo('CC','18C',true,[110.7,163.4]),new SpotsInfo('CC','18D',true,[110.3,120.3]),new SpotsInfo('CC','18E',true,[109.8,220.6]),new SpotsInfo('CC','18F',true,[109.5,257]),new SpotsInfo('CC','190',true,[108.3,158.7])
+				 ,new SpotsInfo('CC','191',true,[108.2,115.8]),new SpotsInfo('CC','192',true,[107.8,153.9]),new SpotsInfo('CC','193',true,[107.6,225.7]),new SpotsInfo('CC','194',true,[107.1,261.3]),new SpotsInfo('CC','195',true,[106.8,147.9])
+				 ,new SpotsInfo('CC','196',true,[106.5,230.5]),new SpotsInfo('CC','197',true,[106.4,143.4]),new SpotsInfo('CC','198',true,[105.7,111.3]),new SpotsInfo('CC','199',true,[104.4,235.5]),new SpotsInfo('CC','19A',true,[104,265.6])
+				 ,new SpotsInfo('CC','19B',true,[103.8,138.4]),new SpotsInfo('CC','19C',true,[102.5,240.4]),new SpotsInfo('CC','19D',true,[101.7,133.5]),new SpotsInfo('CC','19E',true,[101.5,269.4]),new SpotsInfo('CC','19F',true,[100.6,244.7])
+				 ,new SpotsInfo('CC','1A0',true,[99.3,128.6]),new SpotsInfo('CC','1A1',true,[98.2,249.4]),new SpotsInfo('CC','1A2',true,[96.9,124.4]),new SpotsInfo('CC','1A3',true,[95.3,254.1]),new SpotsInfo('CC','1A4',true,[94,118.6])
+				 ,new SpotsInfo('CC','1A5',true,[93.3,257.7]),new SpotsInfo('CC','1A6',true,[90.6,261.6]),new SpotsInfo('CC','1A7',true,[88.1,50.9]),new SpotsInfo('CC','1A8',true,[85.9,189.4]),new SpotsInfo('CC','1A9',true,[85.5,184.9])
+				 ,new SpotsInfo('CC','1AA',true,[85.5,194.7]),new SpotsInfo('CC','1AB',true,[85.4,180.9]),new SpotsInfo('CC','1AC',true,[85.2,199.1]),new SpotsInfo('CC','1AD',true,[85,175.9]),new SpotsInfo('CC','1AE',true,[84.9,205.2])
+				 ,new SpotsInfo('CC','1AF',true,[83.8,56.4]),new SpotsInfo('CC','1B0',true,[83.6,209.2]),new SpotsInfo('CC','1B1',true,[82.9,170.2]),new SpotsInfo('CC','1B2',true,[81.8,214.2]),new SpotsInfo('CC','1B3',true,[81.6,165.1])
+				 ,new SpotsInfo('CC','1B4',true,[80.6,60.5]),new SpotsInfo('CC','1B5',true,[80.3,218.6]),new SpotsInfo('CC','1B6',true,[79.8,159.9]),new SpotsInfo('CC','1B7',true,[78.9,156.3]),new SpotsInfo('CC','1B8',true,[77.9,223.8])
+				 ,new SpotsInfo('CC','1B9',true,[77.3,64.9]),new SpotsInfo('CC','1BA',true,[77.1,150.8]),new SpotsInfo('CC','1BB',true,[76.5,228.7]),new SpotsInfo('CC','1BC',true,[76.2,146.6]),new SpotsInfo('CC','1BD',true,[74.6,69.2])
+				 ,new SpotsInfo('CC','1BE',true,[74.1,232.8]),new SpotsInfo('CC','1BF',true,[71.5,238]),new SpotsInfo('CC','1C0',true,[71.1,73.9]),new SpotsInfo('CC','1C1',true,[69.6,241.9]),new SpotsInfo('CC','1C2',true,[67.8,78.6])
+				 ,new SpotsInfo('CC','1C3',true,[67.7,245.4]),new SpotsInfo('CC','1C4',true,[65.2,82.8]),new SpotsInfo('CC','1C5',true,[62.4,87.4]),new SpotsInfo('CC','1C6',true,[59.4,92.2]),new SpotsInfo('CC','1C7',true,[58.5,144.4])
+				 ,new SpotsInfo('CC','1C8',true,[56.5,96.4]),new SpotsInfo('CC','1C9',true,[56.4,149.1]),new SpotsInfo('CC','1CA',true,[53.2,101.7]),new SpotsInfo('CC','1CB',true,[52,153.4]),new SpotsInfo('CC','1CC',true,[51,236.9])
+				 ,new SpotsInfo('CC','1CD',true,[49.7,105.9]),new SpotsInfo('CC','1CE',true,[49.5,158.1]),new SpotsInfo('CC','1CF',true,[47.8,233.5]),new SpotsInfo('CC','1D0',true,[47,110]),new SpotsInfo('CC','1D1',true,[46.7,162.3])
+				 ,new SpotsInfo('CC','1D2',true,[44.6,114.1]),new SpotsInfo('CC','1D3',true,[44.1,230.5]),new SpotsInfo('CC','1D4',true,[43.4,167.3]),new SpotsInfo('CC','1D5',true,[41.7,118.6]),new SpotsInfo('CC','1D6',true,[41.1,171.8])
+				 ,new SpotsInfo('CC','1D7',true,[41.1,226]),new SpotsInfo('CC','1D8',true,[39.1,122.6]),new SpotsInfo('CC','1D9',true,[38.5,222]),new SpotsInfo('CC','1DA',true,[38.1,177.1]),new SpotsInfo('CC','1DB',true,[36.7,182.1])
+				 ,new SpotsInfo('CC','1DC',true,[36.2,217.5]),new SpotsInfo('CC','1DD',true,[35.9,127.1]),new SpotsInfo('CC','1DE',true,[34.4,212.5]),new SpotsInfo('CC','1DF',true,[33.5,186.5]),new SpotsInfo('CC','1E0',true,[33.4,207.6])
+				 ,new SpotsInfo('CC','1E1',true,[32.8,131.4]),new SpotsInfo('CC','1E2',true,[32.7,190.9]),new SpotsInfo('CC','1E3',true,[32.7,197.1]),new SpotsInfo('CC','1E4',true,[32.6,202.4]),new SpotsInfo('CC','1E5',true,[29.8,136.1])
+				 ,new SpotsInfo('CC','1E6',true,[27,139.8]),new SpotsInfo('CC','1E7',true,[24.2,144.3]),new SpotsInfo('CC','1E8',true,[20.5,148.9]),new SpotsInfo('CC','1E9',true,[17.4,153.6]),new SpotsInfo('CC','1EA',true,[15.1,158.3])
+				 ,new SpotsInfo('CC','1EB',true,[12.4,162.6])];
 
 //Lot DC - - - - - - - - - - - - - - - - - - - - - - - - -
-var DC001 = new SpotsInfo('DC','001',true,[0,0]);
-var DC002 = new SpotsInfo('DC','002',true,[0,0]);
-var DC003 = new SpotsInfo('DC','003',true,[0,0]);
-var DC004 = new SpotsInfo('DC','004',true,[0,0]);
-var DC005 = new SpotsInfo('DC','005',true,[0,0]);
-var DC006 = new SpotsInfo('DC','006',true,[0,0]);
-var DC007 = new SpotsInfo('DC','007',true,[0,0]);
-var DC008 = new SpotsInfo('DC','008',true,[0,0]);
-var DC009 = new SpotsInfo('DC','009',true,[0,0]);
-var DC00A = new SpotsInfo('DC','00A',true,[0,0]);
-var DC00B = new SpotsInfo('DC','00B',true,[0,0]);
-var DC00C = new SpotsInfo('DC','00C',true,[0,0]);
-var DC00D = new SpotsInfo('DC','00D',true,[0,0]);
-var DC00E = new SpotsInfo('DC','00E',true,[0,0]);
-var DC00F = new SpotsInfo('DC','00F',true,[0,0]);
-var DC010 = new SpotsInfo('DC','010',true,[0,0]);
-var DC011 = new SpotsInfo('DC','011',true,[0,0]);
-var DC012 = new SpotsInfo('DC','012',true,[0,0]);
-var DC013 = new SpotsInfo('DC','013',true,[0,0]);
-var DC014 = new SpotsInfo('DC','014',true,[0,0]);
-var DC015 = new SpotsInfo('DC','015',true,[0,0]);
-var DC016 = new SpotsInfo('DC','016',true,[0,0]);
-var DC017 = new SpotsInfo('DC','017',true,[0,0]);
-var DC018 = new SpotsInfo('DC','018',true,[0,0]);
-var DC019 = new SpotsInfo('DC','019',true,[0,0]);
-var DC01A = new SpotsInfo('DC','01A',true,[0,0]);
-var DC01B = new SpotsInfo('DC','01B',true,[0,0]);
-var DC01C = new SpotsInfo('DC','01C',true,[0,0]);
-var DC01D = new SpotsInfo('DC','01D',true,[0,0]);
-var DC01E = new SpotsInfo('DC','01E',true,[0,0]);
-var DC01F = new SpotsInfo('DC','01F',true,[0,0]);
-var DC020 = new SpotsInfo('DC','020',true,[0,0]);
-var DC021 = new SpotsInfo('DC','021',true,[0,0]);
-var DC022 = new SpotsInfo('DC','022',true,[0,0]);
-var DC023 = new SpotsInfo('DC','023',true,[0,0]);
-var DC024 = new SpotsInfo('DC','024',true,[0,0]);
-var DC025 = new SpotsInfo('DC','025',true,[0,0]);
-var DC026 = new SpotsInfo('DC','026',true,[0,0]);
-var DC027 = new SpotsInfo('DC','027',true,[0,0]);
-var DC028 = new SpotsInfo('DC','028',true,[0,0]);
-var DC029 = new SpotsInfo('DC','029',true,[0,0]);
-var DC02A = new SpotsInfo('DC','02A',true,[0,0]);
-var DC02B = new SpotsInfo('DC','02B',true,[0,0]);
-var DC02C = new SpotsInfo('DC','02C',true,[0,0]);
-var DC02D = new SpotsInfo('DC','02D',true,[0,0]);
-var DC02E = new SpotsInfo('DC','02E',true,[0,0]);
-var DC02F = new SpotsInfo('DC','02F',true,[0,0]);
-var DC030 = new SpotsInfo('DC','030',true,[0,0]);
-var DC031 = new SpotsInfo('DC','031',true,[0,0]);
-var DC032 = new SpotsInfo('DC','032',true,[0,0]);
-var DC033 = new SpotsInfo('DC','033',true,[0,0]);
-var DC034 = new SpotsInfo('DC','034',true,[0,0]);
-var DC035 = new SpotsInfo('DC','035',true,[0,0]);
-var DC036 = new SpotsInfo('DC','036',true,[0,0]);
-var DC037 = new SpotsInfo('DC','037',true,[0,0]);
-var DC038 = new SpotsInfo('DC','038',true,[0,0]);
-var DC039 = new SpotsInfo('DC','039',true,[0,0]);
-var DC03A = new SpotsInfo('DC','03A',true,[0,0]);
-var DC03B = new SpotsInfo('DC','03B',true,[0,0]);
-var DC03C = new SpotsInfo('DC','03C',true,[0,0]);
-var DC03D = new SpotsInfo('DC','03D',true,[0,0]);
-var DC03E = new SpotsInfo('DC','03E',true,[0,0]);
-var DC03F = new SpotsInfo('DC','03F',true,[0,0]);
-var DC040 = new SpotsInfo('DC','040',true,[0,0]);
-var DC041 = new SpotsInfo('DC','041',true,[0,0]);
-var DC042 = new SpotsInfo('DC','042',true,[0,0]);
-var DC043 = new SpotsInfo('DC','043',true,[0,0]);
-var DC044 = new SpotsInfo('DC','044',true,[0,0]);
-var DC045 = new SpotsInfo('DC','045',true,[0,0]);
-var DC046 = new SpotsInfo('DC','046',true,[0,0]);
-var DC047 = new SpotsInfo('DC','047',true,[0,0]);
-var DC048 = new SpotsInfo('DC','048',true,[0,0]);
-var DC049 = new SpotsInfo('DC','049',true,[0,0]);
-var DC04A = new SpotsInfo('DC','04A',true,[0,0]);
-var DC04B = new SpotsInfo('DC','04B',true,[0,0]);
-var DC04C = new SpotsInfo('DC','04C',true,[0,0]);
-var DC04D = new SpotsInfo('DC','04D',true,[0,0]);
-var DC04E = new SpotsInfo('DC','04E',true,[0,0]);
-var DC04F = new SpotsInfo('DC','04F',true,[0,0]);
-var DC050 = new SpotsInfo('DC','050',true,[0,0]);
-var DC051 = new SpotsInfo('DC','051',true,[0,0]);
-var DC052 = new SpotsInfo('DC','052',true,[0,0]);
-var DC053 = new SpotsInfo('DC','053',true,[0,0]);
-var DC054 = new SpotsInfo('DC','054',true,[0,0]);
-var DC055 = new SpotsInfo('DC','055',true,[0,0]);
-var DC056 = new SpotsInfo('DC','056',true,[0,0]);
-var DC057 = new SpotsInfo('DC','057',true,[0,0]);
-var DC058 = new SpotsInfo('DC','058',true,[0,0]);
-var DC059 = new SpotsInfo('DC','059',true,[0,0]);
-var DC05A = new SpotsInfo('DC','05A',true,[0,0]);
-var DC05B = new SpotsInfo('DC','05B',true,[0,0]);
-var DC05C = new SpotsInfo('DC','05C',true,[0,0]);
-var DC05D = new SpotsInfo('DC','05D',true,[0,0]);
-var DC05E = new SpotsInfo('DC','05E',true,[0,0]);
-var DC05F = new SpotsInfo('DC','05F',true,[0,0]);
-var DC060 = new SpotsInfo('DC','060',true,[0,0]);
-var DC061 = new SpotsInfo('DC','061',true,[0,0]);
-var DC062 = new SpotsInfo('DC','062',true,[0,0]);
-var DC063 = new SpotsInfo('DC','063',true,[0,0]);
-var DC064 = new SpotsInfo('DC','064',true,[0,0]);
-var DC065 = new SpotsInfo('DC','065',true,[0,0]);
-var DC066 = new SpotsInfo('DC','066',true,[0,0]);
-var DC067 = new SpotsInfo('DC','067',true,[0,0]);
-var DC068 = new SpotsInfo('DC','068',true,[0,0]);
-var DC069 = new SpotsInfo('DC','069',true,[0,0]);
-var DC06A = new SpotsInfo('DC','06A',true,[0,0]);
-var DC06B = new SpotsInfo('DC','06B',true,[0,0]);
-var DC06C = new SpotsInfo('DC','06C',true,[0,0]);
-var DC06D = new SpotsInfo('DC','06D',true,[0,0]);
-var DC06E = new SpotsInfo('DC','06E',true,[0,0]);
-var DC06F = new SpotsInfo('DC','06F',true,[0,0]);
-var DC070 = new SpotsInfo('DC','070',true,[0,0]);
-var DC071 = new SpotsInfo('DC','071',true,[0,0]);
-var DC072 = new SpotsInfo('DC','072',true,[0,0]);
-var DC073 = new SpotsInfo('DC','073',true,[0,0]);
-var DC074 = new SpotsInfo('DC','074',true,[0,0]);
-var DC075 = new SpotsInfo('DC','075',true,[0,0]);
-var DC076 = new SpotsInfo('DC','076',true,[0,0]);
-var DC077 = new SpotsInfo('DC','077',true,[0,0]);
-var DC078 = new SpotsInfo('DC','078',true,[0,0]);
-var DC079 = new SpotsInfo('DC','079',true,[0,0]);
-var DC07A = new SpotsInfo('DC','07A',true,[0,0]);
-var DC07B = new SpotsInfo('DC','07B',true,[0,0]);
-var DC07C = new SpotsInfo('DC','07C',true,[0,0]);
-var DC07D = new SpotsInfo('DC','07D',true,[0,0]);
-var DC07E = new SpotsInfo('DC','07E',true,[0,0]);
-var DC07F = new SpotsInfo('DC','07F',true,[0,0]);
-var DC080 = new SpotsInfo('DC','080',true,[0,0]);
-var DC081 = new SpotsInfo('DC','081',true,[0,0]);
-var DC082 = new SpotsInfo('DC','082',true,[0,0]);
-var DC083 = new SpotsInfo('DC','083',true,[0,0]);
-var DC084 = new SpotsInfo('DC','084',true,[0,0]);
-var DC085 = new SpotsInfo('DC','085',true,[0,0]);
-var DC086 = new SpotsInfo('DC','086',true,[0,0]);
-var DC087 = new SpotsInfo('DC','087',true,[0,0]);
-var DC088 = new SpotsInfo('DC','088',true,[0,0]);
-var DC089 = new SpotsInfo('DC','089',true,[0,0]);
-var DC08A = new SpotsInfo('DC','08A',true,[0,0]);
-var DC08B = new SpotsInfo('DC','08B',true,[0,0]);
-var DC08C = new SpotsInfo('DC','08C',true,[0,0]);
-var DC08D = new SpotsInfo('DC','08D',true,[0,0]);
-var DC08E = new SpotsInfo('DC','08E',true,[0,0]);
-var DC08F = new SpotsInfo('DC','08F',true,[0,0]);
-var DC090 = new SpotsInfo('DC','090',true,[0,0]);
-var DC091 = new SpotsInfo('DC','091',true,[0,0]);
-var DC092 = new SpotsInfo('DC','092',true,[0,0]);
-var DC093 = new SpotsInfo('DC','093',true,[0,0]);
-var DC094 = new SpotsInfo('DC','094',true,[0,0]);
-var DC095 = new SpotsInfo('DC','095',true,[0,0]);
-var DC096 = new SpotsInfo('DC','096',true,[0,0]);
-var DC097 = new SpotsInfo('DC','097',true,[0,0]);
-var DC098 = new SpotsInfo('DC','098',true,[0,0]);
-var DC099 = new SpotsInfo('DC','099',true,[0,0]);
-var DC09A = new SpotsInfo('DC','09A',true,[0,0]);
-var DC09B = new SpotsInfo('DC','09B',true,[0,0]);
-var DC09C = new SpotsInfo('DC','09C',true,[0,0]);
-var DC09D = new SpotsInfo('DC','09D',true,[0,0]);
-var DC09E = new SpotsInfo('DC','09E',true,[0,0]);
-var DC09F = new SpotsInfo('DC','09F',true,[0,0]);
-var DC0A0 = new SpotsInfo('DC','0A0',true,[0,0]);
-var DC0A1 = new SpotsInfo('DC','0A1',true,[0,0]);
-var DC0A2 = new SpotsInfo('DC','0A2',true,[0,0]);
-var DC0A3 = new SpotsInfo('DC','0A3',true,[0,0]);
-var DC0A4 = new SpotsInfo('DC','0A4',true,[0,0]);
-var DC0A5 = new SpotsInfo('DC','0A5',true,[0,0]);
-var DC0A6 = new SpotsInfo('DC','0A6',true,[0,0]);
-var DC0A7 = new SpotsInfo('DC','0A7',true,[0,0]);
-var DC0A8 = new SpotsInfo('DC','0A8',true,[0,0]);
-var DC0A9 = new SpotsInfo('DC','0A9',true,[0,0]);
-var DC0AA = new SpotsInfo('DC','0AA',true,[0,0]);
-var DC0AB = new SpotsInfo('DC','0AB',true,[0,0]);
-var DC0AC = new SpotsInfo('DC','0AC',true,[0,0]);
-var DC0AD = new SpotsInfo('DC','0AD',true,[0,0]);
-var DC0AE = new SpotsInfo('DC','0AE',true,[0,0]);
-var DC0AF = new SpotsInfo('DC','0AF',true,[0,0]);
-var DC0B0 = new SpotsInfo('DC','0B0',true,[0,0]);
-var DC0B1 = new SpotsInfo('DC','0B1',true,[0,0]);
-var DC0B2 = new SpotsInfo('DC','0B2',true,[0,0]);
-var DC0B3 = new SpotsInfo('DC','0B3',true,[0,0]);
-var DC0B4 = new SpotsInfo('DC','0B4',true,[0,0]);
-var DC0B5 = new SpotsInfo('DC','0B5',true,[0,0]);
-var DC0B6 = new SpotsInfo('DC','0B6',true,[0,0]);
-var DC0B7 = new SpotsInfo('DC','0B7',true,[0,0]);
-var DC0B8 = new SpotsInfo('DC','0B8',true,[0,0]);
-var DC0B9 = new SpotsInfo('DC','0B9',true,[0,0]);
-var DC0BA = new SpotsInfo('DC','0BA',true,[0,0]);
-var DC0BB = new SpotsInfo('DC','0BB',true,[0,0]);
-var DC0BC = new SpotsInfo('DC','0BC',true,[0,0]);
-var DC0BD = new SpotsInfo('DC','0BD',true,[0,0]);
-var DC0BE = new SpotsInfo('DC','0BE',true,[0,0]);
-var DC0BF = new SpotsInfo('DC','0BF',true,[0,0]);
-var DC0C0 = new SpotsInfo('DC','0C0',true,[0,0]);
-var DC0C1 = new SpotsInfo('DC','0C1',true,[0,0]);
-var DC0C2 = new SpotsInfo('DC','0C2',true,[0,0]);
-var DC0C3 = new SpotsInfo('DC','0C3',true,[0,0]);
-var DC0C4 = new SpotsInfo('DC','0C4',true,[0,0]);
-var DC0C5 = new SpotsInfo('DC','0C5',true,[0,0]);
-var DC0C6 = new SpotsInfo('DC','0C6',true,[0,0]);
-var DC0C7 = new SpotsInfo('DC','0C7',true,[0,0]);
-var DC0C8 = new SpotsInfo('DC','0C8',true,[0,0]);
-var DC0C9 = new SpotsInfo('DC','0C9',true,[0,0]);
-var DC0CA = new SpotsInfo('DC','0CA',true,[0,0]);
-var DC0CB = new SpotsInfo('DC','0CB',true,[0,0]);
-var DC0CC = new SpotsInfo('DC','0CC',true,[0,0]);
-var DC0CD = new SpotsInfo('DC','0CD',true,[0,0]);
-var DC0CE = new SpotsInfo('DC','0CE',true,[0,0]);
-var DC0CF = new SpotsInfo('DC','0CF',true,[0,0]);
-var DC0D0 = new SpotsInfo('DC','0D0',true,[0,0]);
-var DC0D1 = new SpotsInfo('DC','0D1',true,[0,0]);
-var DC0D2 = new SpotsInfo('DC','0D2',true,[0,0]);
-var DC0D3 = new SpotsInfo('DC','0D3',true,[0,0]);
-var DC0D4 = new SpotsInfo('DC','0D4',true,[0,0]);
-var DC0D5 = new SpotsInfo('DC','0D5',true,[0,0]);
-var DC0D6 = new SpotsInfo('DC','0D6',true,[0,0]);
-var DC0D7 = new SpotsInfo('DC','0D7',true,[0,0]);
-var DC0D8 = new SpotsInfo('DC','0D8',true,[0,0]);
-var DC0D9 = new SpotsInfo('DC','0D9',true,[0,0]);
-var DC0DA = new SpotsInfo('DC','0DA',true,[0,0]);
-var DC0DB = new SpotsInfo('DC','0DB',true,[0,0]);
-var DC0DC = new SpotsInfo('DC','0DC',true,[0,0]);
-var DC0DD = new SpotsInfo('DC','0DD',true,[0,0]);
-var DC0DE = new SpotsInfo('DC','0DE',true,[0,0]);
-var DC0DF = new SpotsInfo('DC','0DF',true,[0,0]);
-var lotDCSpots = [DC001,DC002,DC003,DC004,DC005,DC006,DC007,DC008,DC009,DC00A
-				 ,DC00B,DC00C,DC00D,DC00E,DC00F,DC010,DC011,DC012,DC013,DC014
-				 ,DC015,DC016,DC017,DC018,DC019,DC01A,DC01B,DC01C,DC01D,DC01E
-				 ,DC01F,DC020,DC021,DC022,DC023,DC024,DC025,DC026,DC027,DC028
-				 ,DC029,DC02A,DC02B,DC02C,DC02D,DC02E,DC02F,DC030,DC031,DC032
-				 ,DC033,DC034,DC035,DC036,DC037,DC038,DC039,DC03A,DC03B,DC03C
-				 ,DC03D,DC03E,DC03F,DC040,DC041,DC042,DC043,DC044,DC045,DC046
-				 ,DC047,DC048,DC049,DC04A,DC04B,DC04C,DC04D,DC04E,DC04F,DC050
-				 ,DC051,DC052,DC053,DC054,DC055,DC056,DC057,DC058,DC059,DC05A
-				 ,DC05B,DC05C,DC05D,DC05E,DC05F,DC060,DC061,DC062,DC063,DC064
-				 ,DC065,DC066,DC067,DC068,DC069,DC06A,DC06B,DC06C,DC06D,DC06E
-				 ,DC06F,DC070,DC071,DC072,DC073,DC074,DC075,DC076,DC077,DC078
-				 ,DC079,DC07A,DC07B,DC07C,DC07D,DC07E,DC07F,DC080,DC081,DC082
-				 ,DC083,DC084,DC085,DC086,DC087,DC088,DC089,DC08A,DC08B,DC08C
-				 ,DC08D,DC08E,DC08F,DC090,DC091,DC092,DC093,DC094,DC095,DC096
-				 ,DC097,DC098,DC099,DC09A,DC09B,DC09C,DC09D,DC09E,DC09F,DC0A0
-				 ,DC0A1,DC0A2,DC0A3,DC0A4,DC0A5,DC0A6,DC0A7,DC0A8,DC0A9,DC0AA
-				 ,DC0AB,DC0AC,DC0AD,DC0AE,DC0AF,DC0B0,DC0B1,DC0B2,DC0B3,DC0B4
-				 ,DC0B5,DC0B6,DC0B7,DC0B8,DC0B9,DC0BA,DC0BB,DC0BC,DC0BD,DC0BE
-				 ,DC0BF,DC0C0,DC0C1,DC0C2,DC0C3,DC0C4,DC0C5,DC0C6,DC0C7,DC0C8
-				 ,DC0C9,DC0CA,DC0CB,DC0CC,DC0CD,DC0CE,DC0CF,DC0D0,DC0D1,DC0D2
-				 ,DC0D3,DC0D4,DC0D5,DC0D6,DC0D7,DC0D8,DC0D9,DC0DA,DC0DB,DC0DC
-				 ,DC0DD,DC0DE,DC0DF];
+var lotDCSpots = [new SpotsInfo('DC','001',true,[183,146.7]),new SpotsInfo('DC','002',true,[182.9,130.6]),new SpotsInfo('DC','003',true,[182.9,163.5]),new SpotsInfo('DC','004',true,[182.8,122.3]),new SpotsInfo('DC','005',true,[182.7,67.7])
+				 ,new SpotsInfo('DC','006',true,[182.6,210.2]),new SpotsInfo('DC','007',true,[182.6,217.9]),new SpotsInfo('DC','008',true,[182.5,137.9]),new SpotsInfo('DC','009',true,[182.4,91.7]),new SpotsInfo('DC','00A',true,[182.4,106.6])
+				 ,new SpotsInfo('DC','00B',true,[182.4,154.1]),new SpotsInfo('DC','00C',true,[182.4,178.1]),new SpotsInfo('DC','00D',true,[182.1,76.5]),new SpotsInfo('DC','00E',true,[182.1,99.1]),new SpotsInfo('DC','00F',true,[182.1,169.5])
+				 ,new SpotsInfo('DC','010',true,[182.1,194.8]),new SpotsInfo('DC','011',true,[182,113.9]),new SpotsInfo('DC','012',true,[182,201.9]),new SpotsInfo('DC','013',true,[181.9,59.6]),new SpotsInfo('DC','014',true,[181.9,83])
+				 ,new SpotsInfo('DC','015',true,[181.5,186.4]),new SpotsInfo('DC','016',true,[175.3,9.8]),new SpotsInfo('DC','017',true,[172,255.7]),new SpotsInfo('DC','018',true,[166.5,9.9]),new SpotsInfo('DC','019',true,[164.9,256])
+				 ,new SpotsInfo('DC','01A',true,[160,10.2]),new SpotsInfo('DC','01B',true,[157.5,256.1]),new SpotsInfo('DC','01C',true,[152.7,51.5]),new SpotsInfo('DC','01D',true,[152.4,179]),new SpotsInfo('DC','01E',true,[152.2,122.7])
+				 ,new SpotsInfo('DC','01F',true,[152.1,130.7]),new SpotsInfo('DC','020',true,[151.6,115.4]),new SpotsInfo('DC','021',true,[151.6,256]),new SpotsInfo('DC','022',true,[151.3,107.1]),new SpotsInfo('DC','023',true,[151.2,99])
+				 ,new SpotsInfo('DC','024',true,[151.1,170.7]),new SpotsInfo('DC','025',true,[150.7,67]),new SpotsInfo('DC','026',true,[150.7,147]),new SpotsInfo('DC','027',true,[150.7,202.9]),new SpotsInfo('DC','028',true,[150.6,139.2])
+				 ,new SpotsInfo('DC','029',true,[150.6,194.4]),new SpotsInfo('DC','02A',true,[150.6,210.1]),new SpotsInfo('DC','02B',true,[150.6,218.3]),new SpotsInfo('DC','02C',true,[150.4,186.7]),new SpotsInfo('DC','02D',true,[150.3,92.4])
+				 ,new SpotsInfo('DC','02E',true,[150.2,59.3]),new SpotsInfo('DC','02F',true,[150.2,155.4]),new SpotsInfo('DC','030',true,[149.9,162.6]),new SpotsInfo('DC','031',true,[149.8,83.9]),new SpotsInfo('DC','032',true,[149.7,75.8])
+				 ,new SpotsInfo('DC','033',true,[149.4,11.1]),new SpotsInfo('DC','034',true,[144.9,256.2]),new SpotsInfo('DC','035',true,[142.4,12.9]),new SpotsInfo('DC','036',true,[138.4,52]),new SpotsInfo('DC','037',true,[138.4,67.7])
+				 ,new SpotsInfo('DC','038',true,[138.2,84]),new SpotsInfo('DC','039',true,[138.2,91.2]),new SpotsInfo('DC','03A',true,[137.5,59.7]),new SpotsInfo('DC','03B',true,[137.5,107.4]),new SpotsInfo('DC','03C',true,[137.4,162.9])
+				 ,new SpotsInfo('DC','03D',true,[137.1,76.4]),new SpotsInfo('DC','03E',true,[137,99.9]),new SpotsInfo('DC','03F',true,[137,171.2]),new SpotsInfo('DC','040',true,[136.8,194.8]),new SpotsInfo('DC','041',true,[136.5,115.5])
+				 ,new SpotsInfo('DC','042',true,[136.5,187]),new SpotsInfo('DC','043',true,[136.5,202.7]),new SpotsInfo('DC','044',true,[136.4,210.6]),new SpotsInfo('DC','045',true,[136.1,123.2]),new SpotsInfo('DC','046',true,[135.8,155])
+				 ,new SpotsInfo('DC','047',true,[135.8,178.6]),new SpotsInfo('DC','048',true,[135.7,147.8]),new SpotsInfo('DC','049',true,[135.4,138.6]),new SpotsInfo('DC','04A',true,[135.3,218.7]),new SpotsInfo('DC','04B',true,[135.2,13.3])
+				 ,new SpotsInfo('DC','04C',true,[135.2,130.6]),new SpotsInfo('DC','04D',true,[129,256]),new SpotsInfo('DC','04E',true,[128.6,13.7]),new SpotsInfo('DC','04F',true,[121.9,13.6]),new SpotsInfo('DC','050',true,[121.7,256.2])
+				 ,new SpotsInfo('DC','051',true,[116.2,14.3]),new SpotsInfo('DC','052',true,[115.5,256.7]),new SpotsInfo('DC','053',true,[109.1,256.7]),new SpotsInfo('DC','054',true,[108.6,14]),new SpotsInfo('DC','055',true,[106.8,212.2])
+				 ,new SpotsInfo('DC','056',true,[106.6,52.5]),new SpotsInfo('DC','057',true,[106.6,164.8]),new SpotsInfo('DC','058',true,[106.6,180.5]),new SpotsInfo('DC','059',true,[106.6,196.1]),new SpotsInfo('DC','05A',true,[106.6,219.8])
+				 ,new SpotsInfo('DC','05B',true,[106.5,172.5]),new SpotsInfo('DC','05C',true,[106.5,203.5]),new SpotsInfo('DC','05D',true,[106.4,188]),new SpotsInfo('DC','05E',true,[106.3,117]),new SpotsInfo('DC','05F',true,[106.2,109.6])
+				 ,new SpotsInfo('DC','060',true,[106.1,84.9]),new SpotsInfo('DC','061',true,[106.1,93.5]),new SpotsInfo('DC','062',true,[106.1,101]),new SpotsInfo('DC','063',true,[106.1,124.9]),new SpotsInfo('DC','064',true,[106.1,132.7])
+				 ,new SpotsInfo('DC','065',true,[106.1,140.9]),new SpotsInfo('DC','066',true,[105.9,68.7]),new SpotsInfo('DC','067',true,[105.9,77.4]),new SpotsInfo('DC','068',true,[105.7,148.9]),new SpotsInfo('DC','069',true,[105.5,156.3])
+				 ,new SpotsInfo('DC','06A',true,[105.4,60.1]),new SpotsInfo('DC','06B',true,[102.5,14.3]),new SpotsInfo('DC','06C',true,[102.1,257]),new SpotsInfo('DC','06D',true,[96.2,14.4]),new SpotsInfo('DC','06E',true,[95.9,257.3])
+				 ,new SpotsInfo('DC','06F',true,[89.3,257.2]),new SpotsInfo('DC','070',true,[89.1,14.5]),new SpotsInfo('DC','071',true,[88.8,220.2]),new SpotsInfo('DC','072',true,[86.3,212.8]),new SpotsInfo('DC','073',true,[85.9,53.7])
+				 ,new SpotsInfo('DC','074',true,[85.9,60.7]),new SpotsInfo('DC','075',true,[85.9,124.7]),new SpotsInfo('DC','076',true,[85.7,180.6]),new SpotsInfo('DC','077',true,[85.5,101.9]),new SpotsInfo('DC','078',true,[85.4,70.3])
+				 ,new SpotsInfo('DC','079',true,[85.4,109.2]),new SpotsInfo('DC','07A',true,[85.4,116.4]),new SpotsInfo('DC','07B',true,[85.3,78.1]),new SpotsInfo('DC','07C',true,[85.2,93.8]),new SpotsInfo('DC','07D',true,[85.2,204.5])
+				 ,new SpotsInfo('DC','07E',true,[85.1,172.6]),new SpotsInfo('DC','07F',true,[85,188.7]),new SpotsInfo('DC','080',true,[84.9,84.3]),new SpotsInfo('DC','081',true,[84.9,196.3]),new SpotsInfo('DC','082',true,[84.8,140.6])
+				 ,new SpotsInfo('DC','083',true,[84.7,133.4]),new SpotsInfo('DC','084',true,[84.7,149.4]),new SpotsInfo('DC','085',true,[84.7,156.8]),new SpotsInfo('DC','086',true,[84.6,164.5]),new SpotsInfo('DC','087',true,[83,257.7])
+				 ,new SpotsInfo('DC','088',true,[82.9,14.5]),new SpotsInfo('DC','089',true,[75.9,14.8]),new SpotsInfo('DC','08A',true,[75.8,258.8]),new SpotsInfo('DC','08B',true,[69.2,15.2]),new SpotsInfo('DC','08C',true,[69.2,259.5])
+				 ,new SpotsInfo('DC','08D',true,[63.1,15.4]),new SpotsInfo('DC','08E',true,[62.6,258.9]),new SpotsInfo('DC','08F',true,[56.8,15.6]),new SpotsInfo('DC','090',true,[56.8,259.1]),new SpotsInfo('DC','091',true,[55.9,93.9])
+				 ,new SpotsInfo('DC','092',true,[55.8,100.4]),new SpotsInfo('DC','093',true,[55.7,117.3]),new SpotsInfo('DC','094',true,[55.5,148.6]),new SpotsInfo('DC','095',true,[55.4,86.1]),new SpotsInfo('DC','096',true,[55.4,164.6])
+				 ,new SpotsInfo('DC','097',true,[55.4,172.7]),new SpotsInfo('DC','098',true,[55.4,181.2]),new SpotsInfo('DC','099',true,[55.3,69.8]),new SpotsInfo('DC','09A',true,[55.3,108.8]),new SpotsInfo('DC','09B',true,[55.3,156.6])
+				 ,new SpotsInfo('DC','09C',true,[55.2,188.9]),new SpotsInfo('DC','09D',true,[55.1,140.6]),new SpotsInfo('DC','09E',true,[55,196.8]),new SpotsInfo('DC','09F',true,[54.9,53.8]),new SpotsInfo('DC','0A0',true,[54.9,133.6])
+				 ,new SpotsInfo('DC','0A1',true,[54.8,61.5]),new SpotsInfo('DC','0A2',true,[54.8,78.1]),new SpotsInfo('DC','0A3',true,[54.8,125.2]),new SpotsInfo('DC','0A4',true,[54.8,213]),new SpotsInfo('DC','0A5',true,[54.4,203.6])
+				 ,new SpotsInfo('DC','0A6',true,[53.9,220.7]),new SpotsInfo('DC','0A7',true,[49.8,16.3]),new SpotsInfo('DC','0A8',true,[49.6,259.6]),new SpotsInfo('DC','0A9',true,[43.2,16.4]),new SpotsInfo('DC','0AA',true,[43.2,261.2])
+				 ,new SpotsInfo('DC','0AB',true,[42,165.9]),new SpotsInfo('DC','0AC',true,[42,174.3]),new SpotsInfo('DC','0AD',true,[42,181.2]),new SpotsInfo('DC','0AE',true,[41.7,109.9]),new SpotsInfo('DC','0AF',true,[41.6,134])
+				 ,new SpotsInfo('DC','0B0',true,[41.6,141.1]),new SpotsInfo('DC','0B1',true,[41.5,149.6]),new SpotsInfo('DC','0B2',true,[41.4,70.1]),new SpotsInfo('DC','0B3',true,[41.4,125.2]),new SpotsInfo('DC','0B4',true,[41.2,118.1])
+				 ,new SpotsInfo('DC','0B5',true,[41,189.1]),new SpotsInfo('DC','0B6',true,[40.8,212.8]),new SpotsInfo('DC','0B7',true,[40.7,156.8]),new SpotsInfo('DC','0B8',true,[40.7,197.7]),new SpotsInfo('DC','0B9',true,[40.6,220.1])
+				 ,new SpotsInfo('DC','0BA',true,[40.4,205.3]),new SpotsInfo('DC','0BB',true,[40.3,61.4]),new SpotsInfo('DC','0BC',true,[40.3,101.5]),new SpotsInfo('DC','0BD',true,[40.2,77.4]),new SpotsInfo('DC','0BE',true,[40.2,87])
+				 ,new SpotsInfo('DC','0BF',true,[40.2,93.2]),new SpotsInfo('DC','0C0',true,[40,53.5]),new SpotsInfo('DC','0C1',true,[36,16.5]),new SpotsInfo('DC','0C2',true,[28.9,16.3]),new SpotsInfo('DC','0C3',true,[10.9,249.3])
+				 ,new SpotsInfo('DC','0C4',true,[10.8,76.1]),new SpotsInfo('DC','0C5',true,[10.6,52.2]),new SpotsInfo('DC','0C6',true,[10.6,83.3]),new SpotsInfo('DC','0C7',true,[10.5,234.9]),new SpotsInfo('DC','0C8',true,[10.4,156.1])
+				 ,new SpotsInfo('DC','0C9',true,[10.3,60.2]),new SpotsInfo('DC','0CA',true,[10.3,68.3]),new SpotsInfo('DC','0CB',true,[10.3,240.2]),new SpotsInfo('DC','0CC',true,[10.2,91.9]),new SpotsInfo('DC','0CD',true,[10.2,148.1])
+				 ,new SpotsInfo('DC','0CE',true,[10.2,163.6]),new SpotsInfo('DC','0CF',true,[10.2,187.2]),new SpotsInfo('DC','0D0',true,[10.2,219.8]),new SpotsInfo('DC','0D1',true,[10.2,226.8]),new SpotsInfo('DC','0D2',true,[10.1,107.9])
+				 ,new SpotsInfo('DC','0D3',true,[10.1,130.6]),new SpotsInfo('DC','0D4',true,[10.1,139.7]),new SpotsInfo('DC','0D5',true,[10.1,194.8]),new SpotsInfo('DC','0D6',true,[10,100.1]),new SpotsInfo('DC','0D7',true,[10,171.4])
+				 ,new SpotsInfo('DC','0D8',true,[9.9,203.1]),new SpotsInfo('DC','0D9',true,[9.8,27.8]),new SpotsInfo('DC','0DA',true,[9.8,116.5]),new SpotsInfo('DC','0DB',true,[9.8,123.6]),new SpotsInfo('DC','0DC',true,[9.8,211.5])
+				 ,new SpotsInfo('DC','0DD',true,[9.7,35.6]),new SpotsInfo('DC','0DE',true,[9.7,43.9]),new SpotsInfo('DC','0DF',true,[9.1,180])];
 
 //Lot DD - - - - - - - - - - - - - - - - - - - - - - - - -
-var DD001 = new SpotsInfo('DD','001',true,[0,0]);
-var DD002 = new SpotsInfo('DD','002',true,[0,0]);
-var DD003 = new SpotsInfo('DD','003',true,[0,0]);
-var DD004 = new SpotsInfo('DD','004',true,[0,0]);
-var DD005 = new SpotsInfo('DD','005',true,[0,0]);
-var DD006 = new SpotsInfo('DD','006',true,[0,0]);
-var DD007 = new SpotsInfo('DD','007',true,[0,0]);
-var DD008 = new SpotsInfo('DD','008',true,[0,0]);
-var DD009 = new SpotsInfo('DD','009',true,[0,0]);
-var DD00A = new SpotsInfo('DD','00A',true,[0,0]);
-var DD00B = new SpotsInfo('DD','00B',true,[0,0]);
-var DD00C = new SpotsInfo('DD','00C',true,[0,0]);
-var DD00D = new SpotsInfo('DD','00D',true,[0,0]);
-var DD00E = new SpotsInfo('DD','00E',true,[0,0]);
-var DD00F = new SpotsInfo('DD','00F',true,[0,0]);
-var DD010 = new SpotsInfo('DD','010',true,[0,0]);
-var DD011 = new SpotsInfo('DD','011',true,[0,0]);
-var DD012 = new SpotsInfo('DD','012',true,[0,0]);
-var DD013 = new SpotsInfo('DD','013',true,[0,0]);
-var DD014 = new SpotsInfo('DD','014',true,[0,0]);
-var DD015 = new SpotsInfo('DD','015',true,[0,0]);
-var DD016 = new SpotsInfo('DD','016',true,[0,0]);
-var DD017 = new SpotsInfo('DD','017',true,[0,0]);
-var DD018 = new SpotsInfo('DD','018',true,[0,0]);
-var DD019 = new SpotsInfo('DD','019',true,[0,0]);
-var DD01A = new SpotsInfo('DD','01A',true,[0,0]);
-var DD01B = new SpotsInfo('DD','01B',true,[0,0]);
-var DD01C = new SpotsInfo('DD','01C',true,[0,0]);
-var DD01D = new SpotsInfo('DD','01D',true,[0,0]);
-var DD01E = new SpotsInfo('DD','01E',true,[0,0]);
-var DD01F = new SpotsInfo('DD','01F',true,[0,0]);
-var DD020 = new SpotsInfo('DD','020',true,[0,0]);
-var DD021 = new SpotsInfo('DD','021',true,[0,0]);
-var DD022 = new SpotsInfo('DD','022',true,[0,0]);
-var DD023 = new SpotsInfo('DD','023',true,[0,0]);
-var DD024 = new SpotsInfo('DD','024',true,[0,0]);
-var DD025 = new SpotsInfo('DD','025',true,[0,0]);
-var DD026 = new SpotsInfo('DD','026',true,[0,0]);
-var DD027 = new SpotsInfo('DD','027',true,[0,0]);
-var DD028 = new SpotsInfo('DD','028',true,[0,0]);
-var DD029 = new SpotsInfo('DD','029',true,[0,0]);
-var DD02A = new SpotsInfo('DD','02A',true,[0,0]);
-var DD02B = new SpotsInfo('DD','02B',true,[0,0]);
-var DD02C = new SpotsInfo('DD','02C',true,[0,0]);
-var DD02D = new SpotsInfo('DD','02D',true,[0,0]);
-var DD02E = new SpotsInfo('DD','02E',true,[0,0]);
-var DD02F = new SpotsInfo('DD','02F',true,[0,0]);
-var DD030 = new SpotsInfo('DD','030',true,[0,0]);
-var DD031 = new SpotsInfo('DD','031',true,[0,0]);
-var DD032 = new SpotsInfo('DD','032',true,[0,0]);
-var DD033 = new SpotsInfo('DD','033',true,[0,0]);
-var DD034 = new SpotsInfo('DD','034',true,[0,0]);
-var DD035 = new SpotsInfo('DD','035',true,[0,0]);
-var DD036 = new SpotsInfo('DD','036',true,[0,0]);
-var DD037 = new SpotsInfo('DD','037',true,[0,0]);
-var DD038 = new SpotsInfo('DD','038',true,[0,0]);
-var DD039 = new SpotsInfo('DD','039',true,[0,0]);
-var DD03A = new SpotsInfo('DD','03A',true,[0,0]);
-var DD03B = new SpotsInfo('DD','03B',true,[0,0]);
-var DD03C = new SpotsInfo('DD','03C',true,[0,0]);
-var DD03D = new SpotsInfo('DD','03D',true,[0,0]);
-var DD03E = new SpotsInfo('DD','03E',true,[0,0]);
-var DD03F = new SpotsInfo('DD','03F',true,[0,0]);
-var DD040 = new SpotsInfo('DD','040',true,[0,0]);
-var DD041 = new SpotsInfo('DD','041',true,[0,0]);
-var DD042 = new SpotsInfo('DD','042',true,[0,0]);
-var DD043 = new SpotsInfo('DD','043',true,[0,0]);
-var DD044 = new SpotsInfo('DD','044',true,[0,0]);
-var DD045 = new SpotsInfo('DD','045',true,[0,0]);
-var DD046 = new SpotsInfo('DD','046',true,[0,0]);
-var lotDDSpots = [DD001,DD002,DD003,DD004,DD005,DD006,DD007,DD008,DD009,DD00A
-				 ,DD00B,DD00C,DD00D,DD00E,DD00F,DD010,DD011,DD012,DD013,DD014
-				 ,DD015,DD016,DD017,DD018,DD019,DD01A,DD01B,DD01C,DD01D,DD01E
-				 ,DD01F,DD020,DD021,DD022,DD023,DD024,DD025,DD026,DD027,DD028
-				 ,DD029,DD02A,DD02B,DD02C,DD02D,DD02E,DD02F,DD030,DD031,DD032
-				 ,DD033,DD034,DD035,DD036,DD037,DD038,DD039,DD03A,DD03B,DD03C
-				 ,DD03D,DD03E,DD03F,DD040,DD041,DD042,DD043,DD044,DD045,DD046
+var lotDDSpots = [new SpotsInfo('DD','001',true,[54.9,232.6]),new SpotsInfo('DD','002',true,[54.8,272.8]),new SpotsInfo('DD','003',true,[54.7,238.8]),new SpotsInfo('DD','004',true,[54.6,266.3]),new SpotsInfo('DD','005',true,[54.4,279.7])
+				 ,new SpotsInfo('DD','006',true,[54.3,144.1]),new SpotsInfo('DD','007',true,[54.3,172.2]),new SpotsInfo('DD','008',true,[54.2,164.2]),new SpotsInfo('DD','009',true,[54.1,245.3]),new SpotsInfo('DD','00A',true,[54,225.1])
+				 ,new SpotsInfo('DD','00B',true,[53.9,219.2]),new SpotsInfo('DD','00C',true,[53.9,372.9]),new SpotsInfo('DD','00D',true,[53.8,212.4]),new SpotsInfo('DD','00E',true,[53.8,339.5]),new SpotsInfo('DD','00F',true,[53.8,346.2])
+				 ,new SpotsInfo('DD','010',true,[53.8,351.9]),new SpotsInfo('DD','011',true,[53.7,151.2]),new SpotsInfo('DD','012',true,[53.7,359.1]),new SpotsInfo('DD','013',true,[53.6,130.4]),new SpotsInfo('DD','014',true,[53.5,88.7])
+				 ,new SpotsInfo('DD','015',true,[53.5,157.5]),new SpotsInfo('DD','016',true,[53.5,366.8]),new SpotsInfo('DD','017',true,[53.5,380.5]),new SpotsInfo('DD','018',true,[53.4,109.4]),new SpotsInfo('DD','019',true,[53.4,136.8])
+				 ,new SpotsInfo('DD','01A',true,[53.3,122.9]),new SpotsInfo('DD','01B',true,[53.3,287]),new SpotsInfo('DD','01C',true,[53.2,102]),new SpotsInfo('DD','01D',true,[53.2,116.2]),new SpotsInfo('DD','01E',true,[53.1,95.1])
+				 ,new SpotsInfo('DD','01F',true,[53.1,205.5]),new SpotsInfo('DD','020',true,[53.1,321.2]),new SpotsInfo('DD','021',true,[53,195.6]),new SpotsInfo('DD','022',true,[53,332.4]),new SpotsInfo('DD','023',true,[52.5,67.6])
+				 ,new SpotsInfo('DD','024',true,[52.4,81.4]),new SpotsInfo('DD','025',true,[52.3,74.8]),new SpotsInfo('DD','026',true,[51.8,296.7]),new SpotsInfo('DD','027',true,[40.2,296.8]),new SpotsInfo('DD','028',true,[40,286.9])
+				 ,new SpotsInfo('DD','029',true,[38.9,332.5]),new SpotsInfo('DD','02A',true,[38.8,321]),new SpotsInfo('DD','02B',true,[38.4,205.8]),new SpotsInfo('DD','02C',true,[38.2,195.4]),new SpotsInfo('DD','02D',true,[38,172])
+				 ,new SpotsInfo('DD','02E',true,[37.9,352.9]),new SpotsInfo('DD','02F',true,[37.8,339.1]),new SpotsInfo('DD','030',true,[37.4,130.6]),new SpotsInfo('DD','031',true,[37.4,280]),new SpotsInfo('DD','032',true,[37.4,346.4])
+				 ,new SpotsInfo('DD','033',true,[37.4,366.7]),new SpotsInfo('DD','034',true,[37.3,359.3]),new SpotsInfo('DD','035',true,[37.3,382]),new SpotsInfo('DD','036',true,[37.2,273.1]),new SpotsInfo('DD','037',true,[37.2,373.6])
+				 ,new SpotsInfo('DD','038',true,[37,266.5]),new SpotsInfo('DD','039',true,[36.9,137]),new SpotsInfo('DD','03A',true,[36.9,143.7]),new SpotsInfo('DD','03B',true,[36.8,81.8]),new SpotsInfo('DD','03C',true,[36.8,88.4])
+				 ,new SpotsInfo('DD','03D',true,[36.8,123.5]),new SpotsInfo('DD','03E',true,[36.7,74.6]),new SpotsInfo('DD','03F',true,[36.7,95]),new SpotsInfo('DD','040',true,[36.7,164.3]),new SpotsInfo('DD','041',true,[36.6,102.1])
+				 ,new SpotsInfo('DD','042',true,[36.6,151]),new SpotsInfo('DD','043',true,[36.5,109.9]),new SpotsInfo('DD','044',true,[36.4,68.4]),new SpotsInfo('DD','045',true,[36.4,116.4]),new SpotsInfo('DD','046',true,[36.4,157.6])
 				 ];
 
 //Lot EE - - - - - - - - - - - - - - - - - - - - - - - - -
-var EE001 = new SpotsInfo('EE','001',true,[0,0]);
-var EE002 = new SpotsInfo('EE','002',true,[0,0]);
-var EE003 = new SpotsInfo('EE','003',true,[0,0]);
-var EE004 = new SpotsInfo('EE','004',true,[0,0]);
-var EE005 = new SpotsInfo('EE','005',true,[0,0]);
-var EE006 = new SpotsInfo('EE','006',true,[0,0]);
-var EE007 = new SpotsInfo('EE','007',true,[0,0]);
-var EE008 = new SpotsInfo('EE','008',true,[0,0]);
-var EE009 = new SpotsInfo('EE','009',true,[0,0]);
-var EE00A = new SpotsInfo('EE','00A',true,[0,0]);
-var EE00B = new SpotsInfo('EE','00B',true,[0,0]);
-var EE00C = new SpotsInfo('EE','00C',true,[0,0]);
-var EE00D = new SpotsInfo('EE','00D',true,[0,0]);
-var EE00E = new SpotsInfo('EE','00E',true,[0,0]);
-var EE00F = new SpotsInfo('EE','00F',true,[0,0]);
-var EE010 = new SpotsInfo('EE','010',true,[0,0]);
-var EE011 = new SpotsInfo('EE','011',true,[0,0]);
-var EE012 = new SpotsInfo('EE','012',true,[0,0]);
-var EE013 = new SpotsInfo('EE','013',true,[0,0]);
-var EE014 = new SpotsInfo('EE','014',true,[0,0]);
-var EE015 = new SpotsInfo('EE','015',true,[0,0]);
-var EE016 = new SpotsInfo('EE','016',true,[0,0]);
-var EE017 = new SpotsInfo('EE','017',true,[0,0]);
-var EE018 = new SpotsInfo('EE','018',true,[0,0]);
-var EE019 = new SpotsInfo('EE','019',true,[0,0]);
-var EE01A = new SpotsInfo('EE','01A',true,[0,0]);
-var EE01B = new SpotsInfo('EE','01B',true,[0,0]);
-var EE01C = new SpotsInfo('EE','01C',true,[0,0]);
-var EE01D = new SpotsInfo('EE','01D',true,[0,0]);
-var EE01E = new SpotsInfo('EE','01E',true,[0,0]);
-var EE01F = new SpotsInfo('EE','01F',true,[0,0]);
-var EE020 = new SpotsInfo('EE','020',true,[0,0]);
-var EE021 = new SpotsInfo('EE','021',true,[0,0]);
-var EE022 = new SpotsInfo('EE','022',true,[0,0]);
-var EE023 = new SpotsInfo('EE','023',true,[0,0]);
-var EE024 = new SpotsInfo('EE','024',true,[0,0]);
-var EE025 = new SpotsInfo('EE','025',true,[0,0]);
-var EE026 = new SpotsInfo('EE','026',true,[0,0]);
-var EE027 = new SpotsInfo('EE','027',true,[0,0]);
-var EE028 = new SpotsInfo('EE','028',true,[0,0]);
-var EE029 = new SpotsInfo('EE','029',true,[0,0]);
-var EE02A = new SpotsInfo('EE','02A',true,[0,0]);
-var EE02B = new SpotsInfo('EE','02B',true,[0,0]);
-var EE02C = new SpotsInfo('EE','02C',true,[0,0]);
-var EE02D = new SpotsInfo('EE','02D',true,[0,0]);
-var EE02E = new SpotsInfo('EE','02E',true,[0,0]);
-var EE02F = new SpotsInfo('EE','02F',true,[0,0]);
-var EE030 = new SpotsInfo('EE','030',true,[0,0]);
-var EE031 = new SpotsInfo('EE','031',true,[0,0]);
-var EE032 = new SpotsInfo('EE','032',true,[0,0]);
-var EE033 = new SpotsInfo('EE','033',true,[0,0]);
-var EE034 = new SpotsInfo('EE','034',true,[0,0]);
-var EE035 = new SpotsInfo('EE','035',true,[0,0]);
-var EE036 = new SpotsInfo('EE','036',true,[0,0]);
-var lotEESpots = [EE001,EE002,EE003,EE004,EE005,EE006,EE007,EE008,EE009,EE00A
-				 ,EE00B,EE00C,EE00D,EE00E,EE00F,EE010,EE011,EE012,EE013,EE014
-				 ,EE015,EE016,EE017,EE018,EE019,EE01A,EE01B,EE01C,EE01D,EE01E
-				 ,EE01F,EE020,EE021,EE022,EE023,EE024,EE025,EE026,EE027,EE028
-				 ,EE029,EE02A,EE02B,EE02C,EE02D,EE02E,EE02F,EE030,EE031,EE032
-				 ,EE033,EE034,EE035,EE036];
+var lotEESpots = [new SpotsInfo('EE','001',true,[90.3,279.5]),new SpotsInfo('EE','002',true,[90.2,286.1]),new SpotsInfo('EE','003',true,[90.1,269.9]),new SpotsInfo('EE','004',true,[89.9,210.3]),new SpotsInfo('EE','005',true,[89.7,227.4])
+				 ,new SpotsInfo('EE','006',true,[89.7,236.8]),new SpotsInfo('EE','007',true,[89.7,296.4]),new SpotsInfo('EE','008',true,[89.6,202]),new SpotsInfo('EE','009',true,[89.5,105.8]),new SpotsInfo('EE','00A',true,[89.5,245.3])
+				 ,new SpotsInfo('EE','00B',true,[89.5,253.3]),new SpotsInfo('EE','00C',true,[89.4,219.1]),new SpotsInfo('EE','00D',true,[89.4,304.1]),new SpotsInfo('EE','00E',true,[89.4,322.7]),new SpotsInfo('EE','00F',true,[89.3,262.9])
+				 ,new SpotsInfo('EE','010',true,[89.2,313]),new SpotsInfo('EE','011',true,[89.1,184.9]),new SpotsInfo('EE','012',true,[88.7,192.9]),new SpotsInfo('EE','013',true,[87.9,79.4]),new SpotsInfo('EE','014',true,[87.6,71.1])
+				 ,new SpotsInfo('EE','015',true,[87.5,14.6]),new SpotsInfo('EE','016',true,[87.5,30]),new SpotsInfo('EE','017',true,[87.5,96.4]),new SpotsInfo('EE','018',true,[87.4,38.6]),new SpotsInfo('EE','019',true,[87.4,52.6])
+				 ,new SpotsInfo('EE','01A',true,[87.4,87.7]),new SpotsInfo('EE','01B',true,[87.3,62.6]),new SpotsInfo('EE','01C',true,[36.7,185.4]),new SpotsInfo('EE','01D',true,[36.5,220.2]),new SpotsInfo('EE','01E',true,[36.5,236.2])
+				 ,new SpotsInfo('EE','01F',true,[36.3,176.3]),new SpotsInfo('EE','020',true,[36.3,194.2]),new SpotsInfo('EE','021',true,[36.2,201.7]),new SpotsInfo('EE','022',true,[36.1,227.8]),new SpotsInfo('EE','023',true,[36,210.1])
+				 ,new SpotsInfo('EE','024',true,[35.9,252.9]),new SpotsInfo('EE','025',true,[35.8,244.9]),new SpotsInfo('EE','026',true,[35.6,261.3]),new SpotsInfo('EE','027',true,[35.6,270.5]),new SpotsInfo('EE','028',true,[35.6,297.1])
+				 ,new SpotsInfo('EE','029',true,[35.3,279]),new SpotsInfo('EE','02A',true,[35.1,110.3]),new SpotsInfo('EE','02B',true,[35,118.4]),new SpotsInfo('EE','02C',true,[34.9,287.5]),new SpotsInfo('EE','02D',true,[34.8,167.1])
+				 ,new SpotsInfo('EE','02E',true,[34.8,323.8]),new SpotsInfo('EE','02F',true,[34.5,74.5]),new SpotsInfo('EE','030',true,[34.4,84]),new SpotsInfo('EE','031',true,[34.4,102]),new SpotsInfo('EE','032',true,[33.9,92.8])
+				 ,new SpotsInfo('EE','033',true,[33.9,305.5]),new SpotsInfo('EE','034',true,[33.8,314.2]),new SpotsInfo('EE','035',true,[16.2,47.4]),new SpotsInfo('EE','036',true,[16.1,39.5]),new SpotsInfo('EE','037',true,[15.7,21.9])
+				 ,new SpotsInfo('EE','038',true,[15.4,30.2])];
 
 //Lot FF - - - - - - - - - - - - - - - - - - - - - - - - -
-var FF001 = new SpotsInfo('FF','001',true,[0,0]);
-var FF002 = new SpotsInfo('FF','002',true,[0,0]);
-var FF003 = new SpotsInfo('FF','003',true,[0,0]);
-var FF004 = new SpotsInfo('FF','004',true,[0,0]);
-var FF005 = new SpotsInfo('FF','005',true,[0,0]);
-var FF006 = new SpotsInfo('FF','006',true,[0,0]);
-var FF007 = new SpotsInfo('FF','007',true,[0,0]);
-var FF008 = new SpotsInfo('FF','008',true,[0,0]);
-var FF009 = new SpotsInfo('FF','009',true,[0,0]);
-var FF00A = new SpotsInfo('FF','00A',true,[0,0]);
-var FF00B = new SpotsInfo('FF','00B',true,[0,0]);
-var FF00C = new SpotsInfo('FF','00C',true,[0,0]);
-var FF00D = new SpotsInfo('FF','00D',true,[0,0]);
-var FF00E = new SpotsInfo('FF','00E',true,[0,0]);
-var FF00F = new SpotsInfo('FF','00F',true,[0,0]);
-var FF010 = new SpotsInfo('FF','010',true,[0,0]);
-var FF011 = new SpotsInfo('FF','011',true,[0,0]);
-var FF012 = new SpotsInfo('FF','012',true,[0,0]);
-var FF013 = new SpotsInfo('FF','013',true,[0,0]);
-var FF014 = new SpotsInfo('FF','014',true,[0,0]);
-var FF015 = new SpotsInfo('FF','015',true,[0,0]);
-var FF016 = new SpotsInfo('FF','016',true,[0,0]);
-var FF017 = new SpotsInfo('FF','017',true,[0,0]);
-var FF018 = new SpotsInfo('FF','018',true,[0,0]);
-var FF019 = new SpotsInfo('FF','019',true,[0,0]);
-var FF01A = new SpotsInfo('FF','01A',true,[0,0]);
-var FF01B = new SpotsInfo('FF','01B',true,[0,0]);
-var FF01C = new SpotsInfo('FF','01C',true,[0,0]);
-var FF01D = new SpotsInfo('FF','01D',true,[0,0]);
-var FF01E = new SpotsInfo('FF','01E',true,[0,0]);
-var FF01F = new SpotsInfo('FF','01F',true,[0,0]);
-var FF020 = new SpotsInfo('FF','020',true,[0,0]);
-var FF021 = new SpotsInfo('FF','021',true,[0,0]);
-var FF022 = new SpotsInfo('FF','022',true,[0,0]);
-var FF023 = new SpotsInfo('FF','023',true,[0,0]);
-var FF024 = new SpotsInfo('FF','024',true,[0,0]);
-var FF025 = new SpotsInfo('FF','025',true,[0,0]);
-var FF026 = new SpotsInfo('FF','026',true,[0,0]);
-var FF027 = new SpotsInfo('FF','027',true,[0,0]);
-var FF028 = new SpotsInfo('FF','028',true,[0,0]);
-var FF029 = new SpotsInfo('FF','029',true,[0,0]);
-var FF02A = new SpotsInfo('FF','02A',true,[0,0]);
-var FF02B = new SpotsInfo('FF','02B',true,[0,0]);
-var FF02C = new SpotsInfo('FF','02C',true,[0,0]);
-var FF02D = new SpotsInfo('FF','02D',true,[0,0]);
-var FF02E = new SpotsInfo('FF','02E',true,[0,0]);
-var FF02F = new SpotsInfo('FF','02F',true,[0,0]);
-var FF030 = new SpotsInfo('FF','030',true,[0,0]);
-var FF031 = new SpotsInfo('FF','031',true,[0,0]);
-var FF032 = new SpotsInfo('FF','032',true,[0,0]);
-var FF033 = new SpotsInfo('FF','033',true,[0,0]);
-var FF034 = new SpotsInfo('FF','034',true,[0,0]);
-var FF035 = new SpotsInfo('FF','035',true,[0,0]);
-var FF036 = new SpotsInfo('FF','036',true,[0,0]);
-var FF037 = new SpotsInfo('FF','037',true,[0,0]);
-var FF038 = new SpotsInfo('FF','038',true,[0,0]);
-var FF039 = new SpotsInfo('FF','039',true,[0,0]);
-var FF03A = new SpotsInfo('FF','03A',true,[0,0]);
-var FF03B = new SpotsInfo('FF','03B',true,[0,0]);
-var FF03C = new SpotsInfo('FF','03C',true,[0,0]);
-var FF03D = new SpotsInfo('FF','03D',true,[0,0]);
-var FF03E = new SpotsInfo('FF','03E',true,[0,0]);
-var FF03F = new SpotsInfo('FF','03F',true,[0,0]);
-var FF040 = new SpotsInfo('FF','040',true,[0,0]);
-var FF041 = new SpotsInfo('FF','041',true,[0,0]);
-var FF042 = new SpotsInfo('FF','042',true,[0,0]);
-var FF043 = new SpotsInfo('FF','043',true,[0,0]);
-var FF044 = new SpotsInfo('FF','044',true,[0,0]);
-var FF045 = new SpotsInfo('FF','045',true,[0,0]);
-var FF046 = new SpotsInfo('FF','046',true,[0,0]);
-var FF047 = new SpotsInfo('FF','047',true,[0,0]);
-var FF048 = new SpotsInfo('FF','048',true,[0,0]);
-var FF049 = new SpotsInfo('FF','049',true,[0,0]);
-var FF04A = new SpotsInfo('FF','04A',true,[0,0]);
-var FF04B = new SpotsInfo('FF','04B',true,[0,0]);
-var FF04C = new SpotsInfo('FF','04C',true,[0,0]);
-var FF04D = new SpotsInfo('FF','04D',true,[0,0]);
-var FF04E = new SpotsInfo('FF','04E',true,[0,0]);
-var FF04F = new SpotsInfo('FF','04F',true,[0,0]);
-var FF050 = new SpotsInfo('FF','050',true,[0,0]);
-var FF051 = new SpotsInfo('FF','051',true,[0,0]);
-var FF052 = new SpotsInfo('FF','052',true,[0,0]);
-var FF053 = new SpotsInfo('FF','053',true,[0,0]);
-var FF054 = new SpotsInfo('FF','054',true,[0,0]);
-var FF055 = new SpotsInfo('FF','055',true,[0,0]);
-var FF056 = new SpotsInfo('FF','056',true,[0,0]);
-var FF057 = new SpotsInfo('FF','057',true,[0,0]);
-var FF058 = new SpotsInfo('FF','058',true,[0,0]);
-var FF059 = new SpotsInfo('FF','059',true,[0,0]);
-var FF05A = new SpotsInfo('FF','05A',true,[0,0]);
-var FF05B = new SpotsInfo('FF','05B',true,[0,0]);
-var FF05C = new SpotsInfo('FF','05C',true,[0,0]);
-var FF05D = new SpotsInfo('FF','05D',true,[0,0]);
-var FF05E = new SpotsInfo('FF','05E',true,[0,0]);
-var FF05F = new SpotsInfo('FF','05F',true,[0,0]);
-var FF060 = new SpotsInfo('FF','060',true,[0,0]);
-var FF061 = new SpotsInfo('FF','061',true,[0,0]);
-var FF062 = new SpotsInfo('FF','062',true,[0,0]);
-var FF063 = new SpotsInfo('FF','063',true,[0,0]);
-var FF064 = new SpotsInfo('FF','064',true,[0,0]);
-var FF065 = new SpotsInfo('FF','065',true,[0,0]);
-var FF066 = new SpotsInfo('FF','066',true,[0,0]);
-var FF067 = new SpotsInfo('FF','067',true,[0,0]);
-var FF068 = new SpotsInfo('FF','068',true,[0,0]);
-var FF069 = new SpotsInfo('FF','069',true,[0,0]);
-var FF06A = new SpotsInfo('FF','06A',true,[0,0]);
-var FF06B = new SpotsInfo('FF','06B',true,[0,0]);
-var FF06C = new SpotsInfo('FF','06C',true,[0,0]);
-var FF06D = new SpotsInfo('FF','06D',true,[0,0]);
-var FF06E = new SpotsInfo('FF','06E',true,[0,0]);
-var FF06F = new SpotsInfo('FF','06F',true,[0,0]);
-var FF070 = new SpotsInfo('FF','070',true,[0,0]);
-var FF071 = new SpotsInfo('FF','071',true,[0,0]);
-var FF072 = new SpotsInfo('FF','072',true,[0,0]);
-var FF073 = new SpotsInfo('FF','073',true,[0,0]);
-var FF074 = new SpotsInfo('FF','074',true,[0,0]);
-var FF075 = new SpotsInfo('FF','075',true,[0,0]);
-var FF076 = new SpotsInfo('FF','076',true,[0,0]);
-var FF077 = new SpotsInfo('FF','077',true,[0,0]);
-var FF078 = new SpotsInfo('FF','078',true,[0,0]);
-var FF079 = new SpotsInfo('FF','079',true,[0,0]);
-var FF07A = new SpotsInfo('FF','07A',true,[0,0]);
-var FF07B = new SpotsInfo('FF','07B',true,[0,0]);
-var FF07C = new SpotsInfo('FF','07C',true,[0,0]);
-var FF07D = new SpotsInfo('FF','07D',true,[0,0]);
-var FF07E = new SpotsInfo('FF','07E',true,[0,0]);
-var FF07F = new SpotsInfo('FF','07F',true,[0,0]);
-var FF080 = new SpotsInfo('FF','080',true,[0,0]);
-var FF081 = new SpotsInfo('FF','081',true,[0,0]);
-var FF082 = new SpotsInfo('FF','082',true,[0,0]);
-var FF083 = new SpotsInfo('FF','083',true,[0,0]);
-var FF084 = new SpotsInfo('FF','084',true,[0,0]);
-var FF085 = new SpotsInfo('FF','085',true,[0,0]);
-var FF086 = new SpotsInfo('FF','086',true,[0,0]);
-var FF087 = new SpotsInfo('FF','087',true,[0,0]);
-var FF088 = new SpotsInfo('FF','088',true,[0,0]);
-var FF089 = new SpotsInfo('FF','089',true,[0,0]);
-var FF08A = new SpotsInfo('FF','08A',true,[0,0]);
-var FF08B = new SpotsInfo('FF','08B',true,[0,0]);
-var FF08C = new SpotsInfo('FF','08C',true,[0,0]);
-var FF08D = new SpotsInfo('FF','08D',true,[0,0]);
-var FF08E = new SpotsInfo('FF','08E',true,[0,0]);
-var FF08F = new SpotsInfo('FF','08F',true,[0,0]);
-var FF090 = new SpotsInfo('FF','090',true,[0,0]);
-var FF091 = new SpotsInfo('FF','091',true,[0,0]);
-var FF092 = new SpotsInfo('FF','092',true,[0,0]);
-var FF093 = new SpotsInfo('FF','093',true,[0,0]);
-var FF094 = new SpotsInfo('FF','094',true,[0,0]);
-var FF095 = new SpotsInfo('FF','095',true,[0,0]);
-var FF096 = new SpotsInfo('FF','096',true,[0,0]);
-var FF097 = new SpotsInfo('FF','097',true,[0,0]);
-var FF098 = new SpotsInfo('FF','098',true,[0,0]);
-var FF099 = new SpotsInfo('FF','099',true,[0,0]);
-var FF09A = new SpotsInfo('FF','09A',true,[0,0]);
-var FF09B = new SpotsInfo('FF','09B',true,[0,0]);
-var FF09C = new SpotsInfo('FF','09C',true,[0,0]);
-var FF09D = new SpotsInfo('FF','09D',true,[0,0]);
-var FF09E = new SpotsInfo('FF','09E',true,[0,0]);
-var FF09F = new SpotsInfo('FF','09F',true,[0,0]);
-var FF0A0 = new SpotsInfo('FF','0A0',true,[0,0]);
-var FF0A1 = new SpotsInfo('FF','0A1',true,[0,0]);
-var FF0A2 = new SpotsInfo('FF','0A2',true,[0,0]);
-var FF0A3 = new SpotsInfo('FF','0A3',true,[0,0]);
-var FF0A4 = new SpotsInfo('FF','0A4',true,[0,0]);
-var FF0A5 = new SpotsInfo('FF','0A5',true,[0,0]);
-var FF0A6 = new SpotsInfo('FF','0A6',true,[0,0]);
-var FF0A7 = new SpotsInfo('FF','0A7',true,[0,0]);
-var FF0A8 = new SpotsInfo('FF','0A8',true,[0,0]);
-var FF0A9 = new SpotsInfo('FF','0A9',true,[0,0]);
-var FF0AA = new SpotsInfo('FF','0AA',true,[0,0]);
-var FF0AB = new SpotsInfo('FF','0AB',true,[0,0]);
-var FF0AC = new SpotsInfo('FF','0AC',true,[0,0]);
-var FF0AD = new SpotsInfo('FF','0AD',true,[0,0]);
-var FF0AE = new SpotsInfo('FF','0AE',true,[0,0]);
-var FF0AF = new SpotsInfo('FF','0AF',true,[0,0]);
-var FF0B0 = new SpotsInfo('FF','0B0',true,[0,0]);
-var FF0B1 = new SpotsInfo('FF','0B1',true,[0,0]);
-var FF0B2 = new SpotsInfo('FF','0B2',true,[0,0]);
-var FF0B3 = new SpotsInfo('FF','0B3',true,[0,0]);
-var FF0B4 = new SpotsInfo('FF','0B4',true,[0,0]);
-var FF0B5 = new SpotsInfo('FF','0B5',true,[0,0]);
-var FF0B6 = new SpotsInfo('FF','0B6',true,[0,0]);
-var FF0B7 = new SpotsInfo('FF','0B7',true,[0,0]);
-var FF0B8 = new SpotsInfo('FF','0B8',true,[0,0]);
-var FF0B9 = new SpotsInfo('FF','0B9',true,[0,0]);
-var FF0BA = new SpotsInfo('FF','0BA',true,[0,0]);
-var FF0BB = new SpotsInfo('FF','0BB',true,[0,0]);
-var FF0BC = new SpotsInfo('FF','0BC',true,[0,0]);
-var FF0BD = new SpotsInfo('FF','0BD',true,[0,0]);
-var FF0BE = new SpotsInfo('FF','0BE',true,[0,0]);
-var FF0BF = new SpotsInfo('FF','0BF',true,[0,0]);
-var FF0C0 = new SpotsInfo('FF','0C0',true,[0,0]);
-var FF0C1 = new SpotsInfo('FF','0C1',true,[0,0]);
-var FF0C2 = new SpotsInfo('FF','0C2',true,[0,0]);
-var FF0C3 = new SpotsInfo('FF','0C3',true,[0,0]);
-var FF0C4 = new SpotsInfo('FF','0C4',true,[0,0]);
-var FF0C5 = new SpotsInfo('FF','0C5',true,[0,0]);
-var FF0C6 = new SpotsInfo('FF','0C6',true,[0,0]);
-var FF0C7 = new SpotsInfo('FF','0C7',true,[0,0]);
-var FF0C8 = new SpotsInfo('FF','0C8',true,[0,0]);
-var FF0C9 = new SpotsInfo('FF','0C9',true,[0,0]);
-var FF0CA = new SpotsInfo('FF','0CA',true,[0,0]);
-var FF0CB = new SpotsInfo('FF','0CB',true,[0,0]);
-var FF0CC = new SpotsInfo('FF','0CC',true,[0,0]);
-var FF0CD = new SpotsInfo('FF','0CD',true,[0,0]);
-var FF0CE = new SpotsInfo('FF','0CE',true,[0,0]);
-var FF0CF = new SpotsInfo('FF','0CF',true,[0,0]);
-var FF0D0 = new SpotsInfo('FF','0D0',true,[0,0]);
-var FF0D1 = new SpotsInfo('FF','0D1',true,[0,0]);
-var FF0D2 = new SpotsInfo('FF','0D2',true,[0,0]);
-var FF0D3 = new SpotsInfo('FF','0D3',true,[0,0]);
-var FF0D4 = new SpotsInfo('FF','0D4',true,[0,0]);
-var lotFFSpots = [FF001,FF002,FF003,FF004,FF005,FF006,FF007,FF008,FF009,FF00A
-				 ,FF00B,FF00C,FF00D,FF00E,FF00F,FF010,FF011,FF012,FF013,FF014
-				 ,FF015,FF016,FF017,FF018,FF019,FF01A,FF01B,FF01C,FF01D,FF01E
-				 ,FF01F,FF020,FF021,FF022,FF023,FF024,FF025,FF026,FF027,FF028
-				 ,FF029,FF02A,FF02B,FF02C,FF02D,FF02E,FF02F,FF030,FF031,FF032
-				 ,FF033,FF034,FF035,FF036,FF037,FF038,FF039,FF03A,FF03B,FF03C
-				 ,FF03D,FF03E,FF03F,FF040,FF041,FF042,FF043,FF044,FF045,FF046
-				 ,FF047,FF048,FF049,FF04A,FF04B,FF04C,FF04D,FF04E,FF04F,FF050
-				 ,FF051,FF052,FF053,FF054,FF055,FF056,FF057,FF058,FF059,FF05A
-				 ,FF05B,FF05C,FF05D,FF05E,FF05F,FF060,FF061,FF062,FF063,FF064
-				 ,FF065,FF066,FF067,FF068,FF069,FF06A,FF06B,FF06C,FF06D,FF06E
-				 ,FF06F,FF070,FF071,FF072,FF073,FF074,FF075,FF076,FF077,FF078
-				 ,FF079,FF07A,FF07B,FF07C,FF07D,FF07E,FF07F,FF080,FF081,FF082
-				 ,FF083,FF084,FF085,FF086,FF087,FF088,FF089,FF08A,FF08B,FF08C
-				 ,FF08D,FF08E,FF08F,FF090,FF091,FF092,FF093,FF094,FF095,FF096
-				 ,FF097,FF098,FF099,FF09A,FF09B,FF09C,FF09D,FF09E,FF09F,FF0A0
-				 ,FF0A1,FF0A2,FF0A3,FF0A4,FF0A5,FF0A6,FF0A7,FF0A8,FF0A9,FF0AA
-				 ,FF0AB,FF0AC,FF0AD,FF0AE,FF0AF,FF0B0,FF0B1,FF0B2,FF0B3,FF0B4
-				 ,FF0B5,FF0B6,FF0B7,FF0B8,FF0B9,FF0BA,FF0BB,FF0BC,FF0BD,FF0BE
-				 ,FF0BF,FF0C0,FF0C1,FF0C2,FF0C3,FF0C4,FF0C5,FF0C6,FF0C7,FF0C8
-				 ,FF0C9,FF0CA,FF0CB,FF0CC,FF0CD,FF0CE,FF0CF,FF0D0,FF0D1,FF0D2
-				 ,FF0D3,FF0D4];
+var lotFFSpots = [new SpotsInfo('FF','001',true,[159.9,82.7]),new SpotsInfo('FF','002',true,[159.5,98]),new SpotsInfo('FF','003',true,[159.4,87.7]),new SpotsInfo('FF','004',true,[159.4,93.1]),new SpotsInfo('FF','005',true,[159.4,113.5])
+				 ,new SpotsInfo('FF','006',true,[159.4,129]),new SpotsInfo('FF','007',true,[159.4,133.7]),new SpotsInfo('FF','008',true,[159.3,103.2]),new SpotsInfo('FF','009',true,[159.2,108.6]),new SpotsInfo('FF','00A',true,[159.1,123.9])
+				 ,new SpotsInfo('FF','00B',true,[159.1,138.9]),new SpotsInfo('FF','00C',true,[159,118.8]),new SpotsInfo('FF','00D',true,[150,50.5]),new SpotsInfo('FF','00E',true,[142.7,43.1]),new SpotsInfo('FF','00F',true,[134.5,109.3])
+				 ,new SpotsInfo('FF','010',true,[134.5,134.7]),new SpotsInfo('FF','011',true,[134.4,139.6]),new SpotsInfo('FF','012',true,[134.3,78.2]),new SpotsInfo('FF','013',true,[134.3,129.7]),new SpotsInfo('FF','014',true,[134.2,113.9])
+				 ,new SpotsInfo('FF','015',true,[134.2,119.4]),new SpotsInfo('FF','016',true,[134.2,124.1]),new SpotsInfo('FF','017',true,[134.1,104.5]),new SpotsInfo('FF','018',true,[133.8,83.4]),new SpotsInfo('FF','019',true,[133.7,88.8])
+				 ,new SpotsInfo('FF','01A',true,[133.7,93.2]),new SpotsInfo('FF','01B',true,[133.6,99.2]),new SpotsInfo('FF','01C',true,[120.3,207.1]),new SpotsInfo('FF','01D',true,[120,68.7]),new SpotsInfo('FF','01E',true,[120,79])
+				 ,new SpotsInfo('FF','01F',true,[120,181]),new SpotsInfo('FF','020',true,[119.9,175.7]),new SpotsInfo('FF','021',true,[119.8,83.9]),new SpotsInfo('FF','022',true,[119.8,145.4]),new SpotsInfo('FF','023',true,[119.8,150.6])
+				 ,new SpotsInfo('FF','024',true,[119.8,186.3]),new SpotsInfo('FF','025',true,[119.7,74.3]),new SpotsInfo('FF','026',true,[119.7,155.2]),new SpotsInfo('FF','027',true,[119.7,166.3]),new SpotsInfo('FF','028',true,[119.7,171.1])
+				 ,new SpotsInfo('FF','029',true,[119.6,114.4]),new SpotsInfo('FF','02A',true,[119.6,160.6]),new SpotsInfo('FF','02B',true,[119.5,88.9]),new SpotsInfo('FF','02C',true,[119.5,94.3]),new SpotsInfo('FF','02D',true,[119.5,99.8])
+				 ,new SpotsInfo('FF','02E',true,[119.5,104.2]),new SpotsInfo('FF','02F',true,[119.4,130.3]),new SpotsInfo('FF','030',true,[119.4,140.1]),new SpotsInfo('FF','031',true,[119.4,191.3]),new SpotsInfo('FF','032',true,[119.4,196.6])
+				 ,new SpotsInfo('FF','033',true,[119.3,119.2]),new SpotsInfo('FF','034',true,[119.3,124.4]),new SpotsInfo('FF','035',true,[119.3,135.2]),new SpotsInfo('FF','036',true,[119.1,109.4]),new SpotsInfo('FF','037',true,[118.7,202.3])
+				 ,new SpotsInfo('FF','038',true,[112.8,214]),new SpotsInfo('FF','039',true,[106.8,214.1]),new SpotsInfo('FF','03A',true,[100.6,213.6]),new SpotsInfo('FF','03B',true,[95.8,213.3]),new SpotsInfo('FF','03C',true,[92.7,83.5])
+				 ,new SpotsInfo('FF','03D',true,[92.6,68.4]),new SpotsInfo('FF','03E',true,[92.6,73.5]),new SpotsInfo('FF','03F',true,[92.6,89]),new SpotsInfo('FF','040',true,[92.5,78.7]),new SpotsInfo('FF','041',true,[92.5,99.1])
+				 ,new SpotsInfo('FF','042',true,[92.5,104.3]),new SpotsInfo('FF','043',true,[92.4,185.8]),new SpotsInfo('FF','044',true,[92.3,144.6]),new SpotsInfo('FF','045',true,[92.2,63.2]),new SpotsInfo('FF','046',true,[92.2,124.4])
+				 ,new SpotsInfo('FF','047',true,[92.2,139.7]),new SpotsInfo('FF','048',true,[92.2,149.7]),new SpotsInfo('FF','049',true,[92.2,155]),new SpotsInfo('FF','04A',true,[92.1,94.2]),new SpotsInfo('FF','04B',true,[92.1,114.3])
+				 ,new SpotsInfo('FF','04C',true,[92.1,119.2]),new SpotsInfo('FF','04D',true,[92.1,129.9]),new SpotsInfo('FF','04E',true,[92,109.5]),new SpotsInfo('FF','04F',true,[92,159.9]),new SpotsInfo('FF','050',true,[91.9,134.7])
+				 ,new SpotsInfo('FF','051',true,[91.9,165.4]),new SpotsInfo('FF','052',true,[91.9,170.4]),new SpotsInfo('FF','053',true,[91.8,58.4]),new SpotsInfo('FF','054',true,[91.6,175.3]),new SpotsInfo('FF','055',true,[91.6,181.2])
+				 ,new SpotsInfo('FF','056',true,[89.5,213.4]),new SpotsInfo('FF','057',true,[83.6,213.1]),new SpotsInfo('FF','058',true,[81.9,63.4]),new SpotsInfo('FF','059',true,[81.5,57.7]),new SpotsInfo('FF','05A',true,[81.5,78.6])
+				 ,new SpotsInfo('FF','05B',true,[81.1,83.9]),new SpotsInfo('FF','05C',true,[81,134.8]),new SpotsInfo('FF','05D',true,[80.9,109.3]),new SpotsInfo('FF','05E',true,[80.9,129.7]),new SpotsInfo('FF','05F',true,[80.8,114.4])
+				 ,new SpotsInfo('FF','060',true,[80.7,73.2]),new SpotsInfo('FF','061',true,[80.7,94.7]),new SpotsInfo('FF','062',true,[80.7,99.3]),new SpotsInfo('FF','063',true,[80.7,119.6]),new SpotsInfo('FF','064',true,[80.7,124.9])
+				 ,new SpotsInfo('FF','065',true,[80.7,140]),new SpotsInfo('FF','066',true,[80.7,185.7]),new SpotsInfo('FF','067',true,[80.6,89.2]),new SpotsInfo('FF','068',true,[80.6,144.6]),new SpotsInfo('FF','069',true,[80.6,155.6])
+				 ,new SpotsInfo('FF','06A',true,[80.5,68.6]),new SpotsInfo('FF','06B',true,[80.5,150.1]),new SpotsInfo('FF','06C',true,[80.5,160.4]),new SpotsInfo('FF','06D',true,[80.5,165.8]),new SpotsInfo('FF','06E',true,[80.5,175.6])
+				 ,new SpotsInfo('FF','06F',true,[80.5,180.5]),new SpotsInfo('FF','070',true,[80.4,104.3]),new SpotsInfo('FF','071',true,[80.1,170.3]),new SpotsInfo('FF','072',true,[78.6,212.9]),new SpotsInfo('FF','073',true,[73.4,212.8])
+				 ,new SpotsInfo('FF','074',true,[67,212.7]),new SpotsInfo('FF','075',true,[61.7,212.6]),new SpotsInfo('FF','076',true,[55.8,212.5]),new SpotsInfo('FF','077',true,[52.9,184]),new SpotsInfo('FF','078',true,[52.8,72])
+				 ,new SpotsInfo('FF','079',true,[52.7,67.5]),new SpotsInfo('FF','07A',true,[52.7,77.8]),new SpotsInfo('FF','07B',true,[52.6,82.5]),new SpotsInfo('FF','07C',true,[52.6,174.2]),new SpotsInfo('FF','07D',true,[52.5,52.1])
+				 ,new SpotsInfo('FF','07E',true,[52.5,62.5]),new SpotsInfo('FF','07F',true,[52.4,57.2]),new SpotsInfo('FF','080',true,[52.3,46.5]),new SpotsInfo('FF','081',true,[52.3,128.6]),new SpotsInfo('FF','082',true,[52.2,87.8])
+				 ,new SpotsInfo('FF','083',true,[52.2,93.1]),new SpotsInfo('FF','084',true,[52.2,118.4]),new SpotsInfo('FF','085',true,[52.2,138.7]),new SpotsInfo('FF','086',true,[52.1,113.2]),new SpotsInfo('FF','087',true,[52.1,123.2])
+				 ,new SpotsInfo('FF','088',true,[52.1,133.3]),new SpotsInfo('FF','089',true,[52.1,143.7]),new SpotsInfo('FF','08A',true,[52.1,153.5]),new SpotsInfo('FF','08B',true,[52.1,159]),new SpotsInfo('FF','08C',true,[52.1,169.2])
+				 ,new SpotsInfo('FF','08D',true,[52.1,179.3]),new SpotsInfo('FF','08E',true,[52,97.6]),new SpotsInfo('FF','08F',true,[52,148.5]),new SpotsInfo('FF','090',true,[52,163.9]),new SpotsInfo('FF','091',true,[51.8,102.6])
+				 ,new SpotsInfo('FF','092',true,[51.8,108.1]),new SpotsInfo('FF','093',true,[49.8,212.2]),new SpotsInfo('FF','094',true,[44.9,211.9]),new SpotsInfo('FF','095',true,[42.3,47]),new SpotsInfo('FF','096',true,[41.9,52.4])
+				 ,new SpotsInfo('FF','097',true,[41.8,57.1]),new SpotsInfo('FF','098',true,[41.7,62.3]),new SpotsInfo('FF','099',true,[41.6,67.2]),new SpotsInfo('FF','09A',true,[41.4,118.3]),new SpotsInfo('FF','09B',true,[41.4,164.5])
+				 ,new SpotsInfo('FF','09C',true,[41.4,185]),new SpotsInfo('FF','09D',true,[41.3,72.6]),new SpotsInfo('FF','09E',true,[41.3,98.2]),new SpotsInfo('FF','09F',true,[41.2,77.7]),new SpotsInfo('FF','0A0',true,[41.2,113.6])
+				 ,new SpotsInfo('FF','0A1',true,[41.2,128.3]),new SpotsInfo('FF','0A2',true,[41.2,133.7]),new SpotsInfo('FF','0A3',true,[41.2,169.8]),new SpotsInfo('FF','0A4',true,[41.1,102.7]),new SpotsInfo('FF','0A5',true,[41.1,107.8])
+				 ,new SpotsInfo('FF','0A6',true,[41.1,123.3]),new SpotsInfo('FF','0A7',true,[41.1,144]),new SpotsInfo('FF','0A8',true,[41.1,149]),new SpotsInfo('FF','0A9',true,[41.1,154.1]),new SpotsInfo('FF','0AA',true,[41.1,158.9])
+				 ,new SpotsInfo('FF','0AB',true,[41.1,174.5]),new SpotsInfo('FF','0AC',true,[41,93.2]),new SpotsInfo('FF','0AD',true,[41,179.1]),new SpotsInfo('FF','0AE',true,[40.9,138.5]),new SpotsInfo('FF','0AF',true,[40.8,87.9])
+				 ,new SpotsInfo('FF','0B0',true,[40.6,82.6]),new SpotsInfo('FF','0B1',true,[39.2,212.1]),new SpotsInfo('FF','0B2',true,[33.6,212.1]),new SpotsInfo('FF','0B3',true,[28.5,212]),new SpotsInfo('FF','0B4',true,[23,212.5])
+				 ,new SpotsInfo('FF','0B5',true,[15.3,41.3]),new SpotsInfo('FF','0B6',true,[15.3,76.3]),new SpotsInfo('FF','0B7',true,[15.3,81.2]),new SpotsInfo('FF','0B8',true,[15.2,35.4]),new SpotsInfo('FF','0B9',true,[15.2,51.5])
+				 ,new SpotsInfo('FF','0BA',true,[15.1,46.5]),new SpotsInfo('FF','0BB',true,[15.1,71.1]),new SpotsInfo('FF','0BC',true,[15.1,91.5]),new SpotsInfo('FF','0BD',true,[15.1,112.3]),new SpotsInfo('FF','0BE',true,[15.1,132.2])
+				 ,new SpotsInfo('FF','0BF',true,[15,97.4]),new SpotsInfo('FF','0C0',true,[15,121.9]),new SpotsInfo('FF','0C1',true,[14.9,56.4]),new SpotsInfo('FF','0C2',true,[14.9,86.3]),new SpotsInfo('FF','0C3',true,[14.9,127.2])
+				 ,new SpotsInfo('FF','0C4',true,[14.7,61.8]),new SpotsInfo('FF','0C5',true,[14.7,66.9]),new SpotsInfo('FF','0C6',true,[14.7,102.3]),new SpotsInfo('FF','0C7',true,[14.7,106.8]),new SpotsInfo('FF','0C8',true,[14.6,137.7])
+				 ,new SpotsInfo('FF','0C9',true,[14.6,142.3]),new SpotsInfo('FF','0CA',true,[14.6,168.1]),new SpotsInfo('FF','0CB',true,[14.5,157.5]),new SpotsInfo('FF','0CC',true,[14.5,198.3]),new SpotsInfo('FF','0CD',true,[14.4,152.4])
+				 ,new SpotsInfo('FF','0CE',true,[14.4,162.7]),new SpotsInfo('FF','0CF',true,[14.4,202.8]),new SpotsInfo('FF','0D0',true,[14.3,147.3]),new SpotsInfo('FF','0D1',true,[14.3,173.2]),new SpotsInfo('FF','0D2',true,[14.2,187.6])
+				 ,new SpotsInfo('FF','0D3',true,[14.1,182.6]),new SpotsInfo('FF','0D4',true,[14,192.9]),new SpotsInfo('FF','0D5',true,[13.9,178.1])];
 
 //Lot GA - - - - - - - - - - - - - - - - - - - - - - - - -
-var GA001 = new SpotsInfo('GA','001',true,[0,0]);
-var GA002 = new SpotsInfo('GA','002',true,[0,0]);
-var GA003 = new SpotsInfo('GA','003',true,[0,0]);
-var GA004 = new SpotsInfo('GA','004',true,[0,0]);
-var GA005 = new SpotsInfo('GA','005',true,[0,0]);
-var GA006 = new SpotsInfo('GA','006',true,[0,0]);
-var GA007 = new SpotsInfo('GA','007',true,[0,0]);
-var GA008 = new SpotsInfo('GA','008',true,[0,0]);
-var GA009 = new SpotsInfo('GA','009',true,[0,0]);
-var GA00A = new SpotsInfo('GA','00A',true,[0,0]);
-var GA00B = new SpotsInfo('GA','00B',true,[0,0]);
-var GA00C = new SpotsInfo('GA','00C',true,[0,0]);
-var GA00D = new SpotsInfo('GA','00D',true,[0,0]);
-var GA00E = new SpotsInfo('GA','00E',true,[0,0]);
-var lotGASpots = [GA001,GA002,GA003,GA004,GA005,GA006,GA007,GA008,GA009,GA00A
-				 ,GA00B,GA00C,GA00D,GA00E];
+var lotGASpots = [new SpotsInfo('GA','001',true,[20.6,171.2]),new SpotsInfo('GA','002',true,[20.4,183.7]),new SpotsInfo('GA','003',true,[20,158.7]),new SpotsInfo('GA','004',true,[19.5,148.6]),new SpotsInfo('GA','005',true,[19.2,134.4])
+				 ,new SpotsInfo('GA','006',true,[18.3,106.8]),new SpotsInfo('GA','007',true,[18.1,50.9]),new SpotsInfo('GA','008',true,[18,64.8]),new SpotsInfo('GA','009',true,[18,91.6]),new SpotsInfo('GA','00A',true,[17.8,78.2])
+				 ,new SpotsInfo('GA','00B',true,[17.4,119.6]),new SpotsInfo('GA','00C',true,[17.3,36.1]),new SpotsInfo('GA','00D',true,[16.9,23.7]),new SpotsInfo('GA','00E',true,[16.7,9.2])];
 
 //Lot GG - - - - - - - - - - - - - - - - - - - - - - - - -
-var GG001 = new SpotsInfo('GG','001',true,[0,0]);
-var GG002 = new SpotsInfo('GG','002',true,[0,0]);
-var GG003 = new SpotsInfo('GG','003',true,[0,0]);
-var GG004 = new SpotsInfo('GG','004',true,[0,0]);
-var GG005 = new SpotsInfo('GG','005',true,[0,0]);
-var GG006 = new SpotsInfo('GG','006',true,[0,0]);
-var GG007 = new SpotsInfo('GG','007',true,[0,0]);
-var GG008 = new SpotsInfo('GG','008',true,[0,0]);
-var GG009 = new SpotsInfo('GG','009',true,[0,0]);
-var GG00A = new SpotsInfo('GG','00A',true,[0,0]);
-var GG00B = new SpotsInfo('GG','00B',true,[0,0]);
-var GG00C = new SpotsInfo('GG','00C',true,[0,0]);
-var GG00D = new SpotsInfo('GG','00D',true,[0,0]);
-var GG00E = new SpotsInfo('GG','00E',true,[0,0]);
-var GG00F = new SpotsInfo('GG','00F',true,[0,0]);
-var GG010 = new SpotsInfo('GG','010',true,[0,0]);
-var GG011 = new SpotsInfo('GG','011',true,[0,0]);
-var GG012 = new SpotsInfo('GG','012',true,[0,0]);
-var GG013 = new SpotsInfo('GG','013',true,[0,0]);
-var GG014 = new SpotsInfo('GG','014',true,[0,0]);
-var GG015 = new SpotsInfo('GG','015',true,[0,0]);
-var GG016 = new SpotsInfo('GG','016',true,[0,0]);
-var GG017 = new SpotsInfo('GG','017',true,[0,0]);
-var GG018 = new SpotsInfo('GG','018',true,[0,0]);
-var GG019 = new SpotsInfo('GG','019',true,[0,0]);
-var GG01A = new SpotsInfo('GG','01A',true,[0,0]);
-var GG01B = new SpotsInfo('GG','01B',true,[0,0]);
-var GG01C = new SpotsInfo('GG','01C',true,[0,0]);
-var GG01D = new SpotsInfo('GG','01D',true,[0,0]);
-var GG01E = new SpotsInfo('GG','01E',true,[0,0]);
-var lotGGSpots = [GG001,GG002,GG003,GG004,GG005,GG006,GG007,GG008,GG009,GG00A
-				 ,GG00B,GG00C,GG00D,GG00E,GG00F,GG010,GG011,GG012,GG013,GG014
-				 ,GG015,GG016,GG017,GG018,GG019,GG01A,GG01B,GG01C,GG01D,GG01E
-				 ];
+var lotGGSpots = [new SpotsInfo('GG','001',true,[164.8,107.7]),new SpotsInfo('GG','002',true,[164.5,95.3]),new SpotsInfo('GG','003',true,[164.1,84.4]),new SpotsInfo('GG','004',true,[163.2,73.7]),new SpotsInfo('GG','005',true,[162.8,41.2])
+				 ,new SpotsInfo('GG','006',true,[162.8,62.9]),new SpotsInfo('GG','007',true,[162.7,52.4]),new SpotsInfo('GG','008',true,[162.3,30.4]),new SpotsInfo('GG','009',true,[149.4,126.3]),new SpotsInfo('GG','00A',true,[144.5,10.5])
+				 ,new SpotsInfo('GG','00B',true,[140.5,127.5]),new SpotsInfo('GG','00C',true,[131.3,129.8]),new SpotsInfo('GG','00D',true,[130.4,13.6]),new SpotsInfo('GG','00E',true,[122.1,130.8]),new SpotsInfo('GG','00F',true,[120.9,14.4])
+				 ,new SpotsInfo('GG','010',true,[112.7,132.3]),new SpotsInfo('GG','011',true,[112.4,68.1]),new SpotsInfo('GG','012',true,[112.3,16.3]),new SpotsInfo('GG','013',true,[103.5,133.9]),new SpotsInfo('GG','014',true,[102.6,17.7])
+				 ,new SpotsInfo('GG','015',true,[102.4,69.1]),new SpotsInfo('GG','016',true,[94.2,135.2]),new SpotsInfo('GG','017',true,[93,20.1]),new SpotsInfo('GG','018',true,[92.6,69.9]),new SpotsInfo('GG','019',true,[85.1,20.8])
+				 ,new SpotsInfo('GG','01A',true,[85,137]),new SpotsInfo('GG','01B',true,[83.6,71.2]),new SpotsInfo('GG','01C',true,[75.2,21.7]),new SpotsInfo('GG','01D',true,[73.3,74.3]),new SpotsInfo('GG','01E',true,[65.5,24])
+				 ,new SpotsInfo('GG','01F',true,[64.9,77.6]),new SpotsInfo('GG','020',true,[55.5,24.2]),new SpotsInfo('GG','021',true,[55.3,79]),new SpotsInfo('GG','022',true,[46.4,82.5])];
+
+//Lot HF - - - - - - - - - - - - - - - - - - - - - - - - -
+var lotHFSpots = [new SpotsInfo('HF','001',true,[93.9,88.2]),new SpotsInfo('HF','002',true,[93.7,76.4]),new SpotsInfo('HF','003',true,[92.5,113.1]),new SpotsInfo('HF','004',true,[92.4,51.2]),new SpotsInfo('HF','005',true,[90.5,125.2])
+				 ,new SpotsInfo('HF','006',true,[89.4,138.8]),new SpotsInfo('HF','007',true,[89.3,152]),new SpotsInfo('HF','008',true,[88.8,165.5]),new SpotsInfo('HF','009',true,[88.7,206.3]),new SpotsInfo('HF','00A',true,[88.6,178])
+				 ,new SpotsInfo('HF','00B',true,[88.5,192.9]),new SpotsInfo('HF','00C',true,[88,218.5]),new SpotsInfo('HF','00D',true,[87.8,236.1])];
 
 //Lot HH - - - - - - - - - - - - - - - - - - - - - - - - -
-var HH001 = new SpotsInfo('HH','001',true,[0,0]);
-var HH002 = new SpotsInfo('HH','002',true,[0,0]);
-var HH003 = new SpotsInfo('HH','003',true,[0,0]);
-var HH004 = new SpotsInfo('HH','004',true,[0,0]);
-var HH005 = new SpotsInfo('HH','005',true,[0,0]);
-var HH006 = new SpotsInfo('HH','006',true,[0,0]);
-var HH007 = new SpotsInfo('HH','007',true,[0,0]);
-var HH008 = new SpotsInfo('HH','008',true,[0,0]);
-var HH009 = new SpotsInfo('HH','009',true,[0,0]);
-var HH00A = new SpotsInfo('HH','00A',true,[0,0]);
-var HH00B = new SpotsInfo('HH','00B',true,[0,0]);
-var HH00C = new SpotsInfo('HH','00C',true,[0,0]);
-var HH00D = new SpotsInfo('HH','00D',true,[0,0]);
-var HH00E = new SpotsInfo('HH','00E',true,[0,0]);
-var HH00F = new SpotsInfo('HH','00F',true,[0,0]);
-var HH010 = new SpotsInfo('HH','010',true,[0,0]);
-var HH011 = new SpotsInfo('HH','011',true,[0,0]);
-var HH012 = new SpotsInfo('HH','012',true,[0,0]);
-var HH013 = new SpotsInfo('HH','013',true,[0,0]);
-var HH014 = new SpotsInfo('HH','014',true,[0,0]);
-var HH015 = new SpotsInfo('HH','015',true,[0,0]);
-var HH016 = new SpotsInfo('HH','016',true,[0,0]);
-var HH017 = new SpotsInfo('HH','017',true,[0,0]);
-var HH018 = new SpotsInfo('HH','018',true,[0,0]);
-var HH019 = new SpotsInfo('HH','019',true,[0,0]);
-var HH01A = new SpotsInfo('HH','01A',true,[0,0]);
-var HH01B = new SpotsInfo('HH','01B',true,[0,0]);
-var HH01C = new SpotsInfo('HH','01C',true,[0,0]);
-var HH01D = new SpotsInfo('HH','01D',true,[0,0]);
-var HH01E = new SpotsInfo('HH','01E',true,[0,0]);
-var HH01F = new SpotsInfo('HH','01F',true,[0,0]);
-var HH020 = new SpotsInfo('HH','020',true,[0,0]);
-var HH021 = new SpotsInfo('HH','021',true,[0,0]);
-var HH022 = new SpotsInfo('HH','022',true,[0,0]);
-var HH023 = new SpotsInfo('HH','023',true,[0,0]);
-var HH024 = new SpotsInfo('HH','024',true,[0,0]);
-var HH025 = new SpotsInfo('HH','025',true,[0,0]);
-var HH026 = new SpotsInfo('HH','026',true,[0,0]);
-var HH027 = new SpotsInfo('HH','027',true,[0,0]);
-var HH028 = new SpotsInfo('HH','028',true,[0,0]);
-var HH029 = new SpotsInfo('HH','029',true,[0,0]);
-var HH02A = new SpotsInfo('HH','02A',true,[0,0]);
-var HH02B = new SpotsInfo('HH','02B',true,[0,0]);
-var HH02C = new SpotsInfo('HH','02C',true,[0,0]);
-var HH02D = new SpotsInfo('HH','02D',true,[0,0]);
-var HH02E = new SpotsInfo('HH','02E',true,[0,0]);
-var HH02F = new SpotsInfo('HH','02F',true,[0,0]);
-var HH030 = new SpotsInfo('HH','030',true,[0,0]);
-var HH031 = new SpotsInfo('HH','031',true,[0,0]);
-var HH032 = new SpotsInfo('HH','032',true,[0,0]);
-var HH033 = new SpotsInfo('HH','033',true,[0,0]);
-var HH034 = new SpotsInfo('HH','034',true,[0,0]);
-var HH035 = new SpotsInfo('HH','035',true,[0,0]);
-var HH036 = new SpotsInfo('HH','036',true,[0,0]);
-var HH037 = new SpotsInfo('HH','037',true,[0,0]);
-var HH038 = new SpotsInfo('HH','038',true,[0,0]);
-var HH039 = new SpotsInfo('HH','039',true,[0,0]);
-var HH03A = new SpotsInfo('HH','03A',true,[0,0]);
-var HH03B = new SpotsInfo('HH','03B',true,[0,0]);
-var HH03C = new SpotsInfo('HH','03C',true,[0,0]);
-var HH03D = new SpotsInfo('HH','03D',true,[0,0]);
-var HH03E = new SpotsInfo('HH','03E',true,[0,0]);
-var HH03F = new SpotsInfo('HH','03F',true,[0,0]);
-var HH040 = new SpotsInfo('HH','040',true,[0,0]);
-var HH041 = new SpotsInfo('HH','041',true,[0,0]);
-var HH042 = new SpotsInfo('HH','042',true,[0,0]);
-var HH043 = new SpotsInfo('HH','043',true,[0,0]);
-var HH044 = new SpotsInfo('HH','044',true,[0,0]);
-var HH045 = new SpotsInfo('HH','045',true,[0,0]);
-var HH046 = new SpotsInfo('HH','046',true,[0,0]);
-var HH047 = new SpotsInfo('HH','047',true,[0,0]);
-var lotHHSpots = [HH001,HH002,HH003,HH004,HH005,HH006,HH007,HH008,HH009,HH00A
-				 ,HH00B,HH00C,HH00D,HH00E,HH00F,HH010,HH011,HH012,HH013,HH014
-				 ,HH015,HH016,HH017,HH018,HH019,HH01A,HH01B,HH01C,HH01D,HH01E
-				 ,HH01F,HH020,HH021,HH022,HH023,HH024,HH025,HH026,HH027,HH028
-				 ,HH029,HH02A,HH02B,HH02C,HH02D,HH02E,HH02F,HH030,HH031,HH032
-				 ,HH033,HH034,HH035,HH036,HH037,HH038,HH039,HH03A,HH03B,HH03C
-				 ,HH03D,HH03E,HH03F,HH040,HH041,HH042,HH043,HH044,HH045,HH046
-				 ,HH047];
+var lotHHSpots = [new SpotsInfo('HH','001',true,[156.5,9.9]),new SpotsInfo('HH','002',true,[138.2,11]),new SpotsInfo('HH','003',true,[132.7,227.1]),new SpotsInfo('HH','004',true,[130.8,76.5]),new SpotsInfo('HH','005',true,[130.6,66])
+				 ,new SpotsInfo('HH','006',true,[130.2,87.4]),new SpotsInfo('HH','007',true,[129.7,98.3]),new SpotsInfo('HH','008',true,[129.7,129.5]),new SpotsInfo('HH','009',true,[129.6,108.8]),new SpotsInfo('HH','00A',true,[129.6,139.8])
+				 ,new SpotsInfo('HH','00B',true,[129.6,171.2]),new SpotsInfo('HH','00C',true,[129.5,160.8]),new SpotsInfo('HH','00D',true,[129.4,119.1]),new SpotsInfo('HH','00E',true,[129.4,150.2]),new SpotsInfo('HH','00F',true,[122.7,225.8])
+				 ,new SpotsInfo('HH','010',true,[120.7,11.9]),new SpotsInfo('HH','011',true,[111.7,225.5]),new SpotsInfo('HH','012',true,[110.8,12.7]),new SpotsInfo('HH','013',true,[101.2,225.6]),new SpotsInfo('HH','014',true,[100.6,13.6])
+				 ,new SpotsInfo('HH','015',true,[91.5,225.7]),new SpotsInfo('HH','016',true,[90.9,13.8]),new SpotsInfo('HH','017',true,[82.1,173.6]),new SpotsInfo('HH','018',true,[81.7,129.7]),new SpotsInfo('HH','019',true,[81.2,150.7])
+				 ,new SpotsInfo('HH','01A',true,[81.1,118.7]),new SpotsInfo('HH','01B',true,[81,109]),new SpotsInfo('HH','01C',true,[81,139.8]),new SpotsInfo('HH','01D',true,[80.9,160.5]),new SpotsInfo('HH','01E',true,[80.9,225.6])
+				 ,new SpotsInfo('HH','01F',true,[80.1,98.7]),new SpotsInfo('HH','020',true,[79.9,66.7]),new SpotsInfo('HH','021',true,[79.9,88.2]),new SpotsInfo('HH','022',true,[79.7,77.3]),new SpotsInfo('HH','023',true,[79.2,13.1])
+				 ,new SpotsInfo('HH','024',true,[70.3,226.5]),new SpotsInfo('HH','025',true,[69.5,13.5]),new SpotsInfo('HH','026',true,[63.6,161.5]),new SpotsInfo('HH','027',true,[63.4,172.5]),new SpotsInfo('HH','028',true,[62.1,150.9])
+				 ,new SpotsInfo('HH','029',true,[61.9,77.4]),new SpotsInfo('HH','02A',true,[61.9,130.1]),new SpotsInfo('HH','02B',true,[61.9,140.4]),new SpotsInfo('HH','02C',true,[61.8,88.2]),new SpotsInfo('HH','02D',true,[61.7,66.3])
+				 ,new SpotsInfo('HH','02E',true,[61.7,120.1]),new SpotsInfo('HH','02F',true,[61.3,98.7]),new SpotsInfo('HH','030',true,[61.3,108.8]),new SpotsInfo('HH','031',true,[59.8,226.4]),new SpotsInfo('HH','032',true,[59.3,13.9])
+				 ,new SpotsInfo('HH','033',true,[50.9,227]),new SpotsInfo('HH','034',true,[48.3,14.2]),new SpotsInfo('HH','035',true,[40.4,228.2]),new SpotsInfo('HH','036',true,[38.6,14.6]),new SpotsInfo('HH','037',true,[30.4,228.7])
+				 ,new SpotsInfo('HH','038',true,[28.7,13.5]),new SpotsInfo('HH','039',true,[19.1,228.5]),new SpotsInfo('HH','03A',true,[14.7,152.2]),new SpotsInfo('HH','03B',true,[14.7,162]),new SpotsInfo('HH','03C',true,[14.6,172.9])
+				 ,new SpotsInfo('HH','03D',true,[14.2,141.6]),new SpotsInfo('HH','03E',true,[13.8,131.1]),new SpotsInfo('HH','03F',true,[13.6,99]),new SpotsInfo('HH','040',true,[13.5,88.3]),new SpotsInfo('HH','041',true,[13.4,67.2])
+				 ,new SpotsInfo('HH','042',true,[13.3,120.1]),new SpotsInfo('HH','043',true,[13.1,110.1]),new SpotsInfo('HH','044',true,[13,78.3]),new SpotsInfo('HH','045',true,[12.3,32.8]),new SpotsInfo('HH','046',true,[12.1,45.1])
+				 ,new SpotsInfo('HH','047',true,[9.2,229.3])];
+
+//Lot IM - - - - - - - - - - - - - - - - - - - - - - - - -
+var lotIMSpots = [new SpotsInfo('IM','001',true,[264.4,235.1]),new SpotsInfo('IM','002',true,[264.2,226.8]),new SpotsInfo('IM','003',true,[263.9,164.8]),new SpotsInfo('IM','004',true,[263.8,172.8]),new SpotsInfo('IM','005',true,[263.6,16.5])
+				 ,new SpotsInfo('IM','006',true,[263.6,61.1]),new SpotsInfo('IM','007',true,[263.6,182.1]),new SpotsInfo('IM','008',true,[263.6,200]),new SpotsInfo('IM','009',true,[263.5,69.2]),new SpotsInfo('IM','00A',true,[263.5,157.4])
+				 ,new SpotsInfo('IM','00B',true,[263.4,217.8]),new SpotsInfo('IM','00C',true,[263.3,25.8]),new SpotsInfo('IM','00D',true,[263.3,51.7]),new SpotsInfo('IM','00E',true,[263.3,208.1]),new SpotsInfo('IM','00F',true,[263.2,34])
+				 ,new SpotsInfo('IM','010',true,[263.2,146.8]),new SpotsInfo('IM','011',true,[263.2,191.3]),new SpotsInfo('IM','012',true,[263.1,42.6]),new SpotsInfo('IM','013',true,[263.1,95.9]),new SpotsInfo('IM','014',true,[263.1,121.7])
+				 ,new SpotsInfo('IM','015',true,[262.9,113]),new SpotsInfo('IM','016',true,[262.9,138.6]),new SpotsInfo('IM','017',true,[262.8,78.6]),new SpotsInfo('IM','018',true,[262.7,104]),new SpotsInfo('IM','019',true,[262.7,129.6])
+				 ,new SpotsInfo('IM','01A',true,[262.4,86.6]),new SpotsInfo('IM','01B',true,[211.4,123.9]),new SpotsInfo('IM','01C',true,[211.3,133.5]),new SpotsInfo('IM','01D',true,[211.1,115.4]),new SpotsInfo('IM','01E',true,[210.9,141.3])
+				 ,new SpotsInfo('IM','01F',true,[210.7,149.1]),new SpotsInfo('IM','020',true,[210.5,157.9]),new SpotsInfo('IM','021',true,[210.4,185.1]),new SpotsInfo('IM','022',true,[210.3,166.7]),new SpotsInfo('IM','023',true,[210.2,175.5])
+				 ,new SpotsInfo('IM','024',true,[210.1,193.7]),new SpotsInfo('IM','025',true,[209.8,18.2]),new SpotsInfo('IM','026',true,[209.7,201.5]),new SpotsInfo('IM','027',true,[209.4,8.2]),new SpotsInfo('IM','028',true,[209.1,26.9])
+				 ,new SpotsInfo('IM','029',true,[208.7,35.3]),new SpotsInfo('IM','02A',true,[208.7,219.3]),new SpotsInfo('IM','02B',true,[208.5,210.3]),new SpotsInfo('IM','02C',true,[208.3,43.4]),new SpotsInfo('IM','02D',true,[208.2,228.1])
+				 ,new SpotsInfo('IM','02E',true,[208.2,237.5]),new SpotsInfo('IM','02F',true,[207.9,51.6]),new SpotsInfo('IM','030',true,[94.3,156.2]),new SpotsInfo('IM','031',true,[84.1,156.3]),new SpotsInfo('IM','032',true,[66.4,156.6])
+				 ,new SpotsInfo('IM','033',true,[55.9,156.2])];
 
 //Lot JJ - - - - - - - - - - - - - - - - - - - - - - - - -
-var JJ001 = new SpotsInfo('JJ','001',true,[0,0]);
-var JJ002 = new SpotsInfo('JJ','002',true,[0,0]);
-var JJ003 = new SpotsInfo('JJ','003',true,[0,0]);
-var JJ004 = new SpotsInfo('JJ','004',true,[0,0]);
-var JJ005 = new SpotsInfo('JJ','005',true,[0,0]);
-var JJ006 = new SpotsInfo('JJ','006',true,[0,0]);
-var JJ007 = new SpotsInfo('JJ','007',true,[0,0]);
-var JJ008 = new SpotsInfo('JJ','008',true,[0,0]);
-var JJ009 = new SpotsInfo('JJ','009',true,[0,0]);
-var JJ00A = new SpotsInfo('JJ','00A',true,[0,0]);
-var JJ00B = new SpotsInfo('JJ','00B',true,[0,0]);
-var JJ00C = new SpotsInfo('JJ','00C',true,[0,0]);
-var JJ00D = new SpotsInfo('JJ','00D',true,[0,0]);
-var JJ00E = new SpotsInfo('JJ','00E',true,[0,0]);
-var JJ00F = new SpotsInfo('JJ','00F',true,[0,0]);
-var JJ010 = new SpotsInfo('JJ','010',true,[0,0]);
-var JJ011 = new SpotsInfo('JJ','011',true,[0,0]);
-var JJ012 = new SpotsInfo('JJ','012',true,[0,0]);
-var JJ013 = new SpotsInfo('JJ','013',true,[0,0]);
-var JJ014 = new SpotsInfo('JJ','014',true,[0,0]);
-var JJ015 = new SpotsInfo('JJ','015',true,[0,0]);
-var JJ016 = new SpotsInfo('JJ','016',true,[0,0]);
-var JJ017 = new SpotsInfo('JJ','017',true,[0,0]);
-var JJ018 = new SpotsInfo('JJ','018',true,[0,0]);
-var JJ019 = new SpotsInfo('JJ','019',true,[0,0]);
-var JJ01A = new SpotsInfo('JJ','01A',true,[0,0]);
-var JJ01B = new SpotsInfo('JJ','01B',true,[0,0]);
-var JJ01C = new SpotsInfo('JJ','01C',true,[0,0]);
-var JJ01D = new SpotsInfo('JJ','01D',true,[0,0]);
-var JJ01E = new SpotsInfo('JJ','01E',true,[0,0]);
-var JJ01F = new SpotsInfo('JJ','01F',true,[0,0]);
-var JJ020 = new SpotsInfo('JJ','020',true,[0,0]);
-var JJ021 = new SpotsInfo('JJ','021',true,[0,0]);
-var JJ022 = new SpotsInfo('JJ','022',true,[0,0]);
-var JJ023 = new SpotsInfo('JJ','023',true,[0,0]);
-var JJ024 = new SpotsInfo('JJ','024',true,[0,0]);
-var JJ025 = new SpotsInfo('JJ','025',true,[0,0]);
-var JJ026 = new SpotsInfo('JJ','026',true,[0,0]);
-var JJ027 = new SpotsInfo('JJ','027',true,[0,0]);
-var JJ028 = new SpotsInfo('JJ','028',true,[0,0]);
-var JJ029 = new SpotsInfo('JJ','029',true,[0,0]);
-var lotJJSpots = [JJ001,JJ002,JJ003,JJ004,JJ005,JJ006,JJ007,JJ008,JJ009,JJ00A
-				 ,JJ00B,JJ00C,JJ00D,JJ00E,JJ00F,JJ010,JJ011,JJ012,JJ013,JJ014
-				 ,JJ015,JJ016,JJ017,JJ018,JJ019,JJ01A,JJ01B,JJ01C,JJ01D,JJ01E
-				 ,JJ01F,JJ020,JJ021,JJ022,JJ023,JJ024,JJ025,JJ026,JJ027,JJ028
-				 ,JJ029];
+var lotJJSpots = [new SpotsInfo('JJ','001',true,[126.4,40.9]),new SpotsInfo('JJ','002',true,[125.8,51.9]),new SpotsInfo('JJ','003',true,[125.1,62.3]),new SpotsInfo('JJ','004',true,[124.2,72.4]),new SpotsInfo('JJ','005',true,[123.9,81.6])
+				 ,new SpotsInfo('JJ','006',true,[122.9,91.6]),new SpotsInfo('JJ','007',true,[122.6,102.1]),new SpotsInfo('JJ','008',true,[122.2,111.9]),new SpotsInfo('JJ','009',true,[121.9,124.6]),new SpotsInfo('JJ','00A',true,[111.8,23.8])
+				 ,new SpotsInfo('JJ','00B',true,[106.8,138.1]),new SpotsInfo('JJ','00C',true,[95.7,138]),new SpotsInfo('JJ','00D',true,[92.8,19.1]),new SpotsInfo('JJ','00E',true,[87.3,136.3]),new SpotsInfo('JJ','00F',true,[83.4,19])
+				 ,new SpotsInfo('JJ','010',true,[80.5,65.3]),new SpotsInfo('JJ','011',true,[80.5,87.4]),new SpotsInfo('JJ','012',true,[77.8,134.4]),new SpotsInfo('JJ','013',true,[72.3,64.7]),new SpotsInfo('JJ','014',true,[71.1,84.6])
+				 ,new SpotsInfo('JJ','015',true,[68.9,132.8]),new SpotsInfo('JJ','016',true,[64.9,17.3]),new SpotsInfo('JJ','017',true,[62.8,60.4]),new SpotsInfo('JJ','018',true,[61.4,83.7]),new SpotsInfo('JJ','019',true,[59.1,131.1])
+				 ,new SpotsInfo('JJ','01A',true,[55.2,14.3]),new SpotsInfo('JJ','01B',true,[53,59.8]),new SpotsInfo('JJ','01C',true,[51.7,82.6]),new SpotsInfo('JJ','01D',true,[49.3,129.9]),new SpotsInfo('JJ','01E',true,[46.6,13.9])
+				 ,new SpotsInfo('JJ','01F',true,[44.6,59.3]),new SpotsInfo('JJ','020',true,[43.4,82.3]),new SpotsInfo('JJ','021',true,[40.7,129.1]),new SpotsInfo('JJ','022',true,[36.9,12.5]),new SpotsInfo('JJ','023',true,[34.6,58.1])
+				 ,new SpotsInfo('JJ','024',true,[33.7,80.8]),new SpotsInfo('JJ','025',true,[31.2,128.4]),new SpotsInfo('JJ','026',true,[28.9,11]),new SpotsInfo('JJ','027',true,[25.7,56]),new SpotsInfo('JJ','028',true,[23.7,79.1])
+				 ,new SpotsInfo('JJ','029',true,[21.3,126.8])];
+
+//Lot SL - - - - - - - - - - - - - - - - - - - - - - - - -
+var lotSLSpots = [new SpotsInfo('SL','001',true,[78.7,14.6]),new SpotsInfo('SL','002',true,[67,16.1]),new SpotsInfo('SL','003',true,[55.2,16.1]),new SpotsInfo('SL','004',true,[43.5,16.9]),new SpotsInfo('SL','005',true,[21,83.6])
+				 ,new SpotsInfo('SL','006',true,[20.9,48.9]),new SpotsInfo('SL','007',true,[20.9,70.7]),new SpotsInfo('SL','008',true,[20.9,103])];
+
+//Lot UD - - - - - - - - - - - - - - - - - - - - - - - - -
+var lotUDSpots = [new SpotsInfo('UD','001',true,[191.8,65.7]),new SpotsInfo('UD','002',true,[191.6,57.9]),new SpotsInfo('UD','003',true,[191.6,85.7]),new SpotsInfo('UD','004',true,[191.5,75.2]),new SpotsInfo('UD','005',true,[191.4,100.2])
+				 ,new SpotsInfo('UD','006',true,[191.2,125.8]),new SpotsInfo('UD','007',true,[191.1,108.9]),new SpotsInfo('UD','008',true,[191,133.5]),new SpotsInfo('UD','009',true,[191,142.2]),new SpotsInfo('UD','00A',true,[190.9,117.6])
+				 ,new SpotsInfo('UD','00B',true,[190.8,50.1]),new SpotsInfo('UD','00C',true,[190.8,149.3]),new SpotsInfo('UD','00D',true,[190.7,232.9]),new SpotsInfo('UD','00E',true,[190.6,208.3]),new SpotsInfo('UD','00F',true,[190.6,226.9])
+				 ,new SpotsInfo('UD','010',true,[190.6,238.9]),new SpotsInfo('UD','011',true,[190.5,202.2]),new SpotsInfo('UD','012',true,[190.3,214.3]),new SpotsInfo('UD','013',true,[190.2,189.6]),new SpotsInfo('UD','014',true,[190.2,196])
+				 ,new SpotsInfo('UD','015',true,[190,220.1]),new SpotsInfo('UD','016',true,[187.7,43]),new SpotsInfo('UD','017',true,[182.7,36]),new SpotsInfo('UD','018',true,[178.2,28.5]),new SpotsInfo('UD','019',true,[174.1,21])
+				 ,new SpotsInfo('UD','01A',true,[161.6,262.6]),new SpotsInfo('UD','01B',true,[153.5,262.5]),new SpotsInfo('UD','01C',true,[146.7,262.6]),new SpotsInfo('UD','01D',true,[138.8,262.6]),new SpotsInfo('UD','01E',true,[131.4,262.9])
+				 ,new SpotsInfo('UD','01F',true,[123.7,262.9]),new SpotsInfo('UD','020',true,[115.8,262.3]),new SpotsInfo('UD','021',true,[107.9,262.3]),new SpotsInfo('UD','022',true,[105.2,16.2]),new SpotsInfo('UD','023',true,[100.6,262.5])
+				 ,new SpotsInfo('UD','024',true,[97.5,18.7]),new SpotsInfo('UD','025',true,[93.2,262.2]),new SpotsInfo('UD','026',true,[91.7,21.4]),new SpotsInfo('UD','027',true,[85.7,262.5]),new SpotsInfo('UD','028',true,[84.7,24])
+				 ,new SpotsInfo('UD','029',true,[78.3,26.3]),new SpotsInfo('UD','02A',true,[77.6,262.1]),new SpotsInfo('UD','02B',true,[71.2,29.7]),new SpotsInfo('UD','02C',true,[70.6,261.8]),new SpotsInfo('UD','02D',true,[63,260])
+				 ,new SpotsInfo('UD','02E',true,[55.9,258.7]),new SpotsInfo('UD','02F',true,[49.2,255.8]),new SpotsInfo('UD','030',true,[47.8,38.1]),new SpotsInfo('UD','031',true,[46.6,244.4]),new SpotsInfo('UD','032',true,[43.1,242.3])
+				 ,new SpotsInfo('UD','033',true,[41.9,41.9]),new SpotsInfo('UD','034',true,[40,240.4]),new SpotsInfo('UD','035',true,[37.1,238.3]),new SpotsInfo('UD','036',true,[36.3,45.8]),new SpotsInfo('UD','037',true,[34.8,236.1])
+				 ,new SpotsInfo('UD','038',true,[32.3,233.4]),new SpotsInfo('UD','039',true,[30,231]),new SpotsInfo('UD','03A',true,[27.8,228.2]),new SpotsInfo('UD','03B',true,[24.5,225.3]),new SpotsInfo('UD','03C',true,[22.9,222.4])
+				 ,new SpotsInfo('UD','03D',true,[21.6,219]),new SpotsInfo('UD','03E',true,[20.5,237.8]),new SpotsInfo('UD','03F',true,[20.4,215.5]),new SpotsInfo('UD','040',true,[19.3,212.6]),new SpotsInfo('UD','041',true,[17.9,209.3])
+				 ,new SpotsInfo('UD','042',true,[17.6,206.4]),new SpotsInfo('UD','043',true,[16.9,62.4]),new SpotsInfo('UD','044',true,[16.8,203.1]),new SpotsInfo('UD','045',true,[16.2,233.1]),new SpotsInfo('UD','046',true,[13.8,68])
+				 ,new SpotsInfo('UD','047',true,[12.3,226.9]),new SpotsInfo('UD','048',true,[10.5,73.4]),new SpotsInfo('UD','049',true,[9.7,222]),new SpotsInfo('UD','04A',true,[8.2,79.4]),new SpotsInfo('UD','04B',true,[7.4,215.6])
+				 ,new SpotsInfo('UD','04C',true,[6.3,84.8]),new SpotsInfo('UD','04D',true,[5.8,209.7]),new SpotsInfo('UD','04E',true,[5.4,91]),new SpotsInfo('UD','04F',true,[4.9,97.3]),new SpotsInfo('UD','050',true,[4.8,140.5])
+				 ,new SpotsInfo('UD','051',true,[4.8,146.8]),new SpotsInfo('UD','052',true,[4.8,152.5]),new SpotsInfo('UD','053',true,[4.7,127.8]),new SpotsInfo('UD','054',true,[4.7,203.8]),new SpotsInfo('UD','055',true,[4.6,122])
+				 ,new SpotsInfo('UD','056',true,[4.6,134.1]),new SpotsInfo('UD','057',true,[4.4,110.2]),new SpotsInfo('UD','058',true,[4.3,103.5]),new SpotsInfo('UD','059',true,[4.3,116])];
+
+//Lot PS - - - - - - - - - - - - - - - - - - - - - - - - -
+var lotPSSpots = [new SpotsInfo('PS','001',true,[92,10.4]),new SpotsInfo('PS','002',true,[80.5,12.1]),new SpotsInfo('PS','003',true,[73.5,13.9]),new SpotsInfo('PS','004',true,[65.8,12.7]),new SpotsInfo('PS','005',true,[58.5,13.2])
+				 ,new SpotsInfo('PS','006',true,[52.4,13.3]),new SpotsInfo('PS','007',true,[44.1,13.8]),new SpotsInfo('PS','008',true,[37.5,14.1]),new SpotsInfo('PS','009',true,[30.2,14.2]),new SpotsInfo('PS','00A',true,[22.5,13.6])
+				 ,new SpotsInfo('PS','00B',true,[15.7,13.9]),new SpotsInfo('PS','00C',true,[9.1,13.9])];
+
+//Lot UCC - - - - - - - - - - - - - - - - - - - - - - - - -
+var lotUCCSpots = [new SpotsInfo('UCC','001',true,[82.6,60.6]),new SpotsInfo('UCC','002',true,[82.5,44.3]),new SpotsInfo('UCC','003',true,[82,75.8]),new SpotsInfo('UCC','004',true,[81.9,9.2]),new SpotsInfo('UCC','005',true,[81.8,27.3])
+				 ,new SpotsInfo('UCC','006',true,[81.7,138.9]),new SpotsInfo('UCC','007',true,[81.4,92.4]),new SpotsInfo('UCC','008',true,[81.3,108.6]),new SpotsInfo('UCC','009',true,[81.3,123.9]),new SpotsInfo('UCC','00A',true,[81.3,173.4])
+				 ,new SpotsInfo('UCC','00B',true,[81.3,270.8]),new SpotsInfo('UCC','00C',true,[81.2,157.5]),new SpotsInfo('UCC','00D',true,[80.6,189.4]),new SpotsInfo('UCC','00E',true,[80.6,204.7]),new SpotsInfo('UCC','00F',true,[80.5,222.9])
+				 ,new SpotsInfo('UCC','010',true,[80.2,237.6]),new SpotsInfo('UCC','011',true,[79.5,252.6]),new SpotsInfo('UCC','012',true,[20.4,158.5]),new SpotsInfo('UCC','013',true,[19.9,174.2]),new SpotsInfo('UCC','014',true,[19.9,271])
+				 ,new SpotsInfo('UCC','015',true,[19.8,253.6]),new SpotsInfo('UCC','016',true,[19.6,237]),new SpotsInfo('UCC','017',true,[19.5,28.6]),new SpotsInfo('UCC','018',true,[19.4,191.2]),new SpotsInfo('UCC','019',true,[19.1,77.2])
+				 ,new SpotsInfo('UCC','01A',true,[18.7,60.2]),new SpotsInfo('UCC','01B',true,[18.7,92]),new SpotsInfo('UCC','01C',true,[18.5,205.6]),new SpotsInfo('UCC','01D',true,[18.4,221.7]),new SpotsInfo('UCC','01E',true,[18.2,44.2])
+				 ,new SpotsInfo('UCC','01F',true,[18.1,124.6]),new SpotsInfo('UCC','020',true,[18,110.2]),new SpotsInfo('UCC','021',true,[17.9,140.1])];
 

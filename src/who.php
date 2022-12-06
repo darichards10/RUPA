@@ -4,6 +4,7 @@ require "cookieredir.php";
 <!DOCTYPE html>
 <html lang="en">
         <head>
+            <title>RUPA</title>
             <link rel="stylesheet" href="main.css">
             <link rel="preconnect" href="https://fonts.googleapis.com">
             <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -11,7 +12,7 @@ require "cookieredir.php";
         </head>
 	<body>
         <div class="container">
-            <header><h1>RADFORD UNIVERSITY PARKING APP<hr><h1></header>
+            <header><h1>RADFORD UNIVERSITY PARKING APP<hr>Who are you?<h1></header>
             <form method="post" action="whovalidation.php">
                 <button type="submit" class="button" name="student" value="student"><b>STUDENT</b></button><br>
                 <button type="submit" class="button" name="faculty" value="faculty"><b>FACULTY</b></button><br>

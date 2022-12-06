@@ -1,1 +1,2 @@
---this file folder is going to contain the random js files that may or may not be useful--
+# script Folder
+This folder contains the JavaScript files that run the bulk of our front end.

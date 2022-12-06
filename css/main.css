@@ -44,9 +44,7 @@ font-weight: bold;
   width: 75px;
   height: 75px;
   animation: spin 1s linear infinite;
-  margin-left: 42%;
-  margin-top: 12%;
-  margin-bottom: 8%;
+  margin: 0 auto;
 }
 
 @keyframes spin {
@@ -90,7 +88,7 @@ font-weight: bold;
 
 @media only screen and (orientation: portrait) {
   #map {
-    height: 1500px;
+    height: 1400px;
   }
   #sMap{
     height: 1000px; width: 725px;

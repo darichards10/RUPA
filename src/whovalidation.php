@@ -2,6 +2,7 @@
 require "cookieredir.php";
 session_start();
 
+//Sends user to next page(s) based on who they are
 if(!empty($_POST["student"])) {
     header("Location: pass.php");
     exit();

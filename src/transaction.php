@@ -1,12 +1,13 @@
 <?php
 
 /**
- * Query Stuff.
+ * A query function that provides functionalities with transactions and prepared statements
  */
 function qry(PDO $pdo, string $qry, array $args = null, string $mode = null) {
     if ($args != null && $mode == null) {
         try { 
             //complex query with arguments
+            //prepared statements
             $pdo->beginTransaction(); 
             $query = $pdo->prepare($qry); 
             $query->execute($args);
@@ -16,6 +17,7 @@ function qry(PDO $pdo, string $qry, array $args = null, string $mode = null) {
             throw $e; 
         }
     } elseif($args != null && $mode != null){
+        //select query with prepared statements
         try {
             $query = $pdo->prepare($qry);
             $query->execute($args);
@@ -43,11 +45,4 @@ function qry(PDO $pdo, string $qry, array $args = null, string $mode = null) {
 
     return null;
 }
-function transactionControl (PDO $pdo, string $updateDML, array $args) {
-    //Will do later. 
-    return null; 
-}
-              
-
-
 ?>
